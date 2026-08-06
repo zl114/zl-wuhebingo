@@ -1,0 +1,142 @@
+{
+  "season": "",
+  "board": [
+    {
+      "id": "A14",
+      "desc": "总计4次在T4选择得分最高的选项",
+      "param": 4
+    },
+    {
+      "id": "B20",
+      "desc": "T7~T9某题仅选择1个选项且在该题的得分前三高",
+      "param": null
+    },
+    {
+      "id": "B13",
+      "desc": "某回合你的作答与另一玩家至少完全重合5题",
+      "param": 5
+    },
+    {
+      "id": "A20",
+      "desc": "总计3次在T7得到前3高的总分数",
+      "param": 3
+    },
+    {
+      "id": "A29",
+      "desc": "总计5次在T5选择得分最低的选项",
+      "param": 5
+    },
+    {
+      "id": "B30",
+      "desc": "在T10中选择B选项并最终结算排名为1",
+      "param": null
+    },
+    {
+      "id": "B09",
+      "desc": "累计选择6个B选项（含多选）",
+      "param": 6
+    },
+    {
+      "id": "A01",
+      "desc": "获得2次排名1",
+      "param": 2
+    },
+    {
+      "id": "A06",
+      "desc": "连续3次排名1~6",
+      "param": 3
+    },
+    {
+      "id": "A16",
+      "desc": "总计2次在T5选择得分最高的选项",
+      "param": 2
+    },
+    {
+      "id": "A17",
+      "desc": "连续2次在T6得到前3高的总分数",
+      "param": 2
+    },
+    {
+      "id": "B25",
+      "desc": "某回合你未完成你的盘面上的任何未完成任务",
+      "param": null
+    },
+    {
+      "id": "A15",
+      "desc": "连续2次在T5选择得分最高的选项",
+      "param": 2
+    },
+    {
+      "id": "B01",
+      "desc": "在T1中达成4次勇气",
+      "param": 4
+    },
+    {
+      "id": "A19",
+      "desc": "连续3次在T7得到前3高的总分数",
+      "param": 3
+    },
+    {
+      "id": "B10",
+      "desc": "累计选择11个C选项（含多选）",
+      "param": 11
+    },
+    {
+      "id": "A18",
+      "desc": "总计5次在T6得到前3高的总分数",
+      "param": 5
+    },
+    {
+      "id": "A22",
+      "desc": "总计2次在T8得到前3高的总分数",
+      "param": 2
+    },
+    {
+      "id": "A09",
+      "desc": "连续2次在T2选择得分最高的选项",
+      "param": 2
+    },
+    {
+      "id": "B02",
+      "desc": "在T1中独享过公正（仅你一人选择某个公正选项）",
+      "param": null
+    },
+    {
+      "id": "B11",
+      "desc": "累计选择10个D选项（含多选）",
+      "param": 10
+    },
+    {
+      "id": "B18",
+      "desc": "连续3次在除T10外某题获得最低分",
+      "param": null
+    },
+    {
+      "id": "A26",
+      "desc": "总计1次在T2选择得分最低的选项",
+      "param": 1
+    },
+    {
+      "id": "A32",
+      "desc": "总计3次在T8得到前3低的总分数",
+      "param": 3
+    },
+    {
+      "id": "A04",
+      "desc": "总分达到67分",
+      "param": 67
+    }
+  ],
+  "playerBoards": {},
+  "history": [],
+  "castling": {
+    "triggered": false,
+    "triggeredBy": null,
+    "triggerRound": null,
+    "speedUp": false,
+    "players": {}
+  },
+  "currentRound": 0,
+  "finished": false,
+  "winner": null
+}

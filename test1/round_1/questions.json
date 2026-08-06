@@ -1,0 +1,370 @@
+[
+  {
+    "id": "T1",
+    "type": "T1",
+    "title": "经典乌合",
+    "desc": "从谨慎、团结、公正、智慧、勇气五个分题库各抽一选项，再从整体剩余池抽一选项，共6个选项",
+    "options": [
+      {
+        "label": "A",
+        "text": "A.谨慎(若人数<5,+2)",
+        "cfg": "lt5:2"
+      },
+      {
+        "label": "B",
+        "text": "B.团结(人数最多+4)",
+        "cfg": "max:4"
+      },
+      {
+        "label": "C",
+        "text": "C.公正(平分4分,每多1人总平分数+1)",
+        "cfg": "split_s:4"
+      },
+      {
+        "label": "D",
+        "text": "D.智慧(人数最少+3,无视0人项,否则-1)",
+        "cfg": "min_nz:3;else:-1"
+      },
+      {
+        "label": "E",
+        "text": "E.勇气(人数=2则+7,否则-2)",
+        "cfg": "eq2:7;else:-2"
+      },
+      {
+        "label": "F",
+        "text": "F.智慧(人数最少+3,无视0人项,否则-1)",
+        "cfg": "min_nz:3;else:-1"
+      }
+    ],
+    "catInfo": [
+      {
+        "cat": "谨慎",
+        "opt": {
+          "label": "A",
+          "text": "A.谨慎(若人数<5,+2)",
+          "cfg": "lt5:2"
+        }
+      },
+      {
+        "cat": "团结",
+        "opt": {
+          "label": "B",
+          "text": "B.团结(人数最多+4)",
+          "cfg": "max:4"
+        }
+      },
+      {
+        "cat": "公正",
+        "opt": {
+          "label": "C",
+          "text": "C.公正(平分4分,每多1人总平分数+1)",
+          "cfg": "split_s:4"
+        }
+      },
+      {
+        "cat": "智慧",
+        "opt": {
+          "label": "D",
+          "text": "D.智慧(人数最少+3,无视0人项,否则-1)",
+          "cfg": "min_nz:3;else:-1"
+        }
+      },
+      {
+        "cat": "勇气",
+        "opt": {
+          "label": "E",
+          "text": "E.勇气(人数=2则+7,否则-2)",
+          "cfg": "eq2:7;else:-2"
+        }
+      },
+      {
+        "cat": "智慧",
+        "opt": {
+          "label": "F",
+          "text": "F.智慧(人数最少+3,无视0人项,否则-1)",
+          "cfg": "min_nz:3;else:-1"
+        }
+      }
+    ]
+  },
+  {
+    "id": "T2_Q203",
+    "type": "T2",
+    "title": "单选题T2-3",
+    "desc": "请选择一项",
+    "options": [
+      {
+        "label": "A",
+        "text": "A.选项A",
+        "cfg": "only:6;else:-1"
+      },
+      {
+        "label": "B",
+        "text": "B.选项B",
+        "cfg": "lt3:3;else:-2"
+      },
+      {
+        "label": "C",
+        "text": "C.选项C",
+        "cfg": "split:9"
+      }
+    ],
+    "minSel": 0,
+    "maxSel": 0,
+    "minFill": 0,
+    "maxFill": 0
+  },
+  {
+    "id": "T3_Q302",
+    "type": "T3",
+    "title": "单选题T3-2",
+    "desc": "请选择一项",
+    "options": [
+      {
+        "label": "A",
+        "text": "A.选项A",
+        "cfg": "split:10"
+      },
+      {
+        "label": "B",
+        "text": "B.选项B",
+        "cfg": "max:3;else:-1"
+      },
+      {
+        "label": "C",
+        "text": "C.选项C",
+        "cfg": "notmax:2;else:0"
+      },
+      {
+        "label": "D",
+        "text": "D.选项D",
+        "cfg": "only:5;else:-2"
+      }
+    ],
+    "minSel": 0,
+    "maxSel": 0,
+    "minFill": 0,
+    "maxFill": 0
+  },
+  {
+    "id": "T4_Q401",
+    "type": "T4",
+    "title": "单选题T4-1",
+    "desc": "请选择一项",
+    "options": [
+      {
+        "label": "A",
+        "text": "A.选项A",
+        "cfg": "min:5;else:-3"
+      },
+      {
+        "label": "B",
+        "text": "B.选项B",
+        "cfg": "max:3,each:1;else:-1"
+      },
+      {
+        "label": "C",
+        "text": "C.选项C",
+        "cfg": "split:12"
+      },
+      {
+        "label": "D",
+        "text": "D.选项D",
+        "cfg": "lt3:4;else:0"
+      },
+      {
+        "label": "E",
+        "text": "E.选项E",
+        "cfg": "notmin:2;else:-2"
+      }
+    ],
+    "minSel": 0,
+    "maxSel": 0,
+    "minFill": 0,
+    "maxFill": 0
+  },
+  {
+    "id": "T5",
+    "type": "T5",
+    "title": "随机单选",
+    "desc": "请选择一项",
+    "options": [
+      {
+        "label": "A",
+        "text": "A.选项A",
+        "cfg": "max:4;else:-2"
+      },
+      {
+        "label": "B",
+        "text": "B.选项B",
+        "cfg": "min:2,each:1;else:0"
+      },
+      {
+        "label": "C",
+        "text": "C.选项C",
+        "cfg": "fixed:0"
+      }
+    ],
+    "sourceId": "Q202"
+  },
+  {
+    "id": "T6_Q602",
+    "type": "T6",
+    "title": "填空题T6-2",
+    "desc": "请填写一个1~100的数字",
+    "options": [],
+    "minSel": 0,
+    "maxSel": 0,
+    "minFill": 1,
+    "maxFill": 100
+  },
+  {
+    "id": "T7_Q701",
+    "type": "T7",
+    "title": "多选题T7-1",
+    "desc": "请选择1~5项",
+    "options": [
+      {
+        "label": "A",
+        "text": "A.选项A",
+        "cfg": "min:3;else:-1"
+      },
+      {
+        "label": "B",
+        "text": "B.选项B",
+        "cfg": "max:2;else:0"
+      },
+      {
+        "label": "C",
+        "text": "C.选项C",
+        "cfg": "split:8"
+      },
+      {
+        "label": "D",
+        "text": "D.选项D",
+        "cfg": "notmax:1,each:1;else:-2"
+      },
+      {
+        "label": "E",
+        "text": "E.选项E",
+        "cfg": "only:5;else:-1"
+      }
+    ],
+    "minSel": 1,
+    "maxSel": 5,
+    "minFill": 0,
+    "maxFill": 0
+  },
+  {
+    "id": "T8_Q801",
+    "type": "T8",
+    "title": "多选题T8-1",
+    "desc": "请选择1~7项",
+    "options": [
+      {
+        "label": "A",
+        "text": "A.选项A",
+        "cfg": "max:4;else:-2"
+      },
+      {
+        "label": "B",
+        "text": "B.选项B",
+        "cfg": "min:3,each:0.5;else:-1"
+      },
+      {
+        "label": "C",
+        "text": "C.选项C",
+        "cfg": "split:14"
+      },
+      {
+        "label": "D",
+        "text": "D.选项D",
+        "cfg": "only:6;else:0"
+      },
+      {
+        "label": "E",
+        "text": "E.选项E",
+        "cfg": "notmin:2;else:-1"
+      },
+      {
+        "label": "F",
+        "text": "F.选项F",
+        "cfg": "fixed:1"
+      },
+      {
+        "label": "G",
+        "text": "G.选项G",
+        "cfg": "lt3:4;else:-2"
+      }
+    ],
+    "minSel": 1,
+    "maxSel": 7,
+    "minFill": 0,
+    "maxFill": 0
+  },
+  {
+    "id": "T9_Q801",
+    "type": "T9",
+    "title": "多选题T8-1",
+    "desc": "请选择1~7项",
+    "options": [
+      {
+        "label": "A",
+        "text": "A.选项A",
+        "cfg": "max:4;else:-2"
+      },
+      {
+        "label": "B",
+        "text": "B.选项B",
+        "cfg": "min:3,each:0.5;else:-1"
+      },
+      {
+        "label": "C",
+        "text": "C.选项C",
+        "cfg": "split:14"
+      },
+      {
+        "label": "D",
+        "text": "D.选项D",
+        "cfg": "only:6;else:0"
+      },
+      {
+        "label": "E",
+        "text": "E.选项E",
+        "cfg": "notmin:2;else:-1"
+      },
+      {
+        "label": "F",
+        "text": "F.选项F",
+        "cfg": "fixed:1"
+      },
+      {
+        "label": "G",
+        "text": "G.选项G",
+        "cfg": "lt3:4;else:-2"
+      }
+    ],
+    "minSel": 1,
+    "maxSel": 7,
+    "minFill": 0,
+    "maxFill": 0
+  },
+  {
+    "id": "T10",
+    "type": "T10",
+    "title": "保护费",
+    "desc": "保护费题",
+    "options": [
+      {
+        "label": "A",
+        "text": "A.-3",
+        "cfg": "fixed:-3"
+      },
+      {
+        "label": "B",
+        "text": "B.若你是第一，你的分数归零",
+        "cfg": "rank1_zero"
+      }
+    ]
+  }
+]

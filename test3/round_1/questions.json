@@ -1,0 +1,286 @@
+[
+  {
+    "id": "T1",
+    "type": "single",
+    "text": "经典乌合",
+    "desc": "从谨慎、团结、公正、智慧、勇气各抽一选项，再随机抽一选项，共6个选项",
+    "options": [
+      {
+        "label": "A",
+        "text": "A.谨慎(若人数<5,+2)",
+        "pool": "谨慎"
+      },
+      {
+        "label": "B",
+        "text": "B.团结(人数最多每有1人+1)",
+        "pool": "团结"
+      },
+      {
+        "label": "C",
+        "text": "C.公正(平分4分,额外+0.5)",
+        "pool": "公正"
+      },
+      {
+        "label": "D",
+        "text": "D.智慧(人数非最多+2,否则-1)",
+        "pool": "智慧"
+      },
+      {
+        "label": "E",
+        "text": "E.勇气(人数=3则+10,否则-2)",
+        "pool": "勇气"
+      },
+      {
+        "label": "F",
+        "text": "F.谨慎(若人数>5,+2)",
+        "pool": "谨慎"
+      }
+    ],
+    "formula": "if(choice == 0) {\n  if(A < 5) { 2 } else { 0 }\n} else {\n  if(choice == 1) {\n    if(B >= A && B >= C && B >= D && B >= E && B >= F && B > 0) { B * 1 } else { 0 }\n  } else {\n  if(choice == 2) {\n    if(C > 0) { 4 / C + 0.5 } else { 0 }\n  } else {\n  if(choice == 3) {\n    maxCount = A\n    if(B > maxCount) { maxCount = B }\n    if(C > maxCount) { maxCount = C }\n    if(D > maxCount) { maxCount = D }\n    if(E > maxCount) { maxCount = E }\n    if(F > maxCount) { maxCount = F }\n    if(D < maxCount) { 2 } else { -1 }\n  } else {\n  if(choice == 4) {\n    if(E == 3) { 10 } else { -2 }\n  } else {\n  if(choice == 5) {\n    if(A > 5) { 2 } else { 0 }\n  }\n  else { 0 }\n}\n}\n}\n}\n}\n}"
+  },
+  {
+    "id": "T2",
+    "type": "single",
+    "enabled": true,
+    "text": "单选题T2-2",
+    "desc": "三选项单选题 - 多数派+4",
+    "options": [
+      {
+        "label": "A",
+        "text": "A.选项A"
+      },
+      {
+        "label": "B",
+        "text": "B.选项B"
+      },
+      {
+        "label": "C",
+        "text": "C.选项C"
+      }
+    ],
+    "formula": "if(choice == 0) {\n  if(A >= B && A >= C && A > 0) { 4 } else { -2 }\n} else {\n  if(choice == 1) {\n    if(B > 0 && B <= A && B <= C) { B * 1 } else { 0 }\n  } else {\n    0\n  }\n}"
+  },
+  {
+    "id": "T3",
+    "type": "single",
+    "enabled": true,
+    "text": "单选题T3-1",
+    "desc": "四选项单选题",
+    "options": [
+      {
+        "label": "A",
+        "text": "A.选项A"
+      },
+      {
+        "label": "B",
+        "text": "B.选项B"
+      },
+      {
+        "label": "C",
+        "text": "C.选项C"
+      },
+      {
+        "label": "D",
+        "text": "D.选项D"
+      }
+    ],
+    "formula": "if(choice == 0) {\n  if(A > 0 && A <= B && A <= C && A <= D) { 4 } else { -1 }\n} else {\n  if(choice == 1) {\n    if(B >= A && B >= C && B >= D && B > 0) { 5 } else { -2 }\n  } else {\n    if(choice == 2) {\n      if(C < 3) { 3 } else { 0 }\n    } else {\n      if(D > 0) { 8 / D } else { 0 }\n    }\n  }\n}"
+  },
+  {
+    "id": "T4",
+    "type": "single",
+    "enabled": true,
+    "text": "单选题T4-1",
+    "desc": "五选项单选题",
+    "options": [
+      {
+        "label": "A",
+        "text": "A.选项A"
+      },
+      {
+        "label": "B",
+        "text": "B.选项B"
+      },
+      {
+        "label": "C",
+        "text": "C.选项C"
+      },
+      {
+        "label": "D",
+        "text": "D.选项D"
+      },
+      {
+        "label": "E",
+        "text": "E.选项E"
+      }
+    ],
+    "formula": "if(choice == 0) {\n  if(A > 0 && A <= B && A <= C && A <= D && A <= E) { 5 } else { -3 }\n} else {\n  if(choice == 1) {\n    if(B >= A && B >= C && B >= D && B >= E && B > 0) { 3 + B * 1 } else { -1 }\n  } else {\n    if(choice == 2) {\n      if(C > 0) { 12 / C } else { 0 }\n    } else {\n      if(choice == 3) {\n        if(D < 3) { 4 } else { 0 }\n      } else {\n        if(E > 0 && E != A && E != B && E != C && E != D) { 2 } else { -2 }\n      }\n    }\n  }\n}"
+  },
+  {
+    "id": "T5",
+    "type": "single",
+    "enabled": true,
+    "text": "信任与背叛 (T5)",
+    "desc": "若C选项人数>=3，A选项改为-2",
+    "options": [
+      {
+        "label": "A",
+        "text": "A.信任(+4)"
+      },
+      {
+        "label": "B",
+        "text": "B.不信任(+2)"
+      },
+      {
+        "label": "C",
+        "text": "C.背叛(+0)"
+      }
+    ],
+    "formula": "\n      if(choice==0){\n        if(C>=3){-2}\n        else{4}\n        }\n      else{4-choice*2}\n      "
+  },
+  {
+    "id": "T6",
+    "type": "text",
+    "enabled": true,
+    "minFill": 0,
+    "maxFill": 20,
+    "text": "填空题T6-2",
+    "desc": "特立独行阶梯计分",
+    "options": [],
+    "formula": "ladder_score"
+  },
+  {
+    "id": "T7",
+    "type": "multi",
+    "enabled": true,
+    "minSel": 1,
+    "maxSel": 5,
+    "text": "多选题T7-1",
+    "desc": "选择1~5项",
+    "options": [
+      {
+        "label": "A",
+        "text": "A.选项A"
+      },
+      {
+        "label": "B",
+        "text": "B.选项B"
+      },
+      {
+        "label": "C",
+        "text": "C.选项C"
+      },
+      {
+        "label": "D",
+        "text": "D.选项D"
+      },
+      {
+        "label": "E",
+        "text": "E.选项E"
+      }
+    ],
+    "formula": "score = chose_A * 2 + chose_B * 1 + chose_C * 0 + chose_D * (-1) + chose_E * (-2)\nif(min_count > 0 && chose_min == 1) {\n  score = score + 3\n}\nscore"
+  },
+  {
+    "id": "T8",
+    "type": "multi",
+    "enabled": true,
+    "minSel": 1,
+    "maxSel": 7,
+    "text": "多选题T8-1 (T8)",
+    "desc": "选择1~7项",
+    "options": [
+      {
+        "label": "A",
+        "text": "A.选项A"
+      },
+      {
+        "label": "B",
+        "text": "B.选项B"
+      },
+      {
+        "label": "C",
+        "text": "C.选项C"
+      },
+      {
+        "label": "D",
+        "text": "D.选项D"
+      },
+      {
+        "label": "E",
+        "text": "E.选项E"
+      },
+      {
+        "label": "F",
+        "text": "F.选项F"
+      },
+      {
+        "label": "G",
+        "text": "G.选项G"
+      }
+    ],
+    "formula": "score = chose_A * 1.5 + chose_B * 1 + chose_C * 0.5 + chose_D * 0 + chose_E * (-0.5) + chose_F * (-1) + chose_G * (-1.5)\nif(min_count > 0 && chose_min == 1) {\n  score = score + 4\n}\nif(my_rank <= 3) {\n  score = score + 2\n}\nscore"
+  },
+  {
+    "id": "T9",
+    "type": "multi",
+    "enabled": true,
+    "minSel": 1,
+    "maxSel": 8,
+    "text": "多选题T9-1 (T9)",
+    "desc": "选择1~8项",
+    "options": [
+      {
+        "label": "A",
+        "text": "A.选项A"
+      },
+      {
+        "label": "B",
+        "text": "B.选项B"
+      },
+      {
+        "label": "C",
+        "text": "C.选项C"
+      },
+      {
+        "label": "D",
+        "text": "D.选项D"
+      },
+      {
+        "label": "E",
+        "text": "E.选项E"
+      },
+      {
+        "label": "F",
+        "text": "F.选项F"
+      },
+      {
+        "label": "G",
+        "text": "G.选项G"
+      },
+      {
+        "label": "H",
+        "text": "H.选项H"
+      }
+    ],
+    "formula": "picked = chose_A + chose_B + chose_C + chose_D + chose_E + chose_F + chose_G + chose_H\nscore = chose_A * 2 + chose_B * 1.5 + chose_C * 1 + chose_D * 0.5 + chose_E * 0 + chose_F * (-0.5) + chose_G * (-1) + chose_H * (-1.5)\nif(picked == 1 && my_rank <= 3) {\n  score = score + 5\n}\nif(min_count > 0 && chose_min == 1) {\n  score = score + 6\n}\nscore"
+  },
+  {
+    "id": "T10",
+    "type": "single",
+    "enabled": true,
+    "text": "保护费",
+    "desc": "保护费题",
+    "options": [
+      {
+        "label": "A",
+        "text": "A.-3"
+      },
+      {
+        "label": "B",
+        "text": "B.若你是第一,你的分数归零"
+      }
+    ],
+    "formula": "if(choice == 0) {\n  -3\n} else {\n  if(my_rank == 1) { -score } else { 0 }\n}"
+  }
+]

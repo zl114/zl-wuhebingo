@@ -1,0 +1,3162 @@
+{
+  "season": "test2",
+  "board": [
+    {
+      "id": "A09",
+      "desc": "连续3次在T2选择得分最高的选项",
+      "param": 3
+    },
+    {
+      "id": "A30",
+      "desc": "总计1次在T6得到前3低的总分数",
+      "param": 1
+    },
+    {
+      "id": "A06",
+      "desc": "连续3次排名1~6",
+      "param": 3
+    },
+    {
+      "id": "A14",
+      "desc": "总计4次在T4选择得分最高的选项",
+      "param": 4
+    },
+    {
+      "id": "A15",
+      "desc": "连续2次在T5选择得分最高的选项",
+      "param": 2
+    },
+    {
+      "id": "A03",
+      "desc": "获得5次排名1~6",
+      "param": 5
+    },
+    {
+      "id": "B08",
+      "desc": "累计选择12个A选项（含多选）",
+      "param": 12
+    },
+    {
+      "id": "A13",
+      "desc": "连续2次在T4选择得分最高的选项",
+      "param": 2
+    },
+    {
+      "id": "B15",
+      "desc": "单回合在T7~T9的选择项数完全相同，且最终结算排名为1~6",
+      "param": null
+    },
+    {
+      "id": "A02",
+      "desc": "获得3次排名1~3",
+      "param": 3
+    },
+    {
+      "id": "A33",
+      "desc": "总计4次在T9得到前3低的总分数",
+      "param": 4
+    },
+    {
+      "id": "A05",
+      "desc": "总排名分达到50",
+      "param": 50
+    },
+    {
+      "id": "A22",
+      "desc": "总计6次在T8得到前3高的总分数",
+      "param": 6
+    },
+    {
+      "id": "A20",
+      "desc": "总计4次在T7得到前3高的总分数",
+      "param": 4
+    },
+    {
+      "id": "A32",
+      "desc": "总计2次在T8得到前3低的总分数",
+      "param": 2
+    },
+    {
+      "id": "A08",
+      "desc": "总计3次在T1选择得分最高的选项",
+      "param": 3
+    },
+    {
+      "id": "B13",
+      "desc": "某回合你的作答与另一玩家至少完全重合4题",
+      "param": 4
+    },
+    {
+      "id": "B01",
+      "desc": "在T1中达成4次勇气",
+      "param": 4
+    },
+    {
+      "id": "B23",
+      "desc": "在某题拿到最多分数，且比次多的玩家至少多获得5分",
+      "param": null
+    },
+    {
+      "id": "A01",
+      "desc": "获得1次排名1",
+      "param": 1
+    },
+    {
+      "id": "A04",
+      "desc": "总分达到74分",
+      "param": 74
+    },
+    {
+      "id": "B25",
+      "desc": "某回合你未完成你的盘面上的任何未完成任务",
+      "param": null
+    },
+    {
+      "id": "A25",
+      "desc": "总计1次在T1选择得分最低的选项",
+      "param": 1
+    },
+    {
+      "id": "A23",
+      "desc": "连续2次在T9得到前3高的总分数",
+      "param": 2
+    },
+    {
+      "id": "B07",
+      "desc": "单回合在T1~T5完全选不同选项，且最终结算排名为1~6",
+      "param": null
+    }
+  ],
+  "playerBoards": {
+    "Mithril": [
+      {
+        "progress": 1,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 1,
+        "completed": true,
+        "completedAt": 1
+      },
+      {
+        "progress": 1,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 0,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 1,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 1,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 3,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 0,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 1,
+        "completed": true,
+        "completedAt": 1
+      },
+      {
+        "progress": 1,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 0,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 12,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 1,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 1,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 0,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 0,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 1,
+        "completed": true,
+        "completedAt": 1
+      },
+      {
+        "progress": 0,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 1,
+        "completed": true,
+        "completedAt": 1
+      },
+      {
+        "progress": 1,
+        "completed": true,
+        "completedAt": 1
+      },
+      {
+        "progress": 29.9,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 0,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 0,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 1,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 0,
+        "completed": false,
+        "completedAt": null
+      }
+    ],
+    "����": [
+      {
+        "progress": 0,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 1,
+        "completed": true,
+        "completedAt": 1
+      },
+      {
+        "progress": 1,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 1,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 0,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 1,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 0,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 1,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 1,
+        "completed": true,
+        "completedAt": 1
+      },
+      {
+        "progress": 1,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 0,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 8.931627597837572,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 1,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 1,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 0,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 0,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 1,
+        "completed": true,
+        "completedAt": 1
+      },
+      {
+        "progress": 0,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 1,
+        "completed": true,
+        "completedAt": 1
+      },
+      {
+        "progress": 0,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 21,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 0,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 0,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 1,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 0,
+        "completed": false,
+        "completedAt": null
+      }
+    ],
+    "#��#&": [
+      {
+        "progress": 0,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 1,
+        "completed": true,
+        "completedAt": 1
+      },
+      {
+        "progress": 1,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 1,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 0,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 1,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 0,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 1,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 1,
+        "completed": true,
+        "completedAt": 1
+      },
+      {
+        "progress": 1,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 1,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 7.136744804324857,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 0,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 1,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 1,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 0,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 1,
+        "completed": true,
+        "completedAt": 1
+      },
+      {
+        "progress": 0,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 1,
+        "completed": true,
+        "completedAt": 1
+      },
+      {
+        "progress": 0,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 19,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 0,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 0,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 0,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 0,
+        "completed": false,
+        "completedAt": null
+      }
+    ],
+    "�������Ļݶ�": [
+      {
+        "progress": 0,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 1,
+        "completed": true,
+        "completedAt": 1
+      },
+      {
+        "progress": 1,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 1,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 0,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 1,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 0,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 1,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 1,
+        "completed": true,
+        "completedAt": 1
+      },
+      {
+        "progress": 0,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 1,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 4.875459913842034,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 0,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 1,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 1,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 0,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 1,
+        "completed": true,
+        "completedAt": 1
+      },
+      {
+        "progress": 0,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 1,
+        "completed": true,
+        "completedAt": 1
+      },
+      {
+        "progress": 0,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 16.5,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 0,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 0,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 0,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 0,
+        "completed": false,
+        "completedAt": null
+      }
+    ],
+    "Tuffy": [
+      {
+        "progress": 1,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 1,
+        "completed": true,
+        "completedAt": 1
+      },
+      {
+        "progress": 1,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 0,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 1,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 1,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 1,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 0,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 1,
+        "completed": true,
+        "completedAt": 1
+      },
+      {
+        "progress": 0,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 0,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 4.068372402162429,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 0,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 1,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 0,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 0,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 0,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 0,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 1,
+        "completed": true,
+        "completedAt": 1
+      },
+      {
+        "progress": 0,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 15.9,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 0,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 0,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 0,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 0,
+        "completed": false,
+        "completedAt": null
+      }
+    ],
+    "���챾��": [
+      {
+        "progress": 0,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 1,
+        "completed": true,
+        "completedAt": 1
+      },
+      {
+        "progress": 0,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 0,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 0,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 0,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 0,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 0,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 0,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 0,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 1,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 3.385989634083593,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 0,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 1,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 1,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 0,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 1,
+        "completed": true,
+        "completedAt": 1
+      },
+      {
+        "progress": 0,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 1,
+        "completed": true,
+        "completedAt": 1
+      },
+      {
+        "progress": 0,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 13.4,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 0,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 0,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 0,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 0,
+        "completed": false,
+        "completedAt": null
+      }
+    ],
+    "ҫ�����Ž�": [
+      {
+        "progress": 0,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 1,
+        "completed": true,
+        "completedAt": 1
+      },
+      {
+        "progress": 0,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 0,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 0,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 0,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 0,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 0,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 0,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 0,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 1,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 2.7948827935127163,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 0,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 1,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 1,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 0,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 1,
+        "completed": true,
+        "completedAt": 1
+      },
+      {
+        "progress": 0,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 1,
+        "completed": true,
+        "completedAt": 1
+      },
+      {
+        "progress": 0,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 13.4,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 0,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 0,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 0,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 0,
+        "completed": false,
+        "completedAt": null
+      }
+    ],
+    "����_Triones": [
+      {
+        "progress": 0,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 1,
+        "completed": true,
+        "completedAt": 1
+      },
+      {
+        "progress": 0,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 0,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 0,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 0,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 0,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 0,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 0,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 0,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 1,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 2.2734896086497134,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 0,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 1,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 1,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 0,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 1,
+        "completed": true,
+        "completedAt": 1
+      },
+      {
+        "progress": 0,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 1,
+        "completed": true,
+        "completedAt": 1
+      },
+      {
+        "progress": 0,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 8.4,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 0,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 0,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 0,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 0,
+        "completed": false,
+        "completedAt": null
+      }
+    ],
+    "���ʮ��": [
+      {
+        "progress": 1,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 1,
+        "completed": true,
+        "completedAt": 1
+      },
+      {
+        "progress": 0,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 1,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 1,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 0,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 3,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 1,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 0,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 0,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 0,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 1.8070875116796046,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 1,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 1,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 0,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 0,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 0,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 0,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 1,
+        "completed": true,
+        "completedAt": 1
+      },
+      {
+        "progress": 0,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 0,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 0,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 0,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 1,
+        "completed": false,
+        "completedAt": null
+      },
+      {
+        "progress": 0,
+        "completed": false,
+        "completedAt": null
+      }
+    ]
+  },
+  "history": [
+    {
+      "round": 1,
+      "players": [
+        {
+          "name": "Mithril",
+          "rank": 1,
+          "totalScore": 29.9,
+          "qScores": [
+            0,
+            -1,
+            0,
+            2.4,
+            6,
+            5,
+            5,
+            5,
+            7.5,
+            0
+          ],
+          "answers": [
+            {
+              "type": "single",
+              "label": "B",
+              "labels": [],
+              "value": ""
+            },
+            {
+              "type": "single",
+              "label": "B",
+              "labels": [],
+              "value": ""
+            },
+            {
+              "type": "single",
+              "label": "",
+              "labels": [],
+              "value": ""
+            },
+            {
+              "type": "single",
+              "label": "C",
+              "labels": [],
+              "value": ""
+            },
+            {
+              "type": "single",
+              "label": "C",
+              "labels": [],
+              "value": ""
+            },
+            {
+              "type": "text",
+              "label": "",
+              "labels": [],
+              "value": "2"
+            },
+            {
+              "type": "multi",
+              "label": "",
+              "labels": [
+                "A"
+              ],
+              "value": ""
+            },
+            {
+              "type": "multi",
+              "label": "",
+              "labels": [
+                "A"
+              ],
+              "value": ""
+            },
+            {
+              "type": "multi",
+              "label": "",
+              "labels": [
+                "A"
+              ],
+              "value": ""
+            },
+            {
+              "type": "single",
+              "label": "",
+              "labels": [],
+              "value": ""
+            }
+          ],
+          "flags": {
+            "countA": 3,
+            "countB": 2,
+            "countC": 2,
+            "countD": 0,
+            "t1Max": false,
+            "t1Min": false,
+            "t1Top3": true,
+            "t1Bot3": true,
+            "t2Max": true,
+            "t2Min": false,
+            "t2Top3": true,
+            "t2Bot3": false,
+            "t3Max": false,
+            "t3Min": false,
+            "t3Top3": true,
+            "t3Bot3": true,
+            "t4Max": false,
+            "t4Min": true,
+            "t4Top3": false,
+            "t4Bot3": true,
+            "t5Max": true,
+            "t5Min": false,
+            "t5Top3": true,
+            "t5Bot3": false,
+            "t6Max": false,
+            "t6Min": false,
+            "t6Top3": true,
+            "t6Bot3": true,
+            "t7Max": true,
+            "t7Min": false,
+            "t7Top3": true,
+            "t7Bot3": true,
+            "t8Max": false,
+            "t8Min": false,
+            "t8Top3": true,
+            "t8Bot3": false,
+            "t9Max": false,
+            "t9Min": false,
+            "t9Top3": true,
+            "t9Bot3": false,
+            "t1Brave": false,
+            "t1FairAlone": false,
+            "allWorstT2T5": false,
+            "allBestT2T5": false,
+            "allMidT2T5": false,
+            "allSameT1T5": false,
+            "allDiffT1T5": false,
+            "hasOverlap": 4,
+            "t6AllDigits": true,
+            "t7t9SameCount": true,
+            "t7t9DiffCount": false,
+            "t7t9SingleTop3": true,
+            "t7t9SingleBot3": true,
+            "anyHighExceptT10": true,
+            "anyLowExceptT10": true,
+            "t10BSuccess": false,
+            "allNotMaxCount": false,
+            "beatSecondBy5": true,
+            "allNotZero": false,
+            "noProgress": false,
+            "fillTimeTop3": true,
+            "absTotalUnder3": false,
+            "comebackRank": false,
+            "scoreContains7": false,
+            "t10BRank1": false,
+            "singleMinCount": 2
+          },
+          "fillTime": 60
+        },
+        {
+          "name": "����",
+          "rank": 2,
+          "totalScore": 21,
+          "qScores": [
+            0,
+            -1,
+            5,
+            8,
+            -1,
+            5,
+            1,
+            1,
+            3,
+            0
+          ],
+          "answers": [
+            {
+              "type": "single",
+              "label": "B",
+              "labels": [],
+              "value": ""
+            },
+            {
+              "type": "single",
+              "label": "B",
+              "labels": [],
+              "value": ""
+            },
+            {
+              "type": "single",
+              "label": "B",
+              "labels": [],
+              "value": ""
+            },
+            {
+              "type": "single",
+              "label": "B",
+              "labels": [],
+              "value": ""
+            },
+            {
+              "type": "single",
+              "label": "B",
+              "labels": [],
+              "value": ""
+            },
+            {
+              "type": "text",
+              "label": "",
+              "labels": [],
+              "value": "2"
+            },
+            {
+              "type": "multi",
+              "label": "",
+              "labels": [
+                "B"
+              ],
+              "value": ""
+            },
+            {
+              "type": "multi",
+              "label": "",
+              "labels": [
+                "B"
+              ],
+              "value": ""
+            },
+            {
+              "type": "multi",
+              "label": "",
+              "labels": [
+                "B"
+              ],
+              "value": ""
+            },
+            {
+              "type": "single",
+              "label": "B",
+              "labels": [],
+              "value": ""
+            }
+          ],
+          "flags": {
+            "countA": 0,
+            "countB": 9,
+            "countC": 0,
+            "countD": 0,
+            "t1Max": false,
+            "t1Min": false,
+            "t1Top3": true,
+            "t1Bot3": true,
+            "t2Max": false,
+            "t2Min": true,
+            "t2Top3": false,
+            "t2Bot3": true,
+            "t3Max": true,
+            "t3Min": false,
+            "t3Top3": true,
+            "t3Bot3": false,
+            "t4Max": true,
+            "t4Min": false,
+            "t4Top3": true,
+            "t4Bot3": false,
+            "t5Max": false,
+            "t5Min": true,
+            "t5Top3": false,
+            "t5Bot3": true,
+            "t6Max": false,
+            "t6Min": false,
+            "t6Top3": true,
+            "t6Bot3": true,
+            "t7Max": false,
+            "t7Min": false,
+            "t7Top3": true,
+            "t7Bot3": true,
+            "t8Max": false,
+            "t8Min": false,
+            "t8Top3": true,
+            "t8Bot3": false,
+            "t9Max": false,
+            "t9Min": false,
+            "t9Top3": true,
+            "t9Bot3": false,
+            "t1Brave": false,
+            "t1FairAlone": false,
+            "allWorstT2T5": false,
+            "allBestT2T5": false,
+            "allMidT2T5": false,
+            "allSameT1T5": true,
+            "allDiffT1T5": false,
+            "hasOverlap": 10,
+            "t6AllDigits": true,
+            "t7t9SameCount": true,
+            "t7t9DiffCount": false,
+            "t7t9SingleTop3": true,
+            "t7t9SingleBot3": true,
+            "anyHighExceptT10": true,
+            "anyLowExceptT10": true,
+            "t10BSuccess": false,
+            "allNotMaxCount": false,
+            "beatSecondBy5": true,
+            "allNotZero": false,
+            "noProgress": false,
+            "fillTimeTop3": true,
+            "absTotalUnder3": false,
+            "comebackRank": false,
+            "scoreContains7": false,
+            "t10BRank1": false,
+            "singleMinCount": 2
+          },
+          "fillTime": 103
+        },
+        {
+          "name": "#��#&",
+          "rank": 3,
+          "totalScore": 19,
+          "qScores": [
+            0,
+            -1,
+            5,
+            8,
+            -1,
+            5,
+            1,
+            1,
+            1,
+            0
+          ],
+          "answers": [
+            {
+              "type": "single",
+              "label": "B",
+              "labels": [],
+              "value": ""
+            },
+            {
+              "type": "single",
+              "label": "B",
+              "labels": [],
+              "value": ""
+            },
+            {
+              "type": "single",
+              "label": "B",
+              "labels": [],
+              "value": ""
+            },
+            {
+              "type": "single",
+              "label": "B",
+              "labels": [],
+              "value": ""
+            },
+            {
+              "type": "single",
+              "label": "B",
+              "labels": [],
+              "value": ""
+            },
+            {
+              "type": "text",
+              "label": "",
+              "labels": [],
+              "value": "2"
+            },
+            {
+              "type": "multi",
+              "label": "",
+              "labels": [
+                "B"
+              ],
+              "value": ""
+            },
+            {
+              "type": "multi",
+              "label": "",
+              "labels": [
+                "B"
+              ],
+              "value": ""
+            },
+            {
+              "type": "multi",
+              "label": "",
+              "labels": [
+                "B"
+              ],
+              "value": ""
+            },
+            {
+              "type": "single",
+              "label": "B",
+              "labels": [],
+              "value": ""
+            }
+          ],
+          "flags": {
+            "countA": 0,
+            "countB": 9,
+            "countC": 0,
+            "countD": 0,
+            "t1Max": false,
+            "t1Min": false,
+            "t1Top3": true,
+            "t1Bot3": true,
+            "t2Max": false,
+            "t2Min": true,
+            "t2Top3": false,
+            "t2Bot3": true,
+            "t3Max": true,
+            "t3Min": false,
+            "t3Top3": true,
+            "t3Bot3": false,
+            "t4Max": true,
+            "t4Min": false,
+            "t4Top3": true,
+            "t4Bot3": false,
+            "t5Max": false,
+            "t5Min": true,
+            "t5Top3": false,
+            "t5Bot3": true,
+            "t6Max": false,
+            "t6Min": false,
+            "t6Top3": true,
+            "t6Bot3": true,
+            "t7Max": false,
+            "t7Min": false,
+            "t7Top3": true,
+            "t7Bot3": true,
+            "t8Max": false,
+            "t8Min": false,
+            "t8Top3": false,
+            "t8Bot3": true,
+            "t9Max": false,
+            "t9Min": false,
+            "t9Top3": false,
+            "t9Bot3": true,
+            "t1Brave": false,
+            "t1FairAlone": false,
+            "allWorstT2T5": false,
+            "allBestT2T5": false,
+            "allMidT2T5": false,
+            "allSameT1T5": true,
+            "allDiffT1T5": false,
+            "hasOverlap": 10,
+            "t6AllDigits": true,
+            "t7t9SameCount": true,
+            "t7t9DiffCount": false,
+            "t7t9SingleTop3": true,
+            "t7t9SingleBot3": true,
+            "anyHighExceptT10": true,
+            "anyLowExceptT10": true,
+            "t10BSuccess": false,
+            "allNotMaxCount": false,
+            "beatSecondBy5": true,
+            "allNotZero": false,
+            "noProgress": false,
+            "fillTimeTop3": false,
+            "absTotalUnder3": false,
+            "comebackRank": false,
+            "scoreContains7": false,
+            "t10BRank1": false,
+            "singleMinCount": 2
+          },
+          "fillTime": 171
+        },
+        {
+          "name": "����",
+          "rank": 4,
+          "totalScore": 18,
+          "qScores": [
+            0,
+            -1,
+            5,
+            8,
+            -1,
+            5,
+            0,
+            0,
+            2,
+            0
+          ],
+          "answers": [
+            {
+              "type": "single",
+              "label": "B",
+              "labels": [],
+              "value": ""
+            },
+            {
+              "type": "single",
+              "label": "B",
+              "labels": [],
+              "value": ""
+            },
+            {
+              "type": "single",
+              "label": "B",
+              "labels": [],
+              "value": ""
+            },
+            {
+              "type": "single",
+              "label": "B",
+              "labels": [],
+              "value": ""
+            },
+            {
+              "type": "single",
+              "label": "B",
+              "labels": [],
+              "value": ""
+            },
+            {
+              "type": "text",
+              "label": "",
+              "labels": [],
+              "value": "2"
+            },
+            {
+              "type": "multi",
+              "label": "",
+              "labels": [],
+              "value": ""
+            },
+            {
+              "type": "multi",
+              "label": "",
+              "labels": [],
+              "value": ""
+            },
+            {
+              "type": "multi",
+              "label": "",
+              "labels": [],
+              "value": ""
+            },
+            {
+              "type": "single",
+              "label": "B",
+              "labels": [],
+              "value": ""
+            }
+          ],
+          "flags": {
+            "countA": 0,
+            "countB": 6,
+            "countC": 0,
+            "countD": 0,
+            "t1Max": false,
+            "t1Min": false,
+            "t1Top3": true,
+            "t1Bot3": true,
+            "t2Max": false,
+            "t2Min": true,
+            "t2Top3": false,
+            "t2Bot3": true,
+            "t3Max": true,
+            "t3Min": false,
+            "t3Top3": true,
+            "t3Bot3": false,
+            "t4Max": true,
+            "t4Min": false,
+            "t4Top3": true,
+            "t4Bot3": false,
+            "t5Max": false,
+            "t5Min": true,
+            "t5Top3": false,
+            "t5Bot3": true,
+            "t6Max": false,
+            "t6Min": false,
+            "t6Top3": true,
+            "t6Bot3": true,
+            "t7Max": false,
+            "t7Min": true,
+            "t7Top3": true,
+            "t7Bot3": true,
+            "t8Max": false,
+            "t8Min": false,
+            "t8Top3": false,
+            "t8Bot3": false,
+            "t9Max": false,
+            "t9Min": false,
+            "t9Top3": false,
+            "t9Bot3": false,
+            "t1Brave": false,
+            "t1FairAlone": false,
+            "allWorstT2T5": false,
+            "allBestT2T5": false,
+            "allMidT2T5": false,
+            "allSameT1T5": true,
+            "allDiffT1T5": false,
+            "hasOverlap": 7,
+            "t6AllDigits": true,
+            "t7t9SameCount": true,
+            "t7t9DiffCount": false,
+            "t7t9SingleTop3": false,
+            "t7t9SingleBot3": false,
+            "anyHighExceptT10": true,
+            "anyLowExceptT10": true,
+            "t10BSuccess": false,
+            "allNotMaxCount": false,
+            "beatSecondBy5": true,
+            "allNotZero": false,
+            "noProgress": false,
+            "fillTimeTop3": false,
+            "absTotalUnder3": false,
+            "comebackRank": false,
+            "scoreContains7": false,
+            "t10BRank1": false,
+            "singleMinCount": 4
+          },
+          "fillTime": 180
+        },
+        {
+          "name": "�������Ļݶ�",
+          "rank": 5,
+          "totalScore": 16.5,
+          "qScores": [
+            0,
+            -1,
+            5,
+            8,
+            -1,
+            5,
+            0,
+            0,
+            0.5,
+            0
+          ],
+          "answers": [
+            {
+              "type": "single",
+              "label": "D",
+              "labels": [],
+              "value": ""
+            },
+            {
+              "type": "single",
+              "label": "B",
+              "labels": [],
+              "value": ""
+            },
+            {
+              "type": "single",
+              "label": "B",
+              "labels": [],
+              "value": ""
+            },
+            {
+              "type": "single",
+              "label": "B",
+              "labels": [],
+              "value": ""
+            },
+            {
+              "type": "single",
+              "label": "B",
+              "labels": [],
+              "value": ""
+            },
+            {
+              "type": "text",
+              "label": "",
+              "labels": [],
+              "value": "2"
+            },
+            {
+              "type": "multi",
+              "label": "",
+              "labels": [
+                "C"
+              ],
+              "value": ""
+            },
+            {
+              "type": "multi",
+              "label": "",
+              "labels": [
+                "C"
+              ],
+              "value": ""
+            },
+            {
+              "type": "multi",
+              "label": "",
+              "labels": [
+                "C"
+              ],
+              "value": ""
+            },
+            {
+              "type": "single",
+              "label": "B",
+              "labels": [],
+              "value": ""
+            }
+          ],
+          "flags": {
+            "countA": 0,
+            "countB": 5,
+            "countC": 3,
+            "countD": 1,
+            "t1Max": false,
+            "t1Min": false,
+            "t1Top3": true,
+            "t1Bot3": true,
+            "t2Max": false,
+            "t2Min": true,
+            "t2Top3": false,
+            "t2Bot3": true,
+            "t3Max": true,
+            "t3Min": false,
+            "t3Top3": true,
+            "t3Bot3": false,
+            "t4Max": true,
+            "t4Min": false,
+            "t4Top3": true,
+            "t4Bot3": false,
+            "t5Max": false,
+            "t5Min": true,
+            "t5Top3": false,
+            "t5Bot3": true,
+            "t6Max": false,
+            "t6Min": false,
+            "t6Top3": true,
+            "t6Bot3": true,
+            "t7Max": false,
+            "t7Min": true,
+            "t7Top3": true,
+            "t7Bot3": true,
+            "t8Max": false,
+            "t8Min": false,
+            "t8Top3": false,
+            "t8Bot3": true,
+            "t9Max": false,
+            "t9Min": false,
+            "t9Top3": false,
+            "t9Bot3": true,
+            "t1Brave": false,
+            "t1FairAlone": false,
+            "allWorstT2T5": false,
+            "allBestT2T5": false,
+            "allMidT2T5": false,
+            "allSameT1T5": false,
+            "allDiffT1T5": false,
+            "hasOverlap": 6,
+            "t6AllDigits": true,
+            "t7t9SameCount": true,
+            "t7t9DiffCount": false,
+            "t7t9SingleTop3": true,
+            "t7t9SingleBot3": true,
+            "anyHighExceptT10": true,
+            "anyLowExceptT10": true,
+            "t10BSuccess": false,
+            "allNotMaxCount": false,
+            "beatSecondBy5": true,
+            "allNotZero": false,
+            "noProgress": false,
+            "fillTimeTop3": false,
+            "absTotalUnder3": false,
+            "comebackRank": false,
+            "scoreContains7": false,
+            "t10BRank1": false,
+            "singleMinCount": 4
+          },
+          "fillTime": 139
+        },
+        {
+          "name": "Tuffy",
+          "rank": 6,
+          "totalScore": 15.9,
+          "qScores": [
+            0,
+            0,
+            -1,
+            2.4,
+            6,
+            5,
+            1,
+            1,
+            1.5,
+            0
+          ],
+          "answers": [
+            {
+              "type": "single",
+              "label": "B",
+              "labels": [],
+              "value": ""
+            },
+            {
+              "type": "single",
+              "label": "",
+              "labels": [],
+              "value": ""
+            },
+            {
+              "type": "single",
+              "label": "A",
+              "labels": [],
+              "value": ""
+            },
+            {
+              "type": "single",
+              "label": "C",
+              "labels": [],
+              "value": ""
+            },
+            {
+              "type": "single",
+              "label": "",
+              "labels": [],
+              "value": ""
+            },
+            {
+              "type": "text",
+              "label": "",
+              "labels": [],
+              "value": "1"
+            },
+            {
+              "type": "multi",
+              "label": "",
+              "labels": [
+                "B",
+                "C"
+              ],
+              "value": ""
+            },
+            {
+              "type": "multi",
+              "label": "",
+              "labels": [
+                "B",
+                "C"
+              ],
+              "value": ""
+            },
+            {
+              "type": "multi",
+              "label": "",
+              "labels": [
+                "B",
+                "C"
+              ],
+              "value": ""
+            },
+            {
+              "type": "single",
+              "label": "",
+              "labels": [],
+              "value": ""
+            }
+          ],
+          "flags": {
+            "countA": 1,
+            "countB": 4,
+            "countC": 4,
+            "countD": 0,
+            "t1Max": false,
+            "t1Min": false,
+            "t1Top3": true,
+            "t1Bot3": true,
+            "t2Max": true,
+            "t2Min": false,
+            "t2Top3": true,
+            "t2Bot3": false,
+            "t3Max": false,
+            "t3Min": true,
+            "t3Top3": false,
+            "t3Bot3": true,
+            "t4Max": false,
+            "t4Min": true,
+            "t4Top3": false,
+            "t4Bot3": true,
+            "t5Max": true,
+            "t5Min": false,
+            "t5Top3": true,
+            "t5Bot3": false,
+            "t6Max": false,
+            "t6Min": false,
+            "t6Top3": true,
+            "t6Bot3": true,
+            "t7Max": false,
+            "t7Min": false,
+            "t7Top3": true,
+            "t7Bot3": true,
+            "t8Max": false,
+            "t8Min": false,
+            "t8Top3": false,
+            "t8Bot3": false,
+            "t9Max": false,
+            "t9Min": false,
+            "t9Top3": false,
+            "t9Bot3": false,
+            "t1Brave": false,
+            "t1FairAlone": false,
+            "allWorstT2T5": false,
+            "allBestT2T5": false,
+            "allMidT2T5": false,
+            "allSameT1T5": false,
+            "allDiffT1T5": false,
+            "hasOverlap": 3,
+            "t6AllDigits": true,
+            "t7t9SameCount": true,
+            "t7t9DiffCount": false,
+            "t7t9SingleTop3": false,
+            "t7t9SingleBot3": false,
+            "anyHighExceptT10": true,
+            "anyLowExceptT10": true,
+            "t10BSuccess": false,
+            "allNotMaxCount": false,
+            "beatSecondBy5": true,
+            "allNotZero": false,
+            "noProgress": false,
+            "fillTimeTop3": false,
+            "absTotalUnder3": false,
+            "comebackRank": false,
+            "scoreContains7": false,
+            "t10BRank1": false,
+            "singleMinCount": 2
+          },
+          "fillTime": 218
+        },
+        {
+          "name": "���챾��",
+          "rank": 7,
+          "totalScore": 13.4,
+          "qScores": [
+            0,
+            -1,
+            5,
+            2.4,
+            -1,
+            5,
+            1,
+            1,
+            1,
+            0
+          ],
+          "answers": [
+            {
+              "type": "single",
+              "label": "B",
+              "labels": [],
+              "value": ""
+            },
+            {
+              "type": "single",
+              "label": "B",
+              "labels": [],
+              "value": ""
+            },
+            {
+              "type": "single",
+              "label": "B",
+              "labels": [],
+              "value": ""
+            },
+            {
+              "type": "single",
+              "label": "C",
+              "labels": [],
+              "value": ""
+            },
+            {
+              "type": "single",
+              "label": "B",
+              "labels": [],
+              "value": ""
+            },
+            {
+              "type": "text",
+              "label": "",
+              "labels": [],
+              "value": "4"
+            },
+            {
+              "type": "multi",
+              "label": "",
+              "labels": [
+                "B"
+              ],
+              "value": ""
+            },
+            {
+              "type": "multi",
+              "label": "",
+              "labels": [
+                "B"
+              ],
+              "value": ""
+            },
+            {
+              "type": "multi",
+              "label": "",
+              "labels": [
+                "B"
+              ],
+              "value": ""
+            },
+            {
+              "type": "single",
+              "label": "B",
+              "labels": [],
+              "value": ""
+            }
+          ],
+          "flags": {
+            "countA": 0,
+            "countB": 8,
+            "countC": 1,
+            "countD": 0,
+            "t1Max": false,
+            "t1Min": false,
+            "t1Top3": true,
+            "t1Bot3": true,
+            "t2Max": false,
+            "t2Min": true,
+            "t2Top3": false,
+            "t2Bot3": true,
+            "t3Max": true,
+            "t3Min": false,
+            "t3Top3": true,
+            "t3Bot3": false,
+            "t4Max": false,
+            "t4Min": true,
+            "t4Top3": false,
+            "t4Bot3": true,
+            "t5Max": false,
+            "t5Min": true,
+            "t5Top3": false,
+            "t5Bot3": true,
+            "t6Max": false,
+            "t6Min": false,
+            "t6Top3": true,
+            "t6Bot3": true,
+            "t7Max": false,
+            "t7Min": false,
+            "t7Top3": true,
+            "t7Bot3": true,
+            "t8Max": false,
+            "t8Min": false,
+            "t8Top3": false,
+            "t8Bot3": true,
+            "t9Max": false,
+            "t9Min": false,
+            "t9Top3": false,
+            "t9Bot3": true,
+            "t1Brave": false,
+            "t1FairAlone": false,
+            "allWorstT2T5": false,
+            "allBestT2T5": false,
+            "allMidT2T5": false,
+            "allSameT1T5": false,
+            "allDiffT1T5": false,
+            "hasOverlap": 9,
+            "t6AllDigits": true,
+            "t7t9SameCount": true,
+            "t7t9DiffCount": false,
+            "t7t9SingleTop3": true,
+            "t7t9SingleBot3": true,
+            "anyHighExceptT10": true,
+            "anyLowExceptT10": true,
+            "t10BSuccess": false,
+            "allNotMaxCount": false,
+            "beatSecondBy5": true,
+            "allNotZero": false,
+            "noProgress": false,
+            "fillTimeTop3": false,
+            "absTotalUnder3": false,
+            "comebackRank": false,
+            "scoreContains7": false,
+            "t10BRank1": false,
+            "singleMinCount": 3
+          },
+          "fillTime": 145
+        },
+        {
+          "name": "ҫ�����Ž�",
+          "rank": 8,
+          "totalScore": 13.4,
+          "qScores": [
+            0,
+            -1,
+            5,
+            2.4,
+            -1,
+            5,
+            1,
+            1,
+            1,
+            0
+          ],
+          "answers": [
+            {
+              "type": "single",
+              "label": "B",
+              "labels": [],
+              "value": ""
+            },
+            {
+              "type": "single",
+              "label": "B",
+              "labels": [],
+              "value": ""
+            },
+            {
+              "type": "single",
+              "label": "B",
+              "labels": [],
+              "value": ""
+            },
+            {
+              "type": "single",
+              "label": "C",
+              "labels": [],
+              "value": ""
+            },
+            {
+              "type": "single",
+              "label": "B",
+              "labels": [],
+              "value": ""
+            },
+            {
+              "type": "text",
+              "label": "",
+              "labels": [],
+              "value": "2"
+            },
+            {
+              "type": "multi",
+              "label": "",
+              "labels": [
+                "B"
+              ],
+              "value": ""
+            },
+            {
+              "type": "multi",
+              "label": "",
+              "labels": [
+                "B"
+              ],
+              "value": ""
+            },
+            {
+              "type": "multi",
+              "label": "",
+              "labels": [
+                "B"
+              ],
+              "value": ""
+            },
+            {
+              "type": "single",
+              "label": "B",
+              "labels": [],
+              "value": ""
+            }
+          ],
+          "flags": {
+            "countA": 0,
+            "countB": 8,
+            "countC": 1,
+            "countD": 0,
+            "t1Max": false,
+            "t1Min": false,
+            "t1Top3": true,
+            "t1Bot3": true,
+            "t2Max": false,
+            "t2Min": true,
+            "t2Top3": false,
+            "t2Bot3": true,
+            "t3Max": true,
+            "t3Min": false,
+            "t3Top3": true,
+            "t3Bot3": false,
+            "t4Max": false,
+            "t4Min": true,
+            "t4Top3": false,
+            "t4Bot3": true,
+            "t5Max": false,
+            "t5Min": true,
+            "t5Top3": false,
+            "t5Bot3": true,
+            "t6Max": false,
+            "t6Min": false,
+            "t6Top3": true,
+            "t6Bot3": true,
+            "t7Max": false,
+            "t7Min": false,
+            "t7Top3": true,
+            "t7Bot3": true,
+            "t8Max": false,
+            "t8Min": false,
+            "t8Top3": false,
+            "t8Bot3": true,
+            "t9Max": false,
+            "t9Min": false,
+            "t9Top3": false,
+            "t9Bot3": true,
+            "t1Brave": false,
+            "t1FairAlone": false,
+            "allWorstT2T5": false,
+            "allBestT2T5": false,
+            "allMidT2T5": false,
+            "allSameT1T5": false,
+            "allDiffT1T5": false,
+            "hasOverlap": 9,
+            "t6AllDigits": true,
+            "t7t9SameCount": true,
+            "t7t9DiffCount": false,
+            "t7t9SingleTop3": true,
+            "t7t9SingleBot3": true,
+            "anyHighExceptT10": true,
+            "anyLowExceptT10": true,
+            "t10BSuccess": false,
+            "allNotMaxCount": false,
+            "beatSecondBy5": true,
+            "allNotZero": false,
+            "noProgress": false,
+            "fillTimeTop3": true,
+            "absTotalUnder3": false,
+            "comebackRank": false,
+            "scoreContains7": false,
+            "t10BRank1": false,
+            "singleMinCount": 3
+          },
+          "fillTime": 67
+        },
+        {
+          "name": "����_Triones",
+          "rank": 9,
+          "totalScore": 8.4,
+          "qScores": [
+            0,
+            -1,
+            3,
+            2.4,
+            -1,
+            5,
+            0,
+            0,
+            0,
+            0
+          ],
+          "answers": [
+            {
+              "type": "single",
+              "label": "D",
+              "labels": [],
+              "value": ""
+            },
+            {
+              "type": "single",
+              "label": "B",
+              "labels": [],
+              "value": ""
+            },
+            {
+              "type": "single",
+              "label": "C",
+              "labels": [],
+              "value": ""
+            },
+            {
+              "type": "single",
+              "label": "C",
+              "labels": [],
+              "value": ""
+            },
+            {
+              "type": "single",
+              "label": "B",
+              "labels": [],
+              "value": ""
+            },
+            {
+              "type": "text",
+              "label": "",
+              "labels": [],
+              "value": "4"
+            },
+            {
+              "type": "multi",
+              "label": "",
+              "labels": [],
+              "value": ""
+            },
+            {
+              "type": "multi",
+              "label": "",
+              "labels": [],
+              "value": ""
+            },
+            {
+              "type": "multi",
+              "label": "",
+              "labels": [],
+              "value": ""
+            },
+            {
+              "type": "single",
+              "label": "B",
+              "labels": [],
+              "value": ""
+            }
+          ],
+          "flags": {
+            "countA": 0,
+            "countB": 3,
+            "countC": 2,
+            "countD": 1,
+            "t1Max": false,
+            "t1Min": false,
+            "t1Top3": true,
+            "t1Bot3": true,
+            "t2Max": false,
+            "t2Min": true,
+            "t2Top3": false,
+            "t2Bot3": true,
+            "t3Max": false,
+            "t3Min": false,
+            "t3Top3": true,
+            "t3Bot3": true,
+            "t4Max": false,
+            "t4Min": true,
+            "t4Top3": false,
+            "t4Bot3": true,
+            "t5Max": false,
+            "t5Min": true,
+            "t5Top3": false,
+            "t5Bot3": true,
+            "t6Max": false,
+            "t6Min": false,
+            "t6Top3": true,
+            "t6Bot3": true,
+            "t7Max": false,
+            "t7Min": true,
+            "t7Top3": true,
+            "t7Bot3": true,
+            "t8Max": false,
+            "t8Min": true,
+            "t8Top3": false,
+            "t8Bot3": true,
+            "t9Max": false,
+            "t9Min": true,
+            "t9Top3": false,
+            "t9Bot3": true,
+            "t1Brave": false,
+            "t1FairAlone": false,
+            "allWorstT2T5": false,
+            "allBestT2T5": false,
+            "allMidT2T5": false,
+            "allSameT1T5": false,
+            "allDiffT1T5": false,
+            "hasOverlap": 6,
+            "t6AllDigits": true,
+            "t7t9SameCount": true,
+            "t7t9DiffCount": false,
+            "t7t9SingleTop3": false,
+            "t7t9SingleBot3": false,
+            "anyHighExceptT10": false,
+            "anyLowExceptT10": true,
+            "t10BSuccess": false,
+            "allNotMaxCount": false,
+            "beatSecondBy5": true,
+            "allNotZero": false,
+            "noProgress": false,
+            "fillTimeTop3": false,
+            "absTotalUnder3": false,
+            "comebackRank": false,
+            "scoreContains7": false,
+            "t10BRank1": false,
+            "singleMinCount": 6
+          },
+          "fillTime": 149
+        },
+        {
+          "name": "���ʮ��",
+          "rank": 10,
+          "totalScore": 0,
+          "qScores": [
+            0,
+            0,
+            0,
+            8,
+            6,
+            5,
+            5,
+            5,
+            8,
+            -37
+          ],
+          "answers": [
+            {
+              "type": "single",
+              "label": "E",
+              "labels": [],
+              "value": ""
+            },
+            {
+              "type": "single",
+              "label": "",
+              "labels": [],
+              "value": ""
+            },
+            {
+              "type": "single",
+              "label": "",
+              "labels": [],
+              "value": ""
+            },
+            {
+              "type": "single",
+              "label": "B",
+              "labels": [],
+              "value": ""
+            },
+            {
+              "type": "single",
+              "label": "",
+              "labels": [],
+              "value": ""
+            },
+            {
+              "type": "text",
+              "label": "",
+              "labels": [],
+              "value": "5"
+            },
+            {
+              "type": "multi",
+              "label": "",
+              "labels": [
+                "A",
+                "C"
+              ],
+              "value": ""
+            },
+            {
+              "type": "multi",
+              "label": "",
+              "labels": [
+                "A",
+                "C"
+              ],
+              "value": ""
+            },
+            {
+              "type": "multi",
+              "label": "",
+              "labels": [
+                "A",
+                "C"
+              ],
+              "value": ""
+            },
+            {
+              "type": "single",
+              "label": "",
+              "labels": [],
+              "value": ""
+            }
+          ],
+          "flags": {
+            "countA": 3,
+            "countB": 1,
+            "countC": 3,
+            "countD": 0,
+            "t1Max": false,
+            "t1Min": false,
+            "t1Top3": true,
+            "t1Bot3": true,
+            "t2Max": true,
+            "t2Min": false,
+            "t2Top3": true,
+            "t2Bot3": false,
+            "t3Max": false,
+            "t3Min": false,
+            "t3Top3": true,
+            "t3Bot3": true,
+            "t4Max": true,
+            "t4Min": false,
+            "t4Top3": true,
+            "t4Bot3": false,
+            "t5Max": true,
+            "t5Min": false,
+            "t5Top3": true,
+            "t5Bot3": false,
+            "t6Max": false,
+            "t6Min": false,
+            "t6Top3": true,
+            "t6Bot3": true,
+            "t7Max": true,
+            "t7Min": false,
+            "t7Top3": true,
+            "t7Bot3": true,
+            "t8Max": true,
+            "t8Min": false,
+            "t8Top3": true,
+            "t8Bot3": false,
+            "t9Max": true,
+            "t9Min": false,
+            "t9Top3": true,
+            "t9Bot3": false,
+            "t1Brave": false,
+            "t1FairAlone": false,
+            "allWorstT2T5": false,
+            "allBestT2T5": false,
+            "allMidT2T5": false,
+            "allSameT1T5": false,
+            "allDiffT1T5": false,
+            "hasOverlap": 3,
+            "t6AllDigits": true,
+            "t7t9SameCount": true,
+            "t7t9DiffCount": false,
+            "t7t9SingleTop3": false,
+            "t7t9SingleBot3": false,
+            "anyHighExceptT10": true,
+            "anyLowExceptT10": false,
+            "t10BSuccess": false,
+            "allNotMaxCount": false,
+            "beatSecondBy5": true,
+            "allNotZero": false,
+            "noProgress": false,
+            "fillTimeTop3": false,
+            "absTotalUnder3": true,
+            "comebackRank": false,
+            "scoreContains7": false,
+            "t10BRank1": false,
+            "singleMinCount": 1
+          },
+          "fillTime": 106
+        }
+      ],
+      "questions": [
+        {
+          "id": "T1",
+          "type": "single",
+          "text": "经典乌合",
+          "desc": "从谨慎、团结、公正、智慧、勇气各抽一选项，再随机抽一选项，共6个选项",
+          "options": [
+            {
+              "label": "A",
+              "text": "A.谨慎(若任意两项人数相同,+3)",
+              "pool": "谨慎"
+            },
+            {
+              "label": "B",
+              "text": "B.团结(人数最多+4)",
+              "pool": "团结"
+            },
+            {
+              "label": "C",
+              "text": "C.公正(平分5分)",
+              "pool": "公正"
+            },
+            {
+              "label": "D",
+              "text": "D.智慧(人数非最多+2,否则-1)",
+              "pool": "智慧"
+            },
+            {
+              "label": "E",
+              "text": "E.勇气(人数<3则+3.5,否则-2)",
+              "pool": "勇气"
+            },
+            {
+              "label": "F",
+              "text": "F.勇气(人数=2则+7,否则-2)",
+              "pool": "勇气"
+            }
+          ],
+          "formula": "if(choice == 0) {\n  same = 0\n  if(A > 0 && B > 0 && A == B) { same = 1 }\n  if(A > 0 && C > 0 && A == C) { same = 1 }\n  if(A > 0 && D > 0 && A == D) { same = 1 }\n  if(A > 0 && E > 0 && A == E) { same = 1 }\n  if(A > 0 && F > 0 && A == F) { same = 1 }\n  if(B > 0 && C > 0 && B == C) { same = 1 }\n  if(B > 0 && D > 0 && B == D) { same = 1 }\n  if(B > 0 && E > 0 && B == E) { same = 1 }\n  if(B > 0 && F > 0 && B == F) { same = 1 }\n  if(C > 0 && D > 0 && C == D) { same = 1 }\n  if(C > 0 && E > 0 && C == E) { same = 1 }\n  if(C > 0 && F > 0 && C == F) { same = 1 }\n  if(D > 0 && E > 0 && D == E) { same = 1 }\n  if(D > 0 && F > 0 && D == F) { same = 1 }\n  if(E > 0 && F > 0 && E == F) { same = 1 }\n  if(same == 1) { 3 } else { 0 }\n} else {\n  if(choice == 1) {\n    if(B >= A && B >= C && B >= D && B >= E && B >= F && B > 0) { 4 } else { 0 }\n  } else {\n  if(choice == 2) {\n    if(C > 0) { 5 / C } else { 0 }\n  } else {\n  if(choice == 3) {\n    maxCount = A\n    if(B > maxCount) { maxCount = B }\n    if(C > maxCount) { maxCount = C }\n    if(D > maxCount) { maxCount = D }\n    if(E > maxCount) { maxCount = E }\n    if(F > maxCount) { maxCount = F }\n    if(D < maxCount) { 2 } else { -1 }\n  } else {\n  if(choice == 4) {\n    if(E < 3) { 3.5 } else { -2 }\n  } else {\n  if(choice == 5) {\n    if(E == 2) { 7 } else { -2 }\n  }\n  else { 0 }\n}\n}\n}\n}\n}\n}"
+        },
+        {
+          "id": "T2",
+          "type": "single",
+          "text": "单选题T2-1",
+          "desc": "三选项单选题 - 少数派+3",
+          "options": [
+            {
+              "label": "A",
+              "text": "A.选项A"
+            },
+            {
+              "label": "B",
+              "text": "B.选项B"
+            },
+            {
+              "label": "C",
+              "text": "C.选项C"
+            }
+          ],
+          "formula": "if(choice == 0) {\n  if(A <= B && A <= C && A > 0) { 3 } else { 0 }\n} else {\n  if(choice == 1) {\n    if(B <= A && B <= C && B > 0) { if(B < A || B < C) { -1 } else { 0 } } else { -1 }\n  } else {\n    if(C > 0) { 6 / C } else { 0 }\n  }\n}"
+        },
+        {
+          "id": "T3",
+          "type": "single",
+          "text": "单选题T3-1",
+          "desc": "四选项单选题 - 最小值+4",
+          "options": [
+            {
+              "label": "A",
+              "text": "A.选项A"
+            },
+            {
+              "label": "B",
+              "text": "B.选项B"
+            },
+            {
+              "label": "C",
+              "text": "C.选项C"
+            },
+            {
+              "label": "D",
+              "text": "D.选项D"
+            }
+          ],
+          "formula": "if(choice == 0) {\n  if(A > 0 && A <= B && A <= C && A <= D) { 4 } else { -1 }\n} else {\n  if(choice == 1) {\n    if(B >= A && B >= C && B >= D && B > 0) { 5 } else { -2 }\n  } else {\n    if(choice == 2) {\n      if(C < 3) { 3 } else { 0 }\n    } else {\n      if(D > 0) { 8 / D } else { 0 }\n    }\n  }\n}"
+        },
+        {
+          "id": "T4",
+          "type": "single",
+          "text": "单选题T4-1",
+          "desc": "五选项单选题",
+          "options": [
+            {
+              "label": "A",
+              "text": "A.选项A"
+            },
+            {
+              "label": "B",
+              "text": "B.选项B"
+            },
+            {
+              "label": "C",
+              "text": "C.选项C"
+            },
+            {
+              "label": "D",
+              "text": "D.选项D"
+            },
+            {
+              "label": "E",
+              "text": "E.选项E"
+            }
+          ],
+          "formula": "if(choice == 0) {\n  if(A > 0 && A <= B && A <= C && A <= D && A <= E) { 5 } else { -3 }\n} else {\n  if(choice == 1) {\n    if(B >= A && B >= C && B >= D && B >= E && B > 0) { 3 + B * 1 } else { -1 }\n  } else {\n    if(choice == 2) {\n      if(C > 0) { 12 / C } else { 0 }\n    } else {\n      if(choice == 3) {\n        if(D < 3) { 4 } else { 0 }\n      } else {\n        if(E > 0 && E != A && E != B && E != C && E != D) { 2 } else { -2 }\n      }\n    }\n  }\n}"
+        },
+        {
+          "id": "T5",
+          "type": "single",
+          "text": "单选题T2-1 (T5)",
+          "desc": "三选项单选题 - 少数派+3",
+          "options": [
+            {
+              "label": "A",
+              "text": "A.选项A"
+            },
+            {
+              "label": "B",
+              "text": "B.选项B"
+            },
+            {
+              "label": "C",
+              "text": "C.选项C"
+            }
+          ],
+          "formula": "if(choice == 0) {\n  if(A <= B && A <= C && A > 0) { 3 } else { 0 }\n} else {\n  if(choice == 1) {\n    if(B <= A && B <= C && B > 0) { if(B < A || B < C) { -1 } else { 0 } } else { -1 }\n  } else {\n    if(C > 0) { 6 / C } else { 0 }\n  }\n}"
+        },
+        {
+          "id": "T6",
+          "type": "text",
+          "text": "填空题T6-2",
+          "desc": "特立独行阶梯计分",
+          "options": [],
+          "formula": "ladder_score"
+        },
+        {
+          "id": "T7",
+          "type": "multi",
+          "text": "多选题T7-1",
+          "desc": "3~5选项多选 - 选到最少项+3",
+          "options": [
+            {
+              "label": "A",
+              "text": "A.选项A"
+            },
+            {
+              "label": "B",
+              "text": "B.选项B"
+            },
+            {
+              "label": "C",
+              "text": "C.选项C"
+            },
+            {
+              "label": "D",
+              "text": "D.选项D"
+            },
+            {
+              "label": "E",
+              "text": "E.选项E"
+            }
+          ],
+          "formula": "score = chose_A * 2 + chose_B * 1 + chose_C * 0 + chose_D * (-1) + chose_E * (-2)\nif(min_count > 0 && chose_min == 1) {\n  score = score + 3\n}\nscore"
+        },
+        {
+          "id": "T8",
+          "type": "multi",
+          "text": "多选题T7-1 (T8)",
+          "desc": "3~5选项多选 - 选到最少项+3",
+          "options": [
+            {
+              "label": "A",
+              "text": "A.选项A"
+            },
+            {
+              "label": "B",
+              "text": "B.选项B"
+            },
+            {
+              "label": "C",
+              "text": "C.选项C"
+            },
+            {
+              "label": "D",
+              "text": "D.选项D"
+            },
+            {
+              "label": "E",
+              "text": "E.选项E"
+            }
+          ],
+          "formula": "score = chose_A * 2 + chose_B * 1 + chose_C * 0 + chose_D * (-1) + chose_E * (-2)\nif(min_count > 0 && chose_min == 1) {\n  score = score + 3\n}\nscore"
+        },
+        {
+          "id": "T9",
+          "type": "multi",
+          "text": "多选题T8-1 (T9)",
+          "desc": "5~7选项多选 - 多数派+4",
+          "options": [
+            {
+              "label": "A",
+              "text": "A.选项A"
+            },
+            {
+              "label": "B",
+              "text": "B.选项B"
+            },
+            {
+              "label": "C",
+              "text": "C.选项C"
+            },
+            {
+              "label": "D",
+              "text": "D.选项D"
+            },
+            {
+              "label": "E",
+              "text": "E.选项E"
+            },
+            {
+              "label": "F",
+              "text": "F.选项F"
+            },
+            {
+              "label": "G",
+              "text": "G.选项G"
+            }
+          ],
+          "formula": "score = chose_A * 1.5 + chose_B * 1 + chose_C * 0.5 + chose_D * 0 + chose_E * (-0.5) + chose_F * (-1) + chose_G * (-1.5)\nif(min_count > 0 && chose_min == 1) {\n  score = score + 4\n}\nif(my_rank <= 3) {\n  score = score + 2\n}\nscore"
+        },
+        {
+          "id": "T10",
+          "type": "single",
+          "text": "保护费",
+          "desc": "保护费题",
+          "options": [
+            {
+              "label": "A",
+              "text": "A.-3"
+            },
+            {
+              "label": "B",
+              "text": "B.若你是第一,你的分数归零"
+            }
+          ],
+          "formula": "if(choice == 0) {\n  -3\n} else {\n  if(my_rank == 1) { -score } else { 0 }\n}"
+        }
+      ],
+      "stats": [
+        {
+          "counts": {
+            "A": 0,
+            "B": 7,
+            "C": 0,
+            "D": 2,
+            "E": 1,
+            "F": 0
+          }
+        },
+        {
+          "counts": {
+            "A": 0,
+            "B": 8,
+            "C": 0
+          }
+        },
+        {
+          "counts": {
+            "A": 1,
+            "B": 6,
+            "C": 1,
+            "D": 0
+          }
+        },
+        {
+          "counts": {
+            "A": 0,
+            "B": 5,
+            "C": 5,
+            "D": 0,
+            "E": 0
+          }
+        },
+        {
+          "counts": {
+            "A": 0,
+            "B": 7,
+            "C": 1
+          }
+        },
+        {
+          "counts": {}
+        },
+        {
+          "counts": {
+            "A": 2,
+            "B": 5,
+            "C": 3,
+            "D": 0,
+            "E": 0
+          }
+        },
+        {
+          "counts": {
+            "A": 2,
+            "B": 5,
+            "C": 3,
+            "D": 0,
+            "E": 0
+          }
+        },
+        {
+          "counts": {
+            "A": 2,
+            "B": 5,
+            "C": 3,
+            "D": 0,
+            "E": 0,
+            "F": 0,
+            "G": 0
+          }
+        },
+        {
+          "counts": {
+            "A": 0,
+            "B": 7
+          }
+        }
+      ]
+    }
+  ],
+  "castling": {
+    "triggered": false,
+    "triggeredBy": null,
+    "triggerRound": null
+  },
+  "currentRound": 1,
+  "finished": false,
+  "winner": null
+}

@@ -1,0 +1,143 @@
+// menu.js — 乌合bingo 交互菜单
+var readline = require('readline');
+var cp = require('child_process');
+var fs = require('fs');
+var path = require('path');
+
+var rl = readline.createInterface({ input: process.stdin, output: process.stdout });
+function ask(p) { return new Promise(function(r) { rl.question(p, r); }); }
+
+async function main() {
+  console.log('===== 乌合bingo =====');
+  console.log('');
+  console.log('1. 初始化赛季');
+  console.log('2. 回合抽题');
+  console.log('3. 结算');
+  console.log('4. 调试题目');
+  console.log('5. 查看赛季状态');
+  console.log('6. 生成任务板图片');
+  console.log('7. 易位指定');
+  console.log('8. 修复题目公式');
+  console.log('9. 清除赛季数据');
+  console.log('10. 管理玩家改名');
+  console.log('11. 回退状态');
+  console.log('');
+
+  var c = await ask('选择 (1-11): ');
+
+  if (c === '1') {
+    var name = await ask('赛季名: ');
+    cp.execSync('node draw.js season "' + name + '"', { stdio: 'inherit', cwd: __dirname });
+  } else if (c === '2') {
+    var name = await ask('赛季名: ');
+    var round = await ask('回合号 (默认1): ') || '1';
+    cp.execSync('node draw.js round "' + name + '" ' + round, { stdio: 'inherit', cwd: __dirname });
+  } else if (c === '3') {
+    var name = await ask('赛季名: ');
+    var round = await ask('回合号 (默认1): ') || '1';
+    var csvs = [];
+    try {
+      fs.readdirSync(path.join(name, 'round_' + round)).forEach(function(f){
+        if (f.endsWith('.csv')) csvs.push(path.join(name, 'round_' + round, f));
+      });
+    } catch(e) {}
+    try {
+      fs.readdirSync(name).forEach(function(f){
+        if (f.endsWith('.csv')) csvs.push(path.join(name, f));
+      });
+    } catch(e) {}
+    try {
+      fs.readdirSync('.').forEach(function(f){
+        if (f.endsWith('.csv')) csvs.push(f);
+      });
+    } catch(e) {}
+    // 去重
+    var seen = new Set();
+    csvs = csvs.filter(function(p) { var k = path.basename(p); if (seen.has(k)) return false; seen.add(k); return true; });
+    if (csvs.length === 0) { console.log('未找到CSV文件'); rl.close(); return; }
+    console.log('\n可用 CSV:');
+    csvs.forEach(function(f, i) { console.log('  ' + (i+1) + '. ' + path.basename(f) + '  (' + f + ')'); });
+    var sel = await ask('\n选择序号 (回车选1): ') || '1';
+    var idx = parseInt(sel) - 1;
+    if (isNaN(idx) || idx < 0 || idx >= csvs.length) { console.log('无效序号'); rl.close(); return; }
+    cp.execSync('node settle.js "' + name + '" ' + round + ' "' + csvs[idx] + '"', { stdio: 'inherit', cwd: __dirname });
+  } else if (c === '4') {
+    cp.execSync('node debug.js', { stdio: 'inherit', cwd: __dirname });
+  } else if (c === '5') {
+    var name = await ask('赛季名: ');
+    var state = JSON.parse(fs.readFileSync(path.join(name, 'state.json'), 'utf8'));
+    console.log('\n赛季: ' + state.season);
+    console.log('回合: ' + state.currentRound);
+    console.log('已结束: ' + state.finished);
+    console.log('胜者: ' + (state.winner || '无'));
+    console.log('易位: ' + (state.castling && state.castling.triggered ? '已触发(' + state.castling.triggeredBy + ')' : '未触发'));
+    cp.execSync('node status.js "' + name + '/state.json"', { stdio: 'inherit', cwd: __dirname });
+  } else if (c === '6') {
+    var name = await ask('赛季名: ');
+    cp.execSync('node board.js "' + name + '/state.json"', { stdio: 'inherit', cwd: __dirname });
+    console.log('浏览器打开 ' + name + '/任务板.html 即可查看');
+  } else if (c === '7') {
+    var name = await ask('赛季名: ');
+    var round = await ask('回合号: ');
+    var dir = path.join(name, 'round_' + round);
+    var file = path.join(dir, 'castling.json');
+    var existing = {};
+    try { existing = JSON.parse(fs.readFileSync(file, 'utf8')); } catch(e) {}
+    console.log('\n当前易位指定: ' + (Object.keys(existing).length ? JSON.stringify(existing) : '无'));
+    console.log('格号: A=0 B=1 C=2 ... Y=24');
+    var player = await ask('\n玩家名 (回车跳过): ');
+    if (player) {
+      var cell = await ask('格号 (0-24): ');
+      if (cell) {
+        existing[player] = parseInt(cell);
+        try { fs.mkdirSync(dir); } catch(e) {}
+        fs.writeFileSync(file, JSON.stringify(existing, null, 2), 'utf8');
+        console.log('已写入: ' + file);
+        console.log('请重新执行结算使易位生效');
+      }
+    }
+  } else if (c === '8') {
+    var name = await ask('赛季名: ');
+    var round = await ask('回合号: ');
+    cp.execSync('node repair.js "' + name + '" ' + round, { stdio: 'inherit', cwd: __dirname });
+    console.log('修复完成后请重新执行结算 (菜单选项3)');
+  } else if (c === '9') {
+    var name = await ask('赛季名: ');
+    var confirm = await ask('确定清除 ' + name + ' 的全部数据? 输入 y 确认: ');
+    if (confirm.toLowerCase() === 'y') {
+      cp.execSync('node reset.js "' + name + '"', { stdio: 'inherit', cwd: __dirname });
+    } else {
+      console.log('已取消');
+    }
+  } else if (c === '10') {
+    var nf = path.join(__dirname, 'names.json');
+    var sf = '';
+    var map = {};
+    try { map = JSON.parse(fs.readFileSync(nf, 'utf8')); } catch(e) {}
+    console.log('\n当前全局改名表:');
+    Object.entries(map).forEach(function(e) { console.log('  ' + e[0] + ' -> ' + e[1]); });
+    if (Object.keys(map).length === 0) console.log('  (空)');
+    console.log('\n格式: {\"CSV中的ID\":\"显示名\"}');
+    var inp = await ask('\n输入新映射 (如 123=小明, 回车跳过): ');
+    if (inp && inp.includes('=')) {
+      var parts = inp.split('=');
+      map[parts[0].trim()] = parts[1].trim();
+      fs.writeFileSync(nf, JSON.stringify(map, null, 2), 'utf8');
+      console.log('已保存到全局: names.json');
+    }
+  } else if (c === '11') {
+    var name = await ask('赛季名: ');
+    cp.execSync('node restore.js "' + name + '" list', { stdio: 'inherit', cwd: __dirname });
+    var round = await ask('\n回退到哪个回合的备份? (输入R后面的数字): ');
+    if (round) {
+      var confirm = await ask('确定回退 ' + name + ' 到 R' + round + ' 的状态? (易位保留) 输入 y 确认: ');
+      if (confirm.toLowerCase() === 'y') {
+        cp.execSync('node restore.js "' + name + '" ' + round, { stdio: 'inherit', cwd: __dirname });
+      }
+    }
+  }
+
+  rl.close();
+}
+
+main();

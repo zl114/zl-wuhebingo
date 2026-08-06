@@ -1,0 +1,531 @@
+{
+  "title": "乌合bingo 题库",
+  "t1Pools": {
+    "谨慎": [
+      { "text": "A.谨慎(若人数<5,+1.5)", "formula": "if(A < 5) { 2 } else { 0 }" },
+      { "text": "A.谨慎(若人数>2,+1.5)", "formula": "if(A > 5) { 2 } else { 0 }" },
+      { "text": "A.谨慎(若任意两项人数相同,+3)", "formula": "same = 0\nif(A > 0 && B > 0 && A == B) { same = 1 }\nif(A > 0 && C > 0 && A == C) { same = 1 }\nif(A > 0 && D > 0 && A == D) { same = 1 }\nif(A > 0 && E > 0 && A == E) { same = 1 }\nif(A > 0 && F > 0 && A == F) { same = 1 }\nif(B > 0 && C > 0 && B == C) { same = 1 }\nif(B > 0 && D > 0 && B == D) { same = 1 }\nif(B > 0 && E > 0 && B == E) { same = 1 }\nif(B > 0 && F > 0 && B == F) { same = 1 }\nif(C > 0 && D > 0 && C == D) { same = 1 }\nif(C > 0 && E > 0 && C == E) { same = 1 }\nif(C > 0 && F > 0 && C == F) { same = 1 }\nif(D > 0 && E > 0 && D == E) { same = 1 }\nif(D > 0 && F > 0 && D == F) { same = 1 }\nif(E > 0 && F > 0 && E == F) { same = 1 }\nif(same == 1) { 3 } else { 0 }" }
+    ],
+    "团结": [
+      { "text": "B.团结(人数最多+3)", "formula": "if(B >= A && B >= C && B >= D && B >= E && B >= F && B > 0) { 3 } else { 0 }" },
+      { "text": "B.团结(人数最多+1,每有1人额外+0.4)", "formula": "if(B >= A && B >= C && B >= D && B >= E && B >= F && B > 0) { 1 + B * 0.4 } else { 0 }" },
+      { "text": "B.团结(人数最多每有1人+0.7)", "formula": "if(B >= A && B >= C && B >= D && B >= E && B >= F && B > 0) { B * 0.7 } else { 0 }" },
+      { "text": "B.团结(人数非最少+2,无视0人项)", "formula": "nzMin = 99\nif(A > 0 && A < nzMin) { nzMin = A }\nif(B > 0 && B < nzMin) { nzMin = B }\nif(C > 0 && C < nzMin) { nzMin = C }\nif(D > 0 && D < nzMin) { nzMin = D }\nif(E > 0 && E < nzMin) { nzMin = E }\nif(F > 0 && F < nzMin) { nzMin = F }\nif(B > 0 && B != nzMin) { 1.5 } else { 0 }" }
+    ],
+    "公正": [
+      { "text": "C.公正(平分5分)", "formula": "if(C > 0) { 5 / C } else { 0 }" },
+      { "text": "C.公正(平分7.5分,额外-1)", "formula": "if(C > 0) { 7.5 / C - 1 } else { 0 }" },
+      { "text": "C.公正(平分4分,每多1人总池+1)", "formula": "if(C > 0) { (4 + C - 1) / C } else { 0 }" },
+      { "text": "C.公正(平分4分,额外+0.5)", "formula": "if(C > 0) { 4 / C + 0.5 } else { 0 }" }
+    ],
+    "智慧": [
+      { "text": "D.智慧(人数最少+5,否则-1)", "formula": "if(D > 0 && D <= A && D <= B && D <= C && D <= E && D <= F) { 5 } else { -1 }" },
+      { "text": "D.智慧(人数最少+3,无视0人项,否则-1)", "formula": "nzMin = 99\nif(A > 0 && A < nzMin) { nzMin = A }\nif(B > 0 && B < nzMin) { nzMin = B }\nif(C > 0 && C < nzMin) { nzMin = C }\nif(D > 0 && D < nzMin) { nzMin = D }\nif(E > 0 && E < nzMin) { nzMin = E }\nif(F > 0 && F < nzMin) { nzMin = F }\nif(D > 0 && D == nzMin) { 3 } else { -1 }" },
+      { "text": "D.智慧(人数非最多+2,否则-1)", "formula": "maxCount = A\nif(B > maxCount) { maxCount = B }\nif(C > maxCount) { maxCount = C }\nif(D > maxCount) { maxCount = D }\nif(E > maxCount) { maxCount = E }\nif(F > maxCount) { maxCount = F }\nif(D < maxCount) { 2 } else { -1 }" },
+      { "text": "D.智慧(人数最少每有1人+3,否则-1)", "formula": "if(D > 0 && D <= A && D <= B && D <= C && D <= E && D <= F) { D * 3 } else { -1 }" }
+    ],
+    "勇气": [
+      { "text": "E.勇气(人数=1则+5,否则-2)", "formula": "if(E == 1) { 5 } else { -2 }" },
+      { "text": "E.勇气(人数=2则+7,否则-2)", "formula": "if(E == 2) { 7 } else { -2 }" },
+      { "text": "E.勇气(人数=3则+10,否则-2)", "formula": "if(E == 3) { 10 } else { -2 }" },
+      { "text": "E.勇气(人数<3则+3.5,否则-2)", "formula": "if(E < 3) { 3.5 } else { -2 }" }
+    ]
+  },
+  "t1Labels": ["A","B","C","D","E","F"],
+  "t1PoolOrder": ["谨慎","团结","公正","智慧","勇气"],
+  "questions": [
+    {
+      "id": "T10", "type": "single", "enabled": true, "text": "残局", "desc": "请选择一个选项",
+      "options": [
+        { "label": "A", "text": "A.-2" },
+        { "label": "B", "text": "B.若你是第一,你的分数归零" }
+      ],
+      "formula": "if(choice == 0) {\n  -2\n} else {\n  if(my_rank == 1) { -score } else { 0 }\n}"
+    },
+    {
+      "id": "S1", "type": "single", "enabled": true, "text": "信任与背叛", "desc": "若C选项人数>=3，A选项改为-2",
+      "options": [{"label":"A","text":"A.信任(+4)"},{"label":"B","text":"B.不信任(+2)"},{"label":"C","text":"C.背叛(+0)"}],
+      "formula": "
+      if(choice==0){
+        if(C>=3){-2}
+        else{4}
+        }
+      else{4-choice*2}
+      "
+    },
+    {
+      "id": "S3", "type": "single", "enabled": true, "text": "平分博弈", "desc": "请选择一个选项",
+      "options": [{"label":"A","text":"A.平分6分"},{"label":"B","text":"B.平分8分"},{"label":"C","text":"C.平分10分"},{"label":"D","text":"D.平分12分"}],
+      "formula": "
+      if(c[choice]!=0){(choice*2+6)/c[choice]}
+      else {0}
+      "
+    },
+    {
+      "id": "S4", "type": "single", "enabled": true, "text": "反向平分博弈", "desc": "人数最多项分数*3，最少项改为得0分。若四个选项人数相同，上述效果无效。",
+      "options": [{"label":"A","text":"A.平分-6分"},{"label":"B","text":"B.平分-8分"},{"label":"C","text":"C.平分-10分"},{"label":"D","text":"D.平分-12分"}],
+      "formula": "
+      if(c[choice]!=0){base=-(choice*2+6)/c[choice]}
+      else {base=0}
+      max=A
+      if(B>max){max=B}
+      if(C>max){max=C}
+      if(D>max){max=D}
+      min=A
+      if(B<min){min=B}
+      if(C<min){min=C}
+      if(D<min){min=D}
+      if(max==min){base}
+      else if(c[choice]==max){3*base}
+      else if(c[choice]==min){0}
+      else{base}
+      "
+    },
+    {
+      "id": "S5", "type": "single", "enabled": true, "text": "红蓝按钮问题", "desc": "请选择一个选项",
+      "options": [{"label":"A","text":"A.蓝按钮：平分15分"},{"label":"B","text":"B.红按钮：若人数>=4，+3"},{"label":"C","text":"C.若B成功，每个人使A得分-0.5，C得分+1"}],
+      "formula": "
+      if(B>=4)
+      {
+        if(choice==0){15/A-0.5*C}
+        else if(choice==1){3}
+        else {C}
+      } 
+      else
+      {
+        if(choice==0){15/A}
+        else {0}
+      }
+      "
+    },
+    {
+      "id": "S6", "type": "single", "enabled": true, "text": "任务分成", "desc": "完成的任务内部平分12分,未完成的任务-1",
+      "options": [{"label":"A","text":"A.任务A：人数为1~3"},{"label":"B","text":"B.任务B：至少3人选择"},{"label":"C","text":"C.直接+1"}],
+      "formula": "
+      if(choice==0)
+      {
+        if(1<=A&&A<=3){8/A}
+        else {-1}
+      }
+      else if(choice==1)
+      {
+        if(B>=3){8/B}
+        else {-1}
+      }
+      else {1}
+      "
+    },
+    {
+      "id": "S7", "type": "single", "enabled": true, "text": "条件分成", "desc": "满足条件内部平分15分，否则-1",
+      "options": [{"label":"A","text":"A.人数最多"},{"label":"B","text":"B.人数最少"},{"label":"C","text":"C.人数既不是最多也不是最少"}],
+      "formula": "
+      if(choice==0)
+      {
+        if(A>=B&&A>=C){15/A}
+        else {-1}
+      }
+      else if(choice==1)
+      {
+        if(B<=A&&B<=C){15/B}
+        else {-1}
+      }
+      else
+      {
+        if((A<C&&C<B)||(B<C&&C<A)){15/C}
+        else {-1}
+      }
+      "
+    },
+    {
+      "id": "S8", "type": "single", "enabled": true, "text": "半食物链", "desc": "若选择的选项人数同时少于前面所有选项得分,否则-1",
+      "options": [{"label":"A","text":"A.+1"},{"label":"B","text":"B.+3"},{"label":"C","text":"C.+5"},{"label":"D","text":"D.+7"}],
+      "formula": "
+      if(choice==0)
+      {
+        1
+      }
+      else if(choice==1)
+      {
+        if(B<A){3}
+        else {-1}
+      }
+      else if(choice==2)
+      {
+        if(C<A&&C<B){5}
+        else {-1}
+      }
+      else
+      {
+        if(D<A&&D<B&&D<C){7}
+        else {-1}
+      }
+      "
+    },
+    {
+      "id": "S10", "type": "single", "enabled": true, "text": "投资", "desc": "若总投资额在16~24，返还2.5倍，即B选项得1.5分，C得3分，D得4.5分",
+      "options": [{"label":"A","text":"A.出0分"},{"label":"B","text":"B.出1分"},{"label":"C","text":"C.出2分"},{"label":"D","text":"D.出3分"}],
+      "formula": "
+      if(B+C*2+D*3>=15&&B+C*2+D*3<=25){success=1}
+      else{success=0}
+      if(choice==0)
+      {
+        0
+      }
+      else if(choice==1)
+      {
+        if(success==1){1.5}
+        else {-1}
+      }
+      else if(choice==2)
+      {
+        if(success==1){3}
+        else {-2}
+      }
+      else
+      {
+        if(success==1){4.5}
+        else {-3}
+      }
+      "
+    },
+    {
+      "id": "S11", "type": "single", "enabled": true, "text": "链条", "desc": "请选择一个选项",
+      "options": [{"label":"A","text":"A.+5，每有1人A-1,B+1"},{"label":"B","text":"B.+3，每有一人B-1,C+1"},{"label":"C","text":"C.+1，每有一人C-1,D+1"},{"label":"D","text":"D.-1"}],
+      "formula": "
+      if(choice==0)
+      {
+        5-A
+      }
+      else if(choice==1)
+      {
+        3-B+A
+      }
+      else if(choice==2)
+      {
+        1-C+B
+      }
+      else
+      {
+        -1+C
+      }
+      "
+    },
+    {
+      "id": "S12", "type": "single", "enabled": true, "text": "互斥", "desc": "请选择一个选项",
+      "options": [{"label":"A","text":"A.每人增加B0.6分"},{"label":"B","text":"B.每人增加C0.8分"},{"label":"C","text":"C.每人增加D1分"},{"label":"D","text":"D.每人增加A1.2分"}],
+      "formula": "
+      if(choice==0)
+      {
+        0.6*D
+      }
+      else if(choice==1)
+      {
+        0.3*A
+      }
+      else if(choice==2)
+      {
+        0.4*B
+      }
+      else
+      {
+        0.5*C
+      }
+      "
+    },
+    {
+      "id": "S13", "type": "single", "enabled": true, "text": "避多寻少", "desc": "下列人数最多的-3，人数最少的非0人项+3",
+      "options": [{"label":"A","text":"A.无效果"},{"label":"B","text":"B.额外+1"},{"label":"C","text":"C.额外-1"},{"label":"D","text":"D.得分翻1.5倍"},{"label":"E","text":"E.得分翻2倍"}],
+      "formula": "
+      max=0
+      if(A>max){max=A}
+      if(B>max){max=B}
+      if(C>max){max=C}
+      if(D>max){max=D}
+      if(E>max){max=E}
+      min=13
+      if(A<min&&A!=0){min=A}
+      if(B<min&&B!=0){min=B}
+      if(C<min&&C!=0){min=C}
+      if(D<min&&D!=0){min=D}
+      if(E<min&&E!=0){min=E}
+      base=0
+      if(c[choice]==max){base=base-3}
+      if(c[choice]==min){base=base+3}
+      if(choice==0)
+      {
+        base
+      }
+      else if(choice==1)
+      {
+        base+1
+      }
+      else if(choice==2)
+      {
+        base-1
+      }
+      else if(choice==3)
+      {
+        1.5*base
+      }
+      else
+      {
+        2*base
+      }
+      "
+    },
+    {
+      "id": "S13", "type": "single", "enabled": true, "text": "少输为赢", "desc": "请选择一个选项",
+      "options": [{"label":"A","text":"A.-4"},{"label":"B","text":"B.人数非最少-7.5"},{"label":"C","text":"C.每有一人-1.5"},{"label":"D","text":"D.每有一人-2"},{"label":"E","text":"E.平分-15分,人数为1不扣分"}],
+      "formula": "
+      if(choice==0)
+      {
+        -4
+      }
+      else if(choice==1)
+      {
+        if(B<=A&&B<=C&&B<=D&&B<=E){0}
+        else{-7.5}
+      }
+      else if(choice==2)
+      {
+        -1.5*C
+      }
+      else if(choice==3)
+      {
+        -2*D
+      }
+      else
+      {
+        if(E<=1){0}
+        else{-15/E}
+      }
+      "
+    },
+    {
+      "id": "S13", "type": "single", "enabled": true, "text": "限位器", "desc": "人数超限改为获得-2分",
+      "options": [{"label":"A","text":"A.不得分，不限人数"},{"label":"B","text":"B.+2，限4人"},{"label":"C","text":"C.+3，限2人"},{"label":"D","text":"D.+4，限1人"},{"label":"E","text":"E.+6，限1人"}],
+      "formula": "
+      if(choice==0)
+      {
+        0
+      }
+      else if(choice==1)
+      {
+        if(B<=4){2}
+        else{-2}
+      }
+      else if(choice==2)
+      {
+        if(C<=2){2}
+        else{-2}
+      }
+      else if(choice==3)
+      {
+        if(D<=1){4}
+        else{-2}
+      }
+      else
+      {
+        if(E<=6){6}
+        else{-2}
+      }
+      "
+    },
+    {
+      "id": "S14", "type": "single", "enabled": true, "text": "田忌赛马", "desc": "当ABC人数满足C≥A≥B时所有选项得分，否则改为扣对应分数",
+      "options": [{"label":"A","text":"A.上等马(+5)"},{"label":"B","text":"B.中等马(+3)"},{"label":"C","text":"C.下等马(+1)"}],
+      "formula": "
+      suc=0;
+      if(C>=A&&A>=B){suc=1}
+      (5-choice*2)*(suc-1*!suc)
+      "
+    },
+    {
+      "id": "S15", "type": "single", "enabled": true, "text": "石头剪刀布", "desc": "请选择一个选项",
+      "options": [{"label":"A","text":"A.石头(若B人数最多+2)"},{"label":"B","text":"B.剪刀(若C人数最多+3)"},{"label":"C","text":"C.布(若A人数最多+4)"}],
+      "formula": "
+      max=0
+      if(A>max){max=A}
+      if(B>max){max=B}
+      if(C>max){max=C}
+      if(choice==0&&B==max){2}
+      else if(choice==1&&C==max){3}
+      else if(choice==2&&A==max){4}
+      else {0}
+      "
+    },
+    {
+      "id": "S16", "type": "single", "enabled": true, "text": "多数惩罚", "desc": "人数最多2项的变为相反数，第一并列其余不变，第二并列均变",
+      "options": [{"label":"A","text":"A.+1"},{"label":"B","text":"B.+2"},{"label":"C","text":"C.+3"},{"label":"D","text":"D.+4"}],
+      "formula": "
+      if(gtrank[choice]<=2){-choice-1}
+      else{choice+1}
+      "
+    },
+    {
+      "id": "B1", "type": "text", "enabled": true, "minFill": 0, "maxFill": 20, "text": "特立独行", "desc": "输入整数1~20，设x=最小唯一值，x得5分，x+1得3分，x+2得2分，x+3得1分，小于x扣1分。若X无法取到值，全部-1",
+      "options": [],
+      "formula": "
+      i=0
+      while(c[i]!=1&&i<=20){i=i+1}
+      x=i
+      if(value<x){-1}
+      else if(value==x){5}
+      else if(value==x+1){3}
+      else if(value==x+2){2}
+      else if(value==x+3){1}
+      else {0}
+      "
+    },
+    {
+      "id": "B2", "type": "text", "enabled": true, "minFill": 0, "maxFill": 10, "text": "美人投票", "desc": "输入整数1~10。计x为所有填写值的平均值的2/3并向下取整。若你恰好填写x，+5，若你填写值无其它人填写，+1/3*填写值",
+      "options": [],
+      "formula": "
+      x=floor(2/3*sum/total)
+      s=0
+      if(value==x){s=s+5}
+      if(unique==1){s=s+value/3}
+      s 
+      "
+    },
+    {
+      "id": "B3", "type": "text", "enabled": true, "minFill": 0, "maxFill": 10, "text": "扭亏为盈", "desc": "输入整数0~10。填写一个正整数n，你-2*n分，每有一人填写的数字比你小，你额外+1分",
+      "options": [],
+      "formula": "
+      s=-2*value
+      i=0
+      while(i<value){
+      s=s+c[i]
+      i=i+1
+      } 
+      s
+      "
+    },
+    {
+      "id": "M1", "type": "multi", "enabled": true, "minSel": 1, "maxSel": 3, "text": "条件多选1", "desc": "选择1~3项，成功得分，失败扣分",
+      "options": [{"label":"A","text":"A.1.5，该选项人数<=3"},{"label":"B","text":"B.1.8，该题总选择数达到27"},{"label":"C","text":"C.2.1，该选项人数既不是最多也不是最少"},{"label":"D","text":"D.2.4，该选项人数与另外某项相同"},{"label":"E","text":"E.2.7前四项完成数>=3"}],
+      "formula": "
+      if(A<=3){sucA=1}
+      else{sucA=0}
+      if(A+B+C+D+E>=27){sucB=1}
+      else{sucB=0}
+      max=0
+      if(A>max){max=A}
+      if(B>max){max=B}
+      if(C>max){max=C}
+      if(D>max){max=D}
+      if(E>max){max=E}
+      min=13
+      if(A<min){min=A}
+      if(B<min){min=B}
+      if(C<min){min=C}
+      if(D<min){min=D}
+      if(E<min){min=E}      
+      if(C!=max&&C!=min){sucC=1}
+      else{sucC=0}
+      if(D==A||D==B||D==C||D==E){sucD=1}
+      else{sucD=0}
+      if(sucA+sucB+sucC+sucD>=3){sucE=1}
+      else{sucE=0}
+      chose_A*(sucA*1.5-!sucA*1.5)+chose_B*(sucB*1.8-!sucB*1.8)+chose_C*(sucC*2.1-!sucC*2.1)+chose_D*(sucD*2.4-!sucD*2.4)+chose_E*(sucE*2.7-!sucE*2.7)
+      "
+    },
+    {
+      "id": "M2", "type": "multi", "enabled": true, "minSel": 1, "maxSel": 3, "text": "条件多选2", "desc": "选择1~3项，成功得分，失败扣分",
+      "options": [{"label":"A","text":"A.1.5，该选项人数<=3"},{"label":"B","text":"B.1.8，该选项人数>=9"},{"label":"C","text":"C.2.1，该选项人数在4~7范围内"},{"label":"D","text":"D.2.4，B选项人数同时大于或小于AC"},{"label":"E","text":"E.2.7前四项完成数>=3"}],
+      "formula": "
+      if(A<=3){sucA=1}
+      else{sucA=0}
+      if(B>=9){sucB=1}
+      else{sucB=0}     
+      if(C>=4&&C<=7){sucC=1}
+      else{sucC=0}
+      if((B>A&&B>C)||(B<A&&B<C)){sucD=1}
+      else{sucD=0}
+      if(sucA+sucB+sucC+sucD>=3){sucE=1}
+      else{sucE=0}
+      chose_A*(sucA*1.5-!sucA*1.5)+chose_B*(sucB*1.8-!sucB*1.8)+chose_C*(sucC*2.1-!sucC*2.1)+chose_D*(sucD*2.4-!sucD*2.4)+chose_E*(sucE*2.7-!sucE*2.7)
+      "
+    },
+    {
+      "id": "M3", "type": "multi", "enabled": true, "minSel": 1, "maxSel": 5, "text": "胆量测试", "desc": "选择1~5项并获得对应分数，若你选到最多项，你本题获得总分数改为-2",
+      "options": [{"label":"A","text":"A.只要你选中该选项，你固定得0分，无视全局条件"},{"label":"B","text":"B.0.5"},{"label":"C","text":"C.0.7"},{"label":"D","text":"D.0.9"},{"label":"E","text":"E.1.1"},{"label":"F","text":"F.1.3"},{"label":"G","text":"G.1.5"}],
+      "formula": "
+      score = chose_B*0.5 + chose_C*0.7 + chose_D*0.9 + chose_E*1.1 + chose_F*1.3 + chose_G*1.5
+      max = A
+      if(B > max) { max = B }
+      if(C > max) { max = C }
+      if(D > max) { max = D }
+      if(E > max) { max = E }
+      if(F > max) { max = F }
+      if(G > max) { max = G }
+      hit = 0
+      if(chose_B == 1 && B == max) { hit = 1 }
+      if(chose_C == 1 && C == max) { hit = 1 }
+      if(chose_D == 1 && D == max) { hit = 1 }
+      if(chose_E == 1 && E == max) { hit = 1 }
+      if(chose_F == 1 && F == max) { hit = 1 }
+      if(chose_G == 1 && G == max) { hit = 1 }
+      if(chose_A == 1) { 0 }
+      else { if(hit == 1) { -2 } else { score } }
+      "
+    },
+    {
+      "id": "M4", "type": "multi", "enabled": true, "minSel": 1, "maxSel": 4, "text": "幸运组合", "desc": "选择1~4项，选择选项组唯一的额外+5",
+      "options": [{"label":"A","text":"A.-0.25"},{"label":"B","text":"B.-0.4"},{"label":"C","text":"C.-0.65"},{"label":"D","text":"D.-0.8"},{"label":"E","text":"E.-0.95"},{"label":"F","text":"F.-1.1"}],
+      "formula": "
+      score = 0
+      i = 0
+      while(i < 6) {
+        score = score + chose[i] * (-0.25 - i*0.15)
+        i = i + 1
+      }
+      if(same_set == 1) { score = score + 5 }
+      score
+      "
+    },
+    {
+      "id": "M5", "type": "multi", "enabled": true, "minSel": 1, "maxSel": 4, "text": "数字炸弹", "desc": "选择1~4项。设x初始为50，从上到下逐个选项判定：将x减少选项数字*选项人数，若x变为负数，则不再向下判定并标记该选项。选中被标记的选项本题得分为-1，否则得选择的选项的数字和的30%分。",
+      "options": [{"label":"A","text":"A.7"},{"label":"B","text":"B.6"},{"label":"C","text":"C.5"},{"label":"D","text":"D.4"},{"label":"E","text":"E.3"},{"label":"F","text":"F.2"}],
+      "formula": "
+      x=50
+      i=0
+      s=0
+      while(i<6&&x>=0) {
+        s=s+chose[i]
+        x=x-c[i]*(7-i)
+        i=i+1
+      }
+      i=i-1
+      if(x<0){hit=i}
+      else{hit=-1}
+      if(hit!=-1)
+      {
+        if(chose[i]==1){-1}
+        else{2.1*chose_A+1.8*chose_B+1.5*chose_C+1.2*chose_D+0.9*chose_E+0.6*chose_F}
+      }
+      else{2.1*chose_A+1.8*chose_B+1.5*chose_C+1.2*chose_D+0.9*chose_E+0.6*chose_F}
+      "
+    },
+    {
+      "id": "M6", "type": "multi", "enabled": true, "minSel": 1, "maxSel": 2, "text": "伊甸园", "desc": "选择1~2个选项。红苹果选择人数超过6则本题得分反转。",
+      "options": [{"label":"A","text":"A.红苹果(+1)"},{"label":"B","text":"B.银苹果(若人数比金苹果少+2,否则-2)"},{"label":"C","text":"C.金苹果(若人数比银苹果少或相等+3,否则-3)"}],
+      "formula": "
+      s=chose_A
+      if(B<C)
+      {
+      sB=2
+      sC=-3
+      }
+      else
+      {
+      sB=-2
+      sC=3
+      }
+      s=s+chose_B*sB+chose_C*sC
+      if(A>6){-s}
+      else{s}
+      "
+    }
+  ]
+}

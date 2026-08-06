@@ -1,0 +1,257 @@
+[
+  {
+    "id": "T1",
+    "type": "single",
+    "text": "经典乌合",
+    "desc": "从谨慎、团结、公正、智慧、勇气各抽一选项，再随机抽一选项，共6个选项",
+    "options": [
+      {
+        "label": "A",
+        "text": "A.谨慎(若任意两项人数相同,+3)",
+        "pool": "谨慎"
+      },
+      {
+        "label": "B",
+        "text": "B.团结(人数最多+4)",
+        "pool": "团结"
+      },
+      {
+        "label": "C",
+        "text": "C.公正(平分5分)",
+        "pool": "公正"
+      },
+      {
+        "label": "D",
+        "text": "D.智慧(人数非最多+2,否则-1)",
+        "pool": "智慧"
+      },
+      {
+        "label": "E",
+        "text": "E.勇气(人数<3则+3.5,否则-2)",
+        "pool": "勇气"
+      },
+      {
+        "label": "F",
+        "text": "F.勇气(人数=2则+7,否则-2)",
+        "pool": "勇气"
+      }
+    ],
+    "formula": "if(choice == 0) {\n  same = 0\n  if(A > 0 && B > 0 && A == B) { same = 1 }\n  if(A > 0 && C > 0 && A == C) { same = 1 }\n  if(A > 0 && D > 0 && A == D) { same = 1 }\n  if(A > 0 && E > 0 && A == E) { same = 1 }\n  if(A > 0 && F > 0 && A == F) { same = 1 }\n  if(B > 0 && C > 0 && B == C) { same = 1 }\n  if(B > 0 && D > 0 && B == D) { same = 1 }\n  if(B > 0 && E > 0 && B == E) { same = 1 }\n  if(B > 0 && F > 0 && B == F) { same = 1 }\n  if(C > 0 && D > 0 && C == D) { same = 1 }\n  if(C > 0 && E > 0 && C == E) { same = 1 }\n  if(C > 0 && F > 0 && C == F) { same = 1 }\n  if(D > 0 && E > 0 && D == E) { same = 1 }\n  if(D > 0 && F > 0 && D == F) { same = 1 }\n  if(E > 0 && F > 0 && E == F) { same = 1 }\n  if(same == 1) { 3 } else { 0 }\n} else {\n  if(choice == 1) {\n    if(B >= A && B >= C && B >= D && B >= E && B >= F && B > 0) { 4 } else { 0 }\n  } else {\n  if(choice == 2) {\n    if(C > 0) { 5 / C } else { 0 }\n  } else {\n  if(choice == 3) {\n    maxCount = A\n    if(B > maxCount) { maxCount = B }\n    if(C > maxCount) { maxCount = C }\n    if(D > maxCount) { maxCount = D }\n    if(E > maxCount) { maxCount = E }\n    if(F > maxCount) { maxCount = F }\n    if(D < maxCount) { 2 } else { -1 }\n  } else {\n  if(choice == 4) {\n    if(E < 3) { 3.5 } else { -2 }\n  } else {\n  if(choice == 5) {\n    if(E == 2) { 7 } else { -2 }\n  }\n  else { 0 }\n}\n}\n}\n}\n}\n}"
+  },
+  {
+    "id": "T2",
+    "type": "single",
+    "text": "单选题T2-1",
+    "desc": "三选项单选题 - 少数派+3",
+    "options": [
+      {
+        "label": "A",
+        "text": "A.选项A"
+      },
+      {
+        "label": "B",
+        "text": "B.选项B"
+      },
+      {
+        "label": "C",
+        "text": "C.选项C"
+      }
+    ],
+    "formula": "if(choice == 0) {\n  if(A <= B && A <= C && A > 0) { 3 } else { 0 }\n} else {\n  if(choice == 1) {\n    if(B <= A && B <= C && B > 0) { if(B < A || B < C) { -1 } else { 0 } } else { -1 }\n  } else {\n    if(C > 0) { 6 / C } else { 0 }\n  }\n}"
+  },
+  {
+    "id": "T3",
+    "type": "single",
+    "text": "单选题T3-1",
+    "desc": "四选项单选题 - 最小值+4",
+    "options": [
+      {
+        "label": "A",
+        "text": "A.选项A"
+      },
+      {
+        "label": "B",
+        "text": "B.选项B"
+      },
+      {
+        "label": "C",
+        "text": "C.选项C"
+      },
+      {
+        "label": "D",
+        "text": "D.选项D"
+      }
+    ],
+    "formula": "if(choice == 0) {\n  if(A > 0 && A <= B && A <= C && A <= D) { 4 } else { -1 }\n} else {\n  if(choice == 1) {\n    if(B >= A && B >= C && B >= D && B > 0) { 5 } else { -2 }\n  } else {\n    if(choice == 2) {\n      if(C < 3) { 3 } else { 0 }\n    } else {\n      if(D > 0) { 8 / D } else { 0 }\n    }\n  }\n}"
+  },
+  {
+    "id": "T4",
+    "type": "single",
+    "text": "单选题T4-1",
+    "desc": "五选项单选题",
+    "options": [
+      {
+        "label": "A",
+        "text": "A.选项A"
+      },
+      {
+        "label": "B",
+        "text": "B.选项B"
+      },
+      {
+        "label": "C",
+        "text": "C.选项C"
+      },
+      {
+        "label": "D",
+        "text": "D.选项D"
+      },
+      {
+        "label": "E",
+        "text": "E.选项E"
+      }
+    ],
+    "formula": "if(choice == 0) {\n  if(A > 0 && A <= B && A <= C && A <= D && A <= E) { 5 } else { -3 }\n} else {\n  if(choice == 1) {\n    if(B >= A && B >= C && B >= D && B >= E && B > 0) { 3 + B * 1 } else { -1 }\n  } else {\n    if(choice == 2) {\n      if(C > 0) { 12 / C } else { 0 }\n    } else {\n      if(choice == 3) {\n        if(D < 3) { 4 } else { 0 }\n      } else {\n        if(E > 0 && E != A && E != B && E != C && E != D) { 2 } else { -2 }\n      }\n    }\n  }\n}"
+  },
+  {
+    "id": "T5",
+    "type": "single",
+    "text": "单选题T2-1 (T5)",
+    "desc": "三选项单选题 - 少数派+3",
+    "options": [
+      {
+        "label": "A",
+        "text": "A.选项A"
+      },
+      {
+        "label": "B",
+        "text": "B.选项B"
+      },
+      {
+        "label": "C",
+        "text": "C.选项C"
+      }
+    ],
+    "formula": "if(choice == 0) {\n  if(A <= B && A <= C && A > 0) { 3 } else { 0 }\n} else {\n  if(choice == 1) {\n    if(B <= A && B <= C && B > 0) { if(B < A || B < C) { -1 } else { 0 } } else { -1 }\n  } else {\n    if(C > 0) { 6 / C } else { 0 }\n  }\n}"
+  },
+  {
+    "id": "T6",
+    "type": "text",
+    "text": "填空题T6-2",
+    "desc": "特立独行阶梯计分",
+    "options": [],
+    "formula": "ladder_score"
+  },
+  {
+    "id": "T7",
+    "type": "multi",
+    "text": "多选题T7-1",
+    "desc": "3~5选项多选 - 选到最少项+3",
+    "options": [
+      {
+        "label": "A",
+        "text": "A.选项A"
+      },
+      {
+        "label": "B",
+        "text": "B.选项B"
+      },
+      {
+        "label": "C",
+        "text": "C.选项C"
+      },
+      {
+        "label": "D",
+        "text": "D.选项D"
+      },
+      {
+        "label": "E",
+        "text": "E.选项E"
+      }
+    ],
+    "formula": "score = chose_A * 2 + chose_B * 1 + chose_C * 0 + chose_D * (-1) + chose_E * (-2)\nif(min_count > 0 && chose_min == 1) {\n  score = score + 3\n}\nscore"
+  },
+  {
+    "id": "T8",
+    "type": "multi",
+    "text": "多选题T7-1 (T8)",
+    "desc": "3~5选项多选 - 选到最少项+3",
+    "options": [
+      {
+        "label": "A",
+        "text": "A.选项A"
+      },
+      {
+        "label": "B",
+        "text": "B.选项B"
+      },
+      {
+        "label": "C",
+        "text": "C.选项C"
+      },
+      {
+        "label": "D",
+        "text": "D.选项D"
+      },
+      {
+        "label": "E",
+        "text": "E.选项E"
+      }
+    ],
+    "formula": "score = chose_A * 2 + chose_B * 1 + chose_C * 0 + chose_D * (-1) + chose_E * (-2)\nif(min_count > 0 && chose_min == 1) {\n  score = score + 3\n}\nscore"
+  },
+  {
+    "id": "T9",
+    "type": "multi",
+    "text": "多选题T8-1 (T9)",
+    "desc": "5~7选项多选 - 多数派+4",
+    "options": [
+      {
+        "label": "A",
+        "text": "A.选项A"
+      },
+      {
+        "label": "B",
+        "text": "B.选项B"
+      },
+      {
+        "label": "C",
+        "text": "C.选项C"
+      },
+      {
+        "label": "D",
+        "text": "D.选项D"
+      },
+      {
+        "label": "E",
+        "text": "E.选项E"
+      },
+      {
+        "label": "F",
+        "text": "F.选项F"
+      },
+      {
+        "label": "G",
+        "text": "G.选项G"
+      }
+    ],
+    "formula": "score = chose_A * 1.5 + chose_B * 1 + chose_C * 0.5 + chose_D * 0 + chose_E * (-0.5) + chose_F * (-1) + chose_G * (-1.5)\nif(min_count > 0 && chose_min == 1) {\n  score = score + 4\n}\nif(my_rank <= 3) {\n  score = score + 2\n}\nscore"
+  },
+  {
+    "id": "T10",
+    "type": "single",
+    "text": "保护费",
+    "desc": "保护费题",
+    "options": [
+      {
+        "label": "A",
+        "text": "A.-3"
+      },
+      {
+        "label": "B",
+        "text": "B.若你是第一,你的分数归零"
+      }
+    ],
+    "formula": "if(choice == 0) {\n  -3\n} else {\n  if(my_rank == 1) { -score } else { 0 }\n}"
+  }
+]
