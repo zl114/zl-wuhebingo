@@ -130,7 +130,7 @@
       }
     ],
     "test": false,
-    "formula": "\n      if(choice==0)\n      {\n        0\n      }\n      else if(choice==1)\n      {\n        if(B<=4){2}\n        else{-2}\n      }\n      else if(choice==2)\n      {\n        if(C<=2){2}\n        else{-2}\n      }\n      else if(choice==3)\n      {\n        if(D<=1){4}\n        else{-2}\n      }\n      else\n      {\n        if(E<=6){6}\n        else{-2}\n      }\n      "
+    "formula": "\n      if(choice==0)\n      {\n        0\n      }\n      else if(choice==1)\n      {\n        if(B<=4){2}\n        else{-2}\n      }\n      else if(choice==2)\n      {\n        if(C<=2){2}\n        else{-2}\n      }\n      else if(choice==3)\n      {\n        if(D<=1){4}\n        else{-2}\n      }\n      else\n      {\n        if(E<=1){6}\n        else{-2}\n      }\n      "
   },
   {
     "id": "T5",

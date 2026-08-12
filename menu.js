@@ -78,7 +78,21 @@ async function main() {
     var sel = await ask('\n选择序号 (回车选1): ') || '1';
     var idx = parseInt(sel) - 1;
     if (isNaN(idx) || idx < 0 || idx >= csvs.length) { console.log('无效序号'); rl.close(); return; }
-    cp.execSync('node settle.js "' + name + '" ' + round + ' "' + csvs[idx] + '"', { stdio: 'inherit', cwd: __dirname });
+    try {
+      cp.execFileSync(process.execPath, ['settle.js', name, round, csvs[idx]], { stdio: 'inherit', cwd: __dirname });
+    } catch (e) {
+      var msg = String((e.stderr && e.stderr.toString()) || e.message || '');
+      if (/已有结算结果/.test(msg)) {
+        var force = await ask('⚠️ 该回合已结算过。强制重结会重复抽取事件/历史，确认？(y/N): ');
+        if (/^y/i.test(force.trim())) {
+          cp.execFileSync(process.execPath, ['settle.js', name, round, csvs[idx], '--force'], { stdio: 'inherit', cwd: __dirname });
+        } else {
+          console.log('已取消，返回菜单。');
+        }
+      } else {
+        console.log('❌ 结算失败: ' + msg.split('\n')[0]);
+      }
+    }
   } else if (c === '4') {
     cp.execSync('node debug.js', { stdio: 'inherit', cwd: __dirname });
   } else if (c === '5') {

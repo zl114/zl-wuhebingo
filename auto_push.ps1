@@ -1,4 +1,4 @@
-<#
+﻿<#
   auto_push.ps1 — 乌合bingo 自动上传 GitHub（安全版 v2）
   用法:
     powershell -ExecutionPolicy Bypass -File auto_push.ps1                # 普通推送

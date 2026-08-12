@@ -114,6 +114,17 @@ function genQuestionnaireText(questions, state, seasonName, roundNum) {
   lines.push('乌合bingo ' + (seasonName || '') + '-' + (roundNum || '?') + '问卷');
   lines.push('');
 
+  // 生效事件（下一轮，带描述）——放在任务版之前
+  if (state && state.events && state.events.active && state.events.active.length > 0) {
+    lines.push('下一轮生效事件: \\');
+    for (let ei = 0; ei < state.events.active.length; ei++) {
+      lines.push((EVENT_CN[state.events.active[ei]] || state.events.active[ei]) + '\\');
+    }
+    lines.push('');
+  } else {
+    lines.push('');
+  }
+
   // 任务版
   if (state && state.board && state.board.length > 0) {
     lines.push((seasonName || '') + '任务版\\');
@@ -122,16 +133,6 @@ function genQuestionnaireText(questions, state, seasonName, roundNum) {
       lines.push('[' + CL2[i] + ']' + (state.board[i].desc || '') + '\\');
     }
     lines.push('\\');
-    const hasEventBlk = state && state.events && state.events.active && state.events.active.length > 0;
-    if (!hasEventBlk) lines.push('');
-  }
-
-  // 生效事件（下一轮，带描述）
-  if (state && state.events && state.events.active && state.events.active.length > 0) {
-    lines.push('下一轮生效事件: \\');
-    for (let ei = 0; ei < state.events.active.length; ei++) {
-      lines.push((EVENT_CN[state.events.active[ei]] || state.events.active[ei]) + '\\');
-    }
     lines.push('');
   }
 

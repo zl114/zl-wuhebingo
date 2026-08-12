@@ -26,6 +26,16 @@ var state = JSON.parse(fs.readFileSync(statePath, 'utf8'));
 var config = {};
 if (fs.existsSync(configPath)) config = JSON.parse(fs.readFileSync(configPath, 'utf8'));
 
+// ===== 幂等保护：已结算回合拒绝重复结算（防手滑；回档重结需 --force） =====
+var _idem = path.join(seasonDir, 'round_' + roundNum, 'results.json');
+if (fs.existsSync(_idem) && process.argv.indexOf('--force') < 0) {
+  console.log('⚠️  round_' + roundNum + ' 已有结算结果（results.json 存在），拒绝重复结算！');
+  console.log('   重复结算会重复抽取事件/重复记录历史，导致状态错乱。');
+  console.log('   确认要重结（回档场景）请加 --force 参数：');
+  console.log('   node settle.js ' + seasonName + ' ' + roundNum + ' <csv路径> --force');
+  process.exit(1);
+}
+
 var questions = JSON.parse(fs.readFileSync(path.join(roundDir, 'questions.json'), 'utf8'));
 
 // 名字映射 (global + per-season)
@@ -732,11 +742,12 @@ function checkTasks(state, seasonDir, roundNum, finalRanked, questions, absentPl
 
       // --- B类任务 ---
       else if (taskId === 'B01') {
-        // 在T1中达成{x}次勇气 (勇气=E, 选项4)
+        // 在T1中达成{x}次勇气 (勇气=E；须勇气选项生效：选E且该题正分)
         if (td) {
           var t1Q = questions[0 + qOffset];
           var t1Ans = td.answers && td.answers[0 + qOffset];
-          if (t1Ans && t1Ans.label === 'E') newProgress += 1;
+          var t1Score = (td.qScores && td.qScores[0 + qOffset]) || 0;
+          if (t1Ans && t1Ans.label === 'E' && t1Score > 0) newProgress += 1;
         }
       } else if (taskId === 'B02') {
         // 在T1中独享过公正（仅你一人选择公正选项）
@@ -1651,6 +1662,8 @@ if (s2Enabled) {
   if (!state.events) state.events = { active: [], history: [] };
   if (!state.events.history) state.events.history = [];
   if (s2ActiveEvents.length > 0) {
+    // 幂等：先删除本回合历史再记录（防止重结重复记录）
+    state.events.history = state.events.history.filter(function(h) { return h.round !== roundNum; });
     state.events.history.push({ round: roundNum, events: s2ActiveEvents.slice() });
   }
   // 冷却保险: 排除最近2回合已抽取的事件

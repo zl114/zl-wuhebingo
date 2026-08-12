@@ -93,12 +93,21 @@ function applyEventToQuestion(ev, q, qStats, players, qi, scores) {
   var isOptionQ = q.type === 'single' || q.type === 'multi';
   var i, chos, c;
   switch (ev) {
-    case 'wisdom': // 智慧之息：选中人数最少选项之一 → 该题+2
-      if (!isOptionQ) break;
-      var minC = minPositiveCount(counts);
-      if (minC === null) break;
-      for (i = 0; i < players.length; i++) {
-        if (chosenAnyAt(players, i, qi, counts, minC)) scores[i] += 2;
+    case 'wisdom': // 智慧之息：选中人数最少选项之一 → 该题+2；填空按答案人数（1 1 2 3 → 填2和3的+2）
+      if (q.type === 'single' || q.type === 'multi') {
+        var minC = minPositiveCount(counts);
+        if (minC === null) break;
+        for (i = 0; i < players.length; i++) {
+          if (chosenAnyAt(players, i, qi, counts, minC)) scores[i] += 2;
+        }
+      } else if (q.type === 'text') {
+        var minT = minPositiveCount(counts);
+        if (minT === null) break;
+        for (i = 0; i < players.length; i++) {
+          var _a = players[i].answers && players[i].answers[qi];
+          var _v = (_a && _a.value !== undefined && _a.value !== null) ? String(_a.value).trim() : '';
+          if (_v !== '' && (counts[_v] || 0) === minT) scores[i] += 2;
+        }
       }
       break;
     case 'unity': // 团结之息：选中人数最多选项之一 → 该题+2
@@ -294,6 +303,22 @@ function runTests() {
   var m = byName(run(freshABC(), ['wisdom']).ranked);
   eqArr('智慧 q0 P2+2', m.P2, [5, 6]);
   eqArr('智慧 q1 全+2', m.P1, [1, 4]);
+
+  // 智慧之息填空：1 1 2 3 → 填"2"和"3"的+2（答案人数最少），空答案不加
+  var TQ = [{ id: 'T6', type: 'text' }];
+  var TS = [{ counts: { '1': 2, '2': 1, '3': 1 } }];
+  var tp = [
+    { name: 'A', answers: [{ type: 'text', value: '1' }], qScores: [1], totalScore: 1, rank: 0, absent: false },
+    { name: 'B', answers: [{ type: 'text', value: '1' }], qScores: [1], totalScore: 1, rank: 0, absent: false },
+    { name: 'C', answers: [{ type: 'text', value: '2' }], qScores: [1], totalScore: 1, rank: 0, absent: false },
+    { name: 'D', answers: [{ type: 'text', value: '3' }], qScores: [1], totalScore: 1, rank: 0, absent: false },
+    { name: 'E', answers: [{ type: 'text', value: '' }], qScores: [1], totalScore: 1, rank: 0, absent: false }
+  ];
+  var tm = byName(applyEvents(tp, TQ, 0, ['wisdom'], TS).ranked);
+  eqArr('智慧 填空 1/1/2/3 C+2', tm.C, [3]);
+  eqArr('智慧 填空 1/1/2/3 D+2', tm.D, [3]);
+  eqArr('智慧 填空 1/1/2/3 A不加', tm.A, [1]);
+  eqArr('智慧 填空 空答案不加', tm.E, [1]);
 
   // 团结之息：q0 最多 A(2人)→P1,P3+2; q1 并列最多→全+2
   m = byName(run(freshABC(), ['unity']).ranked);
