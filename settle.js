@@ -420,16 +420,6 @@ for (var ari = 0; ari < rawAnswers.length; ari++) {
   }
 }
 
-// ===== 保存results.json =====
-var resultsData = {
-  round: roundNum,
-  ranked: finalRanked,
-  questions: questions,
-  stats: scoringResult.stats
-};
-core.ensureDir(roundDir);
-fs.writeFileSync(path.join(roundDir, 'results.json'), JSON.stringify(resultsData, null, 2), 'utf8');
-
 // ===== 任务检查 =====
 function checkTasks(state, seasonDir, roundNum, finalRanked, questions, absentPlayers) {
   var board = state.board;
@@ -466,18 +456,21 @@ function checkTasks(state, seasonDir, roundNum, finalRanked, questions, absentPl
     }
   }
 
-  // 本轮排名数据
+  // 本轮排名数据（排名=在场排名，排除缺席）
   var roundRankData = [];
   var roundTotal = finalRanked.filter(function(r) { return !r.absent; }).length;
+  var _rrIdx = 0;
   for (var rri = 0; rri < finalRanked.length; rri++) {
     var fr = finalRanked[rri];
     if (!fr.absent) {
+      _rrIdx++;
       roundRankData.push({
         round: roundNum,
         name: fr.name,
-        rank: fr.rank,
+        rank: _rrIdx,
+        presentRank: _rrIdx,
         totalScore: fr.totalScore || 0,
-        rankScore: core.rankScore(fr.rank, roundTotal),
+        rankScore: core.rankScore(_rrIdx, roundTotal),
         qScores: fr.qScores || [],
         fillTime: fr.fillTime || 0,
         answers: fr.answers || []
@@ -546,13 +539,13 @@ function checkTasks(state, seasonDir, roundNum, finalRanked, questions, absentPl
       // --- A类任务 ---
       if (taskId === 'A01') {
         // 获得{x}次排名1
-        if (td && td.rank === 1) newProgress += 1;
+        if (td && td.presentRank === 1) newProgress += 1;
       } else if (taskId === 'A02') {
         // 获得{x}次排名1~3
-        if (td && td.rank >= 1 && td.rank <= 3) newProgress += 1;
+        if (td && td.presentRank >= 1 && td.presentRank <= 3) newProgress += 1;
       } else if (taskId === 'A03') {
         // 获得{x}次排名1~6
-        if (td && td.rank >= 1 && td.rank <= 6) newProgress += 1;
+        if (td && td.presentRank >= 1 && td.presentRank <= 6) newProgress += 1;
       } else if (taskId === 'A04') {
         // 任意连续3局排名分之和大于{x} (历史中所有连续3局窗口的最大和)
         var rsSeq = [];
@@ -574,7 +567,7 @@ function checkTasks(state, seasonDir, roundNum, finalRanked, questions, absentPl
         newProgress = totalRS;
       } else if (taskId === 'A06') {
         // 连续{x}次排名1~6
-        if (td && td.rank >= 1 && td.rank <= 6) {
+        if (td && td.presentRank >= 1 && td.presentRank <= 6) {
           newProgress += 1;
         } else {
           newProgress = 0;
@@ -731,13 +724,13 @@ function checkTasks(state, seasonDir, roundNum, finalRanked, questions, absentPl
         }
       } else if (taskId === 'A34') {
         // 获得{x}次排名4~9
-        if (td && td.rank >= 4 && td.rank <= 9) newProgress += 1;
+        if (td && td.presentRank >= 4 && td.presentRank <= 9) newProgress += 1;
       } else if (taskId === 'A35') {
         // 获得{x}次排名7~12
-        if (td && td.rank >= 7 && td.rank <= 12) newProgress += 1;
+        if (td && td.presentRank >= 7 && td.presentRank <= 12) newProgress += 1;
       } else if (taskId === 'A36') {
         // 获得{x}次排名12
-        if (td && td.rank === 12) newProgress += 1;
+        if (td && td.presentRank === 12) newProgress += 1;
       }
 
       // --- B类任务 ---
@@ -804,7 +797,7 @@ function checkTasks(state, seasonDir, roundNum, finalRanked, questions, absentPl
         }
       } else if (taskId === 'B06') {
         // 单回合T1~T5完全选同一选项且最终排名1~6
-        if (td && td.rank >= 1 && td.rank <= 6) {
+        if (td && td.presentRank >= 1 && td.presentRank <= 6) {
           var allSame = true;
           var firstLabel = null;
           for (var bqi4 = 0; bqi4 <= 4; bqi4++) {
@@ -819,7 +812,7 @@ function checkTasks(state, seasonDir, roundNum, finalRanked, questions, absentPl
         }
       } else if (taskId === 'B07') {
         // 单回合T1~T5完全选不同选项且最终排名1~6
-        if (td && td.rank >= 1 && td.rank <= 6) {
+        if (td && td.presentRank >= 1 && td.presentRank <= 6) {
           var allDiff = true;
           var seenLabels = {};
           for (var bqi5 = 0; bqi5 <= 4; bqi5++) {
@@ -902,7 +895,7 @@ function checkTasks(state, seasonDir, roundNum, finalRanked, questions, absentPl
         }
       } else if (taskId === 'B15') {
         // 单回合T7~T9选择项数完全相同且排名1~6
-        if (td && td.rank >= 1 && td.rank <= 6) {
+        if (td && td.presentRank >= 1 && td.presentRank <= 6) {
           var t7a = td.answers && td.answers[6 + qOffset] ? (td.answers[6 + qOffset].labels || []).length : 0;
           var t8a = td.answers && td.answers[7 + qOffset] ? (td.answers[7 + qOffset].labels || []).length : 0;
           var t9a = td.answers && td.answers[8 + qOffset] ? (td.answers[8 + qOffset].labels || []).length : 0;
@@ -910,7 +903,7 @@ function checkTasks(state, seasonDir, roundNum, finalRanked, questions, absentPl
         }
       } else if (taskId === 'B16') {
         // 单回合T7~T9选择项数完全不同且排名1~6
-        if (td && td.rank >= 1 && td.rank <= 6) {
+        if (td && td.presentRank >= 1 && td.presentRank <= 6) {
           var t7a2 = td.answers && td.answers[6 + qOffset] ? (td.answers[6 + qOffset].labels || []).length : 0;
           var t8a2 = td.answers && td.answers[7 + qOffset] ? (td.answers[7 + qOffset].labels || []).length : 0;
           var t9a2 = td.answers && td.answers[8 + qOffset] ? (td.answers[8 + qOffset].labels || []).length : 0;
@@ -1057,7 +1050,7 @@ function checkTasks(state, seasonDir, roundNum, finalRanked, questions, absentPl
       } else if (taskId === 'B28') {
         // T3~T9任一题结算后排名9~12, 最终排名1~3
         // 简化: 检查当前回合整体情况
-        if (td && td.rank >= 1 && td.rank <= 3) {
+        if (td && td.presentRank >= 1 && td.presentRank <= 3) {
           // 检查是否有中间排名为9-12 (需要逐题检查)
           // 简化处理: 如果当前排名1-3 且总人数>=9, 则可能触发
           var totalActive = 0;
@@ -1077,7 +1070,7 @@ function checkTasks(state, seasonDir, roundNum, finalRanked, questions, absentPl
         if (td) {
           var t10Idx2 = 9 + qOffset;
           var t10Ans2 = td.answers && td.answers[t10Idx2];
-          if (t10Ans2 && t10Ans2.label === 'B' && td.rank === 1) {
+          if (t10Ans2 && t10Ans2.label === 'B' && td.presentRank === 1) {
             newProgress = 1;
           }
         }
@@ -1088,7 +1081,7 @@ function checkTasks(state, seasonDir, roundNum, finalRanked, questions, absentPl
           var hr31 = ph[b31i].rank;
           if (hr31 >= 1 && hr31 <= 12) rankSet31[hr31] = true;
         }
-        if (td && td.rank >= 1 && td.rank <= 12) rankSet31[td.rank] = true;
+        if (td && td.presentRank >= 1 && td.presentRank <= 12) rankSet31[td.presentRank] = true;
         var ranges31 = [[1, 4], [5, 8], [9, 12]];
         var full31 = false;
         for (var b31r = 0; b31r < ranges31.length; b31r++) {
@@ -1106,7 +1099,7 @@ function checkTasks(state, seasonDir, roundNum, finalRanked, questions, absentPl
           var hr32 = ph[b32i].rank;
           if (hr32 >= 1 && hr32 <= 12) rankSet32[hr32] = true;
         }
-        if (td && td.rank >= 1 && td.rank <= 12) rankSet32[td.rank] = true;
+        if (td && td.presentRank >= 1 && td.presentRank <= 12) rankSet32[td.presentRank] = true;
         var full32 = false;
         for (var b32k = 0; b32k <= 2; b32k++) {
           var ok32 = true;
@@ -1123,7 +1116,7 @@ function checkTasks(state, seasonDir, roundNum, finalRanked, questions, absentPl
           var hr33 = ph[b33i].rank;
           if (hr33 >= 1 && hr33 <= 12) rankSet33[hr33] = true;
         }
-        if (td && td.rank >= 1 && td.rank <= 12) rankSet33[td.rank] = true;
+        if (td && td.presentRank >= 1 && td.presentRank <= 12) rankSet33[td.presentRank] = true;
         var full33 = false;
         for (var b33k = 0; b33k <= 3; b33k++) {
           var ok33 = true;
@@ -1135,7 +1128,7 @@ function checkTasks(state, seasonDir, roundNum, finalRanked, questions, absentPl
         if (full33) newProgress = 1;
       } else if (taskId === 'B34') {
         // 答题时间<=120s且获得前三
-        if (td && td.fillTime > 0 && td.fillTime <= 120 && td.rank >= 1 && td.rank <= 3) {
+        if (td && td.fillTime > 0 && td.fillTime <= 120 && td.presentRank >= 1 && td.presentRank <= 3) {
           newProgress = 1;
         }
       }
@@ -1602,6 +1595,57 @@ if (s2ActiveEvents.length > 0 && s2Enabled) {
   console.log('  [S2事件] 本轮生效: ' + s2ActiveEvents.map(function(e) { return s2events.EVENT_NAMES[e] || e; }).join(', '));
 }
 
+// ===== 残局（T10）按事件后排名判定 =====
+// 公式: 选A→-2；选B→若(事件后)第一名则总分归零，否则0
+// 事件(寒冰/对称/颠倒等)可能翻转排名，残局博弈以事件后排名为准
+(function() {
+  var _t10i = -1;
+  for (var _qi = qOffset; _qi < questions.length; _qi++) {
+    if (questions[_qi] && questions[_qi].id === 'T10') { _t10i = _qi; break; }
+  }
+  if (_t10i < 0) return;
+  // 事件后总分排序（applyEvents 已应用事件；排除缺席，用在场排名判定）
+  var _order = finalRanked.filter(function(r) { return !r.absent; }).sort(function(a, b) {
+    return (b.totalScore || 0) - (a.totalScore || 0);
+  });
+  for (var _ri = 0; _ri < _order.length; _ri++) {
+    var _rp = _order[_ri];
+    var _a = _rp.answers && _rp.answers[_t10i];
+    if (_a && _a.label === 'B' && _ri === 0) {
+      var _oldT10 = (_rp.qScores && _rp.qScores[_t10i]) || 0;
+      var _base = _rp.totalScore - _oldT10;   // 不含残局分的事件后总分
+      var _newT10 = -_base;                   // 归零：残局分 = -总分（正分→负，负分→正）
+      // 残局分参与事件（与其它题同序：寒冰/对称/颠倒等）
+      var _evs = (s2ActiveEvents || []).slice().sort(function(a, b) {
+        return s2events.EVENT_ORDER.indexOf(a) - s2events.EVENT_ORDER.indexOf(b);
+      });
+      for (var _ei = 0; _ei < _evs.length; _ei++) {
+        var _ev = _evs[_ei];
+        if (_ev === 'frost' && _newT10 < 0) _newT10 *= 1.2;
+        else if (_ev === 'blaze' && _newT10 > 0) _newT10 *= 1.2;
+        else if (_ev === 'mirror') _newT10 = Math.abs(_newT10);
+        else if (_ev === 'invert') _newT10 *= -1;
+        else if (_ev === 'thursday') _newT10 -= 0.5;
+      }
+      _rp.qScores[_t10i] = _newT10;
+      _rp.totalScore = _base + _newT10;
+      console.log('  [残局] ' + _rp.name + ' 事件后第1名且选B → 残局分' + _newT10.toFixed(2) + '，总分' + _rp.totalScore.toFixed(2));
+      break;
+    }
+  }
+  // 重新排名
+  finalRanked.sort(function(a, b) { return (b.totalScore || 0) - (a.totalScore || 0); });
+  for (var _rk = 0; _rk < finalRanked.length; _rk++) finalRanked[_rk].rank = _rk + 1;
+})();
+
+// ===== 在场排名（排除缺席，供排名类任务判定：A01/B06/B15/B16 等）=====
+var _presIdx = 0;
+for (var _pi = 0; _pi < finalRanked.length; _pi++) {
+  if (finalRanked[_pi].absent) { finalRanked[_pi].presentRank = null; continue; }
+  _presIdx++;
+  finalRanked[_pi].presentRank = _presIdx;
+}
+
 // ===== S2 屏息：解析HOLD题申请 + 结算到期弱化（须在任务检查前）=====
 if (s2Season && !config.eventsDisabled) {
   s2breath.parseHoldAnswers(state, roundNum, finalRanked, questions);
@@ -1696,10 +1740,8 @@ reportLines.push('');
 reportLines.push('赛季: ' + seasonName);
 reportLines.push('回合: ' + roundNum);
 reportLines.push('日期: ' + new Date().toISOString().slice(0, 19).replace('T', ' '));
-reportLines.push('参赛人数: ' + finalRanked.filter(function(r) { return !r.absent; }).length + ' (共' + finalRanked.length + '人)');
-if (absentPlayers.length > 0) {
-  reportLines.push('缺席: ' + absentPlayers.join(', '));
-}
+reportLines.push('参赛人数: ' + finalRanked.filter(function(r) { return !r.absent; }).length);
+
 if (s2ActiveEvents.length > 0) {
   reportLines.push('本轮生效事件: ' + s2ActiveEvents.map(function(e) { return s2events.EVENT_NAMES[e] || e; }).join('、'));
 }
@@ -1708,10 +1750,12 @@ reportLines.push('');
 // 排名总览
 reportLines.push('------ 排名总览 ------');
 reportLines.push('');
+var _ri2 = 0;
 for (var rpi = 0; rpi < finalRanked.length; rpi++) {
   var rp = finalRanked[rpi];
-  var rankStr = String(rp.rank);
-  if (rp.absent) rankStr += '(缺席)';
+  if (rp.absent) continue;  // 报告不显示缺席玩家
+  _ri2++;
+  var rankStr = String(_ri2);
   var scoreStr = rp.totalScore ? rp.totalScore.toFixed(2) : '0.00';
   var colorTag = playerColors[rp.name] || '';
   reportLines.push('  ' + rankStr.padEnd(10) + rp.name.padEnd(16) + scoreStr.padEnd(12) + '分  ' + (rp.fillTime ? rp.fillTime + '秒' : ''));
@@ -1738,7 +1782,7 @@ for (var sqi = 0; sqi < questions.length; sqi++) {
   }
   reportLines.push('  玩家选择(按提交顺序):');
   rawAnswers.forEach(function(rp) {
-    if (rp.absent) { reportLines.push('    ' + rp.name.padEnd(14) + '→ (缺席)'); return; }
+    if (rp.absent) { return; }  // 报告不生成缺席玩家内容
     var ans = rp.answers && rp.answers[sqi];
     var ansStr = '';
     if (sq.type === 'single') ansStr = ans ? (ans.label || '(空)') : '(空)';
@@ -1753,13 +1797,13 @@ for (var sqi = 0; sqi < questions.length; sqi++) {
 // 逐人逐题详情
 reportLines.push('------ 逐人逐题详情 ------');
 reportLines.push('');
+var _dpi = 0;
 for (var dpi = 0; dpi < finalRanked.length; dpi++) {
   var dp = finalRanked[dpi];
-  reportLines.push('--- ' + dp.name + ' (排名' + dp.rank + (dp.absent ? ', 缺席' : '') + ', ' + (dp.totalScore || 0).toFixed(2) + '分) ---');
-
-  if (dp.absent) {
-    reportLines.push('  (缺席, 无答题数据)');
-  } else {
+  if (dp.absent) continue;  // 报告不生成缺席玩家内容
+  _dpi++;
+  reportLines.push('--- ' + dp.name + ' (排名' + _dpi + ', ' + (dp.totalScore || 0).toFixed(2) + '分) ---');
+  {
     var startQ = qOffset;
     for (var dqi = 0; dqi < questions.length; dqi++) {
       var dq = questions[dqi];
@@ -1834,16 +1878,15 @@ console.log('===== 乌合bingo 结算 - ' + seasonName + ' R' + roundNum + ' ===
 console.log('');
 console.log('排名  玩家            总分        答题时长');
 console.log('------------------------------------------');
+var _pIdx = 0;
 for (var crpi = 0; crpi < finalRanked.length; crpi++) {
   var crp = finalRanked[crpi];
-  var cRankStr = String(crp.rank) + (crp.absent ? '(缺)' : '');
-  console.log(cRankStr.padEnd(6) + crp.name.padEnd(16) + (crp.totalScore || 0).toFixed(2).padEnd(12) + (crp.fillTime || '-') + '秒');
+  if (crp.absent) continue;  // 报告不显示缺席玩家
+  _pIdx++;
+  console.log(String(_pIdx).padEnd(6) + crp.name.padEnd(16) + (crp.totalScore || 0).toFixed(2).padEnd(12) + (crp.fillTime || '-') + '秒');
 }
 console.log('');
 
-if (absentPlayers.length > 0) {
-  console.log('缺席: ' + absentPlayers.join(', '));
-}
 
 var totalNewComps = 0;
 for (var npk in newCompletions) {
@@ -1856,6 +1899,16 @@ for (var npk in newCompletions) {
 console.log('');
 console.log('本轮新增完成: ' + totalNewComps + ' 格');
 if (winner) console.log('** 胜者: ' + winner + ' **');
+// ===== 保存results.json（事件应用+残局修正+任务检查之后，与结算报告一致）=====
+var resultsData = {
+  round: roundNum,
+  ranked: finalRanked,
+  questions: questions,
+  stats: scoringResult.stats
+};
+core.ensureDir(roundDir);
+fs.writeFileSync(path.join(roundDir, 'results.json'), JSON.stringify(resultsData, null, 2), 'utf8');
+
 console.log('结算报告已写入: ' + reportPath);
 console.log('结果已写入: ' + path.join(roundDir, 'results.json'));
 if (state.castling && state.castling.log) {
