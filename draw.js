@@ -114,25 +114,29 @@ function genQuestionnaireText(questions, state, seasonName, roundNum) {
   lines.push('乌合bingo ' + (seasonName || '') + '-' + (roundNum || '?') + '问卷');
   lines.push('');
 
-  // 生效事件（下一轮，带描述）——放在任务版之前
+  // 生效事件（下一轮，带描述）——放在任务版之前；按 EVENT_CN 键序=优先级排序显示
   if (state && state.events && state.events.active && state.events.active.length > 0) {
     lines.push('下一轮生效事件: \\');
-    for (let ei = 0; ei < state.events.active.length; ei++) {
-      lines.push((EVENT_CN[state.events.active[ei]] || state.events.active[ei]) + '\\');
+    var _evOrder = Object.keys(EVENT_CN);
+    var _evs = state.events.active.slice().sort(function(a, b) {
+      return _evOrder.indexOf(a) - _evOrder.indexOf(b);
+    });
+    for (var ei = 0; ei < _evs.length; ei++) {
+      lines.push((EVENT_CN[_evs[ei]] || _evs[ei]) + '\\');
     }
+    lines.push('\\');  // 空行反斜杠（分隔事件与任务版）
     lines.push('');
   } else {
     lines.push('');
   }
 
-  // 任务版
+  // 任务版（结尾空行反斜杠已挪到事件块，这里只留普通空行）
   if (state && state.board && state.board.length > 0) {
     lines.push((seasonName || '') + '任务版\\');
     const CL2 = 'ABCDEFGHIJKLMNOPQRSTUVWXY';
     for (let i = 0; i < state.board.length; i++) {
       lines.push('[' + CL2[i] + ']' + (state.board[i].desc || '') + '\\');
     }
-    lines.push('\\');
     lines.push('');
   }
 
