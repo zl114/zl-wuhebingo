@@ -1,0 +1,5 @@
+name: wuhe_quiz
+display_name: 随机乌合
+desc: 从题库随机抽题，限时收集答案并揭晓
+version: 0.1.0
+author: wuhe

@@ -1,0 +1,36 @@
+# ===== 乌合bingo 项目 .gitignore =====
+# 依赖
+node_modules/
+
+# 备份/临时文件
+*.bak
+*.bak_*
+*.tmp
+_tmp*/
+_dbg*/
+_rebuild_scripts/
+_bak_atomic_20260810/
+_archive_old/
+
+# 运行时产物
+log.txt
+auto_push.log
+export/
+data/
+_mock/
+
+# 测试目录
+test1/
+test2/
+test3/
+testS2/
+rS1/
+rS11/
+
+# 隐私（含 QQ 号/订阅者信息）
+zlwuhe/subscriptions.json
+zlwuhe/pool.json
+
+# 系统
+Thumbs.db
+Desktop.ini

@@ -1,0 +1,17 @@
+{
+  "pool_file": {
+    "description": "问卷池数据文件",
+    "type": "string",
+    "default": "E:\\wuhebingo\\zlwuhe\\pool.json"
+  },
+  "config_file": {
+    "description": "管理员配置文件",
+    "type": "string",
+    "default": "E:\\wuhebingo\\zlwuhe\\pool_config.json"
+  },
+  "ttl_hours": {
+    "description": "问卷过期时间(小时)",
+    "type": "int",
+    "default": 72
+  }
+}

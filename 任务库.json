@@ -1,69 +1,992 @@
 {
-  "tasks": [
-    { "id":"A01","list":"A","desc":"获得{x}次排名1","paramStyle":"weighted","paramWeights":[6,3,1],"paramVals":[1,2,3] },
-    { "id":"A02","list":"A","desc":"获得{x}次排名1~3","paramStyle":"weighted","paramWeights":[3,4,6,3,2,1,1],"paramVals":[1,2,3,4,5,6,7] },
-    { "id":"A03","list":"A","desc":"获得{x}次排名1~6","paramStyle":"weighted","paramWeights":[1,2,4,6,4,2,1],"paramVals":[1,2,3,4,5,6,7] },
-    { "id":"A04","list":"A","desc":"总分达到{x}分","paramStyle":"normal","paramMean":100,"paramStddev":33 },
-    { "id":"A05","list":"A","desc":"总排名分达到{x}","paramStyle":"normal","paramMean":50,"paramStddev":16 },
-    { "id":"A06","list":"A","desc":"连续{x}次排名1~6","paramStyle":"weighted","paramWeights":[6,3,1],"paramVals":[2,3,4] },
-    { "id":"A07","list":"A","desc":"连续{x}次在T1选择得分最高的选项","paramStyle":"weighted","paramWeights":[6,3,1],"paramVals":[2,3,4] },
-    { "id":"A08","list":"A","desc":"总计{x}次在T1选择得分最高的选项","paramStyle":"weighted","paramWeights":[3,4,6,3,2,1,1],"paramVals":[1,2,3,4,5,6,7] },
-    { "id":"A09","list":"A","desc":"连续{x}次在T2选择得分最高的选项","paramStyle":"weighted","paramWeights":[6,3,1],"paramVals":[2,3,4] },
-    { "id":"A10","list":"A","desc":"总计{x}次在T2选择得分最高的选项","paramStyle":"weighted","paramWeights":[3,4,6,3,2,1,1],"paramVals":[1,2,3,4,5,6,7] },
-    { "id":"A11","list":"A","desc":"连续{x}次在T3选择得分最高的选项","paramStyle":"weighted","paramWeights":[6,3,1],"paramVals":[2,3,4] },
-    { "id":"A12","list":"A","desc":"总计{x}次在T3选择得分最高的选项","paramStyle":"weighted","paramWeights":[3,4,6,3,2,1,1],"paramVals":[1,2,3,4,5,6,7] },
-    { "id":"A13","list":"A","desc":"连续{x}次在T4选择得分最高的选项","paramStyle":"weighted","paramWeights":[6,3,1],"paramVals":[2,3,4] },
-    { "id":"A14","list":"A","desc":"总计{x}次在T4选择得分最高的选项","paramStyle":"weighted","paramWeights":[3,4,6,3,2,1,1],"paramVals":[1,2,3,4,5,6,7] },
-    { "id":"A15","list":"A","desc":"连续{x}次在T5选择得分最高的选项","paramStyle":"weighted","paramWeights":[6,3,1],"paramVals":[2,3,4] },
-    { "id":"A16","list":"A","desc":"总计{x}次在T5选择得分最高的选项","paramStyle":"weighted","paramWeights":[3,4,6,3,2,1,1],"paramVals":[1,2,3,4,5,6,7] },
-    { "id":"A17","list":"A","desc":"连续{x}次在T6得到前3高的总分数","paramStyle":"weighted","paramWeights":[6,3,1],"paramVals":[2,3,4] },
-    { "id":"A18","list":"A","desc":"总计{x}次在T6得到前3高的总分数","paramStyle":"weighted","paramWeights":[3,4,6,3,2,1,1],"paramVals":[1,2,3,4,5,6,7] },
-    { "id":"A19","list":"A","desc":"连续{x}次在T7得到前3高的总分数","paramStyle":"weighted","paramWeights":[6,3,1],"paramVals":[2,3,4] },
-    { "id":"A20","list":"A","desc":"总计{x}次在T7得到前3高的总分数","paramStyle":"weighted","paramWeights":[3,4,6,3,2,1,1],"paramVals":[1,2,3,4,5,6,7] },
-    { "id":"A21","list":"A","desc":"连续{x}次在T8得到前3高的总分数","paramStyle":"weighted","paramWeights":[6,3,1],"paramVals":[2,3,4] },
-    { "id":"A22","list":"A","desc":"总计{x}次在T8得到前3高的总分数","paramStyle":"weighted","paramWeights":[3,4,6,3,2,1,1],"paramVals":[1,2,3,4,5,6,7] },
-    { "id":"A23","list":"A","desc":"连续{x}次在T9得到前3高的总分数","paramStyle":"weighted","paramWeights":[6,3,1],"paramVals":[2,3,4] },
-    { "id":"A24","list":"A","desc":"总计{x}次在T9得到前3高的总分数","paramStyle":"weighted","paramWeights":[3,4,6,3,2,1,1],"paramVals":[1,2,3,4,5,6,7] },
-    { "id":"A25","list":"A","desc":"总计{x}次在T1选择得分最低的选项","paramStyle":"weighted","paramWeights":[6,4,4,2,2,1,1],"paramVals":[1,2,3,4,5,6,7] },
-    { "id":"A26","list":"A","desc":"总计{x}次在T2选择得分最低的选项","paramStyle":"weighted","paramWeights":[6,4,4,2,2,1,1],"paramVals":[1,2,3,4,5,6,7] },
-    { "id":"A27","list":"A","desc":"总计{x}次在T3选择得分最低的选项","paramStyle":"weighted","paramWeights":[6,4,4,2,2,1,1],"paramVals":[1,2,3,4,5,6,7] },
-    { "id":"A28","list":"A","desc":"总计{x}次在T4选择得分最低的选项","paramStyle":"weighted","paramWeights":[6,4,4,2,2,1,1],"paramVals":[1,2,3,4,5,6,7] },
-    { "id":"A29","list":"A","desc":"总计{x}次在T5选择得分最低的选项","paramStyle":"weighted","paramWeights":[6,4,4,2,2,1,1],"paramVals":[1,2,3,4,5,6,7] },
-    { "id":"A30","list":"A","desc":"总计{x}次在T6得到前3低的总分数","paramStyle":"weighted","paramWeights":[6,4,4,2,2,1,1],"paramVals":[1,2,3,4,5,6,7] },
-    { "id":"A31","list":"A","desc":"总计{x}次在T7得到前3低的总分数","paramStyle":"weighted","paramWeights":[6,4,4,2,2,1,1],"paramVals":[1,2,3,4,5,6,7] },
-    { "id":"A32","list":"A","desc":"总计{x}次在T8得到前3低的总分数","paramStyle":"weighted","paramWeights":[6,4,4,2,2,1,1],"paramVals":[1,2,3,4,5,6,7] },
-    { "id":"A33","list":"A","desc":"总计{x}次在T9得到前3低的总分数","paramStyle":"weighted","paramWeights":[6,4,4,2,2,1,1],"paramVals":[1,2,3,4,5,6,7] },
-    { "id":"A34","list":"A","desc":"获得{x}次排名5~8","paramStyle":"weighted","paramWeights":[6,4,4,2,2,1,1],"paramVals":[1,2,3,4,5,6,7] },
-    { "id":"A35","list":"A","desc":"获得{x}次排名9~12","paramStyle":"weighted","paramWeights":[6,4,4,2,2,1,1],"paramVals":[1,2,3,4,5,6,7] },
-    { "id":"B01","list":"B","desc":"在T1中达成{x}次勇气","paramStyle":"weighted","paramWeights":[6,4,4,2,2,1,1],"paramVals":[1,2,3,4,5,6,7] },
-    { "id":"B02","list":"B","desc":"在T1中独享过公正（仅你一人选择某个公正选项）","paramStyle":"none" },
-    { "id":"B03","list":"B","desc":"单回合在T2~T5中，全部选中得分最低项之一","paramStyle":"none" },
-    { "id":"B04","list":"B","desc":"单回合在T2~T5中，全部选中得分最高项之一","paramStyle":"none" },
-    { "id":"B05","list":"B","desc":"单回合在T2~T5中，全部未选中得分最低或最高项之一","paramStyle":"none" },
-    { "id":"B06","list":"B","desc":"单回合在T1~T5完全选同一选项，且最终结算排名为1~6","paramStyle":"none" },
-    { "id":"B07","list":"B","desc":"单回合在T1~T5完全选不同选项，且最终结算排名为1~6","paramStyle":"none" },
-    { "id":"B08","list":"B","desc":"累计选择{x}个A选项（含多选）","paramStyle":"normal","paramMean":10,"paramStddev":3 },
-    { "id":"B09","list":"B","desc":"累计选择{x}个B选项（含多选）","paramStyle":"normal","paramMean":10,"paramStddev":3 },
-    { "id":"B10","list":"B","desc":"累计选择{x}个C选项（含多选）","paramStyle":"normal","paramMean":10,"paramStddev":3 },
-    { "id":"B11","list":"B","desc":"累计选择{x}个D选项（含多选）","paramStyle":"normal","paramMean":10,"paramStddev":3 },
-    { "id":"B12","list":"B","desc":"累计获得{x}次单题最低分","paramStyle":"normal","paramMean":15,"paramStddev":4 },
-    { "id":"B13","list":"B","desc":"某回合你的作答与另一玩家至少完全重合{x}题","paramStyle":"weighted","paramWeights":[4,3,2,1],"paramVals":[4,5,6,7] },
-    { "id":"B14","list":"B","desc":"在T6回答过所有一位数答案","paramStyle":"none" },
-    { "id":"B15","list":"B","desc":"单回合在T7~T9的选择项数完全相同，且最终结算排名为1~6","paramStyle":"none" },
-    { "id":"B16","list":"B","desc":"单回合在T7~T9的选择项数完全不相同，且最终结算排名为1~6","paramStyle":"none" },
-    { "id":"B17","list":"B","desc":"连续3次在除T10外某题获得最高分","paramStyle":"none" },
-    { "id":"B18","list":"B","desc":"连续3次在除T10外某题获得最低分","paramStyle":"none" },
-    { "id":"B19","list":"B","desc":"选择了T10的B选项并成功触发条件","paramStyle":"none" },
-    { "id":"B20","list":"B","desc":"T7~T9某题仅选择1个选项且在该题的得分前三高","paramStyle":"none" },
-    { "id":"B21","list":"B","desc":"T7~T9某题仅选择1个选项且在该题的得分前三低","paramStyle":"none" },
-    { "id":"B22","list":"B","desc":"单回合所有题目均未选中人数最多项","paramStyle":"none" },
-    { "id":"B23","list":"B","desc":"在某题拿到最多分数，且比次多的玩家至少多获得5分","paramStyle":"none" },
-    { "id":"B24","list":"B","desc":"单回合所有题目均未获得恰好0分","paramStyle":"none" },
-    { "id":"B25","list":"B","desc":"某回合你未完成你的盘面上的任何未完成任务","paramStyle":"none" },
-    { "id":"B26","list":"B","desc":"你的问卷填写时间在所有人中位列前三","paramStyle":"none" },
-    { "id":"B27","list":"B","desc":"某回合你的分数绝对值小于3","paramStyle":"none" },
-    { "id":"B28","list":"B","desc":"你在T3~T9任一一题结算后排名9~12，但最终结算排名为1~3","paramStyle":"none" },
-    { "id":"B29","list":"B","desc":"累计{x}个回合你的得分取两位小数（向下取整）包含7","paramStyle":"weighted","paramWeights":[6,3,1],"paramVals":[1,2,3] },
-    { "id":"B30","list":"B","desc":"在T10中选择B选项并最终结算排名为1","paramStyle":"none" }
-  ]
+ "tasks": [
+  {
+   "id": "A01",
+   "list": "A",
+   "desc": "获得{x}次排名1",
+   "paramStyle": "weighted",
+   "paramWeights": [
+    6,
+    3,
+    1
+   ],
+   "paramVals": [
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "id": "A02",
+   "list": "A",
+   "desc": "获得{x}次排名1~3",
+   "paramStyle": "weighted",
+   "paramWeights": [
+    3,
+    4,
+    6,
+    3,
+    2,
+    1,
+    1
+   ],
+   "paramVals": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+   ]
+  },
+  {
+   "id": "A03",
+   "list": "A",
+   "desc": "获得{x}次排名1~6",
+   "paramStyle": "weighted",
+   "paramWeights": [
+    1,
+    2,
+    4,
+    6,
+    4,
+    2,
+    1
+   ],
+   "paramVals": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+   ]
+  },
+  {
+   "id": "A04",
+   "list": "A",
+   "desc": "任意连续3局排名分之和大于{x}",
+   "paramStyle": "normal",
+   "paramMean": 20,
+   "paramStddev": 5
+  },
+  {
+   "id": "A05",
+   "list": "A",
+   "desc": "总排名分达到{x}",
+   "paramStyle": "normal",
+   "paramMean": 40,
+   "paramStddev": 13
+  },
+  {
+   "id": "A06",
+   "list": "A",
+   "desc": "连续{x}次排名1~6",
+   "paramStyle": "weighted",
+   "paramWeights": [
+    4,
+    1
+   ],
+   "paramVals": [
+    2,
+    3
+   ]
+  },
+  {
+   "id": "A07",
+   "list": "A",
+   "desc": "连续{x}次在T1得到前3高的总分数",
+   "paramStyle": "weighted",
+   "paramWeights": [
+    6,
+    3,
+    1
+   ],
+   "paramVals": [
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "id": "A08",
+   "list": "A",
+   "desc": "总计{x}次在T1得到前3高的总分数",
+   "paramStyle": "weighted",
+   "paramWeights": [
+    3,
+    4,
+    6,
+    3,
+    2,
+    1,
+    1
+   ],
+   "paramVals": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+   ]
+  },
+  {
+   "id": "A09",
+   "list": "A",
+   "desc": "连续{x}次在T2得到前3高的总分数",
+   "paramStyle": "weighted",
+   "paramWeights": [
+    6,
+    3,
+    1
+   ],
+   "paramVals": [
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "id": "A10",
+   "list": "A",
+   "desc": "总计{x}次在T2得到前3高的总分数",
+   "paramStyle": "weighted",
+   "paramWeights": [
+    3,
+    4,
+    6,
+    3,
+    2,
+    1,
+    1
+   ],
+   "paramVals": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+   ]
+  },
+  {
+   "id": "A11",
+   "list": "A",
+   "desc": "连续{x}次在T3得到前3高的总分数",
+   "paramStyle": "weighted",
+   "paramWeights": [
+    6,
+    3,
+    1
+   ],
+   "paramVals": [
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "id": "A12",
+   "list": "A",
+   "desc": "总计{x}次在T3得到前3高的总分数",
+   "paramStyle": "weighted",
+   "paramWeights": [
+    3,
+    4,
+    6,
+    3,
+    2,
+    1,
+    1
+   ],
+   "paramVals": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+   ]
+  },
+  {
+   "id": "A13",
+   "list": "A",
+   "desc": "连续{x}次在T4得到前3高的总分数",
+   "paramStyle": "weighted",
+   "paramWeights": [
+    6,
+    3,
+    1
+   ],
+   "paramVals": [
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "id": "A14",
+   "list": "A",
+   "desc": "总计{x}次在T4得到前3高的总分数",
+   "paramStyle": "weighted",
+   "paramWeights": [
+    3,
+    4,
+    6,
+    3,
+    2,
+    1,
+    1
+   ],
+   "paramVals": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+   ]
+  },
+  {
+   "id": "A15",
+   "list": "A",
+   "desc": "连续{x}次在T5得到前3高的总分数",
+   "paramStyle": "weighted",
+   "paramWeights": [
+    6,
+    3,
+    1
+   ],
+   "paramVals": [
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "id": "A16",
+   "list": "A",
+   "desc": "总计{x}次在T5得到前3高的总分数",
+   "paramStyle": "weighted",
+   "paramWeights": [
+    3,
+    4,
+    6,
+    3,
+    2,
+    1,
+    1
+   ],
+   "paramVals": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+   ]
+  },
+  {
+   "id": "A17",
+   "list": "A",
+   "desc": "连续{x}次在T6得到前3高的总分数",
+   "paramStyle": "weighted",
+   "paramWeights": [
+    6,
+    3,
+    1
+   ],
+   "paramVals": [
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "id": "A18",
+   "list": "A",
+   "desc": "总计{x}次在T6得到前3高的总分数",
+   "paramStyle": "weighted",
+   "paramWeights": [
+    3,
+    4,
+    6,
+    3,
+    2,
+    1,
+    1
+   ],
+   "paramVals": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+   ]
+  },
+  {
+   "id": "A19",
+   "list": "A",
+   "desc": "连续{x}次在T7得到前3高的总分数",
+   "paramStyle": "weighted",
+   "paramWeights": [
+    6,
+    3,
+    1
+   ],
+   "paramVals": [
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "id": "A20",
+   "list": "A",
+   "desc": "总计{x}次在T7得到前3高的总分数",
+   "paramStyle": "weighted",
+   "paramWeights": [
+    3,
+    4,
+    6,
+    3,
+    2,
+    1,
+    1
+   ],
+   "paramVals": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+   ]
+  },
+  {
+   "id": "A21",
+   "list": "A",
+   "desc": "连续{x}次在T8得到前3高的总分数",
+   "paramStyle": "weighted",
+   "paramWeights": [
+    6,
+    3,
+    1
+   ],
+   "paramVals": [
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "id": "A22",
+   "list": "A",
+   "desc": "总计{x}次在T8得到前3高的总分数",
+   "paramStyle": "weighted",
+   "paramWeights": [
+    3,
+    4,
+    6,
+    3,
+    2,
+    1,
+    1
+   ],
+   "paramVals": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+   ]
+  },
+  {
+   "id": "A23",
+   "list": "A",
+   "desc": "连续{x}次在T9得到前3高的总分数",
+   "paramStyle": "weighted",
+   "paramWeights": [
+    6,
+    3,
+    1
+   ],
+   "paramVals": [
+    2,
+    3,
+    4
+   ]
+  },
+  {
+   "id": "A24",
+   "list": "A",
+   "desc": "总计{x}次在T9得到前3高的总分数",
+   "paramStyle": "weighted",
+   "paramWeights": [
+    3,
+    4,
+    6,
+    3,
+    2,
+    1,
+    1
+   ],
+   "paramVals": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+   ]
+  },
+  {
+   "id": "A25",
+   "list": "A",
+   "desc": "总计{x}次在T1得到前3低的总分数",
+   "paramStyle": "weighted",
+   "paramWeights": [
+    6,
+    4,
+    4,
+    2,
+    2,
+    1,
+    1
+   ],
+   "paramVals": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+   ]
+  },
+  {
+   "id": "A26",
+   "list": "A",
+   "desc": "总计{x}次在T2得到前3低的总分数",
+   "paramStyle": "weighted",
+   "paramWeights": [
+    6,
+    4,
+    4,
+    2,
+    2,
+    1,
+    1
+   ],
+   "paramVals": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+   ]
+  },
+  {
+   "id": "A27",
+   "list": "A",
+   "desc": "总计{x}次在T3得到前3低的总分数",
+   "paramStyle": "weighted",
+   "paramWeights": [
+    6,
+    4,
+    4,
+    2,
+    2,
+    1,
+    1
+   ],
+   "paramVals": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+   ]
+  },
+  {
+   "id": "A28",
+   "list": "A",
+   "desc": "总计{x}次在T4得到前3低的总分数",
+   "paramStyle": "weighted",
+   "paramWeights": [
+    6,
+    4,
+    4,
+    2,
+    2,
+    1,
+    1
+   ],
+   "paramVals": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+   ]
+  },
+  {
+   "id": "A29",
+   "list": "A",
+   "desc": "总计{x}次在T5得到前3低的总分数",
+   "paramStyle": "weighted",
+   "paramWeights": [
+    6,
+    4,
+    4,
+    2,
+    2,
+    1,
+    1
+   ],
+   "paramVals": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+   ]
+  },
+  {
+   "id": "A30",
+   "list": "A",
+   "desc": "总计{x}次在T6得到前3低的总分数",
+   "paramStyle": "weighted",
+   "paramWeights": [
+    6,
+    4,
+    4,
+    2,
+    2,
+    1,
+    1
+   ],
+   "paramVals": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+   ]
+  },
+  {
+   "id": "A31",
+   "list": "A",
+   "desc": "总计{x}次在T7得到前3低的总分数",
+   "paramStyle": "weighted",
+   "paramWeights": [
+    6,
+    4,
+    4,
+    2,
+    2,
+    1,
+    1
+   ],
+   "paramVals": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+   ]
+  },
+  {
+   "id": "A32",
+   "list": "A",
+   "desc": "总计{x}次在T8得到前3低的总分数",
+   "paramStyle": "weighted",
+   "paramWeights": [
+    6,
+    4,
+    4,
+    2,
+    2,
+    1,
+    1
+   ],
+   "paramVals": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+   ]
+  },
+  {
+   "id": "A33",
+   "list": "A",
+   "desc": "总计{x}次在T9得到前3低的总分数",
+   "paramStyle": "weighted",
+   "paramWeights": [
+    6,
+    4,
+    4,
+    2,
+    2,
+    1,
+    1
+   ],
+   "paramVals": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+   ]
+  },
+  {
+   "id": "A34",
+   "list": "A",
+   "desc": "获得{x}次排名4~9",
+   "paramStyle": "weighted",
+   "paramWeights": [
+    6,
+    4,
+    4,
+    2,
+    2,
+    1,
+    1
+   ],
+   "paramVals": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+   ]
+  },
+  {
+   "id": "A35",
+   "list": "A",
+   "desc": "获得{x}次排名7~12",
+   "paramStyle": "weighted",
+   "paramWeights": [
+    6,
+    4,
+    4,
+    2,
+    2,
+    1,
+    1
+   ],
+   "paramVals": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+   ]
+  },
+  {
+   "id": "A36",
+   "list": "A",
+   "desc": "获得{x}次排名12",
+   "paramStyle": "weighted",
+   "paramWeights": [
+    6,
+    3,
+    1
+   ],
+   "paramVals": [
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "id": "B01",
+   "list": "B",
+   "desc": "在T1中达成{x}次勇气",
+   "paramStyle": "weighted",
+   "paramWeights": [
+    6,
+    4,
+    4,
+    2,
+    2,
+    1,
+    1
+   ],
+   "paramVals": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+   ]
+  },
+  {
+   "id": "B02",
+   "list": "B",
+   "desc": "在T1中独享过公正（仅你一人选择某个公正选项）",
+   "paramStyle": "none"
+  },
+  {
+   "id": "B03",
+   "list": "B",
+   "desc": "单回合在T2~T5中，全部获得前三高的分数",
+   "paramStyle": "none"
+  },
+  {
+   "id": "B04",
+   "list": "B",
+   "desc": "单回合在T2~T5中，全部获得前三低的分数",
+   "paramStyle": "none"
+  },
+  {
+   "id": "B05",
+   "list": "B",
+   "desc": "单回合在T2~T5中，全部未获得最高或最低的分数",
+   "paramStyle": "none"
+  },
+  {
+   "id": "B06",
+   "list": "B",
+   "desc": "单回合在T1~T5完全选同一选项，且最终结算排名为1~6",
+   "paramStyle": "none"
+  },
+  {
+   "id": "B07",
+   "list": "B",
+   "desc": "单回合在T1~T5完全选不同选项，且最终结算排名为1~6",
+   "paramStyle": "none"
+  },
+  {
+   "id": "B08",
+   "list": "B",
+   "desc": "累计选择{x}个A选项（含多选）",
+   "paramStyle": "normal",
+   "paramMean": 10,
+   "paramStddev": 3
+  },
+  {
+   "id": "B09",
+   "list": "B",
+   "desc": "累计选择{x}个B选项（含多选）",
+   "paramStyle": "normal",
+   "paramMean": 10,
+   "paramStddev": 3
+  },
+  {
+   "id": "B10",
+   "list": "B",
+   "desc": "累计选择{x}个C选项（含多选）",
+   "paramStyle": "normal",
+   "paramMean": 10,
+   "paramStddev": 3
+  },
+  {
+   "id": "B11",
+   "list": "B",
+   "desc": "累计选择{x}个D选项（含多选）",
+   "paramStyle": "normal",
+   "paramMean": 10,
+   "paramStddev": 3
+  },
+  {
+   "id": "B12",
+   "list": "B",
+   "desc": "累计获得{x}次单题得分倒数第一",
+   "paramStyle": "normal",
+   "paramMean": 15,
+   "paramStddev": 4
+  },
+  {
+   "id": "B13",
+   "list": "B",
+   "desc": "某回合你的作答与另一玩家至少完全重合{x}题",
+   "paramStyle": "weighted",
+   "paramWeights": [
+    10,
+    6,
+    3,
+    1
+   ],
+   "paramVals": [
+    4,
+    5,
+    6,
+    7
+   ]
+  },
+  {
+   "id": "B14",
+   "list": "B",
+   "desc": "在T6回答过0~9所有整数答案",
+   "paramStyle": "none"
+  },
+  {
+   "id": "B15",
+   "list": "B",
+   "desc": "单回合在T7~T9的选择项数完全相同，且最终结算排名为1~6",
+   "paramStyle": "none"
+  },
+  {
+   "id": "B16",
+   "list": "B",
+   "desc": "单回合在T7~T9的选择项数完全不相同，且最终结算排名为1~6",
+   "paramStyle": "none"
+  },
+  {
+   "id": "B17",
+   "list": "B",
+   "desc": "连续3次在除T10外某题获得最高的分数",
+   "paramStyle": "none"
+  },
+  {
+   "id": "B18",
+   "list": "B",
+   "desc": "连续3次在除T10外某题获得最低的分数",
+   "paramStyle": "none"
+  },
+  {
+   "id": "B19",
+   "list": "B",
+   "desc": "选择了T10的B选项并成功触发条件",
+   "paramStyle": "none"
+  },
+  {
+   "id": "B20",
+   "list": "B",
+   "desc": "T7~T9某题仅选择1个选项且在该题的得分前三高",
+   "paramStyle": "none"
+  },
+  {
+   "id": "B21",
+   "list": "B",
+   "desc": "T7~T9某题仅选择1个选项且在该题的得分前三低",
+   "paramStyle": "none"
+  },
+  {
+   "id": "B22",
+   "list": "B",
+   "desc": "单回合所有题目均未选中人数最多项",
+   "paramStyle": "none"
+  },
+  {
+   "id": "B23",
+   "list": "B",
+   "desc": "在某题拿到最高分数，且比第二高的玩家至少多获得5分，并列最高不视为完成",
+   "paramStyle": "none"
+  },
+  {
+   "id": "B24",
+   "list": "B",
+   "desc": "单回合所有题目均未获得恰好0分",
+   "paramStyle": "none"
+  },
+  {
+   "id": "B25",
+   "list": "B",
+   "desc": "某回合你未完成你的盘面上的任何未完成任务",
+   "paramStyle": "none"
+  },
+  {
+   "id": "B26",
+   "list": "B",
+   "desc": "你的问卷填写时间在所有人中最短的三位",
+   "paramStyle": "none"
+  },
+  {
+   "id": "B27",
+   "list": "B",
+   "desc": "某回合你的分数绝对值小于3",
+   "paramStyle": "none"
+  },
+  {
+   "id": "B28",
+   "list": "B",
+   "desc": "你在T3~T9任一一题结算后排名9~12，但最终结算排名为1~3",
+   "paramStyle": "none"
+  },
+  {
+   "id": "B29",
+   "list": "B",
+   "desc": "累计{x}个回合你的得分取两位小数（向下取整）包含7",
+   "paramStyle": "weighted",
+   "paramWeights": [
+    6,
+    3,
+    1
+   ],
+   "paramVals": [
+    1,
+    2,
+    3
+   ]
+  },
+  {
+   "id": "B30",
+   "list": "B",
+   "desc": "在T10中选择B选项并最终结算排名为1",
+   "paramStyle": "none"
+  },
+  {
+   "id": "B31",
+   "list": "B",
+   "desc": "你全收集第1~4/5~8/9~12区间之一内所有名次",
+   "paramStyle": "none"
+  },
+  {
+   "id": "B32",
+   "list": "B",
+   "desc": "你全收集第3n+k某一k(0~2)取值的范围内所有名次",
+   "paramStyle": "none"
+  },
+  {
+   "id": "B33",
+   "list": "B",
+   "desc": "你全收集第4n+k某一k(0~3)取值的范围内所有名次",
+   "paramStyle": "none"
+  },
+  {
+   "id": "B34",
+   "list": "B",
+   "desc": "你在答题时间<=120s的情况下获得前三（以腾讯问卷数据为准）",
+   "paramStyle": "none"
+  }
+ ]
 }

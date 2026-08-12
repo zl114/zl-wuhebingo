@@ -1,0 +1,147 @@
+{
+ "season": "S2",
+ "board": [
+  {
+   "id": "B16",
+   "desc": "单回合在T7~T9的选择项数完全不相同，且最终结算排名为1~6",
+   "param": null
+  },
+  {
+   "id": "A15",
+   "desc": "连续2次在T5得到前3高的总分数",
+   "param": 2
+  },
+  {
+   "id": "B13",
+   "desc": "某回合你的作答与另一玩家至少完全重合4题",
+   "param": 4
+  },
+  {
+   "id": "B03",
+   "desc": "单回合在T2~T5中，全部获得前三高的分数",
+   "param": null
+  },
+  {
+   "id": "A01",
+   "desc": "获得1次排名1",
+   "param": 1
+  },
+  {
+   "id": "A11",
+   "desc": "连续2次在T3得到前3高的总分数",
+   "param": 2
+  },
+  {
+   "id": "A08",
+   "desc": "总计5次在T1得到前3高的总分数",
+   "param": 5
+  },
+  {
+   "id": "A02",
+   "desc": "获得2次排名1~3",
+   "param": 2
+  },
+  {
+   "id": "A14",
+   "desc": "总计3次在T4得到前3高的总分数",
+   "param": 3
+  },
+  {
+   "id": "A06",
+   "desc": "连续2次排名1~6",
+   "param": 2
+  },
+  {
+   "id": "B10",
+   "desc": "累计选择8个C选项（含多选）",
+   "param": 8
+  },
+  {
+   "id": "A12",
+   "desc": "总计3次在T3得到前3高的总分数",
+   "param": 3
+  },
+  {
+   "id": "B22",
+   "desc": "单回合所有题目均未选中人数最多项",
+   "param": null
+  },
+  {
+   "id": "A30",
+   "desc": "总计4次在T6得到前3低的总分数",
+   "param": 4
+  },
+  {
+   "id": "A18",
+   "desc": "总计4次在T6得到前3高的总分数",
+   "param": 4
+  },
+  {
+   "id": "B15",
+   "desc": "单回合在T7~T9的选择项数完全相同，且最终结算排名为1~6",
+   "param": null
+  },
+  {
+   "id": "A32",
+   "desc": "总计3次在T8得到前3低的总分数",
+   "param": 3
+  },
+  {
+   "id": "B11",
+   "desc": "累计选择10个D选项（含多选）",
+   "param": 10
+  },
+  {
+   "id": "B02",
+   "desc": "在T1中独享过公正（仅你一人选择某个公正选项）",
+   "param": null
+  },
+  {
+   "id": "A10",
+   "desc": "总计3次在T2得到前3高的总分数",
+   "param": 3
+  },
+  {
+   "id": "B26",
+   "desc": "你的问卷填写时间在所有人中最短的三位",
+   "param": null
+  },
+  {
+   "id": "A25",
+   "desc": "总计6次在T1得到前3低的总分数",
+   "param": 6
+  },
+  {
+   "id": "B06",
+   "desc": "单回合在T1~T5完全选同一选项，且最终结算排名为1~6",
+   "param": null
+  },
+  {
+   "id": "B01",
+   "desc": "在T1中达成5次勇气",
+   "param": 5
+  },
+  {
+   "id": "A07",
+   "desc": "连续4次在T1得到前3高的总分数",
+   "param": 4
+  }
+ ],
+ "playerBoards": {},
+ "history": [],
+ "castling": {
+  "triggered": false,
+  "triggeredBy": null,
+  "triggerRound": null,
+  "speedUp": false,
+  "players": {},
+  "log": []
+ },
+ "currentRound": 0,
+ "finished": false,
+ "winner": null,
+ "events": {
+  "active": [],
+  "history": []
+ }
+}

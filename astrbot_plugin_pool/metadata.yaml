@@ -1,0 +1,5 @@
+name: pool
+display_name: 问卷池
+desc: 管理问卷链接的收集池，72小时过期
+version: 0.1.0
+author: wuhe

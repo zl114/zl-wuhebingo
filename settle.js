@@ -3,6 +3,8 @@
 var fs = require('fs');
 var path = require('path');
 var core = require('./core');
+var s2events = require('./s2events');  // S2 封印之息事件系统
+var s2breath = require('./s2breath');  // S2 屏息（玩家主动技能）
 
 var args = process.argv.slice(2);
 var seasonName = args[0];
@@ -78,8 +80,14 @@ var header = core.parseCSVLine(csvLines[0]);
 // 格式: N.title (单选/文本), N.title:M (多选第M项), N.N. title :A.desc (变体)
 var colMap = {};  // qi -> { mainCol: idx, multiCols: [{col: idx, optIdx: M-1}] }
 // 确定易位题是否存在 (影响列映射)
-var hasCastle = questions.length > 0 && questions[0].id === 'CASTLE';
-var qOffset = hasCastle ? 1 : 0;
+// 确定易位/屏息题是否存在 (影响列映射)
+var hasCastle = false, hasHold = false;
+for (var qchk = 0; qchk < questions.length; qchk++) {
+  if (questions[qchk] && questions[qchk].id === 'CASTLE') hasCastle = true;
+  if (questions[qchk] && questions[qchk].id === 'HOLD') hasHold = true;
+}
+var qOffset = (hasCastle ? 1 : 0) + (hasHold ? 1 : 0);
+var castleIdx = hasCastle ? (hasHold ? 1 : 0) : -1;
 
 var nicknameCol = -1;
 
@@ -89,17 +97,19 @@ for (var ci = 0; ci < header.length; ci++) {
     nicknameCol = ci;
     continue;
   }
-  // 多选列: N.N. title :A.desc → 提取题号 N 和选项字母 A
-  var multiMatch = h.match(/^(\d+)\.\d+\. .+?\s*:([A-H])\./);
-  if (multiMatch) {
-  var mqi = parseInt(multiMatch[1]) - 1;
-  var aoi = multiMatch[2].toUpperCase().charCodeAt(0) - 65;
+  // 多选列: [Q]N.N. title :A.desc(旧格式) 或 [Q]N.N. title :M数字序号(新格式) → 提取题号 N 和选项索引
+  var multiMatch = h.match(/^Q?(\d+)\.\d+\. .+?\s*:([A-H])\./);
+  var multiNumMatch = h.match(/^Q?(\d+)\.\d+\. .+?\s*:(\d+)$/);
+  if (multiMatch || multiNumMatch) {
+    var mq = multiMatch || multiNumMatch;
+    var mqi = parseInt(mq[1]) - 1;
+    var aoi = multiMatch ? multiMatch[2].toUpperCase().charCodeAt(0) - 65 : (parseInt(multiNumMatch[2]) - 1);
     if (!colMap[mqi]) colMap[mqi] = { mainCol: -1, multiCols: [] };
     colMap[mqi].multiCols.push({ col: ci, optIdx: aoi });
     continue;
   }
-  // 单选/填空列: N.N. title 或 N.title
-  var singleMatch = h.match(/^(\d+)\.\d+\. /) || h.match(/^(\d+)\.(?!\d)/);
+  // 单选/填空列: [Q]N.N. title 或 [Q]N.title
+  var singleMatch = h.match(/^Q?(\d+)\.\d+\. /) || h.match(/^Q?(\d+)\.(?!\d)/);
   if (singleMatch) {
     var sqi = parseInt(singleMatch[1]) - 1;
     if (!colMap[sqi]) colMap[sqi] = { mainCol: -1, multiCols: [] };
@@ -112,6 +122,15 @@ for (var ci = 0; ci < header.length; ci++) {
     if (cqi >= 0) {
       if (!colMap[cqi]) colMap[cqi] = { mainCol: -1, multiCols: [] };
       colMap[cqi].mainCol = ci;
+    }
+    continue;
+  }
+  // 屏息列
+  if (h === '屏息') {
+    var hqi = questions.findIndex(function(q) { return q.id === 'HOLD'; });
+    if (hqi >= 0) {
+      if (!colMap[hqi]) colMap[hqi] = { mainCol: -1, multiCols: [] };
+      colMap[hqi].mainCol = ci;
     }
     continue;
   }
@@ -133,7 +152,7 @@ var answerTimeCol2 = -1; // 开始答题时间列
 // 检测答题时长列和开始答题时间列
 for (var hci = 0; hci < header.length; hci++) {
   var hh = header[hci].trim();
-  if (hh.indexOf('答题时长') >= 0 || hh.toLowerCase().indexOf('duration') >= 0) answerTimeCol = hci;
+  if (hh.indexOf('答题时长') >= 0 || hh.toLowerCase().indexOf('duration') >= 0 || hh.indexOf('用时') >= 0 || hh.indexOf('耗时') >= 0) answerTimeCol = hci;
   if (hh.indexOf('开始答题时间') >= 0 || hh.toLowerCase().indexOf('start') >= 0) answerTimeCol2 = hci;
   if (hh.indexOf('结束答题时间') >= 0 || hh.toLowerCase().indexOf('end') >= 0) answerTimeCol2 = hci;
 }
@@ -187,8 +206,11 @@ for (var li = 1; li < csvLines.length; li++) {
   for (var qi = 0; qi < questions.length; qi++) answers.push({ type: '', label: '', labels: [], value: '', same_set: 0, same_count: 0 });
 
   // 处理CASTLE (index 0)
-  if (hasCastle) {
+  if (hasHold) {
     answers[0] = { type: 'text', label: '', labels: [], value: '', same_set: 0, same_count: 0 };
+  }
+  if (hasCastle) {
+    answers[castleIdx] = { type: 'text', label: '', labels: [], value: '', same_set: 0, same_count: 0 };
   }
 
   // 遍历CSV列
@@ -248,7 +270,7 @@ for (var li = 1; li < csvLines.length; li++) {
 
   // 检查缺席 (所有非CASTLE问题答案为空)
   var allEmpty = true;
-  var startQ = hasCastle ? 1 : 0;
+  var startQ = qOffset;
   for (var aqi = startQ; aqi < questions.length; aqi++) {
     var aq = questions[aqi];
     var ans = answers[aqi];
@@ -318,25 +340,33 @@ for (var npi = 0; npi < csvPlayerNames.length; npi++) {
 // 从castling.json读取CASTLE指定
 var castlingFile = path.join(roundDir, 'castling.json');
 var castlingMap = {};
+var castlingMapInitial = {};
 if (fs.existsSync(castlingFile)) {
-  try { castlingMap = JSON.parse(fs.readFileSync(castlingFile, 'utf8')); } catch (e) {}
+  try { castlingMapInitial = JSON.parse(fs.readFileSync(castlingFile, 'utf8')); } catch (e) {}
 }
 
 // 从CSV中自动提取CASTLE答案 (如果CSV中有CASTLE相关列或questions中有CASTLE)
 if (hasCastle) {
   for (var cai = 0; cai < rawAnswers.length; cai++) {
     var pName = rawAnswers[cai].name;
-    var ca = rawAnswers[cai].answers[0];
-    if (ca && ca.value && !castlingMap[pName]) {
-      // 如果答案是一个字母A-Y, 自动写入castling.json
+    var ca = rawAnswers[cai].answers[castleIdx];
+    if (ca && ca.value) {
       var cvUpper = (ca.value || '').toUpperCase().trim();
       var cellLabels = 'ABCDEFGHIJKLMNOPQRSTUVWXY';
       if (cvUpper.length === 1 && cellLabels.indexOf(cvUpper) >= 0) {
-        castlingMap[pName] = cellLabels.indexOf(cvUpper);
+        // 任务坐标: 查找该玩家当前棋盘上标签cvUpper的实际位置
+        var actualPos = cellLabels.indexOf(cvUpper);
+        if (state.playerLabelMap && state.playerLabelMap[pName]) {
+          var lm2 = state.playerLabelMap[pName];
+          for (var lmi = 0; lmi < lm2.length; lmi++) {
+            if (lm2[lmi] === cvUpper) { actualPos = lmi; break; }
+          }
+        }
+        castlingMap[pName] = actualPos;
       }
     }
   }
-  // 写入castling.json
+  // 写入castling.json (本轮的新指定)
   if (Object.keys(castlingMap).length > 0) {
     core.ensureDir(roundDir);
     fs.writeFileSync(castlingFile, JSON.stringify(castlingMap, null, 2), 'utf8');
@@ -345,14 +375,14 @@ if (hasCastle) {
 }
 
 // ===== 执行两轮计分 =====
-// 为CASTLE题答案填充 (从castling.json)
+// 为CASTLE题答案填充 (从本轮castlingMap)
 if (hasCastle) {
   for (var cbi = 0; cbi < rawAnswers.length; cbi++) {
     var cbName = rawAnswers[cbi].name;
     var cellIdx = castlingMap[cbName];
     if (cellIdx !== undefined && cellIdx !== null) {
       var cellLabels = 'ABCDEFGHIJKLMNOPQRSTUVWXY';
-      rawAnswers[cbi].answers[0].value = cellLabels[cellIdx] || String(cellIdx);
+      rawAnswers[cbi].answers[castleIdx].value = cellLabels[cellIdx] || String(cellIdx);
     }
   }
 }
@@ -395,6 +425,13 @@ function checkTasks(state, seasonDir, roundNum, finalRanked, questions, absentPl
   var board = state.board;
   var playerBoards = state.playerBoards;
   var history = state.history || [];
+  // 确保每位玩家都有任务映射（新玩家自动生成 = 共享任务板顺序）
+  if (!state.playerTaskMap) state.playerTaskMap = {};
+  for (var pni0 in state.playerBoards) {
+    if (!state.playerTaskMap[pni0]) {
+      state.playerTaskMap[pni0] = state.board.map(function(t) { return t.id; });
+    }
+  }
   var castling = state.castling || { triggered: false, triggeredBy: null, triggerRound: null, speedUp: false, players: {}, log: [] };
 
   // 收集历史数据用于任务检查
@@ -403,6 +440,7 @@ function checkTasks(state, seasonDir, roundNum, finalRanked, questions, absentPl
   for (var hi = 0; hi < history.length; hi++) {
     var he = history[hi];
     if (he && he.ranked) {
+      var hrTotal = he.ranked.filter(function(r) { return !r.absent; }).length;
       for (var hri = 0; hri < he.ranked.length; hri++) {
         var hr = he.ranked[hri];
         if (!hr.absent) {
@@ -411,7 +449,7 @@ function checkTasks(state, seasonDir, roundNum, finalRanked, questions, absentPl
             name: hr.name,
             rank: hr.rank,
             totalScore: hr.totalScore || 0,
-            rankScore: core.rankScore(hr.rank)
+            rankScore: core.rankScore(hr.rank, hrTotal)
           });
         }
       }
@@ -420,6 +458,7 @@ function checkTasks(state, seasonDir, roundNum, finalRanked, questions, absentPl
 
   // 本轮排名数据
   var roundRankData = [];
+  var roundTotal = finalRanked.filter(function(r) { return !r.absent; }).length;
   for (var rri = 0; rri < finalRanked.length; rri++) {
     var fr = finalRanked[rri];
     if (!fr.absent) {
@@ -428,7 +467,7 @@ function checkTasks(state, seasonDir, roundNum, finalRanked, questions, absentPl
         name: fr.name,
         rank: fr.rank,
         totalScore: fr.totalScore || 0,
-        rankScore: core.rankScore(fr.rank),
+        rankScore: core.rankScore(fr.rank, roundTotal),
         qScores: fr.qScores || [],
         fillTime: fr.fillTime || 0,
         answers: fr.answers || []
@@ -464,8 +503,8 @@ function checkTasks(state, seasonDir, roundNum, finalRanked, questions, absentPl
 
     for (var ti = 0; ti < 25; ti++) {
       var taskCell = pBoard[ti];
-      var taskDef = board[ti];
-      var taskId = taskDef.id;
+      var taskId = (state.playerTaskMap && state.playerTaskMap[pname]) ? state.playerTaskMap[pname][ti] : board[ti].id;
+      var taskDef = board.find(function(b) { return b.id === taskId; }) || board[ti];
 
       if (taskCell.completed) continue;  // 已完成, 跳过
 
@@ -505,11 +544,18 @@ function checkTasks(state, seasonDir, roundNum, finalRanked, questions, absentPl
         // 获得{x}次排名1~6
         if (td && td.rank >= 1 && td.rank <= 6) newProgress += 1;
       } else if (taskId === 'A04') {
-        // 总分达到{x}分 (累加所有回合总分)
-        var totalScore = 0;
-        for (var tsi = 0; tsi < ph.length; tsi++) totalScore += ph[tsi].totalScore;
-        if (td) totalScore += td.totalScore;
-        newProgress = totalScore;
+        // 任意连续3局排名分之和大于{x} (历史中所有连续3局窗口的最大和)
+        var rsSeq = [];
+        for (var ai4 = 0; ai4 < ph.length; ai4++) rsSeq.push(ph[ai4].rankScore || 0);
+        if (td) rsSeq.push(td.rankScore || 0);
+        var max3Sum = 0;
+        if (rsSeq.length >= 3) {
+          for (var wi4 = 0; wi4 <= rsSeq.length - 3; wi4++) {
+            var wSum = rsSeq[wi4] + rsSeq[wi4 + 1] + rsSeq[wi4 + 2];
+            if (wSum > max3Sum) max3Sum = wSum;
+          }
+        }
+        newProgress = max3Sum;
       } else if (taskId === 'A05') {
         // 总排名分达到{x}
         var totalRS = 0;
@@ -524,49 +570,69 @@ function checkTasks(state, seasonDir, roundNum, finalRanked, questions, absentPl
           newProgress = 0;
         }
       } else if (taskId === 'A07' || taskId === 'A08') {
-        // T1选择得分最高选项 (连续/总计)
-        var t1Best = getQuestionBestChoice(questions, finalRanked, 0 + qOffset);  // T1 is at index after CASTLE
-        var t1Choice = td ? getPlayerChoice(td, 0 + qOffset, questions) : -1;
-        if (t1Best >= 0 && t1Choice === t1Best) {
-          newProgress += 1;
-        } else if (taskId === 'A07') {
-          newProgress = 0;  // 连续任务
+        // T1前3高总分数 (连续/总计)
+        if (td) {
+          var t1aIdx = 0 + qOffset;
+          var t1aScores = getQuestionScores(finalRanked, t1aIdx);
+          var t1aMyScore = td.qScores && td.qScores[t1aIdx] ? td.qScores[t1aIdx] : 0;
+          var t1aTop3 = getTopN(t1aScores, 3);
+          if (t1aTop3.indexOf(t1aMyScore) >= 0) {
+            newProgress += 1;
+          } else if (taskId === 'A07') {
+            newProgress = 0;  // 连续任务
+          }
         }
       } else if (taskId === 'A09' || taskId === 'A10') {
-        var t2Idx = 1 + qOffset;
-        var t2Best = getQuestionBestChoice(questions, finalRanked, t2Idx);
-        var t2Choice = td ? getPlayerChoice(td, t2Idx, questions) : -1;
-        if (t2Best >= 0 && t2Choice === t2Best) {
-          newProgress += 1;
-        } else if (taskId === 'A09') {
-          newProgress = 0;
+        // T2前3高总分数 (连续/总计)
+        if (td) {
+          var t2aIdx = 1 + qOffset;
+          var t2aScores = getQuestionScores(finalRanked, t2aIdx);
+          var t2aMyScore = td.qScores && td.qScores[t2aIdx] ? td.qScores[t2aIdx] : 0;
+          var t2aTop3 = getTopN(t2aScores, 3);
+          if (t2aTop3.indexOf(t2aMyScore) >= 0) {
+            newProgress += 1;
+          } else if (taskId === 'A09') {
+            newProgress = 0;
+          }
         }
       } else if (taskId === 'A11' || taskId === 'A12') {
-        var t3Idx = 2 + qOffset;
-        var t3Best = getQuestionBestChoice(questions, finalRanked, t3Idx);
-        var t3Choice = td ? getPlayerChoice(td, t3Idx, questions) : -1;
-        if (t3Best >= 0 && t3Choice === t3Best) {
-          newProgress += 1;
-        } else if (taskId === 'A11') {
-          newProgress = 0;
+        // T3前3高总分数 (连续/总计)
+        if (td) {
+          var t3aIdx = 2 + qOffset;
+          var t3aScores = getQuestionScores(finalRanked, t3aIdx);
+          var t3aMyScore = td.qScores && td.qScores[t3aIdx] ? td.qScores[t3aIdx] : 0;
+          var t3aTop3 = getTopN(t3aScores, 3);
+          if (t3aTop3.indexOf(t3aMyScore) >= 0) {
+            newProgress += 1;
+          } else if (taskId === 'A11') {
+            newProgress = 0;
+          }
         }
       } else if (taskId === 'A13' || taskId === 'A14') {
-        var t4Idx = 3 + qOffset;
-        var t4Best = getQuestionBestChoice(questions, finalRanked, t4Idx);
-        var t4Choice = td ? getPlayerChoice(td, t4Idx, questions) : -1;
-        if (t4Best >= 0 && t4Choice === t4Best) {
-          newProgress += 1;
-        } else if (taskId === 'A13') {
-          newProgress = 0;
+        // T4前3高总分数 (连续/总计)
+        if (td) {
+          var t4aIdx = 3 + qOffset;
+          var t4aScores = getQuestionScores(finalRanked, t4aIdx);
+          var t4aMyScore = td.qScores && td.qScores[t4aIdx] ? td.qScores[t4aIdx] : 0;
+          var t4aTop3 = getTopN(t4aScores, 3);
+          if (t4aTop3.indexOf(t4aMyScore) >= 0) {
+            newProgress += 1;
+          } else if (taskId === 'A13') {
+            newProgress = 0;
+          }
         }
       } else if (taskId === 'A15' || taskId === 'A16') {
-        var t5Idx = 4 + qOffset;
-        var t5Best = getQuestionBestChoice(questions, finalRanked, t5Idx);
-        var t5Choice = td ? getPlayerChoice(td, t5Idx, questions) : -1;
-        if (t5Best >= 0 && t5Choice === t5Best) {
-          newProgress += 1;
-        } else if (taskId === 'A15') {
-          newProgress = 0;
+        // T5前3高总分数 (连续/总计)
+        if (td) {
+          var t5aIdx = 4 + qOffset;
+          var t5aScores = getQuestionScores(finalRanked, t5aIdx);
+          var t5aMyScore = td.qScores && td.qScores[t5aIdx] ? td.qScores[t5aIdx] : 0;
+          var t5aTop3 = getTopN(t5aScores, 3);
+          if (t5aTop3.indexOf(t5aMyScore) >= 0) {
+            newProgress += 1;
+          } else if (taskId === 'A15') {
+            newProgress = 0;
+          }
         }
       } else if (taskId === 'A17' || taskId === 'A18') {
         // T6前3高总分数
@@ -621,7 +687,7 @@ function checkTasks(state, seasonDir, roundNum, finalRanked, questions, absentPl
           }
         }
       } else if (taskId === 'A25' || taskId === 'A26' || taskId === 'A27' || taskId === 'A28' || taskId === 'A29') {
-        // T1-T5选择得分最低选项
+        // T1-T5前3低总分数
         var lowQi = -1;
         if (taskId === 'A25') lowQi = 0 + qOffset;
         else if (taskId === 'A26') lowQi = 1 + qOffset;
@@ -630,9 +696,10 @@ function checkTasks(state, seasonDir, roundNum, finalRanked, questions, absentPl
         else if (taskId === 'A29') lowQi = 4 + qOffset;
 
         if (lowQi >= 0 && td) {
-          var lowBest = getQuestionWorstChoice(questions, finalRanked, lowQi);
-          var lowChoice = getPlayerChoice(td, lowQi, questions);
-          if (lowBest >= 0 && lowChoice === lowBest) {
+          var lowTS2 = getQuestionScores(finalRanked, lowQi);
+          var lowMy2 = td.qScores && td.qScores[lowQi] ? td.qScores[lowQi] : 0;
+          var lowBtm2 = getBottomN(lowTS2, 3);
+          if (lowBtm2.indexOf(lowMy2) >= 0) {
             newProgress += 1;
           }
         }
@@ -653,11 +720,14 @@ function checkTasks(state, seasonDir, roundNum, finalRanked, questions, absentPl
           }
         }
       } else if (taskId === 'A34') {
-        // 获得{x}次排名5~8
-        if (td && td.rank >= 5 && td.rank <= 8) newProgress += 1;
+        // 获得{x}次排名4~9
+        if (td && td.rank >= 4 && td.rank <= 9) newProgress += 1;
       } else if (taskId === 'A35') {
-        // 获得{x}次排名9~12
-        if (td && td.rank >= 9 && td.rank <= 12) newProgress += 1;
+        // 获得{x}次排名7~12
+        if (td && td.rank >= 7 && td.rank <= 12) newProgress += 1;
+      } else if (taskId === 'A36') {
+        // 获得{x}次排名12
+        if (td && td.rank === 12) newProgress += 1;
       }
 
       // --- B类任务 ---
@@ -685,28 +755,28 @@ function checkTasks(state, seasonDir, roundNum, finalRanked, questions, absentPl
           }
         }
       } else if (taskId === 'B03') {
-        // 单回合T2~T5全部选中得分最低项之一
+        // 单回合T2~T5全部获得前三高的分数
         if (td) {
-          var allLow = true;
-          for (var bqi = 1; bqi <= 4; bqi++) {
-            var qi2 = bqi + qOffset;
-            var worstLabels = getQuestionWorstLabels(questions, finalRanked, qi2);
-            var pc = getPlayerChoice(td, qi2, questions);
-            if (worstLabels.length === 0 || worstLabels.indexOf(pc) < 0) { allLow = false; break; }
+          var allHigh3 = true;
+          for (var bqi3h = 1; bqi3h <= 4; bqi3h++) {
+            var qi3h = bqi3h + qOffset;
+            var s3h = getQuestionScores(finalRanked, qi3h);
+            var my3h = td.qScores && td.qScores[qi3h] ? td.qScores[qi3h] : 0;
+            if (s3h.length === 0 || getTopN(s3h, 3).indexOf(my3h) < 0) { allHigh3 = false; break; }
           }
-          if (allLow) newProgress = 1;
+          if (allHigh3) newProgress = 1;
         }
       } else if (taskId === 'B04') {
-        // 单回合T2~T5全部选中得分最高项之一
+        // 单回合T2~T5全部获得前三低的分数
         if (td) {
-          var allHigh = true;
-          for (var bqi2 = 1; bqi2 <= 4; bqi2++) {
-            var qi3 = bqi2 + qOffset;
-            var bestLabels = getQuestionBestLabels(questions, finalRanked, qi3);
-            var pc2 = getPlayerChoice(td, qi3, questions);
-            if (bestLabels.length === 0 || bestLabels.indexOf(pc2) < 0) { allHigh = false; break; }
+          var allLow3 = true;
+          for (var bqi3l = 1; bqi3l <= 4; bqi3l++) {
+            var qi3l = bqi3l + qOffset;
+            var s3l = getQuestionScores(finalRanked, qi3l);
+            var my3l = td.qScores && td.qScores[qi3l] ? td.qScores[qi3l] : 0;
+            if (s3l.length === 0 || getBottomN(s3l, 3).indexOf(my3l) < 0) { allLow3 = false; break; }
           }
-          if (allHigh) newProgress = 1;
+          if (allLow3) newProgress = 1;
         }
       } else if (taskId === 'B05') {
         // 单回合T2~T5全部未选中得分最低或最高项
@@ -788,6 +858,10 @@ function checkTasks(state, seasonDir, roundNum, finalRanked, questions, absentPl
         }
       } else if (taskId === 'B13') {
         // 某回合你的作答与另一玩家至少完全重合{x}题
+        // x 是条件阈值(param, 加权抽定)，达成当回合即完成 → 完成目标固定为 1
+        var thresh13 = (taskDef && taskDef.param != null) ? taskDef.param : 4;
+        if (taskCell.goal !== 1) taskCell.goal = 1;
+        goal = 1;
         if (td && td.answers) {
           var maxOverlap = 0;
           for (var rj2 = 0; rj2 < finalRanked.length; rj2++) {
@@ -795,7 +869,7 @@ function checkTasks(state, seasonDir, roundNum, finalRanked, questions, absentPl
             var overlap = countAnswerOverlap(td.answers, finalRanked[rj2].answers, questions, qOffset);
             if (overlap > maxOverlap) maxOverlap = overlap;
           }
-          if (maxOverlap >= goal) newProgress = Math.max(newProgress, 1);
+          if (maxOverlap >= thresh13) newProgress = Math.max(newProgress, 1);
         }
       } else if (taskId === 'B14') {
         // 在T6回答过所有一位数答案 (0-9所有数字)
@@ -996,6 +1070,63 @@ function checkTasks(state, seasonDir, roundNum, finalRanked, questions, absentPl
             newProgress = 1;
           }
         }
+      } else if (taskId === 'B31') {
+        // 全收集第1~4/5~8/9~12区间之一内所有名次
+        var rankSet31 = {};
+        for (var b31i = 0; b31i < ph.length; b31i++) {
+          var hr31 = ph[b31i].rank;
+          if (hr31 >= 1 && hr31 <= 12) rankSet31[hr31] = true;
+        }
+        if (td && td.rank >= 1 && td.rank <= 12) rankSet31[td.rank] = true;
+        var ranges31 = [[1, 4], [5, 8], [9, 12]];
+        var full31 = false;
+        for (var b31r = 0; b31r < ranges31.length; b31r++) {
+          var ok31 = true;
+          for (var b31v = ranges31[b31r][0]; b31v <= ranges31[b31r][1]; b31v++) {
+            if (!rankSet31[b31v]) { ok31 = false; break; }
+          }
+          if (ok31) { full31 = true; break; }
+        }
+        if (full31) newProgress = 1;
+      } else if (taskId === 'B32') {
+        // 全收集第3n+k某一k(0~2)取值范围内所有名次 (k=0:{3,6,9,12} k=1:{1,4,7,10} k=2:{2,5,8,11})
+        var rankSet32 = {};
+        for (var b32i = 0; b32i < ph.length; b32i++) {
+          var hr32 = ph[b32i].rank;
+          if (hr32 >= 1 && hr32 <= 12) rankSet32[hr32] = true;
+        }
+        if (td && td.rank >= 1 && td.rank <= 12) rankSet32[td.rank] = true;
+        var full32 = false;
+        for (var b32k = 0; b32k <= 2; b32k++) {
+          var ok32 = true;
+          for (var b32v = (b32k === 0 ? 3 : b32k); b32v <= 12; b32v += 3) {
+            if (!rankSet32[b32v]) { ok32 = false; break; }
+          }
+          if (ok32) { full32 = true; break; }
+        }
+        if (full32) newProgress = 1;
+      } else if (taskId === 'B33') {
+        // 全收集第4n+k某一k(0~3)取值范围内所有名次 (k=0:{4,8,12} k=1:{1,5,9} k=2:{2,6,10} k=3:{3,7,11})
+        var rankSet33 = {};
+        for (var b33i = 0; b33i < ph.length; b33i++) {
+          var hr33 = ph[b33i].rank;
+          if (hr33 >= 1 && hr33 <= 12) rankSet33[hr33] = true;
+        }
+        if (td && td.rank >= 1 && td.rank <= 12) rankSet33[td.rank] = true;
+        var full33 = false;
+        for (var b33k = 0; b33k <= 3; b33k++) {
+          var ok33 = true;
+          for (var b33v = (b33k === 0 ? 4 : b33k); b33v <= 12; b33v += 4) {
+            if (!rankSet33[b33v]) { ok33 = false; break; }
+          }
+          if (ok33) { full33 = true; break; }
+        }
+        if (full33) newProgress = 1;
+      } else if (taskId === 'B34') {
+        // 答题时间<=120s且获得前三
+        if (td && td.fillTime > 0 && td.fillTime <= 120 && td.rank >= 1 && td.rank <= 3) {
+          newProgress = 1;
+        }
       }
 
       // 更新progress
@@ -1058,9 +1189,39 @@ function checkTasks(state, seasonDir, roundNum, finalRanked, questions, absentPl
 
   // ===== 易位处理 =====
   var castlingConfig = config.castling !== false;
-  if (castlingConfig && Object.keys(castlingMap).length > 0) {
-    var cellLabels = 'ABCDEFGHIJKLMNOPQRSTUVWXY';
+  var cellLabels = 'ABCDEFGHIJKLMNOPQRSTUVWXY';
 
+  function seededRand(s) {
+    var h = 0;
+    for (var i = 0; i < s.length; i++) { h = ((h << 5) - h) + s.charCodeAt(i); h |= 0; }
+    return function() { h = (h * 1103515245 + 12345) | 0; return (h >>> 0) / 4294967296; };
+  }
+
+  // 辅助: 获取玩家可见的标签 (而非网格字母)
+  function playerLabel(ppn, pos) {
+    var lm = state.playerLabelMap[ppn];
+    return lm ? lm[pos] : cellLabels[pos];
+  }
+
+  // 易位触发检测 (必须在spec处理前, 确保触发者uses从0开始)
+  if (castlingConfig && !castling.triggered) {
+    for (var tp2 in state.playerBoards) {
+      if (!state.playerBoards.hasOwnProperty(tp2)) continue;
+      var tpb = state.playerBoards[tp2];
+      var tbool = tpb.map(function(c) { return c.completed; });
+      var trig = core.checkTrigger(tbool);
+      if (trig.triggered) {
+        castling.triggered = true;
+        castling.triggeredBy = tp2;
+        castling.triggerRound = roundNum;
+        console.log('  [castling] TRIGGERED by ' + tp2 + ' (' + trig.type + ')');
+        break;
+      }
+    }
+  }
+
+  // 处理新的CASTLE指定
+  if (castlingConfig && Object.keys(castlingMap).length > 0) {
     for (var pn in castlingMap) {
       if (!castlingMap.hasOwnProperty(pn)) continue;
       var targetCell = castlingMap[pn];
@@ -1068,42 +1229,66 @@ function checkTasks(state, seasonDir, roundNum, finalRanked, questions, absentPl
       if (typeof targetCell !== 'number') targetCell = parseInt(targetCell);
       if (isNaN(targetCell) || targetCell < 0 || targetCell >= 25) continue;
 
-      // 检查冷却状态
       if (!castling.players) castling.players = {};
       var cp = castling.players[pn];
       var maxUses = 1;
       if (cp) {
-        if (cp.cooldown && cp.cooldown > 0) continue;  // 冷却中
-        if (cp.uses >= (cp.maxUses || maxUses)) continue;  // 用完了
+        if (cp.cooldownUntil && cp.cooldownUntil > roundNum) continue;
+        if (cp.uses >= (cp.maxUses || maxUses)) continue;
       }
 
-      // Pending: 3回合后检查 (不是立即交换)
       if (!castling.players[pn]) {
-        castling.players[pn] = { uses: 0, maxUses: 1, cooldownUntil: 0, pendingCell: null, pendingRound: null };
+        castling.players[pn] = { uses: 0, maxUses: 999, cooldownUntil: 0, pendingCell: null, pendingRound: null, swapTarget: null };
       }
       castling.players[pn].pendingCell = targetCell;
       castling.players[pn].pendingRound = roundNum;
       castling.players[pn].uses = (castling.players[pn].uses || 0) + 1;
       castling.players[pn].cooldownUntil = roundNum + (castling.speedUp ? 2 : 3);
+      var pbCheck = playerBoards[pn] || [];
+      if (pn === castling.triggeredBy || core.checkTrigger(pbCheck.map(function(c){return c.completed})).triggered) {
+        castling.players[pn].maxUses = 1;
+      }
       if (!castling.log) castling.log = [];
-      castling.log.push({act: "spec", player: pn, round: roundNum, cell: cellLabels[targetCell]});
+      castling.log.push({act: "spec", player: pn, round: roundNum, cell: playerLabel(pn, targetCell)});
       console.log("  [castling] " + pn + " pending " + cellLabels[targetCell] + " (R" + (roundNum+3) + " check)");
     }
+  }
 
-    // 初始玩家任务和标签映射
+  // 待处理检查和交换 (始终执行)
+  if (castlingConfig) {
     if (!state.playerTaskMap) state.playerTaskMap = {};
     if (!state.playerLabelMap) state.playerLabelMap = {};
     var cellLabels = 'ABCDEFGHIJKLMNOPQRSTUVWXY';
 
+    // 辅助: 获取玩家可见的标签 (而非网格字母)
+    function playerLabel(ppn, pos) {
+      var lm = state.playerLabelMap[ppn];
+      return lm ? lm[pos] : cellLabels[pos];
+    }
+
+    // 加载交换覆盖记录 (回档后维持交换目标)
+    var swapOverridesFile = path.join(__dirname, 'zlwuhe', 'swaps.json');
+    var swapOverrides = {};
+    if (fs.existsSync(swapOverridesFile)) {
+      try { swapOverrides = JSON.parse(fs.readFileSync(swapOverridesFile, 'utf8')); } catch(e) {}
+    }
+
     // 种子码: 用于确定易位交换
     if (!castling.seed) castling.seed = state.season + '_' + roundNum;
     var swapSeed = castling.seed + '_swap';
-    function seededRand(s) {
-      var h = 0;
-      for (var i = 0; i < s.length; i++) { h = ((h << 5) - h) + s.charCodeAt(i); h |= 0; }
-      return function() { h = (h * 1103515245 + 12345) | 0; return (h >>> 0) / 4294967296; };
-    }
     var swapRand = seededRand(swapSeed);
+
+    // 加速检测: >=3人触发则冷却缩短 (必须在pending处理前)
+    if (!castling.speedUp && castling.triggered) {
+      var trigCnt3 = 0;
+      for (var tk3 in state.playerBoards) {
+        if (!state.playerBoards.hasOwnProperty(tk3)) continue;
+        if (core.checkTrigger(state.playerBoards[tk3].map(function(c) { return c.completed; })).triggered) trigCnt3++;
+      }
+      if (trigCnt3 >= 3) {
+        castling.speedUp = true;
+      }
+    }
 
     // 处理到期的pending
     var dur = (castling.speedUp ? 2 : 3) - 1; // 指定轮算第1轮, R+2后检查
@@ -1115,12 +1300,42 @@ function checkTasks(state, seasonDir, roundNum, finalRanked, questions, absentPl
       var ppb = playerBoards[ppn];
       if (!ppb) continue;
       if (ppb[ppd.pendingCell] && ppb[ppd.pendingCell].completed) {
-        castling.log.push({act: "complete", player: ppn, round: roundNum, cell: cellLabels[ppd.pendingCell]});
+        castling.log.push({act: "complete", player: ppn, round: roundNum, cell: playerLabel(ppn, ppd.pendingCell)});
       } else {
-        var u2 = [];
-        for (var ri = 0; ri < 25; ri++) if (!ppb[ri].completed && ri !== ppd.pendingCell) u2.push(ri);
-        if (u2.length >= 1) {
-          var sw = u2[Math.floor(swapRand() * u2.length)];
+        var sw = null;
+        // 检查是否有交换覆盖记录
+        var overrideKey = ppn + '|' + playerLabel(ppn, ppd.pendingCell) + '|' + ppd.pendingRound;
+        var overrideLabel = swapOverrides[overrideKey];
+        if (overrideLabel === undefined) {
+          // fallback: 旧格式 key (不带 round)
+          var oldKey = ppn + '|' + playerLabel(ppn, ppd.pendingCell);
+          overrideLabel = swapOverrides[oldKey];
+        }
+        if (overrideLabel !== undefined) {
+          // 在玩家当前标签映射中查找目标标签的实际位置
+          var playerLM = state.playerLabelMap[ppn];
+          var overridePos = -1;
+          if (playerLM) {
+            overridePos = playerLM.indexOf(overrideLabel);
+          }
+          if (overridePos < 0) overridePos = cellLabels.indexOf(overrideLabel);
+          if (overridePos >= 0 && overridePos !== ppd.pendingCell) {
+            sw = overridePos;
+            console.log('  [castling] ' + ppn + ' swap (override) ' + playerLabel(ppn, ppd.pendingCell) + ' <-> ' + overrideLabel);
+          }
+        }
+        if (sw === null) {
+          var u2 = [];
+          for (var ri = 0; ri < 25; ri++) if (!ppb[ri].completed && ri !== ppd.pendingCell) u2.push(ri);
+          if (u2.length >= 1) sw = u2[Math.floor(swapRand() * u2.length)];
+        }
+        if (sw !== null && sw !== undefined) {
+          // 保存交换覆盖 (含回合号)
+          swapOverrides[overrideKey] = cellLabels[sw];
+          core.ensureDir(path.dirname(swapOverridesFile));
+          fs.writeFileSync(swapOverridesFile, JSON.stringify(swapOverrides, null, 2), 'utf8');
+          var fromLabel = playerLabel(ppn, ppd.pendingCell);
+          var toLabel = playerLabel(ppn, sw);
           var tmp = ppb[ppd.pendingCell]; ppb[ppd.pendingCell] = ppb[sw]; ppb[sw] = tmp;
           // 同步交换该玩家的任务位置和标签
           if (!state.playerTaskMap[ppn]) state.playerTaskMap[ppn] = state.board.map(function(t) { return t.id; });
@@ -1131,7 +1346,7 @@ function checkTasks(state, seasonDir, roundNum, finalRanked, questions, absentPl
           var tl = state.playerLabelMap[ppn][ppd.pendingCell];
           state.playerLabelMap[ppn][ppd.pendingCell] = state.playerLabelMap[ppn][sw];
           state.playerLabelMap[ppn][sw] = tl;
-          castling.log.push({act: "swap", player: ppn, round: roundNum, from: cellLabels[ppd.pendingCell], to: cellLabels[sw]});
+          castling.log.push({act: "swap", player: ppn, round: roundNum, from: fromLabel, to: toLabel});
         }
       }
       ppd.pendingCell = null;
@@ -1148,19 +1363,21 @@ function checkTasks(state, seasonDir, roundNum, finalRanked, questions, absentPl
     }
   }
 
-  // 易位触发检测
-  if (!castling.triggered) {
-    for (var tp2 in state.playerBoards) {
-      if (!state.playerBoards.hasOwnProperty(tp2)) continue;
-      var tpb = state.playerBoards[tp2];
-      var tbool = tpb.map(function(c) { return c.completed; });
-      var trig = core.checkTrigger(tbool);
-      if (trig.triggered) {
-        castling.triggered = true;
-        castling.triggeredBy = tp2;
-        castling.triggerRound = roundNum;
-        console.log('  [castling] TRIGGERED by ' + tp2 + ' (' + trig.type + ')');
-        break;
+  // 更新触发者的maxUses (在spec处理之后, 同轮spec一并免除)
+  if (castling.triggered && castling.players) {
+    for (var tpn2 in state.playerBoards) {
+      if (!state.playerBoards.hasOwnProperty(tpn2)) continue;
+      if (!castling.players[tpn2]) continue;
+      var tb2 = state.playerBoards[tpn2].map(function(c) { return c.completed; });
+      var trig2 = core.checkTrigger(tb2);
+      if (trig2.triggered) {
+        // 首次触发: 重置uses (同轮spec被免除)
+        if (castling.players[tpn2].triggeredAtRound === null || castling.players[tpn2].triggeredAtRound === undefined) {
+          castling.players[tpn2].uses = 0;
+          castling.players[tpn2].triggeredAtRound = roundNum;
+          console.log('  [castling] ' + tpn2 + ' triggered R' + roundNum + ', uses reset');
+        }
+        castling.players[tpn2].maxUses = 1;
       }
     }
   }
@@ -1363,6 +1580,23 @@ function getMaxCountLabel(ranked, qi, questions) {
   return maxLabel;
 }
 
+// ===== S2 封印之息：本轮生效事件应用 =====
+var s2ActiveEvents = (state.events && state.events.active) || [];
+var s2Season = /s2/i.test(String(state.season || '')) && !/s2\d/i.test(String(state.season || ''));
+var s2Enabled = s2Season && !config.eventsDisabled;
+var s2Applied = null;
+if (s2ActiveEvents.length > 0 && s2Enabled) {
+  s2Applied = s2events.applyEvents(finalRanked, questions, qOffset, s2ActiveEvents, scoringResult.stats);
+  finalRanked = s2Applied.ranked;
+  console.log('  [S2事件] 本轮生效: ' + s2ActiveEvents.map(function(e) { return s2events.EVENT_NAMES[e] || e; }).join(', '));
+}
+
+// ===== S2 屏息：解析HOLD题申请 + 结算到期弱化（须在任务检查前）=====
+if (s2Season && !config.eventsDisabled) {
+  s2breath.parseHoldAnswers(state, roundNum, finalRanked, questions);
+  s2breath.applyDueWeakenings(state, roundNum);
+}
+
 // ===== 执行任务检查 =====
 var taskResult = checkTasks(state, seasonDir, roundNum, finalRanked, questions, absentPlayers);
 var roundCompletions = taskResult.roundCompletions;
@@ -1406,12 +1640,39 @@ var roundSummary = {
   newCompletions: newCompletions,
   winner: winner
 };
-state.history.push(roundSummary);
+  // 移除同回合旧记录后添加
+  state.history = state.history.filter(function(h) { return h.round !== roundNum; });
+  state.history.push(roundSummary);
 state.currentRound = roundNum;
+
+// ===== S2 封印之息：抽取下一轮事件 =====
+var s2NextEvents = [];
+if (s2Enabled) {
+  if (!state.events) state.events = { active: [], history: [] };
+  if (!state.events.history) state.events.history = [];
+  if (s2ActiveEvents.length > 0) {
+    state.events.history.push({ round: roundNum, events: s2ActiveEvents.slice() });
+  }
+  // 冷却保险: 排除最近2回合已抽取的事件
+  var recentExcl = [];
+  var evHist3 = state.events.history || [];
+  for (var ehx3 = evHist3.length - 1; ehx3 >= 0 && recentExcl.length < 2; ehx3--) {
+    var evsx3 = evHist3[ehx3].events || [];
+    for (var evix3 = 0; evix3 < evsx3.length && recentExcl.length < 2; evix3++) {
+      recentExcl.push(evsx3[evix3]);
+    }
+  }
+  s2NextEvents = s2events.drawEvents(roundNum + 1, recentExcl);
+  state.events.active = s2NextEvents;
+}
+if (s2NextEvents.length > 0) {
+  console.log('  [S2事件] 下一轮R' + (roundNum + 1) + '生效: ' + s2NextEvents.map(function(e) { return s2events.EVENT_NAMES[e] || e; }).join(', ') + (s2events.isSurge(roundNum + 1) ? ' (气息喷涌×3)' : ''));
+}
 
 // 备份 (按回合编号)
 try { fs.copyFileSync(statePath, statePath + '.R' + roundNum); } catch(e) {}
-fs.writeFileSync(statePath, JSON.stringify(state, null, 2), 'utf8');
+fs.writeFileSync(statePath + '.tmp', JSON.stringify(state, null, 2), 'utf8');
+try { fs.renameSync(statePath + '.tmp', statePath); } catch(e) { fs.writeFileSync(statePath, JSON.stringify(state, null, 2), 'utf8'); }
 
 // ===== 生成结算报告 =====
 var reportLines = [];
@@ -1425,6 +1686,9 @@ reportLines.push('日期: ' + new Date().toISOString().slice(0, 19).replace('T',
 reportLines.push('参赛人数: ' + finalRanked.filter(function(r) { return !r.absent; }).length + ' (共' + finalRanked.length + '人)');
 if (absentPlayers.length > 0) {
   reportLines.push('缺席: ' + absentPlayers.join(', '));
+}
+if (s2ActiveEvents.length > 0) {
+  reportLines.push('本轮生效事件: ' + s2ActiveEvents.map(function(e) { return s2events.EVENT_NAMES[e] || e; }).join('、'));
 }
 reportLines.push('');
 
@@ -1483,13 +1747,15 @@ for (var dpi = 0; dpi < finalRanked.length; dpi++) {
   if (dp.absent) {
     reportLines.push('  (缺席, 无答题数据)');
   } else {
-    var startQ = hasCastle ? 1 : 0;
+    var startQ = qOffset;
     for (var dqi = 0; dqi < questions.length; dqi++) {
       var dq = questions[dqi];
       var da = dp.answers && dp.answers[dqi];
       var qScore = dp.qScores && dp.qScores[dqi] ? dp.qScores[dqi].toFixed(2) : '0.00';
-      var qlabel = dqi < startQ ? 'CASTLE' : ('T' + (dqi - qOffset + 1));
-      if (dqi === 0 && hasCastle) qlabel = 'CASTLE';
+      var qlabel;
+      if (dq.id === 'CASTLE') qlabel = 'CASTLE';
+      else if (dq.id === 'HOLD') qlabel = 'HOLD';
+      else qlabel = 'T' + (dqi - qOffset + 1);
 
       var ansStr = '';
       if (dq.type === 'single' && da) ansStr = da.label || '(空)';
@@ -1537,6 +1803,13 @@ if (winner) {
   reportLines.push('');
   reportLines.push('!!!!!  胜者: ' + winner + '  !!!!!');
   reportLines.push('');
+}
+
+if (s2NextEvents.length > 0) {
+  reportLines.push('');
+  reportLines.push('------ 下一轮预告 ------');
+  reportLines.push('下一轮(R' + (roundNum + 1) + ')生效事件: ' + s2NextEvents.map(function(e) { return s2events.EVENT_NAMES[e] || e; }).join('、') + (s2events.isSurge(roundNum + 1) ? ' (气息喷涌×3)' : ''));
+  reportLines.push('(事件由 R' + roundNum + ' 结算时抽取，玩家答题前已可见)');
 }
 
 // 写入报告

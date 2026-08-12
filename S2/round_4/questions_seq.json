@@ -1,0 +1,310 @@
+[
+  {
+    "id": "HOLD",
+    "type": "text",
+    "text": "屏息",
+    "desc": "输入你想屏息指定的格A~Y。2回合后该格任务条件永久削弱。每人每赛季最多2次，不填则本回合不使用。",
+    "options": [],
+    "minFill": 0,
+    "maxFill": 1,
+    "formula": "0"
+  },
+  {
+    "id": "T1",
+    "type": "single",
+    "text": "经典乌合",
+    "desc": "请选择一个选项",
+    "options": [
+      {
+        "label": "A",
+        "text": "A.谨慎(若人数<5,+2)",
+        "pool": "谨慎"
+      },
+      {
+        "label": "B",
+        "text": "B.团结(人数最多每有1人+0.5)",
+        "pool": "团结"
+      },
+      {
+        "label": "C",
+        "text": "C.公正(平分7.5分,额外-1)",
+        "pool": "公正"
+      },
+      {
+        "label": "D",
+        "text": "D.智慧(人数非最多+2,否则-1)",
+        "pool": "智慧"
+      },
+      {
+        "label": "E",
+        "text": "E.勇气(人数=1则+5,否则-2)",
+        "pool": "勇气"
+      },
+      {
+        "label": "F",
+        "text": "F.勇气(人数=2则+7,否则-2)",
+        "pool": "勇气"
+      }
+    ],
+    "formula": "if(choice == 0) {\n  if(A < 5) { 2 } else { 0 }\n} else {\n  if(choice == 1) {\n    if(B >= A && B >= C && B >= D && B >= E && B >= F && B > 0) { B * 0.5 } else { 0 }\n  } else {\n  if(choice == 2) {\n    if(C > 0) { 7.5 / C - 1 } else { 0 }\n  } else {\n  if(choice == 3) {\n    maxCount = A\n    if(B > maxCount) { maxCount = B }\n    if(C > maxCount) { maxCount = C }\n    if(D > maxCount) { maxCount = D }\n    if(E > maxCount) { maxCount = E }\n    if(F > maxCount) { maxCount = F }\n    if(D < maxCount) { 2 } else { -1 }\n  } else {\n  if(choice == 4) {\n    if(E == 1) { 5 } else { -2 }\n  } else {\n  if(choice == 5) {\n    if(F == 2) { 7 } else { -2 }\n  }\n  else { 0 } } } } } }"
+  },
+  {
+    "id": "T2",
+    "type": "single",
+    "enabled": true,
+    "text": "任务分成",
+    "desc": "完成的任务内部平分12分,未完成的任务-1",
+    "_players": 12,
+    "options": [
+      {
+        "label": "A",
+        "text": "A.任务A：人数为1~3"
+      },
+      {
+        "label": "B",
+        "text": "B.任务B：至少3人选择"
+      },
+      {
+        "label": "C",
+        "text": "C.直接+2"
+      }
+    ],
+    "test": false,
+    "formula": "\n      if(choice==0)\n      {\n        if(1<=A&&A<=3){8/A}\n        else {-1}\n      }\n      else if(choice==1)\n      {\n        if(B>=3){12/B}\n        else {-1}\n      }\n      else {2}\n      "
+  },
+  {
+    "id": "T3",
+    "type": "single",
+    "enabled": true,
+    "text": "投资",
+    "desc": "若总投资额在16~24，返还2.5倍，即B选项得1.5分，C得3分，D得4.5分",
+    "_players": 12,
+    "options": [
+      {
+        "label": "A",
+        "text": "A.出0分"
+      },
+      {
+        "label": "B",
+        "text": "B.出1分"
+      },
+      {
+        "label": "C",
+        "text": "C.出2分"
+      },
+      {
+        "label": "D",
+        "text": "D.出3分"
+      }
+    ],
+    "test": false,
+    "formula": "\n      if(B+C*2+D*3>=15&&B+C*2+D*3<=25){success=1}\n      else{success=0}\n      if(choice==0)\n      {\n        0\n      }\n      else if(choice==1)\n      {\n        if(success==1){1.5}\n        else {-1}\n      }\n      else if(choice==2)\n      {\n        if(success==1){3}\n        else {-2}\n      }\n      else\n      {\n        if(success==1){4.5}\n        else {-3}\n      }\n      "
+  },
+  {
+    "id": "T4",
+    "type": "single",
+    "enabled": true,
+    "text": "避多寻少",
+    "desc": "下列人数最多的-3，人数最少的非0人项+3",
+    "_players": 12,
+    "options": [
+      {
+        "label": "A",
+        "text": "A.无效果"
+      },
+      {
+        "label": "B",
+        "text": "B.额外+1"
+      },
+      {
+        "label": "C",
+        "text": "C.额外-1"
+      },
+      {
+        "label": "D",
+        "text": "D.得分翻1.5倍"
+      },
+      {
+        "label": "E",
+        "text": "E.得分翻2倍"
+      }
+    ],
+    "test": false,
+    "formula": "\n      max=0\n      if(A>max){max=A}\n      if(B>max){max=B}\n      if(C>max){max=C}\n      if(D>max){max=D}\n      if(E>max){max=E}\n      min=13\n      if(A<min&&A!=0){min=A}\n      if(B<min&&B!=0){min=B}\n      if(C<min&&C!=0){min=C}\n      if(D<min&&D!=0){min=D}\n      if(E<min&&E!=0){min=E}\n      base=0\n      if(c[choice]==max){base=base-3}\n      if(c[choice]==min){base=base+3}\n      if(choice==0)\n      {\n        base\n      }\n      else if(choice==1)\n      {\n        base+1\n      }\n      else if(choice==2)\n      {\n        base-1\n      }\n      else if(choice==3)\n      {\n        1.5*base\n      }\n      else\n      {\n        2*base\n      }\n      "
+  },
+  {
+    "id": "T5",
+    "type": "single",
+    "enabled": true,
+    "text": "少输为赢",
+    "desc": "请选择一个选项",
+    "_players": 12,
+    "options": [
+      {
+        "label": "A",
+        "text": "A.-4"
+      },
+      {
+        "label": "B",
+        "text": "B.人数非最少-7.5"
+      },
+      {
+        "label": "C",
+        "text": "C.每有一人-1.5"
+      },
+      {
+        "label": "D",
+        "text": "D.每有一人-2"
+      },
+      {
+        "label": "E",
+        "text": "E.平分-15分,人数为1不扣分"
+      }
+    ],
+    "test": false,
+    "formula": "\n      if(choice==0)\n      {\n        -4\n      }\n      else if(choice==1)\n      {\n        if(B<=A&&B<=C&&B<=D&&B<=E){0}\n        else{-7.5}\n      }\n      else if(choice==2)\n      {\n        -1.5*C\n      }\n      else if(choice==3)\n      {\n        -2*D\n      }\n      else\n      {\n        if(E<=1){0}\n        else{-15/E}\n      }\n      "
+  },
+  {
+    "id": "T6",
+    "type": "text",
+    "enabled": true,
+    "text": "大乐透",
+    "desc": "输入整数1~12。设x=被填写的数字总数，你失去0.5*|填写值-x|分。若你填写值恰好为x，额外获得1分",
+    "_players": 12,
+    "options": [],
+    "minFill": 1,
+    "maxFill": 12,
+    "test": false,
+    "formula": "\n      x = 0\n      i = 1\n      while(i <= 12) { if(c[i] > 0) { x = x + 1 }; i = i + 1 }\n      d = 0\n      if(value < x) { d = x - value }\n      else { d = value - x }\n      score = -0.5 * d\n      if(value == x) { score = score + 1 }\n      score\n      "
+  },
+  {
+    "id": "T7",
+    "type": "multi",
+    "enabled": true,
+    "text": "条件多选1",
+    "desc": "选择1~3项，成功得分，失败扣分",
+    "_players": 12,
+    "options": [
+      {
+        "label": "A",
+        "text": "A.1.5，该选项人数<=3"
+      },
+      {
+        "label": "B",
+        "text": "B.1.8，该题总选择数达到27"
+      },
+      {
+        "label": "C",
+        "text": "C.2.1，该选项人数既不是最多也不是最少"
+      },
+      {
+        "label": "D",
+        "text": "D.2.4，该选项人数与另外某项相同"
+      },
+      {
+        "label": "E",
+        "text": "E.2.7前四项完成数>=3"
+      }
+    ],
+    "minSel": 1,
+    "maxSel": 3,
+    "test": false,
+    "formula": "\n      if(A<=3){sucA=1}\n      else{sucA=0}\n      if(A+B+C+D+E>=27){sucB=1}\n      else{sucB=0}\n      max=0\n      if(A>max){max=A}\n      if(B>max){max=B}\n      if(C>max){max=C}\n      if(D>max){max=D}\n      if(E>max){max=E}\n      min=13\n      if(A<min){min=A}\n      if(B<min){min=B}\n      if(C<min){min=C}\n      if(D<min){min=D}\n      if(E<min){min=E}      \n      if(C!=max&&C!=min){sucC=1}\n      else{sucC=0}\n      if(D==A||D==B||D==C||D==E){sucD=1}\n      else{sucD=0}\n      if(sucA+sucB+sucC+sucD>=3){sucE=1}\n      else{sucE=0}\n      chose_A*(sucA*1.5-!sucA*1.5)+chose_B*(sucB*1.8-!sucB*1.8)+chose_C*(sucC*2.1-!sucC*2.1)+chose_D*(sucD*2.4-!sucD*2.4)+chose_E*(sucE*2.7-!sucE*2.7)\n      "
+  },
+  {
+    "id": "T8",
+    "type": "multi",
+    "enabled": true,
+    "text": "胆量测试",
+    "desc": "选择1~5项并获得对应分数，若你选到最多项，你本题获得总分数改为-2",
+    "_players": 12,
+    "options": [
+      {
+        "label": "A",
+        "text": "A.只要你选中该选项，你固定得0分，无视全局条件"
+      },
+      {
+        "label": "B",
+        "text": "B.0.5"
+      },
+      {
+        "label": "C",
+        "text": "C.0.7"
+      },
+      {
+        "label": "D",
+        "text": "D.0.9"
+      },
+      {
+        "label": "E",
+        "text": "E.1.1"
+      },
+      {
+        "label": "F",
+        "text": "F.1.3"
+      },
+      {
+        "label": "G",
+        "text": "G.1.5"
+      }
+    ],
+    "minSel": 1,
+    "maxSel": 5,
+    "test": false,
+    "formula": "\n      score = chose_B*0.5 + chose_C*0.7 + chose_D*0.9 + chose_E*1.1 + chose_F*1.3 + chose_G*1.5\n      max = A\n      if(B > max) { max = B }\n      if(C > max) { max = C }\n      if(D > max) { max = D }\n      if(E > max) { max = E }\n      if(F > max) { max = F }\n      if(G > max) { max = G }\n      hit = 0\n      if(chose_B == 1 && B == max) { hit = 1 }\n      if(chose_C == 1 && C == max) { hit = 1 }\n      if(chose_D == 1 && D == max) { hit = 1 }\n      if(chose_E == 1 && E == max) { hit = 1 }\n      if(chose_F == 1 && F == max) { hit = 1 }\n      if(chose_G == 1 && G == max) { hit = 1 }\n      if(chose_A == 1) { 0 }\n      else { if(hit == 1) { -2 } else { score } }\n      "
+  },
+  {
+    "id": "T9",
+    "type": "multi",
+    "enabled": true,
+    "text": "幸运组合",
+    "desc": "选择1~4项，选择选项组唯一的额外+4",
+    "_players": 12,
+    "options": [
+      {
+        "label": "A",
+        "text": "A.-0.25"
+      },
+      {
+        "label": "B",
+        "text": "B.-0.5"
+      },
+      {
+        "label": "C",
+        "text": "C.-0.75"
+      },
+      {
+        "label": "D",
+        "text": "D.-1"
+      },
+      {
+        "label": "E",
+        "text": "E.-1.25"
+      }
+    ],
+    "minSel": 1,
+    "maxSel": 4,
+    "test": false,
+    "formula": "\n      score = 0\n      i = 0\n      while(i < 5) {\n        score = score + chose[i] * (-0.25 - i*0.25)\n        i = i + 1\n      }\n      if(same_set == 1) { score = score + 4 }\n      score\n      "
+  },
+  {
+    "id": "T10",
+    "type": "single",
+    "enabled": true,
+    "text": "残局",
+    "desc": "请选择一个选项",
+    "_players": 12,
+    "options": [
+      {
+        "label": "A",
+        "text": "A.-2"
+      },
+      {
+        "label": "B",
+        "text": "B.若你是第一,你的分数归零"
+      }
+    ],
+    "test": false,
+    "formula": "if(choice == 0) {\n  -2\n} else {\n  if(my_rank == 1) { -score } else { 0 }\n}"
+  }
+]

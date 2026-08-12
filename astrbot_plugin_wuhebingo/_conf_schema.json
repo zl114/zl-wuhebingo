@@ -1,0 +1,12 @@
+{
+  "season_dir": {
+    "description": "赛季数据目录",
+    "type": "string",
+    "default": "E:\\wuhebingo\\rS1"
+  },
+  "config_dir": {
+    "description": "配置文件目录",
+    "type": "string",
+    "default": "E:\\wuhebingo\\zlwuhe"
+  }
+}

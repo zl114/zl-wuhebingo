@@ -1,0 +1,1866 @@
+{
+  "round": 2,
+  "ranked": [
+    {
+      "name": "神岸春原",
+      "answers": [
+        {
+          "type": "single",
+          "label": "B",
+          "labels": [],
+          "value": "",
+          "same_set": 0,
+          "same_count": 0
+        },
+        {
+          "type": "single",
+          "label": "B",
+          "labels": [],
+          "value": "",
+          "same_set": 0,
+          "same_count": 0
+        },
+        {
+          "type": "single",
+          "label": "B",
+          "labels": [],
+          "value": "",
+          "same_set": 0,
+          "same_count": 0
+        },
+        {
+          "type": "single",
+          "label": "B",
+          "labels": [],
+          "value": "",
+          "same_set": 0,
+          "same_count": 0
+        },
+        {
+          "type": "single",
+          "label": "A",
+          "labels": [],
+          "value": "",
+          "same_set": 0,
+          "same_count": 0
+        },
+        {
+          "type": "text",
+          "label": "",
+          "labels": [],
+          "value": "0",
+          "same_set": 0,
+          "same_count": 0
+        },
+        {
+          "type": "multi",
+          "label": "",
+          "labels": [
+            "C",
+            "D",
+            "E"
+          ],
+          "value": "",
+          "same_set": 1,
+          "same_count": 1
+        },
+        {
+          "type": "multi",
+          "label": "",
+          "labels": [
+            "B",
+            "E",
+            "F"
+          ],
+          "value": "",
+          "same_set": 0,
+          "same_count": 2
+        },
+        {
+          "type": "multi",
+          "label": "",
+          "labels": [
+            "B",
+            "C",
+            "E"
+          ],
+          "value": "",
+          "same_set": 0,
+          "same_count": 4
+        },
+        {
+          "type": "single",
+          "label": "A",
+          "labels": [],
+          "value": "",
+          "same_set": 0,
+          "same_count": 0
+        }
+      ],
+      "fillTime": 124,
+      "absent": false,
+      "qScores": [
+        0,
+        2,
+        3,
+        2,
+        -4,
+        0,
+        -2.4000000000000004,
+        3.3000000000000003,
+        6.6000000000000005,
+        -2
+      ],
+      "totalScore": 8.5,
+      "rank": 1
+    },
+    {
+      "name": "落天本天",
+      "answers": [
+        {
+          "type": "single",
+          "label": "A",
+          "labels": [],
+          "value": "",
+          "same_set": 0,
+          "same_count": 0
+        },
+        {
+          "type": "single",
+          "label": "B",
+          "labels": [],
+          "value": "",
+          "same_set": 0,
+          "same_count": 0
+        },
+        {
+          "type": "single",
+          "label": "C",
+          "labels": [],
+          "value": "",
+          "same_set": 0,
+          "same_count": 0
+        },
+        {
+          "type": "single",
+          "label": "A",
+          "labels": [],
+          "value": "",
+          "same_set": 0,
+          "same_count": 0
+        },
+        {
+          "type": "single",
+          "label": "B",
+          "labels": [],
+          "value": "",
+          "same_set": 0,
+          "same_count": 0
+        },
+        {
+          "type": "text",
+          "label": "",
+          "labels": [],
+          "value": "5",
+          "same_set": 0,
+          "same_count": 0
+        },
+        {
+          "type": "multi",
+          "label": "",
+          "labels": [
+            "A"
+          ],
+          "value": "",
+          "same_set": 0,
+          "same_count": 3
+        },
+        {
+          "type": "multi",
+          "label": "",
+          "labels": [
+            "B",
+            "E",
+            "F"
+          ],
+          "value": "",
+          "same_set": 0,
+          "same_count": 2
+        },
+        {
+          "type": "multi",
+          "label": "",
+          "labels": [
+            "B",
+            "C",
+            "E"
+          ],
+          "value": "",
+          "same_set": 0,
+          "same_count": 4
+        },
+        {
+          "type": "single",
+          "label": "B",
+          "labels": [],
+          "value": "",
+          "same_set": 0,
+          "same_count": 0
+        }
+      ],
+      "fillTime": 48,
+      "absent": false,
+      "qScores": [
+        0,
+        2,
+        -1,
+        0,
+        0,
+        -1,
+        -1.5,
+        3.3000000000000003,
+        6.6000000000000005,
+        0
+      ],
+      "totalScore": 8.4,
+      "rank": 2
+    },
+    {
+      "name": "晨曦",
+      "answers": [
+        {
+          "type": "single",
+          "label": "C",
+          "labels": [],
+          "value": "",
+          "same_set": 0,
+          "same_count": 0
+        },
+        {
+          "type": "single",
+          "label": "B",
+          "labels": [],
+          "value": "",
+          "same_set": 0,
+          "same_count": 0
+        },
+        {
+          "type": "single",
+          "label": "B",
+          "labels": [],
+          "value": "",
+          "same_set": 0,
+          "same_count": 0
+        },
+        {
+          "type": "single",
+          "label": "C",
+          "labels": [],
+          "value": "",
+          "same_set": 0,
+          "same_count": 0
+        },
+        {
+          "type": "single",
+          "label": "E",
+          "labels": [],
+          "value": "",
+          "same_set": 0,
+          "same_count": 0
+        },
+        {
+          "type": "text",
+          "label": "",
+          "labels": [],
+          "value": "3",
+          "same_set": 0,
+          "same_count": 0
+        },
+        {
+          "type": "multi",
+          "label": "",
+          "labels": [
+            "E"
+          ],
+          "value": "",
+          "same_set": 1,
+          "same_count": 1
+        },
+        {
+          "type": "multi",
+          "label": "",
+          "labels": [
+            "C"
+          ],
+          "value": "",
+          "same_set": 0,
+          "same_count": 2
+        },
+        {
+          "type": "multi",
+          "label": "",
+          "labels": [
+            "B",
+            "C",
+            "E"
+          ],
+          "value": "",
+          "same_set": 0,
+          "same_count": 4
+        },
+        {
+          "type": "single",
+          "label": "A",
+          "labels": [],
+          "value": "",
+          "same_set": 0,
+          "same_count": 0
+        }
+      ],
+      "fillTime": 41,
+      "absent": false,
+      "qScores": [
+        0.875,
+        2,
+        3,
+        -2,
+        0,
+        0,
+        -2.7,
+        1.5,
+        6.6000000000000005,
+        -2
+      ],
+      "totalScore": 7.275,
+      "rank": 3
+    },
+    {
+      "name": "西二旗四惠东",
+      "answers": [
+        {
+          "type": "single",
+          "label": "F",
+          "labels": [],
+          "value": "",
+          "same_set": 0,
+          "same_count": 0
+        },
+        {
+          "type": "single",
+          "label": "B",
+          "labels": [],
+          "value": "",
+          "same_set": 0,
+          "same_count": 0
+        },
+        {
+          "type": "single",
+          "label": "A",
+          "labels": [],
+          "value": "",
+          "same_set": 0,
+          "same_count": 0
+        },
+        {
+          "type": "single",
+          "label": "A",
+          "labels": [],
+          "value": "",
+          "same_set": 0,
+          "same_count": 0
+        },
+        {
+          "type": "single",
+          "label": "A",
+          "labels": [],
+          "value": "",
+          "same_set": 0,
+          "same_count": 0
+        },
+        {
+          "type": "text",
+          "label": "",
+          "labels": [],
+          "value": "2",
+          "same_set": 0,
+          "same_count": 0
+        },
+        {
+          "type": "multi",
+          "label": "",
+          "labels": [
+            "C"
+          ],
+          "value": "",
+          "same_set": 0,
+          "same_count": 4
+        },
+        {
+          "type": "multi",
+          "label": "",
+          "labels": [
+            "F"
+          ],
+          "value": "",
+          "same_set": 1,
+          "same_count": 1
+        },
+        {
+          "type": "multi",
+          "label": "",
+          "labels": [
+            "B",
+            "C",
+            "E"
+          ],
+          "value": "",
+          "same_set": 0,
+          "same_count": 4
+        },
+        {
+          "type": "single",
+          "label": "B",
+          "labels": [],
+          "value": "",
+          "same_set": 0,
+          "same_count": 0
+        }
+      ],
+      "fillTime": 100,
+      "absent": false,
+      "qScores": [
+        2,
+        2,
+        2,
+        0,
+        -4,
+        0,
+        -2.1,
+        0.6,
+        6.6000000000000005,
+        0
+      ],
+      "totalScore": 7.1000000000000005,
+      "rank": 4
+    },
+    {
+      "name": "Ushia",
+      "answers": [
+        {
+          "type": "single",
+          "label": "E",
+          "labels": [],
+          "value": "",
+          "same_set": 0,
+          "same_count": 0
+        },
+        {
+          "type": "single",
+          "label": "B",
+          "labels": [],
+          "value": "",
+          "same_set": 0,
+          "same_count": 0
+        },
+        {
+          "type": "single",
+          "label": "A",
+          "labels": [],
+          "value": "",
+          "same_set": 0,
+          "same_count": 0
+        },
+        {
+          "type": "single",
+          "label": "E",
+          "labels": [],
+          "value": "",
+          "same_set": 0,
+          "same_count": 0
+        },
+        {
+          "type": "single",
+          "label": "D",
+          "labels": [],
+          "value": "",
+          "same_set": 0,
+          "same_count": 0
+        },
+        {
+          "type": "text",
+          "label": "",
+          "labels": [],
+          "value": "0",
+          "same_set": 0,
+          "same_count": 0
+        },
+        {
+          "type": "multi",
+          "label": "",
+          "labels": [
+            "A"
+          ],
+          "value": "",
+          "same_set": 0,
+          "same_count": 3
+        },
+        {
+          "type": "multi",
+          "label": "",
+          "labels": [
+            "A",
+            "D",
+            "E",
+            "F"
+          ],
+          "value": "",
+          "same_set": 0,
+          "same_count": 2
+        },
+        {
+          "type": "multi",
+          "label": "",
+          "labels": [
+            "B",
+            "D",
+            "E"
+          ],
+          "value": "",
+          "same_set": 0,
+          "same_count": 2
+        },
+        {
+          "type": "single",
+          "label": "B",
+          "labels": [],
+          "value": "",
+          "same_set": 0,
+          "same_count": 0
+        }
+      ],
+      "fillTime": 421,
+      "absent": false,
+      "qScores": [
+        5,
+        2,
+        2,
+        6,
+        -8,
+        0,
+        -1.5,
+        -1,
+        2.1000000000000005,
+        0
+      ],
+      "totalScore": 6.6000000000000005,
+      "rank": 5
+    },
+    {
+      "name": "尧",
+      "answers": [
+        {
+          "type": "single",
+          "label": "A",
+          "labels": [],
+          "value": "",
+          "same_set": 0,
+          "same_count": 0
+        },
+        {
+          "type": "single",
+          "label": "B",
+          "labels": [],
+          "value": "",
+          "same_set": 0,
+          "same_count": 0
+        },
+        {
+          "type": "single",
+          "label": "B",
+          "labels": [],
+          "value": "",
+          "same_set": 0,
+          "same_count": 0
+        },
+        {
+          "type": "single",
+          "label": "B",
+          "labels": [],
+          "value": "",
+          "same_set": 0,
+          "same_count": 0
+        },
+        {
+          "type": "single",
+          "label": "C",
+          "labels": [],
+          "value": "",
+          "same_set": 0,
+          "same_count": 0
+        },
+        {
+          "type": "text",
+          "label": "",
+          "labels": [],
+          "value": "1",
+          "same_set": 0,
+          "same_count": 0
+        },
+        {
+          "type": "multi",
+          "label": "",
+          "labels": [
+            "C"
+          ],
+          "value": "",
+          "same_set": 0,
+          "same_count": 4
+        },
+        {
+          "type": "multi",
+          "label": "",
+          "labels": [
+            "A",
+            "E",
+            "F"
+          ],
+          "value": "",
+          "same_set": 1,
+          "same_count": 1
+        },
+        {
+          "type": "multi",
+          "label": "",
+          "labels": [
+            "B",
+            "D",
+            "E"
+          ],
+          "value": "",
+          "same_set": 0,
+          "same_count": 2
+        },
+        {
+          "type": "single",
+          "label": "A",
+          "labels": [],
+          "value": "",
+          "same_set": 0,
+          "same_count": 0
+        }
+      ],
+      "fillTime": 28,
+      "absent": false,
+      "qScores": [
+        0,
+        2,
+        3,
+        2,
+        -6,
+        0,
+        -2.1,
+        3.6,
+        2.1000000000000005,
+        -2
+      ],
+      "totalScore": 2.6000000000000005,
+      "rank": 6
+    },
+    {
+      "name": "奇策十二",
+      "answers": [
+        {
+          "type": "single",
+          "label": "D",
+          "labels": [],
+          "value": "",
+          "same_set": 0,
+          "same_count": 0
+        },
+        {
+          "type": "single",
+          "label": "C",
+          "labels": [],
+          "value": "",
+          "same_set": 0,
+          "same_count": 0
+        },
+        {
+          "type": "single",
+          "label": "D",
+          "labels": [],
+          "value": "",
+          "same_set": 0,
+          "same_count": 0
+        },
+        {
+          "type": "single",
+          "label": "C",
+          "labels": [],
+          "value": "",
+          "same_set": 0,
+          "same_count": 0
+        },
+        {
+          "type": "single",
+          "label": "D",
+          "labels": [],
+          "value": "",
+          "same_set": 0,
+          "same_count": 0
+        },
+        {
+          "type": "text",
+          "label": "",
+          "labels": [],
+          "value": "1",
+          "same_set": 0,
+          "same_count": 0
+        },
+        {
+          "type": "multi",
+          "label": "",
+          "labels": [
+            "A",
+            "C",
+            "D"
+          ],
+          "value": "",
+          "same_set": 1,
+          "same_count": 1
+        },
+        {
+          "type": "multi",
+          "label": "",
+          "labels": [
+            "C",
+            "D",
+            "E",
+            "F"
+          ],
+          "value": "",
+          "same_set": 1,
+          "same_count": 1
+        },
+        {
+          "type": "multi",
+          "label": "",
+          "labels": [
+            "B",
+            "C",
+            "D"
+          ],
+          "value": "",
+          "same_set": 1,
+          "same_count": 1
+        },
+        {
+          "type": "single",
+          "label": "B",
+          "labels": [],
+          "value": "",
+          "same_set": 0,
+          "same_count": 0
+        }
+      ],
+      "fillTime": 100,
+      "absent": false,
+      "qScores": [
+        3,
+        0,
+        4,
+        -2,
+        -8,
+        0,
+        -1.2000000000000002,
+        -1,
+        1.5000000000000004,
+        0
+      ],
+      "totalScore": -3.6999999999999997,
+      "rank": 7
+    },
+    {
+      "name": "CME256",
+      "answers": [
+        {
+          "type": "single",
+          "label": "B",
+          "labels": [],
+          "value": "",
+          "same_set": 0,
+          "same_count": 0
+        },
+        {
+          "type": "single",
+          "label": "B",
+          "labels": [],
+          "value": "",
+          "same_set": 0,
+          "same_count": 0
+        },
+        {
+          "type": "single",
+          "label": "A",
+          "labels": [],
+          "value": "",
+          "same_set": 0,
+          "same_count": 0
+        },
+        {
+          "type": "single",
+          "label": "D",
+          "labels": [],
+          "value": "",
+          "same_set": 0,
+          "same_count": 0
+        },
+        {
+          "type": "single",
+          "label": "D",
+          "labels": [],
+          "value": "",
+          "same_set": 0,
+          "same_count": 0
+        },
+        {
+          "type": "text",
+          "label": "",
+          "labels": [],
+          "value": "7",
+          "same_set": 0,
+          "same_count": 0
+        },
+        {
+          "type": "multi",
+          "label": "",
+          "labels": [
+            "B",
+            "C",
+            "D"
+          ],
+          "value": "",
+          "same_set": 1,
+          "same_count": 1
+        },
+        {
+          "type": "multi",
+          "label": "",
+          "labels": [
+            "B",
+            "C",
+            "D",
+            "E"
+          ],
+          "value": "",
+          "same_set": 1,
+          "same_count": 1
+        },
+        {
+          "type": "multi",
+          "label": "",
+          "labels": [
+            "B"
+          ],
+          "value": "",
+          "same_set": 1,
+          "same_count": 1
+        },
+        {
+          "type": "single",
+          "label": "A",
+          "labels": [],
+          "value": "",
+          "same_set": 0,
+          "same_count": 0
+        }
+      ],
+      "fillTime": 29,
+      "absent": false,
+      "qScores": [
+        0,
+        2,
+        2,
+        4,
+        -8,
+        -3,
+        -1.5000000000000004,
+        -1,
+        1.8,
+        -2
+      ],
+      "totalScore": -5.7,
+      "rank": 8
+    },
+    {
+      "name": "飞鼠_Triones",
+      "answers": [
+        {
+          "type": "single",
+          "label": "C",
+          "labels": [],
+          "value": "",
+          "same_set": 0,
+          "same_count": 0
+        },
+        {
+          "type": "single",
+          "label": "C",
+          "labels": [],
+          "value": "",
+          "same_set": 0,
+          "same_count": 0
+        },
+        {
+          "type": "single",
+          "label": "C",
+          "labels": [],
+          "value": "",
+          "same_set": 0,
+          "same_count": 0
+        },
+        {
+          "type": "single",
+          "label": "C",
+          "labels": [],
+          "value": "",
+          "same_set": 0,
+          "same_count": 0
+        },
+        {
+          "type": "single",
+          "label": "C",
+          "labels": [],
+          "value": "",
+          "same_set": 0,
+          "same_count": 0
+        },
+        {
+          "type": "text",
+          "label": "",
+          "labels": [],
+          "value": "3",
+          "same_set": 0,
+          "same_count": 0
+        },
+        {
+          "type": "multi",
+          "label": "",
+          "labels": [
+            "C"
+          ],
+          "value": "",
+          "same_set": 0,
+          "same_count": 4
+        },
+        {
+          "type": "multi",
+          "label": "",
+          "labels": [
+            "C"
+          ],
+          "value": "",
+          "same_set": 0,
+          "same_count": 2
+        },
+        {
+          "type": "multi",
+          "label": "",
+          "labels": [
+            "D"
+          ],
+          "value": "",
+          "same_set": 1,
+          "same_count": 1
+        },
+        {
+          "type": "single",
+          "label": "B",
+          "labels": [],
+          "value": "",
+          "same_set": 0,
+          "same_count": 0
+        }
+      ],
+      "fillTime": 14,
+      "absent": false,
+      "qScores": [
+        0.875,
+        0,
+        -1,
+        -2,
+        -6,
+        0,
+        -2.1,
+        1.5,
+        -2.4,
+        0
+      ],
+      "totalScore": -11.125,
+      "rank": 9
+    },
+    {
+      "name": "Yy",
+      "answers": [
+        {
+          "type": "single",
+          "label": "C",
+          "labels": [],
+          "value": "",
+          "same_set": 0,
+          "same_count": 0
+        },
+        {
+          "type": "single",
+          "label": "C",
+          "labels": [],
+          "value": "",
+          "same_set": 0,
+          "same_count": 0
+        },
+        {
+          "type": "single",
+          "label": "C",
+          "labels": [],
+          "value": "",
+          "same_set": 0,
+          "same_count": 0
+        },
+        {
+          "type": "single",
+          "label": "C",
+          "labels": [],
+          "value": "",
+          "same_set": 0,
+          "same_count": 0
+        },
+        {
+          "type": "single",
+          "label": "C",
+          "labels": [],
+          "value": "",
+          "same_set": 0,
+          "same_count": 0
+        },
+        {
+          "type": "text",
+          "label": "",
+          "labels": [],
+          "value": "4",
+          "same_set": 0,
+          "same_count": 0
+        },
+        {
+          "type": "multi",
+          "label": "",
+          "labels": [
+            "C"
+          ],
+          "value": "",
+          "same_set": 0,
+          "same_count": 4
+        },
+        {
+          "type": "multi",
+          "label": "",
+          "labels": [
+            "A",
+            "D",
+            "E",
+            "F"
+          ],
+          "value": "",
+          "same_set": 0,
+          "same_count": 2
+        },
+        {
+          "type": "multi",
+          "label": "",
+          "labels": [
+            "C"
+          ],
+          "value": "",
+          "same_set": 1,
+          "same_count": 1
+        },
+        {
+          "type": "single",
+          "label": "A",
+          "labels": [],
+          "value": "",
+          "same_set": 0,
+          "same_count": 0
+        }
+      ],
+      "fillTime": 337,
+      "absent": false,
+      "qScores": [
+        0.875,
+        0,
+        -1,
+        -2,
+        -6,
+        0,
+        -2.1,
+        -1,
+        2.1,
+        -2
+      ],
+      "totalScore": -11.125,
+      "rank": 9
+    },
+    {
+      "name": "#¥#@",
+      "answers": [
+        {
+          "type": "single",
+          "label": "C",
+          "labels": [],
+          "value": "",
+          "same_set": 0,
+          "same_count": 0
+        },
+        {
+          "type": "single",
+          "label": "C",
+          "labels": [],
+          "value": "",
+          "same_set": 0,
+          "same_count": 0
+        },
+        {
+          "type": "single",
+          "label": "C",
+          "labels": [],
+          "value": "",
+          "same_set": 0,
+          "same_count": 0
+        },
+        {
+          "type": "single",
+          "label": "C",
+          "labels": [],
+          "value": "",
+          "same_set": 0,
+          "same_count": 0
+        },
+        {
+          "type": "single",
+          "label": "C",
+          "labels": [],
+          "value": "",
+          "same_set": 0,
+          "same_count": 0
+        },
+        {
+          "type": "text",
+          "label": "",
+          "labels": [],
+          "value": "2",
+          "same_set": 0,
+          "same_count": 0
+        },
+        {
+          "type": "multi",
+          "label": "",
+          "labels": [
+            "C",
+            "D"
+          ],
+          "value": "",
+          "same_set": 1,
+          "same_count": 1
+        },
+        {
+          "type": "multi",
+          "label": "",
+          "labels": [
+            "C",
+            "D"
+          ],
+          "value": "",
+          "same_set": 1,
+          "same_count": 1
+        },
+        {
+          "type": "multi",
+          "label": "",
+          "labels": [
+            "C",
+            "D"
+          ],
+          "value": "",
+          "same_set": 1,
+          "same_count": 1
+        },
+        {
+          "type": "single",
+          "label": "A",
+          "labels": [],
+          "value": "",
+          "same_set": 0,
+          "same_count": 0
+        }
+      ],
+      "fillTime": 26,
+      "absent": false,
+      "qScores": [
+        0.875,
+        0,
+        -1,
+        -2,
+        -6,
+        0,
+        0.2999999999999998,
+        -1,
+        -0.2999999999999998,
+        -2
+      ],
+      "totalScore": -11.125,
+      "rank": 9
+    },
+    {
+      "name": "๑",
+      "answers": [
+        {
+          "type": "single",
+          "label": "F",
+          "labels": [],
+          "value": "",
+          "same_set": 0,
+          "same_count": 0
+        },
+        {
+          "type": "single",
+          "label": "A",
+          "labels": [],
+          "value": "",
+          "same_set": 0,
+          "same_count": 0
+        },
+        {
+          "type": "single",
+          "label": "C",
+          "labels": [],
+          "value": "",
+          "same_set": 0,
+          "same_count": 0
+        },
+        {
+          "type": "single",
+          "label": "C",
+          "labels": [],
+          "value": "",
+          "same_set": 0,
+          "same_count": 0
+        },
+        {
+          "type": "single",
+          "label": "D",
+          "labels": [],
+          "value": "",
+          "same_set": 0,
+          "same_count": 0
+        },
+        {
+          "type": "text",
+          "label": "",
+          "labels": [],
+          "value": "5",
+          "same_set": 0,
+          "same_count": 0
+        },
+        {
+          "type": "multi",
+          "label": "",
+          "labels": [
+            "A"
+          ],
+          "value": "",
+          "same_set": 0,
+          "same_count": 3
+        },
+        {
+          "type": "multi",
+          "label": "",
+          "labels": [
+            "B"
+          ],
+          "value": "",
+          "same_set": 1,
+          "same_count": 1
+        },
+        {
+          "type": "multi",
+          "label": "",
+          "labels": [
+            "A"
+          ],
+          "value": "",
+          "same_set": 1,
+          "same_count": 1
+        },
+        {
+          "type": "single",
+          "label": "A",
+          "labels": [],
+          "value": "",
+          "same_set": 0,
+          "same_count": 0
+        }
+      ],
+      "fillTime": 16,
+      "absent": false,
+      "qScores": [
+        2,
+        -2,
+        -1,
+        -2,
+        -8,
+        -1,
+        -1.5,
+        1.8,
+        1.5,
+        -2
+      ],
+      "totalScore": -12.2,
+      "rank": 12
+    },
+    {
+      "name": "流星之意",
+      "answers": [
+        {
+          "type": "single",
+          "label": "",
+          "labels": [],
+          "value": "",
+          "same_set": 0,
+          "same_count": 0
+        },
+        {
+          "type": "single",
+          "label": "",
+          "labels": [],
+          "value": "",
+          "same_set": 0,
+          "same_count": 0
+        },
+        {
+          "type": "single",
+          "label": "",
+          "labels": [],
+          "value": "",
+          "same_set": 0,
+          "same_count": 0
+        },
+        {
+          "type": "single",
+          "label": "",
+          "labels": [],
+          "value": "",
+          "same_set": 0,
+          "same_count": 0
+        },
+        {
+          "type": "single",
+          "label": "",
+          "labels": [],
+          "value": "",
+          "same_set": 0,
+          "same_count": 0
+        },
+        {
+          "type": "text",
+          "label": "",
+          "labels": [],
+          "value": "",
+          "same_set": 0,
+          "same_count": 0
+        },
+        {
+          "type": "multi",
+          "label": "",
+          "labels": [],
+          "value": "",
+          "same_set": 0,
+          "same_count": 0
+        },
+        {
+          "type": "multi",
+          "label": "",
+          "labels": [],
+          "value": "",
+          "same_set": 0,
+          "same_count": 0
+        },
+        {
+          "type": "multi",
+          "label": "",
+          "labels": [],
+          "value": "",
+          "same_set": 0,
+          "same_count": 0
+        },
+        {
+          "type": "single",
+          "label": "",
+          "labels": [],
+          "value": "",
+          "same_set": 0,
+          "same_count": 0
+        }
+      ],
+      "fillTime": 0,
+      "absent": true,
+      "qScores": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "totalScore": 0,
+      "rank": 13
+    }
+  ],
+  "questions": [
+    {
+      "id": "T1",
+      "type": "single",
+      "text": "经典乌合",
+      "desc": "请选择一个选项",
+      "options": [
+        {
+          "label": "A",
+          "text": "A.谨慎(若人数>2,+2)",
+          "pool": "谨慎"
+        },
+        {
+          "label": "B",
+          "text": "B.团结(人数最多+3)",
+          "pool": "团结"
+        },
+        {
+          "label": "C",
+          "text": "C.公正(平分7.5分,额外-1)",
+          "pool": "公正"
+        },
+        {
+          "label": "D",
+          "text": "D.智慧(人数最少每有1人+3,否则-1)",
+          "pool": "智慧"
+        },
+        {
+          "label": "E",
+          "text": "E.勇气(人数=1则+5,否则-2)",
+          "pool": "勇气"
+        },
+        {
+          "label": "F",
+          "text": "F.团结(人数非最少+2,无视0人项)",
+          "pool": "团结"
+        }
+      ],
+      "formula": "if(choice == 0) {\n  if(A > 5) { 2 } else { 0 }\n} else {\n  if(choice == 1) {\n    if(B >= A && B >= C && B >= D && B >= E && B >= F && B > 0) { 3 } else { 0 }\n  } else {\n  if(choice == 2) {\n    if(C > 0) { 7.5 / C - 1 } else { 0 }\n  } else {\n  if(choice == 3) {\n    if(D > 0 && D <= A && D <= B && D <= C && D <= E && D <= F) { D * 3 } else { -1 }\n  } else {\n  if(choice == 4) {\n    if(E == 1) { 5 } else { -2 }\n  } else {\n  if(choice == 5) {\n    nzMin = 99\n    if(A > 0 && A < nzMin) { nzMin = A }\n    if(F > 0 && F < nzMin) { nzMin = F }\n    if(C > 0 && C < nzMin) { nzMin = C }\n    if(D > 0 && D < nzMin) { nzMin = D }\n    if(E > 0 && E < nzMin) { nzMin = E }\n    if(F > 0 && F < nzMin) { nzMin = F }\n    if(F > 0 && F != nzMin) { 2 } else { 0 }\n  }\n  else { 0 } } } } } }"
+    },
+    {
+      "id": "T2",
+      "type": "single",
+      "enabled": true,
+      "text": "信任与背叛",
+      "desc": "若C选项人数>=1，A选项改为-2",
+      "_players": 12,
+      "options": [
+        {
+          "label": "A",
+          "text": "A.信任(+4)"
+        },
+        {
+          "label": "B",
+          "text": "B.不信任(+2)"
+        },
+        {
+          "label": "C",
+          "text": "C.背叛(+0)"
+        }
+      ],
+      "test": false,
+      "formula": "\n      if(choice==0){\n        if(C>=1){-2}\n        else{4}\n        }\n      else{4-choice*2}\n      "
+    },
+    {
+      "id": "T3",
+      "type": "single",
+      "enabled": true,
+      "text": "链条",
+      "desc": "请选择一个选项",
+      "_players": 12,
+      "options": [
+        {
+          "label": "A",
+          "text": "A.+5，每有1人A-1,B+1"
+        },
+        {
+          "label": "B",
+          "text": "B.+3，每有一人B-1,C+1"
+        },
+        {
+          "label": "C",
+          "text": "C.+1，每有一人C-1,D+1"
+        },
+        {
+          "label": "D",
+          "text": "D.-1"
+        }
+      ],
+      "test": false,
+      "formula": "\n      if(choice==0)\n      {\n        5-A\n      }\n      else if(choice==1)\n      {\n        3-B+A\n      }\n      else if(choice==2)\n      {\n        1-C+B\n      }\n      else\n      {\n        -1+C\n      }\n      "
+    },
+    {
+      "id": "T4",
+      "type": "single",
+      "enabled": true,
+      "text": "限位器",
+      "desc": "人数超限改为获得-2分",
+      "_players": 12,
+      "options": [
+        {
+          "label": "A",
+          "text": "A.不得分，不限人数"
+        },
+        {
+          "label": "B",
+          "text": "B.+2，限4人"
+        },
+        {
+          "label": "C",
+          "text": "C.+3，限2人"
+        },
+        {
+          "label": "D",
+          "text": "D.+4，限1人"
+        },
+        {
+          "label": "E",
+          "text": "E.+6，限1人"
+        }
+      ],
+      "test": false,
+      "formula": "\n      if(choice==0)\n      {\n        0\n      }\n      else if(choice==1)\n      {\n        if(B<=4){2}\n        else{-2}\n      }\n      else if(choice==2)\n      {\n        if(C<=2){2}\n        else{-2}\n      }\n      else if(choice==3)\n      {\n        if(D<=1){4}\n        else{-2}\n      }\n      else\n      {\n        if(E<=6){6}\n        else{-2}\n      }\n      "
+    },
+    {
+      "id": "T5",
+      "type": "single",
+      "enabled": true,
+      "text": "少输为赢",
+      "desc": "请选择一个选项",
+      "_players": 12,
+      "options": [
+        {
+          "label": "A",
+          "text": "A.-4"
+        },
+        {
+          "label": "B",
+          "text": "B.人数非最少-7.5"
+        },
+        {
+          "label": "C",
+          "text": "C.每有一人-1.5"
+        },
+        {
+          "label": "D",
+          "text": "D.每有一人-2"
+        },
+        {
+          "label": "E",
+          "text": "E.平分-15分,人数为1不扣分"
+        }
+      ],
+      "test": false,
+      "formula": "\n      if(choice==0)\n      {\n        -4\n      }\n      else if(choice==1)\n      {\n        if(B<=A&&B<=C&&B<=D&&B<=E){0}\n        else{-7.5}\n      }\n      else if(choice==2)\n      {\n        -1.5*C\n      }\n      else if(choice==3)\n      {\n        -2*D\n      }\n      else\n      {\n        if(E<=1){0}\n        else{-15/E}\n      }\n      "
+    },
+    {
+      "id": "T6",
+      "type": "text",
+      "enabled": true,
+      "text": "扭亏为盈",
+      "desc": "输入整数0~10。填写一个正整数n，你-2*n分，每有一人填写的数字比你小，你额外+1分",
+      "_players": 12,
+      "options": [],
+      "minFill": 0,
+      "maxFill": 10,
+      "test": false,
+      "formula": "\n      s=-2*value\n      i=0\n      while(i<value){\n      s=s+c[i]\n      i=i+1\n      } \n      s\n      "
+    },
+    {
+      "id": "T7",
+      "type": "multi",
+      "enabled": true,
+      "text": "条件多选2",
+      "desc": "选择1~3项，成功得分，失败扣分",
+      "_players": 12,
+      "options": [
+        {
+          "label": "A",
+          "text": "A.1.5，该选项人数<=3"
+        },
+        {
+          "label": "B",
+          "text": "B.1.8，该选项人数>=9"
+        },
+        {
+          "label": "C",
+          "text": "C.2.1，该选项人数在4~7范围内"
+        },
+        {
+          "label": "D",
+          "text": "D.2.4，B选项人数同时大于或小于AC"
+        },
+        {
+          "label": "E",
+          "text": "E.2.7前四项完成数>=3"
+        }
+      ],
+      "minSel": 1,
+      "maxSel": 3,
+      "test": false,
+      "formula": "\n      if(A<=3){sucA=1}\n      else{sucA=0}\n      if(B>=9){sucB=1}\n      else{sucB=0}     \n      if(C>=4&&C<=7){sucC=1}\n      else{sucC=0}\n      if((B>A&&B>C)||(B<A&&B<C)){sucD=1}\n      else{sucD=0}\n      if(sucA+sucB+sucC+sucD>=3){sucE=1}\n      else{sucE=0}\n      chose_A*(sucA*1.5-!sucA*1.5)+chose_B*(sucB*1.8-!sucB*1.8)+chose_C*(sucC*2.1-!sucC*2.1)+chose_D*(sucD*2.4-!sucD*2.4)+chose_E*(sucE*2.7-!sucE*2.7)\n      "
+    },
+    {
+      "id": "T8",
+      "type": "multi",
+      "enabled": true,
+      "text": "数字炸弹",
+      "desc": "选择1~4项。设x初始为70，从上到下逐个选项判定：将x减少选项数字*选项人数，若x变为负数，则不再向下判定并标记该选项。选中被标记的选项本题得分为-1，否则得选择的选项的数字和的30%分。",
+      "_players": 12,
+      "options": [
+        {
+          "label": "A",
+          "text": "A.7"
+        },
+        {
+          "label": "B",
+          "text": "B.6"
+        },
+        {
+          "label": "C",
+          "text": "C.5"
+        },
+        {
+          "label": "D",
+          "text": "D.4"
+        },
+        {
+          "label": "E",
+          "text": "E.3"
+        },
+        {
+          "label": "F",
+          "text": "F.2"
+        }
+      ],
+      "minSel": 1,
+      "maxSel": 4,
+      "test": false,
+      "formula": "\n      i=0\n      s=0\n      x=70\n      while(i<6&&x>=0) {\n        s=s+chose[i]\n        x=x-c[i]*(7-i)\n        i=i+1\n      }\n      i=i-1\n      if(x<0){hit=i}\n      else{hit=-1}\n      if(hit!=-1)\n      {\n        if(chose[i]==1){-1}\n        else{2.1*chose_A+1.8*chose_B+1.5*chose_C+1.2*chose_D+0.9*chose_E+0.6*chose_F}\n      }\n      else{2.1*chose_A+1.8*chose_B+1.5*chose_C+1.2*chose_D+0.9*chose_E+0.6*chose_F}\n      "
+    },
+    {
+      "id": "T9",
+      "type": "multi",
+      "enabled": true,
+      "text": "条件多选1",
+      "desc": "选择1~3项，成功得分，失败扣分",
+      "_players": 12,
+      "options": [
+        {
+          "label": "A",
+          "text": "A.1.5，该选项人数<=3"
+        },
+        {
+          "label": "B",
+          "text": "B.1.8，该题总选择数达到27"
+        },
+        {
+          "label": "C",
+          "text": "C.2.1，该选项人数既不是最多也不是最少"
+        },
+        {
+          "label": "D",
+          "text": "D.2.4，该选项人数与另外某项相同"
+        },
+        {
+          "label": "E",
+          "text": "E.2.7前四项完成数>=3"
+        }
+      ],
+      "minSel": 1,
+      "maxSel": 3,
+      "test": false,
+      "formula": "\n      if(A<=3){sucA=1}\n      else{sucA=0}\n      if(A+B+C+D+E>=27){sucB=1}\n      else{sucB=0}\n      max=0\n      if(A>max){max=A}\n      if(B>max){max=B}\n      if(C>max){max=C}\n      if(D>max){max=D}\n      if(E>max){max=E}\n      min=13\n      if(A<min){min=A}\n      if(B<min){min=B}\n      if(C<min){min=C}\n      if(D<min){min=D}\n      if(E<min){min=E}      \n      if(C!=max&&C!=min){sucC=1}\n      else{sucC=0}\n      if(D==A||D==B||D==C||D==E){sucD=1}\n      else{sucD=0}\n      if(sucA+sucB+sucC+sucD>=3){sucE=1}\n      else{sucE=0}\n      chose_A*(sucA*1.5-!sucA*1.5)+chose_B*(sucB*1.8-!sucB*1.8)+chose_C*(sucC*2.1-!sucC*2.1)+chose_D*(sucD*2.4-!sucD*2.4)+chose_E*(sucE*2.7-!sucE*2.7)\n      "
+    },
+    {
+      "id": "T10",
+      "type": "single",
+      "enabled": true,
+      "text": "残局",
+      "desc": "请选择一个选项",
+      "_players": 12,
+      "options": [
+        {
+          "label": "A",
+          "text": "A.-2"
+        },
+        {
+          "label": "B",
+          "text": "B.若你是第一,你的分数归零"
+        }
+      ],
+      "test": false,
+      "formula": "if(choice == 0) {\n  -2\n} else {\n  if(my_rank == 1) { -score } else { 0 }\n}"
+    }
+  ],
+  "stats": [
+    {
+      "counts": {
+        "A": 2,
+        "B": 2,
+        "C": 4,
+        "D": 1,
+        "E": 1,
+        "F": 2
+      },
+      "textSum": 0
+    },
+    {
+      "counts": {
+        "A": 1,
+        "B": 7,
+        "C": 4
+      },
+      "textSum": 0
+    },
+    {
+      "counts": {
+        "A": 3,
+        "B": 3,
+        "C": 5,
+        "D": 1
+      },
+      "textSum": 0
+    },
+    {
+      "counts": {
+        "A": 2,
+        "B": 2,
+        "C": 6,
+        "D": 1,
+        "E": 1
+      },
+      "textSum": 0
+    },
+    {
+      "counts": {
+        "A": 2,
+        "B": 1,
+        "C": 4,
+        "D": 4,
+        "E": 1
+      },
+      "textSum": 0
+    },
+    {
+      "counts": {
+        "0": 2,
+        "1": 2,
+        "2": 2,
+        "3": 2,
+        "4": 1,
+        "5": 2,
+        "7": 1
+      },
+      "textSum": 33
+    },
+    {
+      "counts": {
+        "A": 4,
+        "B": 1,
+        "C": 8,
+        "D": 4,
+        "E": 2
+      },
+      "sameSets": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        1
+      ]
+    },
+    {
+      "counts": {
+        "A": 3,
+        "B": 4,
+        "C": 5,
+        "D": 5,
+        "E": 7,
+        "F": 7
+      },
+      "sameSets": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        1,
+        0,
+        1,
+        1
+      ]
+    },
+    {
+      "counts": {
+        "A": 1,
+        "B": 8,
+        "C": 7,
+        "D": 5,
+        "E": 6
+      },
+      "sameSets": [
+        1,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        1
+      ]
+    },
+    {
+      "counts": {
+        "A": 7,
+        "B": 5
+      },
+      "textSum": 0
+    }
+  ]
+}

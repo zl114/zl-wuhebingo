@@ -1,0 +1,7249 @@
+{
+ "season": "S2",
+ "board": [
+  {
+   "id": "B16",
+   "desc": "单回合在T7~T9的选择项数完全不相同，且最终结算排名为1~6",
+   "param": null
+  },
+  {
+   "id": "A15",
+   "desc": "连续2次在T5得到前3高的总分数",
+   "param": 2
+  },
+  {
+   "id": "B13",
+   "desc": "某回合你的作答与另一玩家至少完全重合4题",
+   "param": 4
+  },
+  {
+   "id": "B03",
+   "desc": "单回合在T2~T5中，全部获得前三高的分数",
+   "param": null
+  },
+  {
+   "id": "A01",
+   "desc": "获得1次排名1",
+   "param": 1
+  },
+  {
+   "id": "A11",
+   "desc": "连续2次在T3得到前3高的总分数",
+   "param": 2
+  },
+  {
+   "id": "A08",
+   "desc": "总计5次在T1得到前3高的总分数",
+   "param": 5
+  },
+  {
+   "id": "A02",
+   "desc": "获得2次排名1~3",
+   "param": 2
+  },
+  {
+   "id": "A14",
+   "desc": "总计3次在T4得到前3高的总分数",
+   "param": 3
+  },
+  {
+   "id": "A06",
+   "desc": "连续2次排名1~6",
+   "param": 2
+  },
+  {
+   "id": "B10",
+   "desc": "累计选择8个C选项（含多选）",
+   "param": 8
+  },
+  {
+   "id": "A12",
+   "desc": "总计3次在T3得到前3高的总分数",
+   "param": 3
+  },
+  {
+   "id": "B22",
+   "desc": "单回合所有题目均未选中人数最多项",
+   "param": null
+  },
+  {
+   "id": "A30",
+   "desc": "总计4次在T6得到前3低的总分数",
+   "param": 4
+  },
+  {
+   "id": "A18",
+   "desc": "总计4次在T6得到前3高的总分数",
+   "param": 4
+  },
+  {
+   "id": "B15",
+   "desc": "单回合在T7~T9的选择项数完全相同，且最终结算排名为1~6",
+   "param": null
+  },
+  {
+   "id": "A32",
+   "desc": "总计3次在T8得到前3低的总分数",
+   "param": 3
+  },
+  {
+   "id": "B11",
+   "desc": "累计选择10个D选项（含多选）",
+   "param": 10
+  },
+  {
+   "id": "B02",
+   "desc": "在T1中独享过公正（仅你一人选择某个公正选项）",
+   "param": null
+  },
+  {
+   "id": "A10",
+   "desc": "总计3次在T2得到前3高的总分数",
+   "param": 3
+  },
+  {
+   "id": "B26",
+   "desc": "你的问卷填写时间在所有人中最短的三位",
+   "param": null
+  },
+  {
+   "id": "A25",
+   "desc": "总计6次在T1得到前3低的总分数",
+   "param": 6
+  },
+  {
+   "id": "B06",
+   "desc": "单回合在T1~T5完全选同一选项，且最终结算排名为1~6",
+   "param": null
+  },
+  {
+   "id": "B01",
+   "desc": "在T1中达成5次勇气",
+   "param": 5
+  },
+  {
+   "id": "A07",
+   "desc": "连续4次在T1得到前3高的总分数",
+   "param": 4
+  }
+ ],
+ "playerBoards": {
+  "晨曦": [
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 1
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 2
+   },
+   {
+    "progress": 1,
+    "completed": true,
+    "completedAt": 1,
+    "goal": 1
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 1
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 1
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 2
+   },
+   {
+    "progress": 2,
+    "completed": false,
+    "completedAt": null,
+    "goal": 5
+   },
+   {
+    "progress": 1,
+    "completed": false,
+    "completedAt": null,
+    "goal": 2
+   },
+   {
+    "progress": 1,
+    "completed": false,
+    "completedAt": null,
+    "goal": 3
+   },
+   {
+    "progress": 2,
+    "completed": true,
+    "completedAt": 2,
+    "goal": 2
+   },
+   {
+    "progress": 8,
+    "completed": true,
+    "completedAt": 3,
+    "goal": 8
+   },
+   {
+    "progress": 1,
+    "completed": false,
+    "completedAt": null,
+    "goal": 3
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 1
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 4
+   },
+   {
+    "progress": 1,
+    "completed": false,
+    "completedAt": null,
+    "goal": 4
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 1
+   },
+   {
+    "progress": 1,
+    "completed": false,
+    "completedAt": null,
+    "goal": 3
+   },
+   {
+    "progress": 1,
+    "completed": false,
+    "completedAt": null,
+    "goal": 10
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 1
+   },
+   {
+    "progress": 2,
+    "completed": false,
+    "completedAt": null,
+    "goal": 3
+   },
+   {
+    "progress": 1,
+    "completed": true,
+    "completedAt": 3,
+    "goal": 1
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 6
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 1
+   },
+   {
+    "progress": 1,
+    "completed": false,
+    "completedAt": null,
+    "goal": 5
+   },
+   {
+    "progress": 1,
+    "completed": false,
+    "completedAt": null,
+    "goal": 4
+   }
+  ],
+  "Ushia": [
+   {
+    "progress": 1,
+    "completed": true,
+    "completedAt": 2,
+    "goal": 1
+   },
+   {
+    "progress": 1,
+    "completed": false,
+    "completedAt": null,
+    "goal": 2
+   },
+   {
+    "progress": 1,
+    "completed": true,
+    "completedAt": 3,
+    "goal": 1
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 1
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 1
+   },
+   {
+    "progress": 1,
+    "completed": false,
+    "completedAt": null,
+    "goal": 2
+   },
+   {
+    "progress": 2,
+    "completed": false,
+    "completedAt": null,
+    "goal": 5
+   },
+   {
+    "progress": 1,
+    "completed": false,
+    "completedAt": null,
+    "goal": 2
+   },
+   {
+    "progress": 1,
+    "completed": false,
+    "completedAt": null,
+    "goal": 3
+   },
+   {
+    "progress": 2,
+    "completed": true,
+    "completedAt": 2,
+    "goal": 2
+   },
+   {
+    "progress": 8,
+    "completed": true,
+    "completedAt": 1,
+    "goal": 8
+   },
+   {
+    "progress": 2,
+    "completed": false,
+    "completedAt": null,
+    "goal": 3
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 1
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 4
+   },
+   {
+    "progress": 1,
+    "completed": false,
+    "completedAt": null,
+    "goal": 4
+   },
+   {
+    "progress": 1,
+    "completed": true,
+    "completedAt": 1,
+    "goal": 1
+   },
+   {
+    "progress": 1,
+    "completed": false,
+    "completedAt": null,
+    "goal": 3
+   },
+   {
+    "progress": 6,
+    "completed": false,
+    "completedAt": null,
+    "goal": 10
+   },
+   {
+    "progress": 1,
+    "completed": true,
+    "completedAt": 1,
+    "goal": 1
+   },
+   {
+    "progress": 2,
+    "completed": false,
+    "completedAt": null,
+    "goal": 3
+   },
+   {
+    "progress": 1,
+    "completed": true,
+    "completedAt": 1,
+    "goal": 1
+   },
+   {
+    "progress": 1,
+    "completed": false,
+    "completedAt": null,
+    "goal": 6
+   },
+   {
+    "progress": 1,
+    "completed": true,
+    "completedAt": 1,
+    "goal": 1
+   },
+   {
+    "progress": 2,
+    "completed": false,
+    "completedAt": null,
+    "goal": 5
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 4
+   }
+  ],
+  "Yy": [
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 1
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 2
+   },
+   {
+    "progress": 1,
+    "completed": true,
+    "completedAt": 1,
+    "goal": 1
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 1
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 1
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 2
+   },
+   {
+    "progress": 1,
+    "completed": false,
+    "completedAt": null,
+    "goal": 5
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 2
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 3
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 2
+   },
+   {
+    "progress": 8,
+    "completed": true,
+    "completedAt": 2,
+    "goal": 8
+   },
+   {
+    "progress": 1,
+    "completed": false,
+    "completedAt": null,
+    "goal": 3
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 1
+   },
+   {
+    "progress": 2,
+    "completed": false,
+    "completedAt": null,
+    "goal": 4
+   },
+   {
+    "progress": 1,
+    "completed": false,
+    "completedAt": null,
+    "goal": 4
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 1
+   },
+   {
+    "progress": 1,
+    "completed": false,
+    "completedAt": null,
+    "goal": 3
+   },
+   {
+    "progress": 2,
+    "completed": false,
+    "completedAt": null,
+    "goal": 10
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 1
+   },
+   {
+    "progress": 2,
+    "completed": false,
+    "completedAt": null,
+    "goal": 3
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 1
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 6
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 1
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 5
+   },
+   {
+    "progress": 1,
+    "completed": false,
+    "completedAt": null,
+    "goal": 4
+   }
+  ],
+  "#¥#@": [
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 1
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 2
+   },
+   {
+    "progress": 1,
+    "completed": true,
+    "completedAt": 1,
+    "goal": 1
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 1
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 1
+   },
+   {
+    "progress": 1,
+    "completed": false,
+    "completedAt": null,
+    "goal": 2
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 5
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 2
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 3
+   },
+   {
+    "progress": 1,
+    "completed": false,
+    "completedAt": null,
+    "goal": 2
+   },
+   {
+    "progress": 8,
+    "completed": true,
+    "completedAt": 2,
+    "goal": 8
+   },
+   {
+    "progress": 1,
+    "completed": false,
+    "completedAt": null,
+    "goal": 3
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 1
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 4
+   },
+   {
+    "progress": 2,
+    "completed": false,
+    "completedAt": null,
+    "goal": 4
+   },
+   {
+    "progress": 1,
+    "completed": true,
+    "completedAt": 3,
+    "goal": 1
+   },
+   {
+    "progress": 2,
+    "completed": false,
+    "completedAt": null,
+    "goal": 3
+   },
+   {
+    "progress": 6,
+    "completed": false,
+    "completedAt": null,
+    "goal": 10
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 1
+   },
+   {
+    "progress": 2,
+    "completed": false,
+    "completedAt": null,
+    "goal": 3
+   },
+   {
+    "progress": 1,
+    "completed": true,
+    "completedAt": 2,
+    "goal": 1
+   },
+   {
+    "progress": 1,
+    "completed": false,
+    "completedAt": null,
+    "goal": 6
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 1
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 5
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 4
+   }
+  ],
+  "๑": [
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 1
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 2
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 1
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 1
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 1
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 2
+   },
+   {
+    "progress": 2,
+    "completed": false,
+    "completedAt": null,
+    "goal": 5
+   },
+   {
+    "progress": 1,
+    "completed": false,
+    "completedAt": null,
+    "goal": 2
+   },
+   {
+    "progress": 2,
+    "completed": false,
+    "completedAt": null,
+    "goal": 3
+   },
+   {
+    "progress": 1,
+    "completed": false,
+    "completedAt": null,
+    "goal": 2
+   },
+   {
+    "progress": 8,
+    "completed": true,
+    "completedAt": 3,
+    "goal": 8
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 3
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 1
+   },
+   {
+    "progress": 2,
+    "completed": false,
+    "completedAt": null,
+    "goal": 4
+   },
+   {
+    "progress": 1,
+    "completed": false,
+    "completedAt": null,
+    "goal": 4
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 1
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 3
+   },
+   {
+    "progress": 5,
+    "completed": false,
+    "completedAt": null,
+    "goal": 10
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 1
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 3
+   },
+   {
+    "progress": 1,
+    "completed": true,
+    "completedAt": 2,
+    "goal": 1
+   },
+   {
+    "progress": 1,
+    "completed": false,
+    "completedAt": null,
+    "goal": 6
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 1
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 5
+   },
+   {
+    "progress": 2,
+    "completed": false,
+    "completedAt": null,
+    "goal": 4
+   }
+  ],
+  "CME256": [
+   {
+    "progress": 1,
+    "completed": true,
+    "completedAt": 1,
+    "goal": 1
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 2
+   },
+   {
+    "progress": 1,
+    "completed": true,
+    "completedAt": 1,
+    "goal": 1
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 1
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 1
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 2
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 5
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 2
+   },
+   {
+    "progress": 1,
+    "completed": false,
+    "completedAt": null,
+    "goal": 3
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 2
+   },
+   {
+    "progress": 5,
+    "completed": false,
+    "completedAt": null,
+    "goal": 8
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 3
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 1
+   },
+   {
+    "progress": 2,
+    "completed": false,
+    "completedAt": null,
+    "goal": 4
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 4
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 1
+   },
+   {
+    "progress": 1,
+    "completed": false,
+    "completedAt": null,
+    "goal": 3
+   },
+   {
+    "progress": 4,
+    "completed": false,
+    "completedAt": null,
+    "goal": 10
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 1
+   },
+   {
+    "progress": 1,
+    "completed": false,
+    "completedAt": null,
+    "goal": 3
+   },
+   {
+    "progress": 1,
+    "completed": true,
+    "completedAt": 1,
+    "goal": 1
+   },
+   {
+    "progress": 1,
+    "completed": false,
+    "completedAt": null,
+    "goal": 6
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 1
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 5
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 4
+   }
+  ],
+  "落天本天": [
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 1
+   },
+   {
+    "progress": 2,
+    "completed": true,
+    "completedAt": 2,
+    "goal": 2
+   },
+   {
+    "progress": 1,
+    "completed": true,
+    "completedAt": 1,
+    "goal": 1
+   },
+   {
+    "progress": 1,
+    "completed": true,
+    "completedAt": 1,
+    "goal": 1
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 1
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 2
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 5
+   },
+   {
+    "progress": 2,
+    "completed": true,
+    "completedAt": 2,
+    "goal": 2
+   },
+   {
+    "progress": 1,
+    "completed": false,
+    "completedAt": null,
+    "goal": 3
+   },
+   {
+    "progress": 2,
+    "completed": true,
+    "completedAt": 2,
+    "goal": 2
+   },
+   {
+    "progress": 5,
+    "completed": false,
+    "completedAt": null,
+    "goal": 8
+   },
+   {
+    "progress": 1,
+    "completed": false,
+    "completedAt": null,
+    "goal": 3
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 1
+   },
+   {
+    "progress": 1,
+    "completed": false,
+    "completedAt": null,
+    "goal": 4
+   },
+   {
+    "progress": 1,
+    "completed": false,
+    "completedAt": null,
+    "goal": 4
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 1
+   },
+   {
+    "progress": 1,
+    "completed": false,
+    "completedAt": null,
+    "goal": 3
+   },
+   {
+    "progress": 4,
+    "completed": false,
+    "completedAt": null,
+    "goal": 10
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 1
+   },
+   {
+    "progress": 2,
+    "completed": false,
+    "completedAt": null,
+    "goal": 3
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 1
+   },
+   {
+    "progress": 2,
+    "completed": false,
+    "completedAt": null,
+    "goal": 6
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 1
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 5
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 4
+   }
+  ],
+  "流星之意": [
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 1
+   },
+   {
+    "progress": 1,
+    "completed": false,
+    "completedAt": null,
+    "goal": 2
+   },
+   {
+    "progress": 1,
+    "completed": true,
+    "completedAt": 1,
+    "goal": 1
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 1
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 1
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 2
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 5
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 2
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 3
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 2
+   },
+   {
+    "progress": 1,
+    "completed": false,
+    "completedAt": null,
+    "goal": 8
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 3
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 1
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 4
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 4
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 1
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 3
+   },
+   {
+    "progress": 1,
+    "completed": false,
+    "completedAt": null,
+    "goal": 10
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 1
+   },
+   {
+    "progress": 1,
+    "completed": false,
+    "completedAt": null,
+    "goal": 3
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 1
+   },
+   {
+    "progress": 1,
+    "completed": false,
+    "completedAt": null,
+    "goal": 6
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 1
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 5
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 4
+   }
+  ],
+  "尧": [
+   {
+    "progress": 1,
+    "completed": true,
+    "completedAt": 3,
+    "goal": 1
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 2
+   },
+   {
+    "progress": 1,
+    "completed": true,
+    "completedAt": 1,
+    "goal": 1
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 1
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 1
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 2
+   },
+   {
+    "progress": 1,
+    "completed": false,
+    "completedAt": null,
+    "goal": 5
+   },
+   {
+    "progress": 1,
+    "completed": false,
+    "completedAt": null,
+    "goal": 2
+   },
+   {
+    "progress": 2,
+    "completed": false,
+    "completedAt": null,
+    "goal": 3
+   },
+   {
+    "progress": 2,
+    "completed": true,
+    "completedAt": 3,
+    "goal": 2
+   },
+   {
+    "progress": 8,
+    "completed": true,
+    "completedAt": 3,
+    "goal": 8
+   },
+   {
+    "progress": 1,
+    "completed": false,
+    "completedAt": null,
+    "goal": 3
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 1
+   },
+   {
+    "progress": 1,
+    "completed": false,
+    "completedAt": null,
+    "goal": 4
+   },
+   {
+    "progress": 2,
+    "completed": false,
+    "completedAt": null,
+    "goal": 4
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 1
+   },
+   {
+    "progress": 1,
+    "completed": false,
+    "completedAt": null,
+    "goal": 3
+   },
+   {
+    "progress": 4,
+    "completed": false,
+    "completedAt": null,
+    "goal": 10
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 1
+   },
+   {
+    "progress": 3,
+    "completed": true,
+    "completedAt": 3,
+    "goal": 3
+   },
+   {
+    "progress": 1,
+    "completed": true,
+    "completedAt": 3,
+    "goal": 1
+   },
+   {
+    "progress": 1,
+    "completed": false,
+    "completedAt": null,
+    "goal": 6
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 1
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 5
+   },
+   {
+    "progress": 1,
+    "completed": false,
+    "completedAt": null,
+    "goal": 4
+   }
+  ],
+  "西二旗四惠东": [
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 1
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 2
+   },
+   {
+    "progress": 1,
+    "completed": true,
+    "completedAt": 1,
+    "goal": 1
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 1
+   },
+   {
+    "progress": 1,
+    "completed": true,
+    "completedAt": 1,
+    "goal": 1
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 2
+   },
+   {
+    "progress": 2,
+    "completed": false,
+    "completedAt": null,
+    "goal": 5
+   },
+   {
+    "progress": 1,
+    "completed": false,
+    "completedAt": null,
+    "goal": 2
+   },
+   {
+    "progress": 1,
+    "completed": false,
+    "completedAt": null,
+    "goal": 3
+   },
+   {
+    "progress": 2,
+    "completed": true,
+    "completedAt": 2,
+    "goal": 2
+   },
+   {
+    "progress": 8,
+    "completed": true,
+    "completedAt": 3,
+    "goal": 8
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 3
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 1
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 4
+   },
+   {
+    "progress": 1,
+    "completed": false,
+    "completedAt": null,
+    "goal": 4
+   },
+   {
+    "progress": 1,
+    "completed": true,
+    "completedAt": 1,
+    "goal": 1
+   },
+   {
+    "progress": 1,
+    "completed": false,
+    "completedAt": null,
+    "goal": 3
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 10
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 1
+   },
+   {
+    "progress": 3,
+    "completed": true,
+    "completedAt": 3,
+    "goal": 3
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 1
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 6
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 1
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 5
+   },
+   {
+    "progress": 2,
+    "completed": false,
+    "completedAt": null,
+    "goal": 4
+   }
+  ],
+  "飞鼠_Triones": [
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 1
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 2
+   },
+   {
+    "progress": 1,
+    "completed": true,
+    "completedAt": 1,
+    "goal": 1
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 1
+   },
+   {
+    "progress": 1,
+    "completed": true,
+    "completedAt": 3,
+    "goal": 1
+   },
+   {
+    "progress": 1,
+    "completed": false,
+    "completedAt": null,
+    "goal": 2
+   },
+   {
+    "progress": 1,
+    "completed": false,
+    "completedAt": null,
+    "goal": 5
+   },
+   {
+    "progress": 1,
+    "completed": false,
+    "completedAt": null,
+    "goal": 2
+   },
+   {
+    "progress": 1,
+    "completed": false,
+    "completedAt": null,
+    "goal": 3
+   },
+   {
+    "progress": 1,
+    "completed": false,
+    "completedAt": null,
+    "goal": 2
+   },
+   {
+    "progress": 8,
+    "completed": true,
+    "completedAt": 2,
+    "goal": 8
+   },
+   {
+    "progress": 1,
+    "completed": false,
+    "completedAt": null,
+    "goal": 3
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 1
+   },
+   {
+    "progress": 2,
+    "completed": false,
+    "completedAt": null,
+    "goal": 4
+   },
+   {
+    "progress": 1,
+    "completed": false,
+    "completedAt": null,
+    "goal": 4
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 1
+   },
+   {
+    "progress": 2,
+    "completed": false,
+    "completedAt": null,
+    "goal": 3
+   },
+   {
+    "progress": 6,
+    "completed": false,
+    "completedAt": null,
+    "goal": 10
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 1
+   },
+   {
+    "progress": 1,
+    "completed": false,
+    "completedAt": null,
+    "goal": 3
+   },
+   {
+    "progress": 1,
+    "completed": true,
+    "completedAt": 2,
+    "goal": 1
+   },
+   {
+    "progress": 1,
+    "completed": false,
+    "completedAt": null,
+    "goal": 6
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 1
+   },
+   {
+    "progress": 2,
+    "completed": false,
+    "completedAt": null,
+    "goal": 5
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 4
+   }
+  ],
+  "奇策十二": [
+   {
+    "progress": 1,
+    "completed": true,
+    "completedAt": 3,
+    "goal": 1
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 2
+   },
+   {
+    "progress": 1,
+    "completed": true,
+    "completedAt": 1,
+    "goal": 1
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 1
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 1
+   },
+   {
+    "progress": 2,
+    "completed": true,
+    "completedAt": 2,
+    "goal": 2
+   },
+   {
+    "progress": 2,
+    "completed": false,
+    "completedAt": null,
+    "goal": 5
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 2
+   },
+   {
+    "progress": 1,
+    "completed": false,
+    "completedAt": null,
+    "goal": 3
+   },
+   {
+    "progress": 1,
+    "completed": false,
+    "completedAt": null,
+    "goal": 2
+   },
+   {
+    "progress": 8,
+    "completed": true,
+    "completedAt": 2,
+    "goal": 8
+   },
+   {
+    "progress": 2,
+    "completed": false,
+    "completedAt": null,
+    "goal": 3
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 1
+   },
+   {
+    "progress": 1,
+    "completed": false,
+    "completedAt": null,
+    "goal": 4
+   },
+   {
+    "progress": 2,
+    "completed": false,
+    "completedAt": null,
+    "goal": 4
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 1
+   },
+   {
+    "progress": 1,
+    "completed": false,
+    "completedAt": null,
+    "goal": 3
+   },
+   {
+    "progress": 10,
+    "completed": true,
+    "completedAt": 2,
+    "goal": 10
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 1
+   },
+   {
+    "progress": 1,
+    "completed": false,
+    "completedAt": null,
+    "goal": 3
+   },
+   {
+    "progress": 1,
+    "completed": true,
+    "completedAt": 1,
+    "goal": 1
+   },
+   {
+    "progress": 1,
+    "completed": false,
+    "completedAt": null,
+    "goal": 6
+   },
+   {
+    "progress": 1,
+    "completed": true,
+    "completedAt": 3,
+    "goal": 1
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 5
+   },
+   {
+    "progress": 2,
+    "completed": false,
+    "completedAt": null,
+    "goal": 4
+   }
+  ],
+  "神岸春原": [
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 1
+   },
+   {
+    "progress": 2,
+    "completed": true,
+    "completedAt": 3,
+    "goal": 2
+   },
+   {
+    "progress": 1,
+    "completed": true,
+    "completedAt": 2,
+    "goal": 1
+   },
+   {
+    "progress": 1,
+    "completed": true,
+    "completedAt": 2,
+    "goal": 1
+   },
+   {
+    "progress": 1,
+    "completed": true,
+    "completedAt": 2,
+    "goal": 1
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 2
+   },
+   {
+    "progress": 1,
+    "completed": false,
+    "completedAt": null,
+    "goal": 5
+   },
+   {
+    "progress": 1,
+    "completed": false,
+    "completedAt": null,
+    "goal": 2
+   },
+   {
+    "progress": 1,
+    "completed": false,
+    "completedAt": null,
+    "goal": 3
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 2
+   },
+   {
+    "progress": 5,
+    "completed": false,
+    "completedAt": null,
+    "goal": 8
+   },
+   {
+    "progress": 1,
+    "completed": false,
+    "completedAt": null,
+    "goal": 3
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 1
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 4
+   },
+   {
+    "progress": 1,
+    "completed": false,
+    "completedAt": null,
+    "goal": 4
+   },
+   {
+    "progress": 1,
+    "completed": true,
+    "completedAt": 2,
+    "goal": 1
+   },
+   {
+    "progress": 1,
+    "completed": false,
+    "completedAt": null,
+    "goal": 3
+   },
+   {
+    "progress": 3,
+    "completed": false,
+    "completedAt": null,
+    "goal": 10
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 1
+   },
+   {
+    "progress": 2,
+    "completed": false,
+    "completedAt": null,
+    "goal": 3
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 1
+   },
+   {
+    "progress": 1,
+    "completed": false,
+    "completedAt": null,
+    "goal": 6
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 1
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 5
+   },
+   {
+    "progress": 1,
+    "completed": false,
+    "completedAt": null,
+    "goal": 4
+   }
+  ],
+  "Mithril": [
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 1
+   },
+   {
+    "progress": 1,
+    "completed": false,
+    "completedAt": null,
+    "goal": 2
+   },
+   {
+    "progress": 1,
+    "completed": true,
+    "completedAt": 3,
+    "goal": 1
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 1
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 1
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 2
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 5
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 2
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 3
+   },
+   {
+    "progress": 1,
+    "completed": false,
+    "completedAt": null,
+    "goal": 2
+   },
+   {
+    "progress": 2,
+    "completed": false,
+    "completedAt": null,
+    "goal": 8
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 3
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 1
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 4
+   },
+   {
+    "progress": 1,
+    "completed": false,
+    "completedAt": null,
+    "goal": 4
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 1
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 3
+   },
+   {
+    "progress": 2,
+    "completed": false,
+    "completedAt": null,
+    "goal": 10
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 1
+   },
+   {
+    "progress": 1,
+    "completed": false,
+    "completedAt": null,
+    "goal": 3
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 1
+   },
+   {
+    "progress": 1,
+    "completed": false,
+    "completedAt": null,
+    "goal": 6
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 1
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 5
+   },
+   {
+    "progress": 0,
+    "completed": false,
+    "completedAt": null,
+    "goal": 4
+   }
+  ]
+ },
+ "history": [
+  {
+   "round": 1,
+   "date": "2026-08-11",
+   "ranked": [
+    {
+     "name": "西二旗四惠东",
+     "rank": 1,
+     "totalScore": -2.208333333333333,
+     "qScores": [
+      3,
+      2,
+      -3.5999999999999996,
+      -4,
+      0,
+      2.6666666666666665,
+      1,
+      -2.1,
+      0.825,
+      -2
+     ],
+     "answers": [
+      {
+       "type": "single",
+       "label": "A",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "B",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "A",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "A",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "A",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "text",
+       "label": "",
+       "labels": [],
+       "value": "8",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "multi",
+       "label": "",
+       "labels": [
+        "A"
+       ],
+       "value": "",
+       "same_set": 0,
+       "same_count": 4
+      },
+      {
+       "type": "multi",
+       "label": "",
+       "labels": [
+        "C"
+       ],
+       "value": "",
+       "same_set": 0,
+       "same_count": 4
+      },
+      {
+       "type": "multi",
+       "label": "",
+       "labels": [
+        "A"
+       ],
+       "value": "",
+       "same_set": 0,
+       "same_count": 2
+      },
+      {
+       "type": "single",
+       "label": "A",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      }
+     ],
+     "absent": false,
+     "fillTime": 187
+    },
+    {
+     "name": "落天本天",
+     "rank": 2,
+     "totalScore": -2.6500000000000004,
+     "qScores": [
+      -1,
+      2,
+      0,
+      -6,
+      3,
+      5,
+      1,
+      -6.300000000000001,
+      -0.34999999999999987,
+      0
+     ],
+     "answers": [
+      {
+       "type": "single",
+       "label": "D",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "B",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "C",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "D",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "B",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "text",
+       "label": "",
+       "labels": [],
+       "value": "2",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "multi",
+       "label": "",
+       "labels": [
+        "A"
+       ],
+       "value": "",
+       "same_set": 0,
+       "same_count": 4
+      },
+      {
+       "type": "multi",
+       "label": "",
+       "labels": [
+        "B",
+        "C",
+        "D"
+       ],
+       "value": "",
+       "same_set": 1,
+       "same_count": 1
+      },
+      {
+       "type": "multi",
+       "label": "",
+       "labels": [
+        "B",
+        "C",
+        "D"
+       ],
+       "value": "",
+       "same_set": 1,
+       "same_count": 1
+      },
+      {
+       "type": "single",
+       "label": "B",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      }
+     ],
+     "absent": false,
+     "fillTime": 83
+    },
+    {
+     "name": "Ushia",
+     "rank": 3,
+     "totalScore": -3.5166666666666666,
+     "qScores": [
+      4.5,
+      0,
+      0,
+      -7.5,
+      0,
+      0.3333333333333333,
+      3,
+      -2.1,
+      -1.75,
+      0
+     ],
+     "answers": [
+      {
+       "type": "single",
+       "label": "C",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "C",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "C",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "C",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "C",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "text",
+       "label": "",
+       "labels": [],
+       "value": "1",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "multi",
+       "label": "",
+       "labels": [
+        "C"
+       ],
+       "value": "",
+       "same_set": 0,
+       "same_count": 2
+      },
+      {
+       "type": "multi",
+       "label": "",
+       "labels": [
+        "C"
+       ],
+       "value": "",
+       "same_set": 0,
+       "same_count": 4
+      },
+      {
+       "type": "multi",
+       "label": "",
+       "labels": [
+        "C"
+       ],
+       "value": "",
+       "same_set": 1,
+       "same_count": 1
+      },
+      {
+       "type": "single",
+       "label": "B",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      }
+     ],
+     "absent": false,
+     "fillTime": 14
+    },
+    {
+     "name": "奇策十二",
+     "rank": 4,
+     "totalScore": -3.775,
+     "qScores": [
+      -1,
+      -2,
+      0,
+      -6,
+      0,
+      5,
+      1,
+      -3,
+      2.225,
+      0
+     ],
+     "answers": [
+      {
+       "type": "single",
+       "label": "D",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "A",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "D",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "D",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "C",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "text",
+       "label": "",
+       "labels": [],
+       "value": "2",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "multi",
+       "label": "",
+       "labels": [
+        "B",
+        "C"
+       ],
+       "value": "",
+       "same_set": 0,
+       "same_count": 2
+      },
+      {
+       "type": "multi",
+       "label": "",
+       "labels": [
+        "A",
+        "C",
+        "D"
+       ],
+       "value": "",
+       "same_set": 1,
+       "same_count": 1
+      },
+      {
+       "type": "multi",
+       "label": "",
+       "labels": [
+        "A",
+        "B",
+        "D"
+       ],
+       "value": "",
+       "same_set": 1,
+       "same_count": 1
+      },
+      {
+       "type": "single",
+       "label": "B",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      }
+     ],
+     "absent": false,
+     "fillTime": 49
+    },
+    {
+     "name": "晨曦",
+     "rank": 5,
+     "totalScore": -7.1083333333333325,
+     "qScores": [
+      3.5,
+      2,
+      -3.5999999999999996,
+      -4,
+      0,
+      1.6666666666666667,
+      -1,
+      -4.5,
+      0.825,
+      -2
+     ],
+     "answers": [
+      {
+       "type": "single",
+       "label": "E",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "B",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "A",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "A",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "A",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "text",
+       "label": "",
+       "labels": [],
+       "value": "5",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "multi",
+       "label": "",
+       "labels": [
+        "A",
+        "B"
+       ],
+       "value": "",
+       "same_set": 0,
+       "same_count": 2
+      },
+      {
+       "type": "multi",
+       "label": "",
+       "labels": [
+        "C",
+        "D"
+       ],
+       "value": "",
+       "same_set": 0,
+       "same_count": 2
+      },
+      {
+       "type": "multi",
+       "label": "",
+       "labels": [
+        "A"
+       ],
+       "value": "",
+       "same_set": 0,
+       "same_count": 2
+      },
+      {
+       "type": "single",
+       "label": "A",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      }
+     ],
+     "absent": false,
+     "fillTime": 167
+    },
+    {
+     "name": "CME256",
+     "rank": 6,
+     "totalScore": -8.166666666666666,
+     "qScores": [
+      3,
+      -2,
+      -2.6666666666666665,
+      -7.5,
+      0,
+      0,
+      1,
+      1.5,
+      0.5,
+      -2
+     ],
+     "answers": [
+      {
+       "type": "single",
+       "label": "B",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "A",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "B",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "C",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "A",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "text",
+       "label": "",
+       "labels": [],
+       "value": "6",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "multi",
+       "label": "",
+       "labels": [
+        "B",
+        "C"
+       ],
+       "value": "",
+       "same_set": 0,
+       "same_count": 2
+      },
+      {
+       "type": "multi",
+       "label": "",
+       "labels": [
+        "A"
+       ],
+       "value": "",
+       "same_set": 1,
+       "same_count": 1
+      },
+      {
+       "type": "multi",
+       "label": "",
+       "labels": [
+        "B",
+        "C",
+        "E"
+       ],
+       "value": "",
+       "same_set": 1,
+       "same_count": 1
+      },
+      {
+       "type": "single",
+       "label": "A",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      }
+     ],
+     "absent": false,
+     "fillTime": 34
+    },
+    {
+     "name": "Yy",
+     "rank": 7,
+     "totalScore": -9.025,
+     "qScores": [
+      3,
+      2,
+      0,
+      -7.5,
+      0,
+      0,
+      1,
+      -2.1,
+      -3.425,
+      -2
+     ],
+     "answers": [
+      {
+       "type": "single",
+       "label": "B",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "B",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "D",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "C",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "C",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "text",
+       "label": "",
+       "labels": [],
+       "value": "3",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "multi",
+       "label": "",
+       "labels": [
+        "A"
+       ],
+       "value": "",
+       "same_set": 0,
+       "same_count": 4
+      },
+      {
+       "type": "multi",
+       "label": "",
+       "labels": [
+        "C"
+       ],
+       "value": "",
+       "same_set": 0,
+       "same_count": 4
+      },
+      {
+       "type": "multi",
+       "label": "",
+       "labels": [
+        "A",
+        "C",
+        "F"
+       ],
+       "value": "",
+       "same_set": 0,
+       "same_count": 2
+      },
+      {
+       "type": "single",
+       "label": "A",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      }
+     ],
+     "absent": false,
+     "fillTime": 271
+    },
+    {
+     "name": "流星之意",
+     "rank": 8,
+     "totalScore": -9.833333333333332,
+     "qScores": [
+      -1,
+      2,
+      -2.6666666666666665,
+      -7.5,
+      3,
+      2.3333333333333335,
+      1,
+      -3.9000000000000004,
+      -1.0999999999999999,
+      -2
+     ],
+     "answers": [
+      {
+       "type": "single",
+       "label": "F",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "B",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "B",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "E",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "B",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "text",
+       "label": "",
+       "labels": [],
+       "value": "7",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "multi",
+       "label": "",
+       "labels": [
+        "A"
+       ],
+       "value": "",
+       "same_set": 0,
+       "same_count": 4
+      },
+      {
+       "type": "multi",
+       "label": "",
+       "labels": [
+        "B",
+        "C"
+       ],
+       "value": "",
+       "same_set": 0,
+       "same_count": 2
+      },
+      {
+       "type": "multi",
+       "label": "",
+       "labels": [
+        "B",
+        "D",
+        "F"
+       ],
+       "value": "",
+       "same_set": 1,
+       "same_count": 1
+      },
+      {
+       "type": "single",
+       "label": "A",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      }
+     ],
+     "absent": false,
+     "fillTime": 95
+    },
+    {
+     "name": "#¥#@",
+     "rank": 9,
+     "totalScore": -11.158333333333333,
+     "qScores": [
+      3,
+      2,
+      -2.6666666666666665,
+      -7.5,
+      3,
+      1.3333333333333333,
+      -1,
+      -3.9000000000000004,
+      -3.425,
+      -2
+     ],
+     "answers": [
+      {
+       "type": "single",
+       "label": "B",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "B",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "B",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "C",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "B",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "text",
+       "label": "",
+       "labels": [],
+       "value": "4",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "multi",
+       "label": "",
+       "labels": [
+        "A",
+        "B"
+       ],
+       "value": "",
+       "same_set": 0,
+       "same_count": 2
+      },
+      {
+       "type": "multi",
+       "label": "",
+       "labels": [
+        "B",
+        "C"
+       ],
+       "value": "",
+       "same_set": 0,
+       "same_count": 2
+      },
+      {
+       "type": "multi",
+       "label": "",
+       "labels": [
+        "A",
+        "C",
+        "F"
+       ],
+       "value": "",
+       "same_set": 0,
+       "same_count": 2
+      },
+      {
+       "type": "single",
+       "label": "A",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      }
+     ],
+     "absent": false,
+     "fillTime": 144
+    },
+    {
+     "name": "尧",
+     "rank": 10,
+     "totalScore": -11.275,
+     "qScores": [
+      3,
+      2,
+      -3.5999999999999996,
+      -7.5,
+      0,
+      5,
+      -2,
+      -4.5,
+      -1.675,
+      -2
+     ],
+     "answers": [
+      {
+       "type": "single",
+       "label": "A",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "B",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "A",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "C",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "C",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "text",
+       "label": "",
+       "labels": [],
+       "value": "2",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "multi",
+       "label": "",
+       "labels": [
+        "B"
+       ],
+       "value": "",
+       "same_set": 0,
+       "same_count": 2
+      },
+      {
+       "type": "multi",
+       "label": "",
+       "labels": [
+        "C",
+        "D"
+       ],
+       "value": "",
+       "same_set": 0,
+       "same_count": 2
+      },
+      {
+       "type": "multi",
+       "label": "",
+       "labels": [
+        "A",
+        "B",
+        "F"
+       ],
+       "value": "",
+       "same_set": 1,
+       "same_count": 1
+      },
+      {
+       "type": "single",
+       "label": "A",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      }
+     ],
+     "absent": false,
+     "fillTime": 131
+    },
+    {
+     "name": "๑",
+     "rank": 11,
+     "totalScore": -13.375,
+     "qScores": [
+      -1,
+      -2,
+      -3.5999999999999996,
+      -6,
+      0,
+      0,
+      3,
+      -2.1,
+      -1.675,
+      0
+     ],
+     "answers": [
+      {
+       "type": "single",
+       "label": "F",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "A",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "A",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "D",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "A",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "text",
+       "label": "",
+       "labels": [],
+       "value": "6",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "multi",
+       "label": "",
+       "labels": [
+        "C"
+       ],
+       "value": "",
+       "same_set": 0,
+       "same_count": 2
+      },
+      {
+       "type": "multi",
+       "label": "",
+       "labels": [
+        "C"
+       ],
+       "value": "",
+       "same_set": 0,
+       "same_count": 4
+      },
+      {
+       "type": "multi",
+       "label": "",
+       "labels": [
+        "A",
+        "F"
+       ],
+       "value": "",
+       "same_set": 1,
+       "same_count": 1
+      },
+      {
+       "type": "single",
+       "label": "B",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      }
+     ],
+     "absent": false,
+     "fillTime": 71
+    },
+    {
+     "name": "飞鼠_Triones",
+     "rank": 12,
+     "totalScore": -18.75,
+     "qScores": [
+      3.5,
+      2,
+      -3.5999999999999996,
+      -7.5,
+      0,
+      0,
+      -2,
+      -6.9,
+      -4.25,
+      0
+     ],
+     "answers": [
+      {
+       "type": "single",
+       "label": "E",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "B",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "A",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "E",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "C",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "text",
+       "label": "",
+       "labels": [],
+       "value": "3",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "multi",
+       "label": "",
+       "labels": [
+        "B"
+       ],
+       "value": "",
+       "same_set": 0,
+       "same_count": 2
+      },
+      {
+       "type": "multi",
+       "label": "",
+       "labels": [
+        "B",
+        "D",
+        "E"
+       ],
+       "value": "",
+       "same_set": 1,
+       "same_count": 1
+      },
+      {
+       "type": "multi",
+       "label": "",
+       "labels": [
+        "C",
+        "F"
+       ],
+       "value": "",
+       "same_set": 1,
+       "same_count": 1
+      },
+      {
+       "type": "single",
+       "label": "B",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      }
+     ],
+     "absent": false,
+     "fillTime": 180
+    }
+   ],
+   "absent": [],
+   "newCompletions": {
+    "晨曦": [],
+    "Ushia": [
+     10,
+     15,
+     18,
+     20,
+     22
+    ],
+    "Yy": [],
+    "#¥#@": [],
+    "๑": [],
+    "CME256": [
+     0,
+     20
+    ],
+    "落天本天": [
+     3
+    ],
+    "流星之意": [],
+    "尧": [],
+    "西二旗四惠东": [
+     4,
+     15
+    ],
+    "飞鼠_Triones": [],
+    "奇策十二": [
+     20
+    ]
+   },
+   "winner": null
+  },
+  {
+   "round": 2,
+   "date": "2026-08-11",
+   "ranked": [
+    {
+     "name": "神岸春原",
+     "rank": 1,
+     "totalScore": 8.5,
+     "qScores": [
+      0,
+      2,
+      3,
+      2,
+      -4,
+      0,
+      -2.4000000000000004,
+      3.3000000000000003,
+      6.6000000000000005,
+      -2
+     ],
+     "answers": [
+      {
+       "type": "single",
+       "label": "B",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "B",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "B",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "B",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "A",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "text",
+       "label": "",
+       "labels": [],
+       "value": "0",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "multi",
+       "label": "",
+       "labels": [
+        "C",
+        "D",
+        "E"
+       ],
+       "value": "",
+       "same_set": 1,
+       "same_count": 1
+      },
+      {
+       "type": "multi",
+       "label": "",
+       "labels": [
+        "B",
+        "E",
+        "F"
+       ],
+       "value": "",
+       "same_set": 0,
+       "same_count": 2
+      },
+      {
+       "type": "multi",
+       "label": "",
+       "labels": [
+        "B",
+        "C",
+        "E"
+       ],
+       "value": "",
+       "same_set": 0,
+       "same_count": 4
+      },
+      {
+       "type": "single",
+       "label": "A",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      }
+     ],
+     "absent": false,
+     "fillTime": 124
+    },
+    {
+     "name": "落天本天",
+     "rank": 2,
+     "totalScore": 8.4,
+     "qScores": [
+      0,
+      2,
+      -1,
+      0,
+      0,
+      -1,
+      -1.5,
+      3.3000000000000003,
+      6.6000000000000005,
+      0
+     ],
+     "answers": [
+      {
+       "type": "single",
+       "label": "A",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "B",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "C",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "A",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "B",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "text",
+       "label": "",
+       "labels": [],
+       "value": "5",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "multi",
+       "label": "",
+       "labels": [
+        "A"
+       ],
+       "value": "",
+       "same_set": 0,
+       "same_count": 3
+      },
+      {
+       "type": "multi",
+       "label": "",
+       "labels": [
+        "B",
+        "E",
+        "F"
+       ],
+       "value": "",
+       "same_set": 0,
+       "same_count": 2
+      },
+      {
+       "type": "multi",
+       "label": "",
+       "labels": [
+        "B",
+        "C",
+        "E"
+       ],
+       "value": "",
+       "same_set": 0,
+       "same_count": 4
+      },
+      {
+       "type": "single",
+       "label": "B",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      }
+     ],
+     "absent": false,
+     "fillTime": 48
+    },
+    {
+     "name": "晨曦",
+     "rank": 3,
+     "totalScore": 7.275,
+     "qScores": [
+      0.875,
+      2,
+      3,
+      -2,
+      0,
+      0,
+      -2.7,
+      1.5,
+      6.6000000000000005,
+      -2
+     ],
+     "answers": [
+      {
+       "type": "single",
+       "label": "C",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "B",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "B",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "C",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "E",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "text",
+       "label": "",
+       "labels": [],
+       "value": "3",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "multi",
+       "label": "",
+       "labels": [
+        "E"
+       ],
+       "value": "",
+       "same_set": 1,
+       "same_count": 1
+      },
+      {
+       "type": "multi",
+       "label": "",
+       "labels": [
+        "C"
+       ],
+       "value": "",
+       "same_set": 0,
+       "same_count": 2
+      },
+      {
+       "type": "multi",
+       "label": "",
+       "labels": [
+        "B",
+        "C",
+        "E"
+       ],
+       "value": "",
+       "same_set": 0,
+       "same_count": 4
+      },
+      {
+       "type": "single",
+       "label": "A",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      }
+     ],
+     "absent": false,
+     "fillTime": 41
+    },
+    {
+     "name": "西二旗四惠东",
+     "rank": 4,
+     "totalScore": 7.1000000000000005,
+     "qScores": [
+      2,
+      2,
+      2,
+      0,
+      -4,
+      0,
+      -2.1,
+      0.6,
+      6.6000000000000005,
+      0
+     ],
+     "answers": [
+      {
+       "type": "single",
+       "label": "F",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "B",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "A",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "A",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "A",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "text",
+       "label": "",
+       "labels": [],
+       "value": "2",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "multi",
+       "label": "",
+       "labels": [
+        "C"
+       ],
+       "value": "",
+       "same_set": 0,
+       "same_count": 4
+      },
+      {
+       "type": "multi",
+       "label": "",
+       "labels": [
+        "F"
+       ],
+       "value": "",
+       "same_set": 1,
+       "same_count": 1
+      },
+      {
+       "type": "multi",
+       "label": "",
+       "labels": [
+        "B",
+        "C",
+        "E"
+       ],
+       "value": "",
+       "same_set": 0,
+       "same_count": 4
+      },
+      {
+       "type": "single",
+       "label": "B",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      }
+     ],
+     "absent": false,
+     "fillTime": 100
+    },
+    {
+     "name": "Ushia",
+     "rank": 5,
+     "totalScore": 6.6000000000000005,
+     "qScores": [
+      5,
+      2,
+      2,
+      6,
+      -8,
+      0,
+      -1.5,
+      -1,
+      2.1000000000000005,
+      0
+     ],
+     "answers": [
+      {
+       "type": "single",
+       "label": "E",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "B",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "A",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "E",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "D",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "text",
+       "label": "",
+       "labels": [],
+       "value": "0",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "multi",
+       "label": "",
+       "labels": [
+        "A"
+       ],
+       "value": "",
+       "same_set": 0,
+       "same_count": 3
+      },
+      {
+       "type": "multi",
+       "label": "",
+       "labels": [
+        "A",
+        "D",
+        "E",
+        "F"
+       ],
+       "value": "",
+       "same_set": 0,
+       "same_count": 2
+      },
+      {
+       "type": "multi",
+       "label": "",
+       "labels": [
+        "B",
+        "D",
+        "E"
+       ],
+       "value": "",
+       "same_set": 0,
+       "same_count": 2
+      },
+      {
+       "type": "single",
+       "label": "B",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      }
+     ],
+     "absent": false,
+     "fillTime": 421
+    },
+    {
+     "name": "尧",
+     "rank": 6,
+     "totalScore": 2.6000000000000005,
+     "qScores": [
+      0,
+      2,
+      3,
+      2,
+      -6,
+      0,
+      -2.1,
+      3.6,
+      2.1000000000000005,
+      -2
+     ],
+     "answers": [
+      {
+       "type": "single",
+       "label": "A",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "B",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "B",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "B",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "C",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "text",
+       "label": "",
+       "labels": [],
+       "value": "1",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "multi",
+       "label": "",
+       "labels": [
+        "C"
+       ],
+       "value": "",
+       "same_set": 0,
+       "same_count": 4
+      },
+      {
+       "type": "multi",
+       "label": "",
+       "labels": [
+        "A",
+        "E",
+        "F"
+       ],
+       "value": "",
+       "same_set": 1,
+       "same_count": 1
+      },
+      {
+       "type": "multi",
+       "label": "",
+       "labels": [
+        "B",
+        "D",
+        "E"
+       ],
+       "value": "",
+       "same_set": 0,
+       "same_count": 2
+      },
+      {
+       "type": "single",
+       "label": "A",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      }
+     ],
+     "absent": false,
+     "fillTime": 28
+    },
+    {
+     "name": "奇策十二",
+     "rank": 7,
+     "totalScore": -3.6999999999999997,
+     "qScores": [
+      3,
+      0,
+      4,
+      -2,
+      -8,
+      0,
+      -1.2000000000000002,
+      -1,
+      1.5000000000000004,
+      0
+     ],
+     "answers": [
+      {
+       "type": "single",
+       "label": "D",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "C",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "D",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "C",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "D",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "text",
+       "label": "",
+       "labels": [],
+       "value": "1",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "multi",
+       "label": "",
+       "labels": [
+        "A",
+        "C",
+        "D"
+       ],
+       "value": "",
+       "same_set": 1,
+       "same_count": 1
+      },
+      {
+       "type": "multi",
+       "label": "",
+       "labels": [
+        "C",
+        "D",
+        "E",
+        "F"
+       ],
+       "value": "",
+       "same_set": 1,
+       "same_count": 1
+      },
+      {
+       "type": "multi",
+       "label": "",
+       "labels": [
+        "B",
+        "C",
+        "D"
+       ],
+       "value": "",
+       "same_set": 1,
+       "same_count": 1
+      },
+      {
+       "type": "single",
+       "label": "B",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      }
+     ],
+     "absent": false,
+     "fillTime": 100
+    },
+    {
+     "name": "CME256",
+     "rank": 8,
+     "totalScore": -5.7,
+     "qScores": [
+      0,
+      2,
+      2,
+      4,
+      -8,
+      -3,
+      -1.5000000000000004,
+      -1,
+      1.8,
+      -2
+     ],
+     "answers": [
+      {
+       "type": "single",
+       "label": "B",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "B",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "A",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "D",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "D",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "text",
+       "label": "",
+       "labels": [],
+       "value": "7",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "multi",
+       "label": "",
+       "labels": [
+        "B",
+        "C",
+        "D"
+       ],
+       "value": "",
+       "same_set": 1,
+       "same_count": 1
+      },
+      {
+       "type": "multi",
+       "label": "",
+       "labels": [
+        "B",
+        "C",
+        "D",
+        "E"
+       ],
+       "value": "",
+       "same_set": 1,
+       "same_count": 1
+      },
+      {
+       "type": "multi",
+       "label": "",
+       "labels": [
+        "B"
+       ],
+       "value": "",
+       "same_set": 1,
+       "same_count": 1
+      },
+      {
+       "type": "single",
+       "label": "A",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      }
+     ],
+     "absent": false,
+     "fillTime": 29
+    },
+    {
+     "name": "飞鼠_Triones",
+     "rank": 9,
+     "totalScore": -11.125,
+     "qScores": [
+      0.875,
+      0,
+      -1,
+      -2,
+      -6,
+      0,
+      -2.1,
+      1.5,
+      -2.4,
+      0
+     ],
+     "answers": [
+      {
+       "type": "single",
+       "label": "C",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "C",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "C",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "C",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "C",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "text",
+       "label": "",
+       "labels": [],
+       "value": "3",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "multi",
+       "label": "",
+       "labels": [
+        "C"
+       ],
+       "value": "",
+       "same_set": 0,
+       "same_count": 4
+      },
+      {
+       "type": "multi",
+       "label": "",
+       "labels": [
+        "C"
+       ],
+       "value": "",
+       "same_set": 0,
+       "same_count": 2
+      },
+      {
+       "type": "multi",
+       "label": "",
+       "labels": [
+        "D"
+       ],
+       "value": "",
+       "same_set": 1,
+       "same_count": 1
+      },
+      {
+       "type": "single",
+       "label": "B",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      }
+     ],
+     "absent": false,
+     "fillTime": 14
+    },
+    {
+     "name": "Yy",
+     "rank": 9,
+     "totalScore": -11.125,
+     "qScores": [
+      0.875,
+      0,
+      -1,
+      -2,
+      -6,
+      0,
+      -2.1,
+      -1,
+      2.1,
+      -2
+     ],
+     "answers": [
+      {
+       "type": "single",
+       "label": "C",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "C",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "C",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "C",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "C",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "text",
+       "label": "",
+       "labels": [],
+       "value": "4",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "multi",
+       "label": "",
+       "labels": [
+        "C"
+       ],
+       "value": "",
+       "same_set": 0,
+       "same_count": 4
+      },
+      {
+       "type": "multi",
+       "label": "",
+       "labels": [
+        "A",
+        "D",
+        "E",
+        "F"
+       ],
+       "value": "",
+       "same_set": 0,
+       "same_count": 2
+      },
+      {
+       "type": "multi",
+       "label": "",
+       "labels": [
+        "C"
+       ],
+       "value": "",
+       "same_set": 1,
+       "same_count": 1
+      },
+      {
+       "type": "single",
+       "label": "A",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      }
+     ],
+     "absent": false,
+     "fillTime": 337
+    },
+    {
+     "name": "#¥#@",
+     "rank": 9,
+     "totalScore": -11.125,
+     "qScores": [
+      0.875,
+      0,
+      -1,
+      -2,
+      -6,
+      0,
+      0.2999999999999998,
+      -1,
+      -0.2999999999999998,
+      -2
+     ],
+     "answers": [
+      {
+       "type": "single",
+       "label": "C",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "C",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "C",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "C",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "C",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "text",
+       "label": "",
+       "labels": [],
+       "value": "2",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "multi",
+       "label": "",
+       "labels": [
+        "C",
+        "D"
+       ],
+       "value": "",
+       "same_set": 1,
+       "same_count": 1
+      },
+      {
+       "type": "multi",
+       "label": "",
+       "labels": [
+        "C",
+        "D"
+       ],
+       "value": "",
+       "same_set": 1,
+       "same_count": 1
+      },
+      {
+       "type": "multi",
+       "label": "",
+       "labels": [
+        "C",
+        "D"
+       ],
+       "value": "",
+       "same_set": 1,
+       "same_count": 1
+      },
+      {
+       "type": "single",
+       "label": "A",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      }
+     ],
+     "absent": false,
+     "fillTime": 26
+    },
+    {
+     "name": "๑",
+     "rank": 12,
+     "totalScore": -12.2,
+     "qScores": [
+      2,
+      -2,
+      -1,
+      -2,
+      -8,
+      -1,
+      -1.5,
+      1.8,
+      1.5,
+      -2
+     ],
+     "answers": [
+      {
+       "type": "single",
+       "label": "F",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "A",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "C",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "C",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "D",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "text",
+       "label": "",
+       "labels": [],
+       "value": "5",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "multi",
+       "label": "",
+       "labels": [
+        "A"
+       ],
+       "value": "",
+       "same_set": 0,
+       "same_count": 3
+      },
+      {
+       "type": "multi",
+       "label": "",
+       "labels": [
+        "B"
+       ],
+       "value": "",
+       "same_set": 1,
+       "same_count": 1
+      },
+      {
+       "type": "multi",
+       "label": "",
+       "labels": [
+        "A"
+       ],
+       "value": "",
+       "same_set": 1,
+       "same_count": 1
+      },
+      {
+       "type": "single",
+       "label": "A",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      }
+     ],
+     "absent": false,
+     "fillTime": 16
+    },
+    {
+     "name": "流星之意",
+     "rank": 13,
+     "totalScore": 0,
+     "qScores": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "answers": [
+      {
+       "type": "single",
+       "label": "",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "text",
+       "label": "",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "multi",
+       "label": "",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "multi",
+       "label": "",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "multi",
+       "label": "",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      }
+     ],
+     "absent": true,
+     "fillTime": 0
+    }
+   ],
+   "absent": [
+    "流星之意"
+   ],
+   "newCompletions": {
+    "晨曦": [
+     2,
+     9
+    ],
+    "Ushia": [
+     0,
+     9
+    ],
+    "Yy": [
+     2,
+     10
+    ],
+    "#¥#@": [
+     2,
+     10,
+     20
+    ],
+    "๑": [
+     20
+    ],
+    "CME256": [
+     2
+    ],
+    "落天本天": [
+     1,
+     2,
+     7,
+     9
+    ],
+    "流星之意": [
+     2
+    ],
+    "尧": [
+     2
+    ],
+    "西二旗四惠东": [
+     2,
+     9
+    ],
+    "飞鼠_Triones": [
+     2,
+     10,
+     20
+    ],
+    "奇策十二": [
+     2,
+     5,
+     10,
+     17
+    ],
+    "神岸春原": [
+     2,
+     3,
+     4,
+     15
+    ]
+   },
+   "winner": null
+  },
+  {
+   "round": 3,
+   "date": "2026-08-12",
+   "ranked": [
+    {
+     "name": "飞鼠_Triones",
+     "rank": 1,
+     "totalScore": -0.7000000000000002,
+     "qScores": [
+      0,
+      -2.5,
+      -3.5,
+      5.5,
+      3.5,
+      -4.5,
+      -0.5,
+      4.3,
+      -2.1,
+      1.6,
+      -2.5
+     ],
+     "answers": [
+      {
+       "type": "text",
+       "label": "",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "E",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "B",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "D",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "B",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "D",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "text",
+       "label": "",
+       "labels": [],
+       "value": "2",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "multi",
+       "label": "",
+       "labels": [
+        "A",
+        "D",
+        "E",
+        "F"
+       ],
+       "value": "",
+       "same_set": 1,
+       "same_count": 1
+      },
+      {
+       "type": "multi",
+       "label": "",
+       "labels": [
+        "D"
+       ],
+       "value": "",
+       "same_set": 1,
+       "same_count": 1
+      },
+      {
+       "type": "multi",
+       "label": "",
+       "labels": [
+        "C"
+       ],
+       "value": "",
+       "same_set": 0,
+       "same_count": 3
+      },
+      {
+       "type": "single",
+       "label": "A",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      }
+     ],
+     "absent": false,
+     "fillTime": 99
+    },
+    {
+     "name": "๑",
+     "rank": 2,
+     "totalScore": -2.58,
+     "qScores": [
+      0,
+      0.57,
+      -3.5,
+      1.5,
+      -0.5,
+      -4.5,
+      4.5,
+      -1.5,
+      3.05,
+      -1.7,
+      -0.5
+     ],
+     "answers": [
+      {
+       "type": "text",
+       "label": "",
+       "labels": [],
+       "value": "B",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "C",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "B",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "B",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "D",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "D",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "text",
+       "label": "",
+       "labels": [],
+       "value": "3",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "multi",
+       "label": "",
+       "labels": [
+        "A",
+        "B",
+        "C",
+        "D"
+       ],
+       "value": "",
+       "same_set": 1,
+       "same_count": 1
+      },
+      {
+       "type": "multi",
+       "label": "",
+       "labels": [
+        "A",
+        "B",
+        "C"
+       ],
+       "value": "",
+       "same_set": 1,
+       "same_count": 1
+      },
+      {
+       "type": "multi",
+       "label": "",
+       "labels": [
+        "A",
+        "B",
+        "C"
+       ],
+       "value": "",
+       "same_set": 1,
+       "same_count": 1
+      },
+      {
+       "type": "single",
+       "label": "B",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      }
+     ],
+     "absent": false,
+     "fillTime": 32
+    },
+    {
+     "name": "尧",
+     "rank": 3,
+     "totalScore": -2.7299999999999995,
+     "qScores": [
+      0,
+      0.57,
+      -1.5,
+      2,
+      -0.5,
+      -6.5,
+      -0.5,
+      2.2,
+      0.4,
+      1.6,
+      -0.5
+     ],
+     "answers": [
+      {
+       "type": "text",
+       "label": "",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "C",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "C",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "C",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "D",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "C",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "text",
+       "label": "",
+       "labels": [],
+       "value": "2",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "multi",
+       "label": "",
+       "labels": [
+        "A",
+        "F"
+       ],
+       "value": "",
+       "same_set": 1,
+       "same_count": 1
+      },
+      {
+       "type": "multi",
+       "label": "",
+       "labels": [
+        "A",
+        "D",
+        "F"
+       ],
+       "value": "",
+       "same_set": 1,
+       "same_count": 1
+      },
+      {
+       "type": "multi",
+       "label": "",
+       "labels": [
+        "C"
+       ],
+       "value": "",
+       "same_set": 0,
+       "same_count": 3
+      },
+      {
+       "type": "single",
+       "label": "B",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      }
+     ],
+     "absent": false,
+     "fillTime": 28
+    },
+    {
+     "name": "Mithril",
+     "rank": 4,
+     "totalScore": -3.9699999999999998,
+     "qScores": [
+      0,
+      -0.5,
+      -1.5,
+      1.5,
+      -6.5,
+      -3.17,
+      4.5,
+      -1.5,
+      3.5,
+      2.2,
+      -2.5
+     ],
+     "answers": [
+      {
+       "type": "text",
+       "label": "",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "B",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "C",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "B",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "E",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "B",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "text",
+       "label": "",
+       "labels": [],
+       "value": "3",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "multi",
+       "label": "",
+       "labels": [
+        "A",
+        "B"
+       ],
+       "value": "",
+       "same_set": 1,
+       "same_count": 1
+      },
+      {
+       "type": "multi",
+       "label": "",
+       "labels": [
+        "B",
+        "D",
+        "F"
+       ],
+       "value": "",
+       "same_set": 1,
+       "same_count": 1
+      },
+      {
+       "type": "multi",
+       "label": "",
+       "labels": [
+        "B",
+        "C",
+        "D"
+       ],
+       "value": "",
+       "same_set": 1,
+       "same_count": 1
+      },
+      {
+       "type": "single",
+       "label": "A",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      }
+     ],
+     "absent": false,
+     "fillTime": 63
+    },
+    {
+     "name": "#¥#@",
+     "rank": 5,
+     "totalScore": -6.67,
+     "qScores": [
+      0,
+      -0.5,
+      -1.5,
+      5.5,
+      -6.5,
+      -4.5,
+      2.83,
+      0.1,
+      -1.5,
+      1.9,
+      -2.5
+     ],
+     "answers": [
+      {
+       "type": "text",
+       "label": "",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "B",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "C",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "D",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "E",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "D",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "text",
+       "label": "",
+       "labels": [],
+       "value": "10",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "multi",
+       "label": "",
+       "labels": [
+        "F"
+       ],
+       "value": "",
+       "same_set": 0,
+       "same_count": 2
+      },
+      {
+       "type": "multi",
+       "label": "",
+       "labels": [
+        "A"
+       ],
+       "value": "",
+       "same_set": 0,
+       "same_count": 2
+      },
+      {
+       "type": "multi",
+       "label": "",
+       "labels": [
+        "D"
+       ],
+       "value": "",
+       "same_set": 1,
+       "same_count": 1
+      },
+      {
+       "type": "single",
+       "label": "A",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      }
+     ],
+     "absent": false,
+     "fillTime": 44
+    },
+    {
+     "name": "奇策十二",
+     "rank": 6,
+     "totalScore": -7.029999999999999,
+     "qScores": [
+      0,
+      0.57,
+      -1.5,
+      2,
+      -4.5,
+      -6.5,
+      -0.5,
+      1.6,
+      -0.2,
+      2.5,
+      -0.5
+     ],
+     "answers": [
+      {
+       "type": "text",
+       "label": "",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "C",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "C",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "C",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "C",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "C",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "text",
+       "label": "",
+       "labels": [],
+       "value": "2",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "multi",
+       "label": "",
+       "labels": [
+        "A"
+       ],
+       "value": "",
+       "same_set": 1,
+       "same_count": 1
+      },
+      {
+       "type": "multi",
+       "label": "",
+       "labels": [
+        "B",
+        "E"
+       ],
+       "value": "",
+       "same_set": 1,
+       "same_count": 1
+      },
+      {
+       "type": "multi",
+       "label": "",
+       "labels": [
+        "A",
+        "C",
+        "D"
+       ],
+       "value": "",
+       "same_set": 1,
+       "same_count": 1
+      },
+      {
+       "type": "single",
+       "label": "B",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      }
+     ],
+     "absent": false,
+     "fillTime": 60
+    },
+    {
+     "name": "神岸春原",
+     "rank": 7,
+     "totalScore": -9.469999999999999,
+     "qScores": [
+      0,
+      0.57,
+      -1.5,
+      1.5,
+      -6.5,
+      -3.17,
+      1.83,
+      1.3,
+      -2.3,
+      1.3,
+      -2.5
+     ],
+     "answers": [
+      {
+       "type": "text",
+       "label": "",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "C",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "C",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "B",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "E",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "B",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "text",
+       "label": "",
+       "labels": [],
+       "value": "7",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "multi",
+       "label": "",
+       "labels": [
+        "D",
+        "F"
+       ],
+       "value": "",
+       "same_set": 1,
+       "same_count": 1
+      },
+      {
+       "type": "multi",
+       "label": "",
+       "labels": [
+        "E"
+       ],
+       "value": "",
+       "same_set": 1,
+       "same_count": 1
+      },
+      {
+       "type": "multi",
+       "label": "",
+       "labels": [
+        "C",
+        "D",
+        "E"
+       ],
+       "value": "",
+       "same_set": 1,
+       "same_count": 1
+      },
+      {
+       "type": "single",
+       "label": "A",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      }
+     ],
+     "absent": false,
+     "fillTime": 275
+    },
+    {
+     "name": "Yy",
+     "rank": 8,
+     "totalScore": -9.879999999999999,
+     "qScores": [
+      0,
+      0.57,
+      -1.5,
+      2,
+      -4.5,
+      -6.5,
+      -0.5,
+      3.1,
+      1.95,
+      -2,
+      -2.5
+     ],
+     "answers": [
+      {
+       "type": "text",
+       "label": "",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "C",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "C",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "C",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "C",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "C",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "text",
+       "label": "",
+       "labels": [],
+       "value": "2",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "multi",
+       "label": "",
+       "labels": [
+        "A",
+        "E",
+        "F"
+       ],
+       "value": "",
+       "same_set": 1,
+       "same_count": 1
+      },
+      {
+       "type": "multi",
+       "label": "",
+       "labels": [
+        "C"
+       ],
+       "value": "",
+       "same_set": 1,
+       "same_count": 1
+      },
+      {
+       "type": "multi",
+       "label": "",
+       "labels": [
+        "A"
+       ],
+       "value": "",
+       "same_set": 1,
+       "same_count": 1
+      },
+      {
+       "type": "single",
+       "label": "A",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      }
+     ],
+     "absent": false,
+     "fillTime": 78
+    },
+    {
+     "name": "西二旗四惠东",
+     "rank": 9,
+     "totalScore": -10.06,
+     "qScores": [
+      0,
+      0.57,
+      -1.5,
+      2,
+      -4.5,
+      -6.5,
+      2.17,
+      0.1,
+      -1.5,
+      1.6,
+      -2.5
+     ],
+     "answers": [
+      {
+       "type": "text",
+       "label": "",
+       "labels": [],
+       "value": "M",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "C",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "C",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "C",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "C",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "C",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "text",
+       "label": "",
+       "labels": [],
+       "value": "8",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "multi",
+       "label": "",
+       "labels": [
+        "F"
+       ],
+       "value": "",
+       "same_set": 0,
+       "same_count": 2
+      },
+      {
+       "type": "multi",
+       "label": "",
+       "labels": [
+        "A"
+       ],
+       "value": "",
+       "same_set": 0,
+       "same_count": 2
+      },
+      {
+       "type": "multi",
+       "label": "",
+       "labels": [
+        "C"
+       ],
+       "value": "",
+       "same_set": 0,
+       "same_count": 3
+      },
+      {
+       "type": "single",
+       "label": "A",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      }
+     ],
+     "absent": false,
+     "fillTime": 53
+    },
+    {
+     "name": "Ushia",
+     "rank": 10,
+     "totalScore": -12.47,
+     "qScores": [
+      0,
+      -2.5,
+      -1.5,
+      5.5,
+      -6.5,
+      -3.17,
+      1.5,
+      -1.5,
+      -0.4,
+      -1.4,
+      -2.5
+     ],
+     "answers": [
+      {
+       "type": "text",
+       "label": "",
+       "labels": [],
+       "value": "F",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "E",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "C",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "A",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "E",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "B",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "text",
+       "label": "",
+       "labels": [],
+       "value": "6",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "multi",
+       "label": "",
+       "labels": [
+        "A",
+        "B",
+        "D",
+        "E"
+       ],
+       "value": "",
+       "same_set": 1,
+       "same_count": 1
+      },
+      {
+       "type": "multi",
+       "label": "",
+       "labels": [
+        "D",
+        "E",
+        "F"
+       ],
+       "value": "",
+       "same_set": 1,
+       "same_count": 1
+      },
+      {
+       "type": "multi",
+       "label": "",
+       "labels": [
+        "A",
+        "B",
+        "D"
+       ],
+       "value": "",
+       "same_set": 1,
+       "same_count": 1
+      },
+      {
+       "type": "single",
+       "label": "A",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      }
+     ],
+     "absent": false,
+     "fillTime": 981
+    },
+    {
+     "name": "晨曦",
+     "rank": 11,
+     "totalScore": -18.91,
+     "qScores": [
+      0,
+      0.57,
+      -3.5,
+      1.5,
+      -4.5,
+      -6.5,
+      1.17,
+      -1.5,
+      0.15,
+      -3.8,
+      -2.5
+     ],
+     "answers": [
+      {
+       "type": "text",
+       "label": "",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "C",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "B",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "B",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "C",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "C",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "text",
+       "label": "",
+       "labels": [],
+       "value": "5",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "multi",
+       "label": "",
+       "labels": [
+        "B",
+        "E"
+       ],
+       "value": "",
+       "same_set": 1,
+       "same_count": 1
+      },
+      {
+       "type": "multi",
+       "label": "",
+       "labels": [
+        "C",
+        "E"
+       ],
+       "value": "",
+       "same_set": 1,
+       "same_count": 1
+      },
+      {
+       "type": "multi",
+       "label": "",
+       "labels": [
+        "A",
+        "B"
+       ],
+       "value": "",
+       "same_set": 1,
+       "same_count": 1
+      },
+      {
+       "type": "single",
+       "label": "A",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      }
+     ],
+     "absent": false,
+     "fillTime": 15
+    },
+    {
+     "name": "CME256",
+     "rank": 12,
+     "totalScore": 0,
+     "qScores": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "answers": [
+      {
+       "type": "text",
+       "label": "",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "text",
+       "label": "",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "multi",
+       "label": "",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "multi",
+       "label": "",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "multi",
+       "label": "",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      }
+     ],
+     "absent": true,
+     "fillTime": 0
+    },
+    {
+     "name": "落天本天",
+     "rank": 13,
+     "totalScore": 0,
+     "qScores": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "answers": [
+      {
+       "type": "text",
+       "label": "",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "text",
+       "label": "",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "multi",
+       "label": "",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "multi",
+       "label": "",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "multi",
+       "label": "",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      }
+     ],
+     "absent": true,
+     "fillTime": 0
+    },
+    {
+     "name": "流星之意",
+     "rank": 14,
+     "totalScore": 0,
+     "qScores": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+     ],
+     "answers": [
+      {
+       "type": "text",
+       "label": "",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "text",
+       "label": "",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "multi",
+       "label": "",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "multi",
+       "label": "",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "multi",
+       "label": "",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      },
+      {
+       "type": "single",
+       "label": "",
+       "labels": [],
+       "value": "",
+       "same_set": 0,
+       "same_count": 0
+      }
+     ],
+     "absent": true,
+     "fillTime": 0
+    }
+   ],
+   "absent": [
+    "CME256",
+    "落天本天",
+    "流星之意"
+   ],
+   "newCompletions": {
+    "晨曦": [
+     10,
+     20
+    ],
+    "Ushia": [
+     2
+    ],
+    "Yy": [],
+    "#¥#@": [
+     15
+    ],
+    "๑": [
+     10
+    ],
+    "CME256": [],
+    "落天本天": [],
+    "流星之意": [],
+    "尧": [
+     0,
+     9,
+     10,
+     19,
+     20
+    ],
+    "西二旗四惠东": [
+     10,
+     19
+    ],
+    "飞鼠_Triones": [
+     4
+    ],
+    "奇策十二": [
+     0,
+     22
+    ],
+    "神岸春原": [
+     1
+    ],
+    "Mithril": [
+     2
+    ]
+   },
+   "winner": null
+  }
+ ],
+ "castling": {
+  "triggered": false,
+  "triggeredBy": null,
+  "triggerRound": null,
+  "speedUp": false,
+  "players": {},
+  "log": [],
+  "seed": "S2_1"
+ },
+ "currentRound": 3,
+ "finished": false,
+ "winner": null,
+ "events": {
+  "active": [
+   "wisdom"
+  ],
+  "history": [
+   {
+    "round": 3,
+    "events": [
+     "thursday"
+    ]
+   }
+  ]
+ },
+ "playerTaskMap": {
+  "晨曦": [
+   "B16",
+   "A15",
+   "B13",
+   "B03",
+   "A01",
+   "A11",
+   "A08",
+   "A02",
+   "A14",
+   "A06",
+   "B10",
+   "A12",
+   "B22",
+   "A30",
+   "A18",
+   "B15",
+   "A32",
+   "B11",
+   "B02",
+   "A10",
+   "B26",
+   "A25",
+   "B06",
+   "B01",
+   "A07"
+  ],
+  "Ushia": [
+   "B16",
+   "A15",
+   "B13",
+   "B03",
+   "A01",
+   "A11",
+   "A08",
+   "A02",
+   "A14",
+   "A06",
+   "B10",
+   "A12",
+   "B22",
+   "A30",
+   "A18",
+   "B15",
+   "A32",
+   "B11",
+   "B02",
+   "A10",
+   "B26",
+   "A25",
+   "B06",
+   "B01",
+   "A07"
+  ],
+  "Yy": [
+   "B16",
+   "A15",
+   "B13",
+   "B03",
+   "A01",
+   "A11",
+   "A08",
+   "A02",
+   "A14",
+   "A06",
+   "B10",
+   "A12",
+   "B22",
+   "A30",
+   "A18",
+   "B15",
+   "A32",
+   "B11",
+   "B02",
+   "A10",
+   "B26",
+   "A25",
+   "B06",
+   "B01",
+   "A07"
+  ],
+  "#¥#@": [
+   "B16",
+   "A15",
+   "B13",
+   "B03",
+   "A01",
+   "A11",
+   "A08",
+   "A02",
+   "A14",
+   "A06",
+   "B10",
+   "A12",
+   "B22",
+   "A30",
+   "A18",
+   "B15",
+   "A32",
+   "B11",
+   "B02",
+   "A10",
+   "B26",
+   "A25",
+   "B06",
+   "B01",
+   "A07"
+  ],
+  "๑": [
+   "B16",
+   "A15",
+   "B13",
+   "B03",
+   "A01",
+   "A11",
+   "A08",
+   "A02",
+   "A14",
+   "A06",
+   "B10",
+   "A12",
+   "B22",
+   "A30",
+   "A18",
+   "B15",
+   "A32",
+   "B11",
+   "B02",
+   "A10",
+   "B26",
+   "A25",
+   "B06",
+   "B01",
+   "A07"
+  ],
+  "CME256": [
+   "B16",
+   "A15",
+   "B13",
+   "B03",
+   "A01",
+   "A11",
+   "A08",
+   "A02",
+   "A14",
+   "A06",
+   "B10",
+   "A12",
+   "B22",
+   "A30",
+   "A18",
+   "B15",
+   "A32",
+   "B11",
+   "B02",
+   "A10",
+   "B26",
+   "A25",
+   "B06",
+   "B01",
+   "A07"
+  ],
+  "落天本天": [
+   "B16",
+   "A15",
+   "B13",
+   "B03",
+   "A01",
+   "A11",
+   "A08",
+   "A02",
+   "A14",
+   "A06",
+   "B10",
+   "A12",
+   "B22",
+   "A30",
+   "A18",
+   "B15",
+   "A32",
+   "B11",
+   "B02",
+   "A10",
+   "B26",
+   "A25",
+   "B06",
+   "B01",
+   "A07"
+  ],
+  "流星之意": [
+   "B16",
+   "A15",
+   "B13",
+   "B03",
+   "A01",
+   "A11",
+   "A08",
+   "A02",
+   "A14",
+   "A06",
+   "B10",
+   "A12",
+   "B22",
+   "A30",
+   "A18",
+   "B15",
+   "A32",
+   "B11",
+   "B02",
+   "A10",
+   "B26",
+   "A25",
+   "B06",
+   "B01",
+   "A07"
+  ],
+  "尧": [
+   "B16",
+   "A15",
+   "B13",
+   "B03",
+   "A01",
+   "A11",
+   "A08",
+   "A02",
+   "A14",
+   "A06",
+   "B10",
+   "A12",
+   "B22",
+   "A30",
+   "A18",
+   "B15",
+   "A32",
+   "B11",
+   "B02",
+   "A10",
+   "B26",
+   "A25",
+   "B06",
+   "B01",
+   "A07"
+  ],
+  "西二旗四惠东": [
+   "B16",
+   "A15",
+   "B13",
+   "B03",
+   "A01",
+   "A11",
+   "A08",
+   "A02",
+   "A14",
+   "A06",
+   "B10",
+   "A12",
+   "B22",
+   "A30",
+   "A18",
+   "B15",
+   "A32",
+   "B11",
+   "B02",
+   "A10",
+   "B26",
+   "A25",
+   "B06",
+   "B01",
+   "A07"
+  ],
+  "飞鼠_Triones": [
+   "B16",
+   "A15",
+   "B13",
+   "B03",
+   "A01",
+   "A11",
+   "A08",
+   "A02",
+   "A14",
+   "A06",
+   "B10",
+   "A12",
+   "B22",
+   "A30",
+   "A18",
+   "B15",
+   "A32",
+   "B11",
+   "B02",
+   "A10",
+   "B26",
+   "A25",
+   "B06",
+   "B01",
+   "A07"
+  ],
+  "奇策十二": [
+   "B16",
+   "A15",
+   "B13",
+   "B03",
+   "A01",
+   "A11",
+   "A08",
+   "A02",
+   "A14",
+   "A06",
+   "B10",
+   "A12",
+   "B22",
+   "A30",
+   "A18",
+   "B15",
+   "A32",
+   "B11",
+   "B02",
+   "A10",
+   "B26",
+   "A25",
+   "B06",
+   "B01",
+   "A07"
+  ],
+  "神岸春原": [
+   "B16",
+   "A15",
+   "B13",
+   "B03",
+   "A01",
+   "A11",
+   "A08",
+   "A02",
+   "A14",
+   "A06",
+   "B10",
+   "A12",
+   "B22",
+   "A30",
+   "A18",
+   "B15",
+   "A32",
+   "B11",
+   "B02",
+   "A10",
+   "B26",
+   "A25",
+   "B06",
+   "B01",
+   "A07"
+  ],
+  "Mithril": [
+   "B16",
+   "A15",
+   "B13",
+   "B03",
+   "A01",
+   "A11",
+   "A08",
+   "A02",
+   "A14",
+   "A06",
+   "B10",
+   "A12",
+   "B22",
+   "A30",
+   "A18",
+   "B15",
+   "A32",
+   "B11",
+   "B02",
+   "A10",
+   "B26",
+   "A25",
+   "B06",
+   "B01",
+   "A07"
+  ]
+ },
+ "breathHold": {
+  "quota": 2,
+  "players": {
+   "๑": {
+    "used": 1
+   },
+   "西二旗四惠东": {
+    "used": 1
+   },
+   "Ushia": {
+    "used": 1
+   }
+  },
+  "requests": [
+   {
+    "player": "๑",
+    "cell": 1,
+    "requestRound": 3,
+    "applyRound": 5,
+    "status": "pending"
+   },
+   {
+    "player": "西二旗四惠东",
+    "cell": 12,
+    "requestRound": 3,
+    "applyRound": 5,
+    "status": "pending"
+   },
+   {
+    "player": "Ushia",
+    "cell": 5,
+    "requestRound": 3,
+    "applyRound": 5,
+    "status": "pending"
+   }
+  ],
+  "applied": []
+ },
+ "playerLabelMap": {}
+}

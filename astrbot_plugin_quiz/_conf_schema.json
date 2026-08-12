@@ -1,0 +1,12 @@
+{
+  "bank_file": {
+    "description": "题库文件路径",
+    "type": "string",
+    "default": "E:\\wuhebingo\\题库.json"
+  },
+  "core_js": {
+    "description": "core.js路径(用于公式计算)",
+    "type": "string",
+    "default": "E:\\wuhebingo\\core.js"
+  }
+}

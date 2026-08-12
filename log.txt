@@ -1,29 +1,75 @@
-SyntaxError: Unexpected end of input
-    at wrapSafe (node:internal/modules/cjs/loader:1804:18)
-    at Module._compile (node:internal/modules/cjs/loader:1845:20)
-    at Object..js (node:internal/modules/cjs/loader:2002:10)
-    at Module.load (node:internal/modules/cjs/loader:1594:32)
-    at Module._load (node:internal/modules/cjs/loader:1396:12)
-    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)
-    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)
-    at node:internal/main/run_main_module:33:47
+===== 乌合bingo =====
 
-Node.js v24.18.0
-node:internal/errors:985
-  const err = new Error(message);
-              ^
+1. 初始化赛季
+2. 回合抽题
+3. 结算
+4. 调试题目
+5. 查看赛季状态
+6. 生成任务板图片
+7. 易位指定
+8. 修复题目公式
+9. 清除赛季数据
+10. 管理玩家改名
+11. 回退状态
 
-Error: Command failed: node settle.js "rS1" 3 "rS1\round_3\answer.csv"
-    at genericNodeError (node:internal/errors:985:15)
-    at wrappedFn (node:internal/errors:539:14)
-    at checkExecSyncError (node:child_process:925:11)
-    at Object.execSync (node:child_process:997:15)
-    at main (E:\wuhebingo\menu.js:62:8)
-    at process.processTicksAndRejections (node:internal/process/task_queues:104:5) {
-  status: 1,
-  signal: null,
-  output: [ null, null, null ],
-  pid: 9520,
-  stdout: null,
-  stderr: null
-}
+选择 (1-11): 3
+赛季名: rS1
+回合号 (默认1): 10
+
+可用 CSV:
+  1. ans10.csv  (rS1\round_10\ans10.csv)
+  2. example.csv  (example.csv)
+
+选择序号 (回车选1): 1
+  [castling] 已从CSV提取CASTLE答案写入: E:\wuhebingo\rS1\round_10\castling.json
+===== 乌合bingo 结算 - rS1 R10 =====
+
+排名  玩家            总分        答题时长
+------------------------------------------
+1     117**********   18.46       154秒
+2     45.***********  16.30       191秒
+3     112**********   16.16       138秒
+4     218***********  12.05       292秒
+5     ����            10.51       58秒
+6     211*********    9.60        76秒
+7     223***********  9.36        34秒
+8     Yy              8.40        254秒
+9     #��#@           7.11        411秒
+10    ��              6.71        44秒
+11    223***********  0.41        25秒
+12    223************ 0.00        294秒
+13(缺) 神岸春原            0.00        -秒
+14(缺) 落天本天            0.00        -秒
+15(缺) #¥#@            0.00        -秒
+16(缺) 耀               0.00        -秒
+17(缺) ๑               0.00        -秒
+18(缺) 西二旗四惠东          0.00        -秒
+19(缺) 奇策十二            0.00        -秒
+20(缺) 雪帝              0.00        -秒
+21(缺) 流星之意            0.00        -秒
+22(缺) 飞鼠_Triones      0.00        -秒
+23(缺) 尧               0.00        -秒
+24(缺) Ushia           0.00        -秒
+25(缺) CME256          0.00        -秒
+26(缺) 彼岸花             0.00        -秒
+27(缺) Mithril         0.00        -秒
+28(缺) 大海的灰浪           0.00        -秒
+29(缺) 游戏人生            0.00        -秒
+
+缺席: 神岸春原, 落天本天, #¥#@, 耀, ๑, 西二旗四惠东, 奇策十二, 雪帝, 流星之意, 飞鼠_Triones, 尧, Ushia, CME256, 彼岸花, Mithril, 大海的灰浪, 游戏人生
+  Yy: 新完成 W
+  ����: 新完成 K
+  223***********: 新完成 Y
+  223************: 新完成 G,K
+  218***********: 新完成 D
+  112**********: 新完成 K,R
+  211*********: 新完成 D
+  #��#@: 新完成 K,Q
+  117**********: 新完成 K,R
+  45.***********: 新完成 D
+  ��: 新完成 D
+
+本轮新增完成: 15 格
+结算报告已写入: E:\wuhebingo\rS1\round_10\结算报告.txt
+结果已写入: E:\wuhebingo\rS1\round_10\results.json
+易位交换: 1 次

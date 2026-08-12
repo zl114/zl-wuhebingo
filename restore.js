@@ -34,6 +34,7 @@ if (keepCastling && keepCastling.log) {
   // 易位未变化, 可用回退版本的playerBoards
 }
 
-fs.writeFileSync(statePath, JSON.stringify(backupState, null, 2), 'utf8');
+fs.writeFileSync(statePath + '.tmp', JSON.stringify(backupState, null, 2), 'utf8');
+try { fs.renameSync(statePath + '.tmp', statePath); } catch(e) { fs.writeFileSync(statePath, JSON.stringify(backupState, null, 2), 'utf8'); }
 console.log('已回退到 ' + bakPath);
 console.log('易位状态已保留');

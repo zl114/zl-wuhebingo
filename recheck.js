@@ -18,7 +18,8 @@ state.currentRound = 0;
 state.finished = false;
 state.winner = null;
 state.castling = { triggered: false, triggeredBy: null, triggerRound: null, speedUp: false, players: {}, log: [] };
-fs.writeFileSync(statePath, JSON.stringify(state, null, 2), 'utf8');
+fs.writeFileSync(statePath + '.tmp', JSON.stringify(state, null, 2), 'utf8');
+try { fs.renameSync(statePath + '.tmp', statePath); } catch(e) { fs.writeFileSync(statePath, JSON.stringify(state, null, 2), 'utf8'); }
 console.log('已重置状态 (保留任务板和易位)');
 
 // 逐轮重新结算

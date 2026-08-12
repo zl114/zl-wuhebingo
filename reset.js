@@ -16,7 +16,8 @@ state.finished = false;
 state.winner = null;
 state.castling = { triggered: false, triggeredBy: null, triggerRound: null, speedUp: false, players: {}, log: [] };
 
-fs.writeFileSync(statePath, JSON.stringify(state, null, 2), 'utf8');
+fs.writeFileSync(statePath + '.tmp', JSON.stringify(state, null, 2), 'utf8');
+try { fs.renameSync(statePath + '.tmp', statePath); } catch(e) { fs.writeFileSync(statePath, JSON.stringify(state, null, 2), 'utf8'); }
 console.log('赛季 ' + seasonName + ' 已重置');
 console.log('  任务板: 保留 (25格)');
 console.log('  历史: 已清除');

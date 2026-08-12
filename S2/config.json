@@ -1,0 +1,6 @@
+{
+  "castling": false,
+  "winCheck": true,
+  "speedUp": true,
+  "playerCount": 12
+}
