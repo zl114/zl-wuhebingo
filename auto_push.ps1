@@ -1,12 +1,15 @@
 <#
-  auto_push.ps1 — 乌合bingo 自动上传 GitHub
+  auto_push.ps1 — 乌合bingo 自动上传 GitHub（安全版 v2）
   用法:
     powershell -ExecutionPolicy Bypass -File auto_push.ps1                # 普通推送
     powershell -ExecutionPolicy Bypass -File auto_push.ps1 -Msg "更新"     # 自定义提交信息
-    powershell -ExecutionPolicy Bypass -File auto_push.ps1 -Force         # 强制推送(首次同步用)
-  说明:
-    - 自动 add 全部改动并提交(带时间戳), 然后 push origin master
-    - 远端领先导致推送失败时, 提示使用 -Force(会覆盖远端, 仅首次/确定时用)
+    powershell -ExecutionPolicy Bypass -File auto_push.ps1 -Force         # 强制推送(覆盖远端)
+  安全说明:
+    - 只 fetch（不动工作区）；远端领先时【拒绝推送】并提示，绝不自动 pull/rebase
+      （此前 git pull --rebase 失败曾导致工作区被重置，数据险些丢失）
+    - -Force 直接 force push 覆盖远端（确认远端是旧版时才用）
+    - remote 已切换为 SSH(ssh.github.com:443)，github.com 被墙时也能推送
+    - 推送成功后提醒: 帽子云需手动「重新部署」网站才会更新
     - 日志写入 auto_push.log
 #>
 param(
@@ -42,25 +45,30 @@ if ($staged -eq 0) {
     Log "已提交 $staged 个文件: $Msg"
 }
 
-# 4. 拉取远端（合并，不强制时）
+# 4. 只 fetch（不合并、不动工作区）
 git fetch origin 2>&1 | Out-Null
 
-# 5. 推送
-if ($Force) {
-    git push --force origin master 2>&1 | Out-Null
-    $rc = $LASTEXITCODE
-} else {
-    git pull --rebase origin master 2>&1 | Out-Null
-    if ($LASTEXITCODE -ne 0) {
-        Log "❌ pull/rebase 冲突或失败——需要手动处理, 或确认覆盖远端后加 -Force"
+# 5. 检查远端领先情况
+$behind = git rev-list --count "HEAD..origin/master" 2>$null
+if (-not $Force) {
+    if ($behind -and $behind -gt 0) {
+        Log "❌ 远端 origin/master 领先本地 $behind 个提交——拒绝推送(防数据丢失)。"
+        Log "   确认远端为旧版可加 -Force 覆盖；或手动处理远端后重试。"
         exit 1
     }
-    git push origin master 2>&1 | Out-Null
-    $rc = $LASTEXITCODE
 }
+
+# 6. 推送（remote 为 SSH: ssh://git@ssh.github.com:443/...）
+if ($Force) {
+    git push --force origin master 2>&1 | Out-Null
+} else {
+    git push origin master 2>&1 | Out-Null
+}
+$rc = $LASTEXITCODE
 
 if ($rc -eq 0) {
     Log "✅ 推送成功 origin/master ($Time)"
+    Log "   💡 帽子云不会自动部署——若网站未更新, 请到帽子云后台点「重新部署」"
 } else {
-    Log "❌ 推送失败 (exit=$rc)——远端领先时请确认后加 -Force 覆盖"
+    Log "❌ 推送失败 (exit=$rc)——网络问题可重试；SSH 通道已配置(ssh.github.com:443)更稳。"
 }
