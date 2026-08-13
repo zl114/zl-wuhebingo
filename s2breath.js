@@ -128,11 +128,17 @@ function parseHoldAnswers(state, roundNum, ranked, questions) {
     var name = p.name;
     // S3：屏息二选一——"F 取消前缀"（或含"前缀"字样）→ 取消任务前缀；否则默认虚弱任务
     // S3：小写=取消前缀（f），大写=虚弱任务（F）；兼容"取消前缀"文字
-    var mode = 'weak';
     var _cellPart = val.split(/[\s,，\-]+/)[0];  // 提取格号（支持 "F 取消前缀"/大小写 格式）
-    if (/^[a-z]$/.test(_cellPart)) mode = 'prefix';
-    else if (/前缀|取消/.test(val)) mode = 'prefix';
     var cellIdx = parseCellInput(_cellPart);
+    var mode = 'weak';
+    if (/^[a-z]$/.test(_cellPart)) {
+      mode = 'prefix';
+      // 保护：该格无前缀时，小写视同大写（虚弱任务）
+      var _cb = state.board || [];
+      if (cellIdx < 0 || cellIdx >= _cb.length || !_cb[cellIdx].condState) mode = 'weak';
+    } else if (/前缀|取消/.test(val)) {
+      mode = 'prefix';
+    }
     if (cellIdx < 0) { rejected.push({ name: name, reason: '无效格号: ' + val }); continue; }
     var used = (bh.players[name] && bh.players[name].used) || 0;
     if (used >= (bh.quota || QUOTA)) { rejected.push({ name: name, reason: '屏息次数已用完(每人每赛季' + (bh.quota || QUOTA) + '次)' }); continue; }
