@@ -192,7 +192,7 @@ function addHoldQuestion(state, config, questions) {
   if (!state.breathHold) state.breathHold = { quota: 2, players: {}, requests: [], applied: [] };
   questions.unshift({
     id: 'HOLD', type: 'text', text: '屏息',
-    desc: '输入你想屏息指定的格A~Y。2回合后该格任务条件永久削弱。每人每赛季最多2次，不填则本回合不使用。',
+    desc: '输入你想屏息指定的格A~Y。S3起本局结算后立即生效。二选一：大写F=虚弱任务（连续-1/总计减半）；小写f=取消该格任务的状态前缀（任何状态均有效）。每人每赛季最多2次，不填则本回合不使用。',
     options: [], minFill: 0, maxFill: 1, formula: '0'
   });
   console.log('  [S2屏息] 屏息题已加入');

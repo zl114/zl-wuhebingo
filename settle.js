@@ -608,6 +608,7 @@ function checkTasks(state, seasonDir, roundNum, finalRanked, questions, absentPl
       var taskCell = pBoard[ti];
       // S3 特色：任务前缀条件（实化/虚化/标准状态下才判定）
       var condState = (state.board && state.board[ti]) ? state.board[ti].condState : null;
+      if (taskCell.condStateCancelled) condState = null;  // 屏息取消前缀：任何状态有效
       if (condState) {
         var _wNow = (thisRoundData && thisRoundData.weight) || 1;
         var _condOk = (condState === 'solid' && _wNow > 1) || (condState === 'virtual' && _wNow < 1) || (condState === 'standard' && _wNow === 1);

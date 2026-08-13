@@ -126,7 +126,13 @@ function parseHoldAnswers(state, roundNum, ranked, questions) {
     var val = ans && ans.value ? String(ans.value).trim() : '';
     if (!val) continue;
     var name = p.name;
-    var cellIdx = parseCellInput(val);
+    // S3：屏息二选一——"F 取消前缀"（或含"前缀"字样）→ 取消任务前缀；否则默认虚弱任务
+    // S3：小写=取消前缀（f），大写=虚弱任务（F）；兼容"取消前缀"文字
+    var mode = 'weak';
+    var _cellPart = val.split(/[\s,，\-]+/)[0];  // 提取格号（支持 "F 取消前缀"/大小写 格式）
+    if (/^[a-z]$/.test(_cellPart)) mode = 'prefix';
+    else if (/前缀|取消/.test(val)) mode = 'prefix';
+    var cellIdx = parseCellInput(_cellPart);
     if (cellIdx < 0) { rejected.push({ name: name, reason: '无效格号: ' + val }); continue; }
     var used = (bh.players[name] && bh.players[name].used) || 0;
     if (used >= (bh.quota || QUOTA)) { rejected.push({ name: name, reason: '屏息次数已用完(每人每赛季' + (bh.quota || QUOTA) + '次)' }); continue; }
@@ -139,7 +145,7 @@ function parseHoldAnswers(state, roundNum, ranked, questions) {
     bh.players[name].used += 1;
     bh.requests.push({
       player: name, cell: cellIdx, requestRound: roundNum,
-      applyRound: roundNum, status: 'pending'
+      applyRound: roundNum, status: 'pending', mode: mode
     });
     accepted.push({ name: name, cell: cellIdx, applyRound: roundNum });
   }
@@ -185,6 +191,12 @@ function applyOne(state, r) {
   var taskCell = pBoard[cellIdx];
   if (taskCell.completed) return null;
   var board = state.board || [];
+  // S3：取消前缀模式——去掉该玩家此格的任务状态前缀（condState 个人取消）
+  if (r.mode === 'prefix') {
+    taskCell.condStateCancelled = true;
+    taskCell.weakDesc = '【屏息】已取消该格任务的状态前缀（任何状态下均有效）';
+    return { player: name, cell: cellIdx, taskId: taskCell.taskId || (board[cellIdx] ? board[cellIdx].id : null), oldDesc: (board[cellIdx] ? board[cellIdx].desc : ''), newDesc: '【屏息】已取消前缀', goal: null };
+  }
   var taskId = (state.playerTaskMap && state.playerTaskMap[name])
     ? state.playerTaskMap[name][cellIdx] : (board[cellIdx] ? board[cellIdx].id : null);
   var taskDef = null;

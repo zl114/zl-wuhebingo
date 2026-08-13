@@ -428,7 +428,7 @@ var html = '<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewpor
   + '<div class="sub">回合 ' + state.currentRound + ' · ' + players.length + ' 人 · ' + (state.finished?'已结束 · 胜者: '+(state.winner||''):'进行中')
   + (config.castling === false ? ' · 易位:关' : '') + (config.winCheck === false ? ' · 获胜:关' : '')
   + (isS2 && state.events && state.events.active && state.events.active.length ? ' · 🌬 ' + state.events.active.slice().sort(function(a, b) { return _evOrder.indexOf(a) - _evOrder.indexOf(b); }).map(function(k){ return evInfo(k).name; }).join('、') : '') + '</div>'
-  + '<div class="nav"><a href="#master">📋 总版</a>' + players.map(function(p,pi){ return '<a href="#p'+pi+'"><span class="dot" style="background:'+playerColor(pi)+'"></span>'+esc(p)+'</a>'; }).join('')   + '<a href="#timeline">📊 进度</a>' + (isS2?'<a href="#s2events">🌬 事件</a>':'') + (isS2?'<a href="#breath">💨 屏息</a>':'') + (swapLog.length?'<a href="#swap">🔄 易位</a>':'') + (coolTable?'<a href="#cooling">⏳ 冷却</a>':'') + '</div>'
+  + '<div class="nav"><a href="#master">📋 总版</a>' + (isS2 ? '<a href="/s3/">📖 赛季介绍</a>' : '') + players.map(function(p,pi){ return '<a href="#p'+pi+'"><span class="dot" style="background:'+playerColor(pi)+'"></span>'+esc(p)+'</a>'; }).join('')   + '<a href="#timeline">📊 进度</a>' + (isS2?'<a href="#s2events">🌬 事件</a>':'') + (isS2?'<a href="#breath">💨 屏息</a>':'') + (swapLog.length?'<a href="#swap">🔄 易位</a>':'') + (coolTable?'<a href="#cooling">⏳ 冷却</a>':'') + '</div>'
   + '<div id="master"><h2>总版</h2><div class="board-wrap"><table>' + masterTable + '</table></div></div>'
   + '<div class="players">' + legend + '</div>'
   + singleBoards
