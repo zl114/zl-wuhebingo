@@ -145,13 +145,13 @@ function applyEventToQuestion(ev, q, qStats, players, qi, scores) {
         if (chosenAnyAt(players, i, qi, counts, maxC)) scores[i] += 2;
       }
       break;
-    case 'caution': // 谨慎之息：选中被超过半数选择的选项 → 该题-1（单选>6，多选>9）
+    case 'caution': // 谨慎之息：选中被超过半数选择的选项 → 每个受害选项-1（单选>4，多选>7）
       if (!isOptionQ) break;
-      var threshold = q.type === 'multi' ? 9 : 6;
+      var threshold = q.type === 'multi' ? 7 : 4;
       for (i = 0; i < players.length; i++) {
         chos = chosenLabels(players[i], qi);
         for (c = 0; c < chos.length; c++) {
-          if ((counts[chos[c]] || 0) > threshold) { scores[i] -= 1; break; }
+          if ((counts[chos[c]] || 0) > threshold) scores[i] -= 1;  // 选到几个扣几个
         }
       }
       break;
