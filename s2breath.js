@@ -72,6 +72,10 @@ function weakify(taskId, param, desc) {
   var d = desc || '';
   var p = (param == null ? 1 : param);
   var goal = null, kind = 'single', nd = d, check = null;
+  // S3 前缀保留（在实化/虚化/标准状态下）
+  var _prefix = '';
+  var _pm = d.match(/^(在(实化|虚化|标准)状态下)\s*/);
+  if (_pm) _prefix = _pm[1] + ' ';
 
   // 特殊弱化表优先（一次性任务）
   var rule = weakRule(taskId);
@@ -80,7 +84,7 @@ function weakify(taskId, param, desc) {
     check = rule.check || null;
     nd = rule.desc || d;
     if (goal != null) kind = 'total';
-    return { goal: goal, desc: nd, kind: kind, check: check };
+    return { goal: goal, desc: (nd.indexOf(_prefix) === 0 ? nd : _prefix + nd), kind: kind, check: check };
   }
 
   // 尝试用任务库原始模板（含 {x}），保证渲染后 desc 也能正确弱化（总计减半/连续-1）
@@ -97,7 +101,7 @@ function weakify(taskId, param, desc) {
     }
     nd = srcD.replace(/\{x\}/g, String(goal));
   }
-  return { goal: goal, desc: nd, kind: kind, check: check };
+  return { goal: goal, desc: (nd.indexOf(_prefix) === 0 ? nd : _prefix + nd), kind: kind, check: check };
 }
 
 // 解析本轮屏息提交（在结算流程中调用）
