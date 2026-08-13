@@ -8,7 +8,9 @@ var s2breath = require('./s2breath');  // S2 屏息（玩家主动技能）
 
 var args = process.argv.slice(2);
 var seasonName = args[0];
-var roundNum = parseInt(args[1]) || 1;
+var roundNumRaw = args[1] || '1';
+var isSpecial = /^(s\d+|special|rs\d+)$/i.test(roundNumRaw);  // Rs1/Special 特别回合
+var roundNum = isSpecial ? roundNumRaw : (parseInt(roundNumRaw) || 1);
 var csvPath = args[2];
 
 if (!seasonName || !csvPath) {
@@ -418,6 +420,33 @@ for (var ari = 0; ari < rawAnswers.length; ari++) {
       rank: finalRanked.length + 1
     });
   }
+}
+
+// ===== Special 特别回合（Rs1）：6事件同时生效，纯分数定高低，与正赛无影响 =====
+// 在计分后立即分支（不点任务板、不写正赛 state）
+if (isSpecial) {
+  var s1Events = ((args[3] && args[3] !== '--force') ? args[3] : 'wisdom,unity,thursday,blaze,flora,void')
+    .split(',').map(function(s) { return s.trim(); }).filter(Boolean);
+  console.log('  [Rs1] 特别回合：6事件同时生效 → ' + s1Events.map(function(e) { return s2events.EVENT_NAMES[e] || e; }).join(', '));
+  var s1Applied = s2events.applyEvents(finalRanked, questions, qOffset, s1Events, scoringResult.stats);
+  var s1Ranked = s1Applied.ranked.filter(function(r) { return !r.absent; });
+  s1Ranked.sort(function(a, b) { return (b.totalScore || 0) - (a.totalScore || 0); });
+  for (var s1i = 0; s1i < s1Ranked.length; s1i++) s1Ranked[s1i].rank = s1i + 1;
+
+  console.log('===== 乌合bingo Special 结算 - ' + seasonName + ' ' + roundNumRaw + ' =====');
+  console.log('排名  玩家            总分        答题时长');
+  console.log('------------------------------------------');
+  for (var s1r = 0; s1r < s1Ranked.length; s1r++) {
+    var s1p = s1Ranked[s1r];
+    console.log(String(s1p.rank).padEnd(6) + s1p.name.padEnd(16) + (s1p.totalScore || 0).toFixed(2).padEnd(12) + (s1p.fillTime || '-') + '秒');
+  }
+  var s1Dir = path.join(seasonDir, 'round_' + roundNumRaw.toLowerCase());
+  core.ensureDir(s1Dir);
+  fs.writeFileSync(path.join(s1Dir, 'results.json'),
+    JSON.stringify({ round: roundNumRaw, ranked: s1Ranked, questions: questions, stats: scoringResult.stats, events: s1Events }, null, 2), 'utf8');
+  console.log('结果已写入: ' + path.join(s1Dir, 'results.json'));
+  console.log('（特别回合：纯分数，不点任务板，不影响正赛）');
+  process.exit(0);
 }
 
 // ===== 任务检查 =====
