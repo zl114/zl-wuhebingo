@@ -617,12 +617,7 @@
         "progress": 0,
         "completed": false,
         "completedAt": null,
-        "goal": 1,
-        "weakened": true,
-        "weakKind": "single",
-        "weakCheck": "top6All",
-        "weakAppliedRound": 6,
-        "weakDesc": "【屏息】单回合在T2~T5中，全部获得前六高的分数"
+        "goal": 1
       },
       {
         "progress": 0,
@@ -1409,12 +1404,7 @@
         "progress": 0,
         "completed": false,
         "completedAt": null,
-        "goal": 1,
-        "weakened": true,
-        "weakKind": "streak",
-        "weakCheck": null,
-        "weakAppliedRound": 6,
-        "weakDesc": "【屏息】连续1次在T3得到前3高的总分数"
+        "goal": 2
       },
       {
         "progress": 2,
@@ -2032,12 +2022,7 @@
         "progress": 0,
         "completed": false,
         "completedAt": null,
-        "goal": 1,
-        "weakened": true,
-        "weakKind": "streak",
-        "weakCheck": null,
-        "weakAppliedRound": 6,
-        "weakDesc": "【屏息】连续1次在T3得到前3高的总分数"
+        "goal": 2
       },
       {
         "progress": 1,
@@ -14306,6 +14291,27 @@
         "requestRound": 6,
         "applyRound": 7,
         "status": "pending"
+      },
+      {
+        "player": "神岸春原",
+        "cell": 5,
+        "requestRound": 6,
+        "applyRound": 7,
+        "status": "pending"
+      },
+      {
+        "player": "尧",
+        "cell": 5,
+        "requestRound": 6,
+        "applyRound": 7,
+        "status": "pending"
+      },
+      {
+        "player": "#¥#@",
+        "cell": 3,
+        "requestRound": 6,
+        "applyRound": 7,
+        "status": "pending"
       }
     ],
     "applied": [
@@ -14404,30 +14410,6 @@
         "applyRound": 6,
         "status": "void",
         "voidReason": "应用时格子已完成或无效"
-      },
-      {
-        "player": "神岸春原",
-        "cell": 5,
-        "requestRound": 5,
-        "applyRound": 6,
-        "status": "applied",
-        "appliedRound": 6
-      },
-      {
-        "player": "尧",
-        "cell": 5,
-        "requestRound": 5,
-        "applyRound": 6,
-        "status": "applied",
-        "appliedRound": 6
-      },
-      {
-        "player": "#¥#@",
-        "cell": 3,
-        "requestRound": 5,
-        "applyRound": 6,
-        "status": "applied",
-        "appliedRound": 6
       }
     ]
   },
