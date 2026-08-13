@@ -448,7 +448,12 @@
         "progress": 0,
         "completed": false,
         "completedAt": null,
-        "goal": 2
+        "goal": 1,
+        "weakened": true,
+        "weakKind": "streak",
+        "weakCheck": null,
+        "weakAppliedRound": 6,
+        "weakDesc": "【屏息】连续1次在T5得到前3高的总分数"
       },
       {
         "progress": 1,
@@ -612,7 +617,12 @@
         "progress": 0,
         "completed": false,
         "completedAt": null,
-        "goal": 1
+        "goal": 1,
+        "weakened": true,
+        "weakKind": "single",
+        "weakCheck": "top6All",
+        "weakAppliedRound": 6,
+        "weakDesc": "【屏息】单回合在T2~T5中，全部获得前六高的分数"
       },
       {
         "progress": 0,
@@ -817,7 +827,12 @@
         "progress": 1,
         "completed": false,
         "completedAt": null,
-        "goal": 3
+        "goal": 2,
+        "weakened": true,
+        "weakKind": "total",
+        "weakCheck": null,
+        "weakAppliedRound": 6,
+        "weakDesc": "【屏息】总计2次在T3得到前3高的总分数"
       },
       {
         "progress": 0,
@@ -1394,7 +1409,12 @@
         "progress": 0,
         "completed": false,
         "completedAt": null,
-        "goal": 2
+        "goal": 1,
+        "weakened": true,
+        "weakKind": "streak",
+        "weakCheck": null,
+        "weakAppliedRound": 6,
+        "weakDesc": "【屏息】连续1次在T3得到前3高的总分数"
       },
       {
         "progress": 2,
@@ -1691,7 +1711,12 @@
         "progress": 0,
         "completed": false,
         "completedAt": null,
-        "goal": 1
+        "goal": 1,
+        "weakened": true,
+        "weakKind": "single",
+        "weakCheck": "top6All",
+        "weakAppliedRound": 6,
+        "weakDesc": "【屏息】单回合在T2~T5中，全部获得前六高的分数"
       },
       {
         "progress": 1,
@@ -2007,7 +2032,12 @@
         "progress": 0,
         "completed": false,
         "completedAt": null,
-        "goal": 2
+        "goal": 1,
+        "weakened": true,
+        "weakKind": "streak",
+        "weakCheck": null,
+        "weakAppliedRound": 6,
+        "weakDesc": "【屏息】连续1次在T3得到前3高的总分数"
       },
       {
         "progress": 1,
@@ -14269,78 +14299,7 @@
         "used": 1
       }
     },
-    "requests": [
-      {
-        "player": "西二旗四惠东",
-        "cell": 5,
-        "requestRound": 5,
-        "applyRound": 7,
-        "status": "pending"
-      },
-      {
-        "player": "Ushia",
-        "cell": 16,
-        "requestRound": 5,
-        "applyRound": 7,
-        "status": "pending"
-      },
-      {
-        "player": "飞鼠_Triones",
-        "cell": 3,
-        "requestRound": 5,
-        "applyRound": 7,
-        "status": "pending"
-      },
-      {
-        "player": "๑",
-        "cell": 11,
-        "requestRound": 5,
-        "applyRound": 7,
-        "status": "pending"
-      },
-      {
-        "player": "Yy",
-        "cell": 1,
-        "requestRound": 5,
-        "applyRound": 7,
-        "status": "pending"
-      },
-      {
-        "player": "奇策十二",
-        "cell": 16,
-        "requestRound": 5,
-        "applyRound": 7,
-        "status": "pending"
-      },
-      {
-        "player": "神岸春原",
-        "cell": 5,
-        "requestRound": 5,
-        "applyRound": 7,
-        "status": "pending"
-      },
-      {
-        "player": "尧",
-        "cell": 5,
-        "requestRound": 5,
-        "applyRound": 7,
-        "status": "pending"
-      },
-      {
-        "player": "#¥#@",
-        "cell": 3,
-        "requestRound": 5,
-        "applyRound": 7,
-        "status": "pending"
-      },
-      {
-        "player": "飞鼠_Triones",
-        "cell": 5,
-        "requestRound": 5,
-        "applyRound": 7,
-        "status": "pending"
-      }
-    ],
+    "requests": [],
     "applied": [
       {
         "player": "๑",
@@ -14386,6 +14345,86 @@
         "player": "奇策十二",
         "cell": 18,
         "requestRound": 4,
+        "applyRound": 6,
+        "status": "void",
+        "voidReason": "应用时格子已完成或无效"
+      },
+      {
+        "player": "西二旗四惠东",
+        "cell": 5,
+        "requestRound": 5,
+        "applyRound": 6,
+        "status": "void",
+        "voidReason": "应用时格子已完成或无效"
+      },
+      {
+        "player": "Ushia",
+        "cell": 16,
+        "requestRound": 5,
+        "applyRound": 6,
+        "status": "void",
+        "voidReason": "应用时格子已完成或无效"
+      },
+      {
+        "player": "飞鼠_Triones",
+        "cell": 3,
+        "requestRound": 5,
+        "applyRound": 6,
+        "status": "applied",
+        "appliedRound": 6
+      },
+      {
+        "player": "๑",
+        "cell": 11,
+        "requestRound": 5,
+        "applyRound": 6,
+        "status": "applied",
+        "appliedRound": 6
+      },
+      {
+        "player": "Yy",
+        "cell": 1,
+        "requestRound": 5,
+        "applyRound": 6,
+        "status": "applied",
+        "appliedRound": 6
+      },
+      {
+        "player": "奇策十二",
+        "cell": 16,
+        "requestRound": 5,
+        "applyRound": 6,
+        "status": "void",
+        "voidReason": "应用时格子已完成或无效"
+      },
+      {
+        "player": "神岸春原",
+        "cell": 5,
+        "requestRound": 5,
+        "applyRound": 6,
+        "status": "applied",
+        "appliedRound": 6
+      },
+      {
+        "player": "尧",
+        "cell": 5,
+        "requestRound": 5,
+        "applyRound": 6,
+        "status": "applied",
+        "appliedRound": 6
+      },
+      {
+        "player": "#¥#@",
+        "cell": 3,
+        "requestRound": 5,
+        "applyRound": 6,
+        "status": "applied",
+        "appliedRound": 6
+      },
+      {
+        "player": "飞鼠_Triones",
+        "cell": 5,
+        "requestRound": 5,
         "applyRound": 6,
         "status": "void",
         "voidReason": "应用时格子已完成或无效"
