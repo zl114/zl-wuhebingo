@@ -214,9 +214,9 @@
         "goal": 4
       },
       {
-        "progress": 4,
-        "completed": true,
-        "completedAt": 6,
+        "progress": 3,
+        "completed": false,
+        "completedAt": null,
         "goal": 4
       },
       {
@@ -232,7 +232,7 @@
         "goal": 3
       },
       {
-        "progress": 6,
+        "progress": 5,
         "completed": false,
         "completedAt": null,
         "goal": 10
@@ -256,7 +256,7 @@
         "goal": 1
       },
       {
-        "progress": 4,
+        "progress": 3,
         "completed": false,
         "completedAt": null,
         "goal": 6
@@ -365,7 +365,7 @@
         "goal": 1
       },
       {
-        "progress": 2,
+        "progress": 1,
         "completed": false,
         "completedAt": null,
         "goal": 4
@@ -413,7 +413,7 @@
         "goal": 1
       },
       {
-        "progress": 4,
+        "progress": 3,
         "completed": false,
         "completedAt": null,
         "goal": 6
@@ -669,7 +669,7 @@
         "goal": 1
       },
       {
-        "progress": 2,
+        "progress": 1,
         "completed": false,
         "completedAt": null,
         "goal": 4
@@ -693,9 +693,9 @@
         "goal": 3
       },
       {
-        "progress": 10,
-        "completed": true,
-        "completedAt": 6,
+        "progress": 9,
+        "completed": false,
+        "completedAt": null,
         "goal": 10
       },
       {
@@ -717,7 +717,7 @@
         "goal": 1
       },
       {
-        "progress": 4,
+        "progress": 3,
         "completed": false,
         "completedAt": null,
         "goal": 6
@@ -778,9 +778,9 @@
         "goal": 1
       },
       {
-        "progress": 2,
-        "completed": true,
-        "completedAt": 6,
+        "progress": 1,
+        "completed": false,
+        "completedAt": null,
         "goal": 2
       },
       {
@@ -802,9 +802,9 @@
         "goal": 3
       },
       {
-        "progress": 2,
-        "completed": true,
-        "completedAt": 6,
+        "progress": 1,
+        "completed": false,
+        "completedAt": null,
         "goal": 2
       },
       {
@@ -814,7 +814,7 @@
         "goal": 8
       },
       {
-        "progress": 2,
+        "progress": 1,
         "completed": false,
         "completedAt": null,
         "goal": 3
@@ -844,9 +844,9 @@
         "goal": 1
       },
       {
-        "progress": 3,
-        "completed": true,
-        "completedAt": 6,
+        "progress": 2,
+        "completed": false,
+        "completedAt": null,
         "goal": 3
       },
       {
@@ -862,9 +862,9 @@
         "goal": 1
       },
       {
-        "progress": 3,
-        "completed": true,
-        "completedAt": 6,
+        "progress": 2,
+        "completed": false,
+        "completedAt": null,
         "goal": 3
       },
       {
@@ -874,7 +874,7 @@
         "goal": 1
       },
       {
-        "progress": 3,
+        "progress": 2,
         "completed": false,
         "completedAt": null,
         "goal": 6
@@ -1397,7 +1397,7 @@
         "goal": 2
       },
       {
-        "progress": 3,
+        "progress": 2,
         "completed": false,
         "completedAt": null,
         "goal": 5
@@ -1457,9 +1457,9 @@
         "goal": 1
       },
       {
-        "progress": 3,
-        "completed": true,
-        "completedAt": 6,
+        "progress": 2,
+        "completed": false,
+        "completedAt": null,
         "goal": 3
       },
       {
@@ -1505,7 +1505,7 @@
         "goal": 5
       },
       {
-        "progress": 2,
+        "progress": 1,
         "completed": false,
         "completedAt": null,
         "goal": 4
@@ -1549,7 +1549,7 @@
         "goal": 2
       },
       {
-        "progress": 4,
+        "progress": 3,
         "completed": false,
         "completedAt": null,
         "goal": 5
@@ -1620,7 +1620,7 @@
         "goal": 3
       },
       {
-        "progress": 5,
+        "progress": 3,
         "completed": false,
         "completedAt": null,
         "goal": 10
@@ -1662,7 +1662,7 @@
         "goal": 5
       },
       {
-        "progress": 2,
+        "progress": 1,
         "completed": false,
         "completedAt": null,
         "goal": 4
@@ -1706,7 +1706,7 @@
         "goal": 2
       },
       {
-        "progress": 4,
+        "progress": 3,
         "completed": false,
         "completedAt": null,
         "goal": 5
@@ -1748,9 +1748,9 @@
         "goal": 1
       },
       {
-        "progress": 4,
-        "completed": true,
-        "completedAt": 6,
+        "progress": 3,
+        "completed": false,
+        "completedAt": null,
         "goal": 4
       },
       {
@@ -1808,13 +1808,13 @@
         "goal": 1
       },
       {
-        "progress": 4,
+        "progress": 3,
         "completed": false,
         "completedAt": null,
         "goal": 5
       },
       {
-        "progress": 2,
+        "progress": 1,
         "completed": false,
         "completedAt": null,
         "goal": 4
@@ -1948,7 +1948,7 @@
         "goal": 1
       },
       {
-        "progress": 5,
+        "progress": 4,
         "completed": false,
         "completedAt": null,
         "goal": 6
@@ -2058,9 +2058,9 @@
         "goal": 4
       },
       {
-        "progress": 4,
-        "completed": true,
-        "completedAt": 6,
+        "progress": 3,
+        "completed": false,
+        "completedAt": null,
         "goal": 4
       },
       {
@@ -2076,9 +2076,9 @@
         "goal": 3
       },
       {
-        "progress": 10,
-        "completed": true,
-        "completedAt": 6,
+        "progress": 9,
+        "completed": false,
+        "completedAt": null,
         "goal": 10
       },
       {
@@ -2100,7 +2100,7 @@
         "goal": 1
       },
       {
-        "progress": 4,
+        "progress": 3,
         "completed": false,
         "completedAt": null,
         "goal": 6
@@ -2471,7 +2471,7 @@
         "goal": 2
       },
       {
-        "progress": 2,
+        "progress": 1,
         "completed": false,
         "completedAt": null,
         "goal": 5
@@ -2483,19 +2483,19 @@
         "goal": 2
       },
       {
-        "progress": 3,
-        "completed": true,
-        "completedAt": 6,
+        "progress": 2,
+        "completed": false,
+        "completedAt": null,
         "goal": 3
       },
       {
-        "progress": 2,
-        "completed": true,
-        "completedAt": 6,
+        "progress": 1,
+        "completed": false,
+        "completedAt": null,
         "goal": 2
       },
       {
-        "progress": 5,
+        "progress": 4,
         "completed": false,
         "completedAt": null,
         "goal": 8
@@ -2513,7 +2513,7 @@
         "goal": 1
       },
       {
-        "progress": 3,
+        "progress": 2,
         "completed": false,
         "completedAt": null,
         "goal": 4
@@ -2531,13 +2531,13 @@
         "goal": 1
       },
       {
-        "progress": 2,
+        "progress": 1,
         "completed": false,
         "completedAt": null,
         "goal": 3
       },
       {
-        "progress": 2,
+        "progress": 1,
         "completed": false,
         "completedAt": null,
         "goal": 10
@@ -2549,7 +2549,7 @@
         "goal": 1
       },
       {
-        "progress": 2,
+        "progress": 1,
         "completed": false,
         "completedAt": null,
         "goal": 3
@@ -2579,7 +2579,7 @@
         "goal": 5
       },
       {
-        "progress": 2,
+        "progress": 1,
         "completed": false,
         "completedAt": null,
         "goal": 4
@@ -2775,7 +2775,7 @@
         "goal": 2
       },
       {
-        "progress": 2,
+        "progress": 1,
         "completed": false,
         "completedAt": null,
         "goal": 5
@@ -2799,7 +2799,7 @@
         "goal": 2
       },
       {
-        "progress": 4,
+        "progress": 2,
         "completed": false,
         "completedAt": null,
         "goal": 8
@@ -2817,7 +2817,7 @@
         "goal": 1
       },
       {
-        "progress": 2,
+        "progress": 1,
         "completed": false,
         "completedAt": null,
         "goal": 4
@@ -2835,13 +2835,13 @@
         "goal": 1
       },
       {
-        "progress": 2,
+        "progress": 1,
         "completed": false,
         "completedAt": null,
         "goal": 3
       },
       {
-        "progress": 6,
+        "progress": 3,
         "completed": false,
         "completedAt": null,
         "goal": 10
@@ -2853,7 +2853,7 @@
         "goal": 1
       },
       {
-        "progress": 2,
+        "progress": 1,
         "completed": false,
         "completedAt": null,
         "goal": 3
@@ -2877,13 +2877,13 @@
         "goal": 1
       },
       {
-        "progress": 2,
+        "progress": 1,
         "completed": false,
         "completedAt": null,
         "goal": 5
       },
       {
-        "progress": 2,
+        "progress": 1,
         "completed": false,
         "completedAt": null,
         "goal": 4
@@ -11566,7 +11566,7 @@
         {
           "name": "西二旗四惠东",
           "rank": 1,
-          "totalScore": 1.9299999999999997,
+          "totalScore": 0,
           "qScores": [
             0,
             3,
@@ -11578,7 +11578,7 @@
             1,
             0.5,
             3,
-            -1
+            -2.9299999999999997
           ],
           "answers": [
             {
@@ -12575,7 +12575,7 @@
         {
           "name": "飞鼠_Triones",
           "rank": 10,
-          "totalScore": -1,
+          "totalScore": -2,
           "qScores": [
             0,
             7,
@@ -12587,7 +12587,7 @@
             -2,
             0,
             3,
-            -5.35
+            -6.35
           ],
           "answers": [
             {
@@ -13671,43 +13671,49 @@
         "nap"
       ],
       "newCompletions": {
-        "晨曦": [
-          14
+        "晨曦": [],
+        "Ushia": [
+          16
         ],
-        "Ushia": [],
         "Yy": [],
-        "#¥#@": [
-          17
-        ],
+        "#¥#@": [],
         "๑": [
-          5,
-          9,
-          16,
-          19
+          0,
+          7,
+          8
         ],
         "CME256": [],
         "落天本天": [],
         "流星之意": [],
         "尧": [
-          16
-        ],
-        "西二旗四惠东": [],
-        "飞鼠_Triones": [
-          13
-        ],
-        "奇策十二": [],
-        "神岸春原": [
           14,
           17
+        ],
+        "西二旗四惠东": [
+          11,
+          14
+        ],
+        "飞鼠_Triones": [
+          5,
+          8,
+          11,
+          17
+        ],
+        "奇策十二": [
+          14
+        ],
+        "神岸春原": [
+          9
         ],
         "Mithril": [],
         "Anomaly": [],
         "彼岸花": [
-          8,
-          9
+          1
         ],
         "nap": [],
-        "耀": []
+        "耀": [
+          20
+        ]
       },
       "winner": null
     }
@@ -13726,7 +13732,7 @@
   "winner": null,
   "events": {
     "active": [
-      "invert"
+      "caution"
     ],
     "history": [
       {

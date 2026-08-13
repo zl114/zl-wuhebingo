@@ -1604,18 +1604,21 @@ if (s2ActiveEvents.length > 0 && s2Enabled) {
     if (questions[_qi] && questions[_qi].id === 'T10') { _t10i = _qi; break; }
   }
   if (_t10i < 0) return;
-  // 事件后总分排序（applyEvents 已应用事件；排除缺席，用在场排名判定）
+  // 事件后"不含残局分"总分排序（残局是赌第一，赌注不计入第一判定；排除缺席）
   var _order = finalRanked.filter(function(r) { return !r.absent; }).sort(function(a, b) {
-    return (b.totalScore || 0) - (a.totalScore || 0);
+    var _a0 = (a.qScores && a.qScores[_t10i]) || 0;
+    var _b0 = (b.qScores && b.qScores[_t10i]) || 0;
+    return ((b.totalScore || 0) - _b0) - ((a.totalScore || 0) - _a0);
   });
   for (var _ri = 0; _ri < _order.length; _ri++) {
     var _rp = _order[_ri];
     var _a = _rp.answers && _rp.answers[_t10i];
-    if (_a && _a.label === 'B' && _ri === 0) {
-      var _oldT10 = (_rp.qScores && _rp.qScores[_t10i]) || 0;
-      var _base = _rp.totalScore - _oldT10;   // 不含残局分的事件后总分
-      var _newT10 = -_base;                   // 归零：残局分 = -总分（正分→负，负分→正）
-      // 残局分参与事件（与其它题同序：寒冰/对称/颠倒等）
+    if (!_a || _a.label !== 'B') continue;
+    var _oldT10 = (_rp.qScores && _rp.qScores[_t10i]) || 0;
+    if (_ri === 0) {
+      // 事件后第一：归零（残局分 = -总分，参与事件）
+      var _base = _rp.totalScore - _oldT10;
+      var _newT10 = -_base;
       var _evs = (s2ActiveEvents || []).slice().sort(function(a, b) {
         return s2events.EVENT_ORDER.indexOf(a) - s2events.EVENT_ORDER.indexOf(b);
       });
@@ -1626,11 +1629,37 @@ if (s2ActiveEvents.length > 0 && s2Enabled) {
         else if (_ev === 'mirror') _newT10 = Math.abs(_newT10);
         else if (_ev === 'invert') _newT10 *= -1;
         else if (_ev === 'thursday') _newT10 -= 0.5;
+        else if (_ev === 'caution') {
+          var _cntB = ((scoringResult.stats[_t10i] || {}).counts || {})['B'] || 0;
+          if (_cntB > 6) _newT10 -= 1;  // 归零分也叠加谨慎之息
+        }
       }
       _rp.qScores[_t10i] = _newT10;
       _rp.totalScore = _base + _newT10;
       console.log('  [残局] ' + _rp.name + ' 事件后第1名且选B → 残局分' + _newT10.toFixed(2) + '，总分' + _rp.totalScore.toFixed(2));
-      break;
+    } else {
+      // 非事件后第一：残局分重置为 0 的事件后值（覆盖原始公式 -score，保留谨慎/周四等事件效果）
+      var _newT10b = 0;
+      var _evs2 = (s2ActiveEvents || []).slice().sort(function(a, b) {
+        return s2events.EVENT_ORDER.indexOf(a) - s2events.EVENT_ORDER.indexOf(b);
+      });
+      for (var _ei2 = 0; _ei2 < _evs2.length; _ei2++) {
+        var _ev2 = _evs2[_ei2];
+        if (_ev2 === 'frost' && _newT10b < 0) _newT10b *= 1.2;
+        else if (_ev2 === 'blaze' && _newT10b > 0) _newT10b *= 1.2;
+        else if (_ev2 === 'mirror') _newT10b = Math.abs(_newT10b);
+        else if (_ev2 === 'invert') _newT10b *= -1;
+        else if (_ev2 === 'thursday') _newT10b -= 0.5;
+        else if (_ev2 === 'caution') {
+          var _cntB2 = ((scoringResult.stats[_t10i] || {}).counts || {})['B'] || 0;
+          if (_cntB2 > 6) _newT10b -= 1;
+        }
+      }
+      if (_newT10b !== _oldT10) {
+        _rp.qScores[_t10i] = _newT10b;
+        _rp.totalScore = _rp.totalScore - _oldT10 + _newT10b;
+        console.log('  [残局] ' + _rp.name + ' 非事件后第一，残局分重置为 ' + _newT10b.toFixed(2) + '（原 ' + _oldT10.toFixed(2) + '）');
+      }
     }
   }
   // 重新排名
