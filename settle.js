@@ -93,13 +93,15 @@ var header = core.parseCSVLine(csvLines[0]);
 var colMap = {};  // qi -> { mainCol: idx, multiCols: [{col: idx, optIdx: M-1}] }
 // 确定易位题是否存在 (影响列映射)
 // 确定易位/屏息题是否存在 (影响列映射)
-var hasCastle = false, hasHold = false;
+var hasCastle = false, hasHold = false, hasSolid = false;
 for (var qchk = 0; qchk < questions.length; qchk++) {
   if (questions[qchk] && questions[qchk].id === 'CASTLE') hasCastle = true;
   if (questions[qchk] && questions[qchk].id === 'HOLD') hasHold = true;
+  if (questions[qchk] && questions[qchk].id === 'SOLID') hasSolid = true;
 }
-var qOffset = (hasCastle ? 1 : 0) + (hasHold ? 1 : 0);
+var qOffset = (hasCastle ? 1 : 0) + (hasHold ? 1 : 0) + (hasSolid ? 1 : 0);
 var castleIdx = hasCastle ? (hasHold ? 1 : 0) : -1;
+var solidIdx = hasSolid ? (hasCastle ? (hasHold ? 2 : 1) : (hasHold ? 1 : 0)) : -1;
 
 var nicknameCol = -1;
 
@@ -292,11 +294,19 @@ for (var li = 1; li < csvLines.length; li++) {
     if (atype === 'multi' && (ans.labels || []).length > 0) { allEmpty = false; break; }
   }
 
+  // S3 实化/虚化：SOLID 题答案 → 权重（A虚化0.5 / B标准1 / C实化1.5）
+  var solidWeight = 1;
+  if (hasSolid && solidIdx >= 0 && answers[solidIdx]) {
+    var solidLabel = answers[solidIdx].label || '';
+    if (solidLabel === 'A') solidWeight = 0.5;
+    else if (solidLabel === 'C') solidWeight = 1.5;
+  }
   rawAnswers.push({
     name: displayName,
     answers: answers,
     fillTime: fillTime,
-    absent: allEmpty
+    absent: allEmpty,
+    weight: solidWeight
   });
 }
 
@@ -317,7 +327,8 @@ for (var kpi = 0; kpi < knownPlayers.length; kpi++) {
       name: kp,
       answers: emptyAnswers,
       fillTime: 0,
-      absent: true
+      absent: true,
+      weight: 1
     });
     absentPlayers.push(kp);
   } else {
@@ -408,6 +419,15 @@ if (scoringAnswers.length > 0) {
 
 // 将absent玩家的结果合并回来 (排在最后)
 var finalRanked = scoringResult.ranked.slice();
+// 附加 S3 实化/虚化权重（供镜花水月/对影成三事件读取）
+for (var _wri = 0; _wri < rawAnswers.length; _wri++) {
+  for (var _wrj = 0; _wrj < finalRanked.length; _wrj++) {
+    if (finalRanked[_wrj].name === rawAnswers[_wri].name) {
+      finalRanked[_wrj].weight = rawAnswers[_wri].weight || 1;
+      break;
+    }
+  }
+}
 for (var ari = 0; ari < rawAnswers.length; ari++) {
   if (rawAnswers[ari].absent) {
     finalRanked.push({
@@ -417,7 +437,8 @@ for (var ari = 0; ari < rawAnswers.length; ari++) {
       absent: true,
       qScores: rawAnswers[ari].answers.map(function() { return 0; }),
       totalScore: 0,
-      rank: finalRanked.length + 1
+      rank: finalRanked.length + 1,
+      weight: rawAnswers[ari].weight || 1
     });
   }
 }
@@ -444,7 +465,56 @@ if (isSpecial) {
   core.ensureDir(s1Dir);
   fs.writeFileSync(path.join(s1Dir, 'results.json'),
     JSON.stringify({ round: roundNumRaw, ranked: s1Ranked, questions: questions, stats: scoringResult.stats, events: s1Events }, null, 2), 'utf8');
+  // 结算报告.txt（自动生成）
+  var s1Lines = [];
+  s1Lines.push('='.repeat(40));
+  s1Lines.push('  乌合bingo 结算报告 - ' + seasonName + ' ' + roundNumRaw + '（特别回合）');
+  s1Lines.push('='.repeat(40));
+  s1Lines.push('');
+  s1Lines.push('赛季: ' + seasonName);
+  s1Lines.push('回合: ' + roundNumRaw + '（纯分数娱乐局）');
+  s1Lines.push('参赛人数: ' + s1Ranked.length);
+  s1Lines.push('生效事件: ' + s1Events.map(function(e) { return s2events.EVENT_NAMES[e] || e; }).join('、'));
+  s1Lines.push('');
+  s1Lines.push('------ 排名总览 ------');
+  s1Lines.push('');
+  for (var s1r2 = 0; s1r2 < s1Ranked.length; s1r2++) {
+    var s1p2 = s1Ranked[s1r2];
+    s1Lines.push('  ' + String(s1p2.rank).padEnd(10) + s1p2.name.padEnd(16) + (s1p2.totalScore || 0).toFixed(2).padEnd(12) + '分  ' + (s1p2.fillTime || '-') + '秒');
+  }
+  s1Lines.push('');
+  s1Lines.push('------ 每题详情 ------');
+  s1Lines.push('');
+  for (var s1qi = 0; s1qi < questions.length; s1qi++) {
+    var s1q = questions[s1qi];
+    if (s1q.id === 'HOLD' || s1q.id === 'CASTLE') continue;
+    var s1tn = { single: '单选', multi: '多选', text: '填空' }[s1q.type] || '?';
+    s1Lines.push('Q' + (s1qi + 1) + '. [' + s1tn + '] ' + (s1q.text || s1q.title || ''));
+    if (s1q.desc) s1Lines.push('  描述: ' + s1q.desc);
+    if (s1q.options && s1q.options.length > 0) {
+      var s1stt = scoringResult.stats[s1qi] || {};
+      s1Lines.push('  选项分布:');
+      for (var s1oi = 0; s1oi < s1q.options.length; s1oi++) {
+        var s1oo = s1q.options[s1oi];
+        var s1cnt = (s1stt.counts || {})[s1oo.label] || 0;
+        s1Lines.push('    ' + s1oo.label + '. ' + s1oo.text + ' → ' + s1cnt + '人');
+      }
+    }
+    s1Lines.push('  玩家选择(按提交顺序):');
+    for (var s1pr = 0; s1pr < s1Ranked.length; s1pr++) {
+      var s1pp = s1Ranked[s1pr];
+      var s1a = s1pp.answers && s1pp.answers[s1qi];
+      if (!s1a) continue;
+      var s1val = s1a.label || s1a.value || '';
+      if (s1q.type === 'multi') s1val = (s1a.labels || []).join(',');
+      var s1sc = (s1pp.qScores && s1pp.qScores[s1qi]) || 0;
+      s1Lines.push('    ' + String(s1pp.name).padEnd(12) + '→ ' + String(s1val || '(空)') + '  得分: ' + s1sc.toFixed(2));
+    }
+    s1Lines.push('');
+  }
+  fs.writeFileSync(path.join(s1Dir, '结算报告.txt'), s1Lines.join('\n'), 'utf8');
   console.log('结果已写入: ' + path.join(s1Dir, 'results.json'));
+  console.log('结算报告已写入: ' + path.join(s1Dir, '结算报告.txt'));
   console.log('（特别回合：纯分数，不点任务板，不影响正赛）');
   process.exit(0);
 }
@@ -502,7 +572,8 @@ function checkTasks(state, seasonDir, roundNum, finalRanked, questions, absentPl
         rankScore: core.rankScore(_rrIdx, roundTotal),
         qScores: fr.qScores || [],
         fillTime: fr.fillTime || 0,
-        answers: fr.answers || []
+        answers: fr.answers || [],
+        weight: fr.weight || 1
       });
     }
   }
@@ -535,6 +606,16 @@ function checkTasks(state, seasonDir, roundNum, finalRanked, questions, absentPl
 
     for (var ti = 0; ti < 25; ti++) {
       var taskCell = pBoard[ti];
+      // S3 特色：任务前缀条件（实化/虚化/标准状态下才判定）
+      var condState = (state.board && state.board[ti]) ? state.board[ti].condState : null;
+      if (condState) {
+        var _wNow = (thisRoundData && thisRoundData.weight) || 1;
+        var _condOk = (condState === 'solid' && _wNow > 1) || (condState === 'virtual' && _wNow < 1) || (condState === 'standard' && _wNow === 1);
+        if (!_condOk) {
+          // 不满足前缀条件（宽容）：本轮跳过——不重置也不推进（连续进度原地不动）
+          continue;
+        }
+      }
       var taskId = (state.playerTaskMap && state.playerTaskMap[pname]) ? state.playerTaskMap[pname][ti] : board[ti].id;
       var taskDef = board.find(function(b) { return b.id === taskId; }) || board[ti];
 
@@ -1615,7 +1696,7 @@ function getMaxCountLabel(ranked, qi, questions) {
 
 // ===== S2 封印之息：本轮生效事件应用 =====
 var s2ActiveEvents = (state.events && state.events.active) || [];
-var s2Season = /s2/i.test(String(state.season || '')) && !/s2\d/i.test(String(state.season || ''));
+var s2Season = /^s[23]$/i.test(String(state.season || '').trim());  // S2/S3 启用事件+屏息系统
 var s2Enabled = s2Season && !config.eventsDisabled;
 var s2Applied = null;
 if (s2ActiveEvents.length > 0 && s2Enabled) {

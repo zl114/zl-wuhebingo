@@ -1,15 +1,5 @@
 [
   {
-    "id": "HOLD",
-    "type": "text",
-    "text": "屏息",
-    "desc": "输入你想屏息指定的格A~Y。2回合后该格任务条件永久削弱。每人每赛季最多2次，不填则本回合不使用。",
-    "options": [],
-    "minFill": 0,
-    "maxFill": 1,
-    "formula": "0"
-  },
-  {
     "id": "T1",
     "type": "single",
     "text": "经典乌合",

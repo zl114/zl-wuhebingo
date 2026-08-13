@@ -1,7 +1,7 @@
 // s2breath.js — 乌合bingo S2「大地的呼吸」屏息技能
 // 规则：
 //   1. 玩家在任意一轮答题时通过问卷中的「屏息」填空题指定自己的一个格子（A~Y 或 0~24）
-//   2. 申请后第2次结算时生效（requestRound + 1 = applyRound：R5申请→R6结算生效，经过R5R6两回合）
+//   2. （S3）1回合生效：本局填写，结算后立即生效（requestRound = applyRound）
 //   3. 削弱绑定「格子位置」而非任务本身（易位后仍作用于该位置）
 //   4. 削弱规则：
 //        - 总计/累计/获得N次/总分/排名分类   → 要求减半（向上取整）
@@ -135,9 +135,9 @@ function parseHoldAnswers(state, roundNum, ranked, questions) {
     bh.players[name].used += 1;
     bh.requests.push({
       player: name, cell: cellIdx, requestRound: roundNum,
-      applyRound: roundNum + 1, status: 'pending'
+      applyRound: roundNum, status: 'pending'
     });
-    accepted.push({ name: name, cell: cellIdx, applyRound: roundNum + 1 });
+    accepted.push({ name: name, cell: cellIdx, applyRound: roundNum });
   }
   return { accepted: accepted, rejected: rejected };
 }

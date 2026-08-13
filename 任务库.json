@@ -22,12 +22,10 @@
    "desc": "获得{x}次排名1~3",
    "paramStyle": "weighted",
    "paramWeights": [
+    1,
     3,
-    4,
     6,
     3,
-    2,
-    1,
     1
    ],
    "paramVals": [
@@ -35,9 +33,7 @@
     2,
     3,
     4,
-    5,
-    6,
-    7
+    5
    ]
   },
   {
@@ -47,11 +43,9 @@
    "paramStyle": "weighted",
    "paramWeights": [
     1,
-    2,
-    4,
+    3,
     6,
-    4,
-    2,
+    3,
     1
    ],
    "paramVals": [
@@ -59,9 +53,7 @@
     2,
     3,
     4,
-    5,
-    6,
-    7
+    5
    ]
   },
   {
@@ -100,14 +92,12 @@
    "desc": "连续{x}次在T1得到前3高的总分数",
    "paramStyle": "weighted",
    "paramWeights": [
-    6,
-    3,
+    4,
     1
    ],
    "paramVals": [
     2,
-    3,
-    4
+    3
    ]
   },
   {
@@ -116,12 +106,10 @@
    "desc": "总计{x}次在T1得到前3高的总分数",
    "paramStyle": "weighted",
    "paramWeights": [
+    1,
     3,
-    4,
     6,
     3,
-    2,
-    1,
     1
    ],
    "paramVals": [
@@ -129,9 +117,7 @@
     2,
     3,
     4,
-    5,
-    6,
-    7
+    5
    ]
   },
   {
@@ -140,14 +126,12 @@
    "desc": "连续{x}次在T2得到前3高的总分数",
    "paramStyle": "weighted",
    "paramWeights": [
-    6,
-    3,
+    4,
     1
    ],
    "paramVals": [
     2,
-    3,
-    4
+    3
    ]
   },
   {
@@ -156,12 +140,10 @@
    "desc": "总计{x}次在T2得到前3高的总分数",
    "paramStyle": "weighted",
    "paramWeights": [
+    1,
     3,
-    4,
     6,
     3,
-    2,
-    1,
     1
    ],
    "paramVals": [
@@ -169,9 +151,7 @@
     2,
     3,
     4,
-    5,
-    6,
-    7
+    5
    ]
   },
   {
@@ -180,14 +160,12 @@
    "desc": "连续{x}次在T3得到前3高的总分数",
    "paramStyle": "weighted",
    "paramWeights": [
-    6,
-    3,
+    4,
     1
    ],
    "paramVals": [
     2,
-    3,
-    4
+    3
    ]
   },
   {
@@ -196,12 +174,10 @@
    "desc": "总计{x}次在T3得到前3高的总分数",
    "paramStyle": "weighted",
    "paramWeights": [
+    1,
     3,
-    4,
     6,
     3,
-    2,
-    1,
     1
    ],
    "paramVals": [
@@ -209,9 +185,7 @@
     2,
     3,
     4,
-    5,
-    6,
-    7
+    5
    ]
   },
   {
@@ -220,14 +194,12 @@
    "desc": "连续{x}次在T4得到前3高的总分数",
    "paramStyle": "weighted",
    "paramWeights": [
-    6,
-    3,
+    4,
     1
    ],
    "paramVals": [
     2,
-    3,
-    4
+    3
    ]
   },
   {
@@ -236,12 +208,10 @@
    "desc": "总计{x}次在T4得到前3高的总分数",
    "paramStyle": "weighted",
    "paramWeights": [
+    1,
     3,
-    4,
     6,
     3,
-    2,
-    1,
     1
    ],
    "paramVals": [
@@ -249,9 +219,7 @@
     2,
     3,
     4,
-    5,
-    6,
-    7
+    5
    ]
   },
   {
@@ -260,14 +228,12 @@
    "desc": "连续{x}次在T5得到前3高的总分数",
    "paramStyle": "weighted",
    "paramWeights": [
-    6,
-    3,
+    4,
     1
    ],
    "paramVals": [
     2,
-    3,
-    4
+    3
    ]
   },
   {
@@ -276,12 +242,10 @@
    "desc": "总计{x}次在T5得到前3高的总分数",
    "paramStyle": "weighted",
    "paramWeights": [
+    1,
     3,
-    4,
     6,
     3,
-    2,
-    1,
     1
    ],
    "paramVals": [
@@ -289,9 +253,7 @@
     2,
     3,
     4,
-    5,
-    6,
-    7
+    5
    ]
   },
   {
@@ -300,14 +262,12 @@
    "desc": "连续{x}次在T6得到前3高的总分数",
    "paramStyle": "weighted",
    "paramWeights": [
-    6,
-    3,
+    4,
     1
    ],
    "paramVals": [
     2,
-    3,
-    4
+    3
    ]
   },
   {
@@ -316,12 +276,10 @@
    "desc": "总计{x}次在T6得到前3高的总分数",
    "paramStyle": "weighted",
    "paramWeights": [
+    1,
     3,
-    4,
     6,
     3,
-    2,
-    1,
     1
    ],
    "paramVals": [
@@ -329,9 +287,7 @@
     2,
     3,
     4,
-    5,
-    6,
-    7
+    5
    ]
   },
   {
@@ -340,14 +296,12 @@
    "desc": "连续{x}次在T7得到前3高的总分数",
    "paramStyle": "weighted",
    "paramWeights": [
-    6,
-    3,
+    4,
     1
    ],
    "paramVals": [
     2,
-    3,
-    4
+    3
    ]
   },
   {
@@ -356,12 +310,10 @@
    "desc": "总计{x}次在T7得到前3高的总分数",
    "paramStyle": "weighted",
    "paramWeights": [
+    1,
     3,
-    4,
     6,
     3,
-    2,
-    1,
     1
    ],
    "paramVals": [
@@ -369,9 +321,7 @@
     2,
     3,
     4,
-    5,
-    6,
-    7
+    5
    ]
   },
   {
@@ -380,14 +330,12 @@
    "desc": "连续{x}次在T8得到前3高的总分数",
    "paramStyle": "weighted",
    "paramWeights": [
-    6,
-    3,
+    4,
     1
    ],
    "paramVals": [
     2,
-    3,
-    4
+    3
    ]
   },
   {
@@ -396,12 +344,10 @@
    "desc": "总计{x}次在T8得到前3高的总分数",
    "paramStyle": "weighted",
    "paramWeights": [
+    1,
     3,
-    4,
     6,
     3,
-    2,
-    1,
     1
    ],
    "paramVals": [
@@ -409,9 +355,7 @@
     2,
     3,
     4,
-    5,
-    6,
-    7
+    5
    ]
   },
   {
@@ -420,14 +364,12 @@
    "desc": "连续{x}次在T9得到前3高的总分数",
    "paramStyle": "weighted",
    "paramWeights": [
-    6,
-    3,
+    4,
     1
    ],
    "paramVals": [
     2,
-    3,
-    4
+    3
    ]
   },
   {
@@ -436,12 +378,10 @@
    "desc": "总计{x}次在T9得到前3高的总分数",
    "paramStyle": "weighted",
    "paramWeights": [
+    1,
     3,
-    4,
     6,
     3,
-    2,
-    1,
     1
    ],
    "paramVals": [
@@ -449,9 +389,7 @@
     2,
     3,
     4,
-    5,
-    6,
-    7
+    5
    ]
   },
   {
@@ -460,12 +398,10 @@
    "desc": "总计{x}次在T1得到前3低的总分数",
    "paramStyle": "weighted",
    "paramWeights": [
-    6,
-    4,
-    4,
-    2,
-    2,
     1,
+    3,
+    6,
+    3,
     1
    ],
    "paramVals": [
@@ -473,9 +409,7 @@
     2,
     3,
     4,
-    5,
-    6,
-    7
+    5
    ]
   },
   {
@@ -484,12 +418,10 @@
    "desc": "总计{x}次在T2得到前3低的总分数",
    "paramStyle": "weighted",
    "paramWeights": [
-    6,
-    4,
-    4,
-    2,
-    2,
     1,
+    3,
+    6,
+    3,
     1
    ],
    "paramVals": [
@@ -497,9 +429,7 @@
     2,
     3,
     4,
-    5,
-    6,
-    7
+    5
    ]
   },
   {
@@ -508,12 +438,10 @@
    "desc": "总计{x}次在T3得到前3低的总分数",
    "paramStyle": "weighted",
    "paramWeights": [
-    6,
-    4,
-    4,
-    2,
-    2,
     1,
+    3,
+    6,
+    3,
     1
    ],
    "paramVals": [
@@ -521,9 +449,7 @@
     2,
     3,
     4,
-    5,
-    6,
-    7
+    5
    ]
   },
   {
@@ -532,12 +458,10 @@
    "desc": "总计{x}次在T4得到前3低的总分数",
    "paramStyle": "weighted",
    "paramWeights": [
-    6,
-    4,
-    4,
-    2,
-    2,
     1,
+    3,
+    6,
+    3,
     1
    ],
    "paramVals": [
@@ -545,9 +469,7 @@
     2,
     3,
     4,
-    5,
-    6,
-    7
+    5
    ]
   },
   {
@@ -556,12 +478,10 @@
    "desc": "总计{x}次在T5得到前3低的总分数",
    "paramStyle": "weighted",
    "paramWeights": [
-    6,
-    4,
-    4,
-    2,
-    2,
     1,
+    3,
+    6,
+    3,
     1
    ],
    "paramVals": [
@@ -569,9 +489,7 @@
     2,
     3,
     4,
-    5,
-    6,
-    7
+    5
    ]
   },
   {
@@ -580,12 +498,10 @@
    "desc": "总计{x}次在T6得到前3低的总分数",
    "paramStyle": "weighted",
    "paramWeights": [
-    6,
-    4,
-    4,
-    2,
-    2,
     1,
+    3,
+    6,
+    3,
     1
    ],
    "paramVals": [
@@ -593,9 +509,7 @@
     2,
     3,
     4,
-    5,
-    6,
-    7
+    5
    ]
   },
   {
@@ -604,12 +518,10 @@
    "desc": "总计{x}次在T7得到前3低的总分数",
    "paramStyle": "weighted",
    "paramWeights": [
-    6,
-    4,
-    4,
-    2,
-    2,
     1,
+    3,
+    6,
+    3,
     1
    ],
    "paramVals": [
@@ -617,9 +529,7 @@
     2,
     3,
     4,
-    5,
-    6,
-    7
+    5
    ]
   },
   {
@@ -628,12 +538,10 @@
    "desc": "总计{x}次在T8得到前3低的总分数",
    "paramStyle": "weighted",
    "paramWeights": [
-    6,
-    4,
-    4,
-    2,
-    2,
     1,
+    3,
+    6,
+    3,
     1
    ],
    "paramVals": [
@@ -641,9 +549,7 @@
     2,
     3,
     4,
-    5,
-    6,
-    7
+    5
    ]
   },
   {
@@ -652,12 +558,10 @@
    "desc": "总计{x}次在T9得到前3低的总分数",
    "paramStyle": "weighted",
    "paramWeights": [
-    6,
-    4,
-    4,
-    2,
-    2,
     1,
+    3,
+    6,
+    3,
     1
    ],
    "paramVals": [
@@ -665,9 +569,7 @@
     2,
     3,
     4,
-    5,
-    6,
-    7
+    5
    ]
   },
   {
@@ -676,12 +578,10 @@
    "desc": "获得{x}次排名4~9",
    "paramStyle": "weighted",
    "paramWeights": [
-    6,
-    4,
-    4,
-    2,
-    2,
     1,
+    3,
+    6,
+    3,
     1
    ],
    "paramVals": [
@@ -689,9 +589,7 @@
     2,
     3,
     4,
-    5,
-    6,
-    7
+    5
    ]
   },
   {
@@ -700,12 +598,10 @@
    "desc": "获得{x}次排名7~12",
    "paramStyle": "weighted",
    "paramWeights": [
-    6,
-    4,
-    4,
-    2,
-    2,
     1,
+    3,
+    6,
+    3,
     1
    ],
    "paramVals": [
@@ -713,9 +609,7 @@
     2,
     3,
     4,
-    5,
-    6,
-    7
+    5
    ]
   },
   {
@@ -740,12 +634,10 @@
    "desc": "在T1中达成{x}次勇气",
    "paramStyle": "weighted",
    "paramWeights": [
-    6,
-    4,
-    4,
-    2,
-    2,
     1,
+    3,
+    6,
+    3,
     1
    ],
    "paramVals": [
@@ -753,9 +645,7 @@
     2,
     3,
     4,
-    5,
-    6,
-    7
+    5
    ]
   },
   {
@@ -799,32 +689,32 @@
    "list": "B",
    "desc": "累计选择{x}个A选项（含多选）",
    "paramStyle": "normal",
-   "paramMean": 10,
-   "paramStddev": 3
+   "paramMean": 20,
+   "paramStddev": 2.449
   },
   {
    "id": "B09",
    "list": "B",
    "desc": "累计选择{x}个B选项（含多选）",
    "paramStyle": "normal",
-   "paramMean": 10,
-   "paramStddev": 3
+   "paramMean": 20,
+   "paramStddev": 2.449
   },
   {
    "id": "B10",
    "list": "B",
    "desc": "累计选择{x}个C选项（含多选）",
    "paramStyle": "normal",
-   "paramMean": 10,
-   "paramStddev": 3
+   "paramMean": 20,
+   "paramStddev": 2.449
   },
   {
    "id": "B11",
    "list": "B",
    "desc": "累计选择{x}个D选项（含多选）",
    "paramStyle": "normal",
-   "paramMean": 10,
-   "paramStddev": 3
+   "paramMean": 20,
+   "paramStddev": 2.449
   },
   {
    "id": "B12",

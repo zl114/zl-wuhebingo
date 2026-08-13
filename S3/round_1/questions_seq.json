@@ -1,0 +1,322 @@
+[
+  {
+    "id": "HOLD",
+    "type": "text",
+    "text": "屏息",
+    "desc": "输入你想屏息指定的格A~Y。2回合后该格任务条件永久削弱。每人每赛季最多2次，不填则本回合不使用。",
+    "options": [],
+    "minFill": 0,
+    "maxFill": 1,
+    "formula": "0"
+  },
+  {
+    "id": "SOLID",
+    "type": "single",
+    "text": "实化与虚化",
+    "desc": "请选择一个选项（影响本局人数计算权重）",
+    "options": [
+      {
+        "label": "A",
+        "text": "A.虚化（你本局视作0.5个人参与计算）"
+      },
+      {
+        "label": "B",
+        "text": "B.标准（无效果）"
+      },
+      {
+        "label": "C",
+        "text": "C.实化（你本局视作1.5个人参与计算）"
+      }
+    ]
+  },
+  {
+    "id": "T1",
+    "type": "single",
+    "text": "经典乌合",
+    "desc": "请选择一个选项",
+    "options": [
+      {
+        "label": "A",
+        "text": "A.谨慎(若人数>2,+2)",
+        "pool": "谨慎"
+      },
+      {
+        "label": "B",
+        "text": "B.团结(人数非最少+2,无视0人项)",
+        "pool": "团结"
+      },
+      {
+        "label": "C",
+        "text": "C.公正(每有一人+0.5分，上限3分)",
+        "pool": "公正"
+      },
+      {
+        "label": "D",
+        "text": "D.智慧(人数最少每有1人+3,否则-1)",
+        "pool": "智慧"
+      },
+      {
+        "label": "E",
+        "text": "E.勇气(人数<3则+3.5,否则-2)",
+        "pool": "勇气"
+      },
+      {
+        "label": "F",
+        "text": "F.团结(人数最多+3)",
+        "pool": "团结"
+      }
+    ],
+    "formula": "if(choice == 0) {\n  if(A > 5) { 2 } else { 0 }\n} else {\n  if(choice == 1) {\n    nzMin = 99\n    if(A > 0 && A < nzMin) { nzMin = A }\n    if(B > 0 && B < nzMin) { nzMin = B }\n    if(C > 0 && C < nzMin) { nzMin = C }\n    if(D > 0 && D < nzMin) { nzMin = D }\n    if(E > 0 && E < nzMin) { nzMin = E }\n    if(F > 0 && F < nzMin) { nzMin = F }\n    if(B > 0 && B != nzMin) { 2 } else { 0 }\n  } else {\n  if(choice == 2) {\n    if(C > 0) { if(C<6){C*0.5}else{3} } else { 0 }\n  } else {\n  if(choice == 3) {\n    if(D > 0 && D <= A && D <= B && D <= C && D <= E && D <= F) { D * 3 } else { -1 }\n  } else {\n  if(choice == 4) {\n    if(E < 3) { 3.5 } else { -2 }\n  } else {\n  if(choice == 5) {\n    if(F >= A && F >= C && F >= D && F >= E && F >= F && F > 0) { 3 } else { 0 }\n  }\n  else { 0 } } } } } }"
+  },
+  {
+    "id": "T2",
+    "type": "single",
+    "enabled": true,
+    "text": "红蓝按钮问题",
+    "desc": "请选择一个选项",
+    "_players": 12,
+    "options": [
+      {
+        "label": "A",
+        "text": "A.蓝按钮：平分15分"
+      },
+      {
+        "label": "B",
+        "text": "B.红按钮：若人数>=4，+3"
+      },
+      {
+        "label": "C",
+        "text": "C.若B成功，每个人使A得分-0.5，C得分+1"
+      }
+    ],
+    "test": false,
+    "formula": "\n      if(B>=4)\n      {\n        if(choice==0){15/A-0.5*C}\n        else if(choice==1){3}\n        else {C}\n      } \n      else\n      {\n        if(choice==0){15/A}\n        else {0}\n      }\n      "
+  },
+  {
+    "id": "T3",
+    "type": "single",
+    "enabled": true,
+    "text": "平分博弈",
+    "desc": "请选择一个选项",
+    "_players": 12,
+    "options": [
+      {
+        "label": "A",
+        "text": "A.平分6分"
+      },
+      {
+        "label": "B",
+        "text": "B.平分8分"
+      },
+      {
+        "label": "C",
+        "text": "C.平分10分"
+      },
+      {
+        "label": "D",
+        "text": "D.平分12分"
+      }
+    ],
+    "test": false,
+    "formula": "\n      if(c[choice]!=0){(choice*2+6)/c[choice]}\n      else {0}\n      "
+  },
+  {
+    "id": "T4",
+    "type": "single",
+    "enabled": true,
+    "text": "少输为赢",
+    "desc": "请选择一个选项",
+    "_players": 12,
+    "options": [
+      {
+        "label": "A",
+        "text": "A.-4"
+      },
+      {
+        "label": "B",
+        "text": "B.人数非最少-7.5"
+      },
+      {
+        "label": "C",
+        "text": "C.每有一人-1.5"
+      },
+      {
+        "label": "D",
+        "text": "D.每有一人-2"
+      },
+      {
+        "label": "E",
+        "text": "E.平分-15分,人数为1不扣分"
+      }
+    ],
+    "test": false,
+    "formula": "\n      if(choice==0)\n      {\n        -4\n      }\n      else if(choice==1)\n      {\n        if(B<=A&&B<=C&&B<=D&&B<=E){0}\n        else{-7.5}\n      }\n      else if(choice==2)\n      {\n        -1.5*C\n      }\n      else if(choice==3)\n      {\n        -2*D\n      }\n      else\n      {\n        if(E<=1){0}\n        else{-15/E}\n      }\n      "
+  },
+  {
+    "id": "T5",
+    "type": "single",
+    "enabled": true,
+    "text": "多数惩罚",
+    "desc": "人数最多2项的变为相反数，第一并列其余不变，第二并列均变",
+    "_players": 12,
+    "options": [
+      {
+        "label": "A",
+        "text": "A.+1"
+      },
+      {
+        "label": "B",
+        "text": "B.+2"
+      },
+      {
+        "label": "C",
+        "text": "C.+3"
+      },
+      {
+        "label": "D",
+        "text": "D.+4"
+      }
+    ],
+    "test": false,
+    "formula": "\n      if(gtrank[choice]<=2){-choice-1}\n      else{choice+1}\n      "
+  },
+  {
+    "id": "T6",
+    "type": "text",
+    "enabled": true,
+    "text": "美人投票",
+    "desc": "输入整数0~10。计x为所有填写值的平均值的2/3并向下取整。若你恰好填写x，+5，若你填写值无其它人填写，+1/3*填写值",
+    "_players": 12,
+    "options": [],
+    "minFill": 0,
+    "maxFill": 10,
+    "test": false,
+    "formula": "\n      x=floor(2/3*sum/total)\n      s=0\n      if(value==x){s=s+5}\n      if(unique==1){s=s+value/3}\n      s \n      "
+  },
+  {
+    "id": "T7",
+    "type": "multi",
+    "enabled": true,
+    "text": "条件多选2",
+    "desc": "选择1~3项，成功得分，失败扣分",
+    "_players": 12,
+    "options": [
+      {
+        "label": "A",
+        "text": "A.1.5，该选项人数<=3"
+      },
+      {
+        "label": "B",
+        "text": "B.1.8，该选项人数>=9"
+      },
+      {
+        "label": "C",
+        "text": "C.2.1，该选项人数在4~7范围内"
+      },
+      {
+        "label": "D",
+        "text": "D.2.4，B选项人数同时大于或小于AC"
+      },
+      {
+        "label": "E",
+        "text": "E.2.7前四项完成数>=3"
+      }
+    ],
+    "minSel": 1,
+    "maxSel": 3,
+    "test": false,
+    "formula": "\n      if(A<=3){sucA=1}\n      else{sucA=0}\n      if(B>=9){sucB=1}\n      else{sucB=0}     \n      if(C>=4&&C<=7){sucC=1}\n      else{sucC=0}\n      if((B>A&&B>C)||(B<A&&B<C)){sucD=1}\n      else{sucD=0}\n      if(sucA+sucB+sucC+sucD>=3){sucE=1}\n      else{sucE=0}\n      chose_A*(sucA*1.5-!sucA*1.5)+chose_B*(sucB*1.8-!sucB*1.8)+chose_C*(sucC*2.1-!sucC*2.1)+chose_D*(sucD*2.4-!sucD*2.4)+chose_E*(sucE*2.7-!sucE*2.7)\n      "
+  },
+  {
+    "id": "T8",
+    "type": "multi",
+    "enabled": true,
+    "text": "数字炸弹",
+    "desc": "选择1~4项。设x初始为70，从上到下逐个选项判定：将x减少选项数字*选项人数，若x变为负数，则不再向下判定并标记该选项。选中被标记的选项本题得分为-1，否则得选择的选项的数字和的30%分。",
+    "_players": 12,
+    "options": [
+      {
+        "label": "A",
+        "text": "A.7"
+      },
+      {
+        "label": "B",
+        "text": "B.6"
+      },
+      {
+        "label": "C",
+        "text": "C.5"
+      },
+      {
+        "label": "D",
+        "text": "D.4"
+      },
+      {
+        "label": "E",
+        "text": "E.3"
+      },
+      {
+        "label": "F",
+        "text": "F.2"
+      }
+    ],
+    "minSel": 1,
+    "maxSel": 4,
+    "test": false,
+    "formula": "\n      i=0\n      s=0\n      x=70\n      while(i<6&&x>=0) {\n        s=s+chose[i]\n        x=x-c[i]*(7-i)\n        i=i+1\n      }\n      i=i-1\n      if(x<0){hit=i}\n      else{hit=-1}\n      if(hit!=-1)\n      {\n        if(chose[i]==1){-1}\n        else{2.1*chose_A+1.8*chose_B+1.5*chose_C+1.2*chose_D+0.9*chose_E+0.6*chose_F}\n      }\n      else{2.1*chose_A+1.8*chose_B+1.5*chose_C+1.2*chose_D+0.9*chose_E+0.6*chose_F}\n      "
+  },
+  {
+    "id": "T9",
+    "type": "multi",
+    "enabled": true,
+    "text": "幸运组合",
+    "desc": "选择1~4项，选择选项组唯一的额外+4",
+    "_players": 12,
+    "options": [
+      {
+        "label": "A",
+        "text": "A.-0.25"
+      },
+      {
+        "label": "B",
+        "text": "B.-0.5"
+      },
+      {
+        "label": "C",
+        "text": "C.-0.75"
+      },
+      {
+        "label": "D",
+        "text": "D.-1"
+      },
+      {
+        "label": "E",
+        "text": "E.-1.25"
+      }
+    ],
+    "minSel": 1,
+    "maxSel": 4,
+    "test": false,
+    "formula": "\n      score = 0\n      i = 0\n      while(i < 5) {\n        score = score + chose[i] * (-0.25 - i*0.25)\n        i = i + 1\n      }\n      if(same_set == 1) { score = score + 4 }\n      score\n      "
+  },
+  {
+    "id": "T10",
+    "type": "single",
+    "enabled": true,
+    "text": "残局",
+    "desc": "请选择一个选项",
+    "_players": 12,
+    "options": [
+      {
+        "label": "A",
+        "text": "A.-2"
+      },
+      {
+        "label": "B",
+        "text": "B.若你是第一,你的分数归零"
+      }
+    ],
+    "test": false,
+    "formula": "if(choice == 0) {\n  -2\n} else {\n  if(my_rank == 1) { -score } else { 0 }\n}"
+  }
+]

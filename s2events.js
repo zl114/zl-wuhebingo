@@ -9,6 +9,8 @@ var path = require('path');
 
 // ===== 事件定义（优先级从上至下结算） =====
 var EVENT_ORDER = [
+  'illusion', // 0 镜花水月：该题虚化玩家视作0.1人（防0爆掉）
+  'triple',   // 0.5 对影成三：该题实化玩家视作3人
   'wisdom',   // 1 智慧之息
   'unity',    // 2 团结之息
   'caution',  // 3 谨慎之息
@@ -22,14 +24,15 @@ var EVENT_ORDER = [
 ];
 
 var EVENT_NAMES = {
+  illusion: '镜花水月', triple: '对影成三',
   wisdom: '智慧之息', unity: '团结之息', caution: '谨慎之息', thursday: '周四之息',
   blaze: '灼热之息', frost: '寒冰之息', mirror: '对称之息', invert: '颠倒之息',
   flora: '草木之息', void: '归零之息'
 };
 
-// 喷涌回合：R5 起每 3 回合一次 → 5, 8, 11, 14, 17, ...
+// 喷涌回合（S3）：R3 起每 3 回合一次 → 3, 6, 9, 12, ...
 function isSurge(roundNum) {
-  return roundNum >= 5 && (roundNum - 5) % 3 === 0;
+  return roundNum >= 3 && roundNum % 3 === 0;
 }
 
 // 为 roundNum 回合抽取事件（不放回）：
@@ -37,7 +40,7 @@ function isSurge(roundNum) {
 //   喷涌回合      → 3 个
 //   其余          → 1 个
 function drawEvents(roundNum, exclude) {
-  if (roundNum < 3) return [];
+  if (roundNum < 1) return [];  // S3：R1 起事件生效
   var k = isSurge(roundNum) ? 3 : 1;
   var pool = EVENT_ORDER.slice();
   // 冷却保险: 最近2回合已抽取的事件不再出现
@@ -93,6 +96,30 @@ function applyEventToQuestion(ev, q, qStats, players, qi, scores) {
   var isOptionQ = q.type === 'single' || q.type === 'multi';
   var i, chos, c;
   switch (ev) {
+    case 'illusion': // 镜花水月：该题虚化玩家(weight<1)视作0.25人参与（防0爆掉）
+      if (!isOptionQ) break;
+      for (i = 0; i < players.length; i++) {
+        var _w1 = players[i].weight || 1;
+        if (_w1 < 1) {
+          var _l1 = chosenLabels(players[i], qi);
+          for (var _j1 = 0; _j1 < _l1.length; _j1++) {
+            if (counts[_l1[_j1]] !== undefined) counts[_l1[_j1]] = counts[_l1[_j1]] - _w1 + 0.25;
+          }
+        }
+      }
+      break;
+    case 'triple': // 对影成三：该题实化玩家(weight>1)视作3人参与
+      if (!isOptionQ) break;
+      for (i = 0; i < players.length; i++) {
+        var _w3 = players[i].weight || 1;
+        if (_w3 > 1) {
+          var _l3 = chosenLabels(players[i], qi);
+          for (var _j3 = 0; _j3 < _l3.length; _j3++) {
+            if (counts[_l3[_j3]] !== undefined) counts[_l3[_j3]] = counts[_l3[_j3]] - _w3 + 3;
+          }
+        }
+      }
+      break;
     case 'wisdom': // 智慧之息：选中人数最少选项之一 → 该题+2；填空按答案人数（1 1 2 3 → 填2和3的+2）
       if (q.type === 'single' || q.type === 'multi') {
         var minC = minPositiveCount(counts);

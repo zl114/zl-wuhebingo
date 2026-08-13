@@ -1,0 +1,180 @@
+{
+  "season": "S3",
+  "board": [
+    {
+      "id": "A25",
+      "desc": "总计1次在T1得到前3低的总分数",
+      "param": 1,
+      "condState": null
+    },
+    {
+      "id": "B04",
+      "desc": "单回合在T2~T5中，全部获得前三低的分数",
+      "param": null,
+      "condState": null
+    },
+    {
+      "id": "A33",
+      "desc": "总计2次在T9得到前3低的总分数",
+      "param": 2,
+      "condState": null
+    },
+    {
+      "id": "B01",
+      "desc": "在T1中达成3次勇气",
+      "param": 3,
+      "condState": null
+    },
+    {
+      "id": "A12",
+      "desc": "总计3次在T3得到前3高的总分数",
+      "param": 3,
+      "condState": null
+    },
+    {
+      "id": "A34",
+      "desc": "获得4次排名4~9",
+      "param": 4,
+      "condState": null
+    },
+    {
+      "id": "A19",
+      "desc": "连续2次在T7得到前3高的总分数",
+      "param": 2,
+      "condState": null
+    },
+    {
+      "id": "A08",
+      "desc": "总计3次在T1得到前3高的总分数",
+      "param": 3,
+      "condState": null
+    },
+    {
+      "id": "A10",
+      "desc": "总计2次在T2得到前3高的总分数",
+      "param": 2,
+      "condState": null
+    },
+    {
+      "id": "B19",
+      "desc": "选择了T10的B选项并成功触发条件",
+      "param": null,
+      "condState": null
+    },
+    {
+      "id": "A18",
+      "desc": "总计2次在T6得到前3高的总分数",
+      "param": 2,
+      "condState": null
+    },
+    {
+      "id": "A09",
+      "desc": "连续2次在T2得到前3高的总分数",
+      "param": 2,
+      "condState": null
+    },
+    {
+      "id": "A24",
+      "desc": "在实化状态下 总计3次在T9得到前3高的总分数",
+      "param": 3,
+      "condState": "solid"
+    },
+    {
+      "id": "A02",
+      "desc": "在标准状态下 获得3次排名1~3",
+      "param": 3,
+      "condState": "standard"
+    },
+    {
+      "id": "A16",
+      "desc": "总计3次在T5得到前3高的总分数",
+      "param": 3,
+      "condState": null
+    },
+    {
+      "id": "B29",
+      "desc": "在标准状态下 累计1个回合你的得分取两位小数（向下取整）包含7",
+      "param": 1,
+      "condState": "standard"
+    },
+    {
+      "id": "A35",
+      "desc": "获得4次排名7~12",
+      "param": 4,
+      "condState": null
+    },
+    {
+      "id": "A15",
+      "desc": "在虚化状态下 连续2次在T5得到前3高的总分数",
+      "param": 2,
+      "condState": "virtual"
+    },
+    {
+      "id": "A36",
+      "desc": "获得1次排名12",
+      "param": 1,
+      "condState": null
+    },
+    {
+      "id": "A01",
+      "desc": "在标准状态下 获得2次排名1",
+      "param": 2,
+      "condState": "standard"
+    },
+    {
+      "id": "B24",
+      "desc": "单回合所有题目均未获得恰好0分",
+      "param": null,
+      "condState": null
+    },
+    {
+      "id": "A06",
+      "desc": "在虚化状态下 连续2次排名1~6",
+      "param": 2,
+      "condState": "virtual"
+    },
+    {
+      "id": "A17",
+      "desc": "连续2次在T6得到前3高的总分数",
+      "param": 2,
+      "condState": null
+    },
+    {
+      "id": "B07",
+      "desc": "在实化状态下 单回合在T1~T5完全选不同选项，且最终结算排名为1~6",
+      "param": null,
+      "condState": "solid"
+    },
+    {
+      "id": "B32",
+      "desc": "你全收集第3n+k某一k(0~2)取值的范围内所有名次",
+      "param": null,
+      "condState": null
+    }
+  ],
+  "playerBoards": {},
+  "history": [],
+  "castling": {
+    "triggered": false,
+    "triggeredBy": null,
+    "triggerRound": null,
+    "speedUp": false,
+    "players": {},
+    "log": []
+  },
+  "events": {
+    "active": [
+      "caution"
+    ],
+    "history": []
+  },
+  "breathHold": {
+    "quota": 2,
+    "players": {},
+    "requests": [],
+    "applied": []
+  },
+  "currentRound": 0,
+  "finished": false,
+  "winner": null
+}

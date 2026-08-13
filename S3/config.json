@@ -1,0 +1,8 @@
+{
+  "castling": false,
+  "winCheck": true,
+  "speedUp": true,
+  "events": true,
+  "breathHold": true,
+  "playerCount": 12
+}

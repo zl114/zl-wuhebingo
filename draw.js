@@ -91,11 +91,25 @@ function drawRound(bank) {
   }
   // 检查完整性
   if (questions.length < 10) console.log('  警告: 仅抽到 ' + questions.length + '/10 题, 部分类型题库不足');
+  // S3 新机制：实化/虚化题（每局开头，单选 A虚化/B标准/C实化）
+  questions.unshift({
+    id: 'SOLID',
+    type: 'single',
+    text: '实化与虚化',
+    desc: '请选择一个选项（影响本局人数计算权重）',
+    options: [
+      { label: 'A', text: 'A.虚化（你本局视作0.5个人参与计算）' },
+      { label: 'B', text: 'B.标准（无效果）' },
+      { label: 'C', text: 'C.实化（你本局视作1.5个人参与计算）' }
+    ]
+  });
   return questions;
 }
 
 // ===== 生成问卷文本 (腾讯问卷DSL格式) =====
 var EVENT_CN = {
+  illusion: '镜花水月：该题虚化玩家视作0.25人（防0爆掉）',
+  triple: '对影成三：该题实化玩家视作3人',
   wisdom: '智慧之息：选最少选项者该题+2',
   unity: '团结之息：选最多者+2',
   caution: '谨慎之息：被超半数选择的选项，选了-1',
@@ -145,7 +159,7 @@ function genQuestionnaireText(questions, state, seasonName, roundNum) {
     const q = questions[i];
     const typeName = TYPE_MAP[q.type] || '单选题';
     const desc = q.desc ? '(' + q.desc + ')' : '';
-    if (q.id === 'CASTLE' || q.id === 'HOLD') {
+    if (q.id === 'CASTLE' || q.id === 'HOLD' || q.id === 'SOLID') {
       lines.push((q.text || q.title) + '[' + typeName + ']' + desc);
     } else {
       qnum++;
@@ -167,8 +181,8 @@ function genQuestionnaireText(questions, state, seasonName, roundNum) {
 // ===== 赛季初始化 =====
 // ===== S2 判断（与 settle.js 规则一致） =====
 function isS2Season(state, seasonName) {
-  var sn = String((state && state.season) || seasonName || '');
-  return /s2/i.test(sn) && !/s2\d/i.test(sn);
+  var sn = String((state && state.season) || seasonName || '').trim();
+  return /^s[23]$/i.test(sn);  // S2/S3 启用事件+屏息系统（S3 同机制）
 }
 
 // 在题目开头插入屏息 HOLD 题（S2 且 config.breathHold !== false）
@@ -203,7 +217,16 @@ function initSeason(seasonName) {
   for (let i = 0; i < 25; i++) {
     const def = allPicked[i];
     const param = core.generateTaskParam(def);
-    board.push({ id: def.id, desc: core.taskDisplay(def, param), param });
+    let desc = core.taskDisplay(def, param);
+    let condState = null;
+    // S3 特色：33% 概率给任务加前缀（实化/虚化/标准状态下达成）
+    if (Math.random() < 0.33) {
+      const states = ['solid', 'virtual', 'standard'];
+      const labels = { solid: '在实化状态下', virtual: '在虚化状态下', standard: '在标准状态下' };
+      condState = states[Math.floor(Math.random() * 3)];
+      desc = labels[condState] + ' ' + desc;
+    }
+    board.push({ id: def.id, desc, param, condState });
   }
 
   const state = {

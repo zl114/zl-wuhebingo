@@ -294,7 +294,7 @@ function scoreAllQuestions(questions, rawAnswers) {
   // 统计
   const allStats = questions.map((q, qi) => {
     const type = q.type || 'single';
-    const ans = rawAnswers.map(r => r.answers[qi] || { type, label: '', labels: [], value: '' });
+    const ans = rawAnswers.map((r, ri) => Object.assign({}, r.answers[qi] || { type, label: '', labels: [], value: '' }, { weight: r.weight || 1 }));
     if (type === 'single' || type === 'text') {
       const counts = {};
       if (q.options) for (const o of q.options) counts[o.label] = 0;
@@ -302,10 +302,10 @@ function scoreAllQuestions(questions, rawAnswers) {
       for (const a of ans) {
         const label = a.label || a.value || '';
         if (type === 'text' && a.value) {
-          counts[a.value] = (counts[a.value] || 0) + 1;
+          counts[a.value] = (counts[a.value] || 0) + a.weight;
           textSum += parseFloat(a.value) || 0;
         } else if (label && counts[label] !== undefined) {
-          counts[label]++;
+          counts[label] += a.weight;
         }
       }
       return { counts, textSum };
@@ -313,7 +313,7 @@ function scoreAllQuestions(questions, rawAnswers) {
     if (type === 'multi') {
       const counts = {};
       if (q.options) for (const o of q.options) counts[o.label] = 0;
-      for (const a of ans) for (const l of (a.labels || [])) if (counts[l] !== undefined) counts[l]++;
+      for (const a of ans) for (const l of (a.labels || [])) if (counts[l] !== undefined) counts[l] += a.weight;
       // sameSets[i]: 第i个玩家的选项组合是否唯一
       var sameSets = ans.map(function(a, i) {
         var mySet = (a.labels || []).sort().join(',');
@@ -349,7 +349,7 @@ function scoreAllQuestions(questions, rawAnswers) {
     let sc = 0;
     for (let qi = 0; qi < questions.length; qi++) {
       const q = questions[qi];
-      const ctx = buildCtx(q, qi, allQ, allStats, rawAnswers, sc, null, null, 0, r.answers, r.name);
+      const ctx = buildCtx(q, qi, allQ, allStats, rawAnswers, sc, null, null, 0, r.answers, r.name, rawAnswers);
       const qs = q.formula ? evaluateFormula(q.formula, ctx) : 0;
       r.qScores = r.qScores || [];
       r.qScores[qi] = qs;
@@ -382,7 +382,7 @@ function scoreAllQuestions(questions, rawAnswers) {
       const q = questions[qi];
       // T10 用 Q1~Q9 排名, 其他用第一轮排名
       var isT10 = q.id === 'T10' || q.type === 'T10';
-      var ctx = buildCtx(q, qi, allQ, allStats, rawAnswers, sc, sorted1, rankAns1, 1, r.answers, r.name);
+      var ctx = buildCtx(q, qi, allQ, allStats, rawAnswers, sc, sorted1, rankAns1, 1, r.answers, r.name, rawAnswers);
       if (isT10) ctx.my_rank = preT10Rank[r.name] || allAnswers.length;
       const qs = q.formula ? evaluateFormula(q.formula, ctx) : 0;
       r.qScores[qi] = qs;
