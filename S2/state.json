@@ -743,9 +743,9 @@
     ],
     "๑": [
       {
-        "progress": 1,
-        "completed": true,
-        "completedAt": 6,
+        "progress": 0,
+        "completed": false,
+        "completedAt": null,
         "goal": 1
       },
       {
@@ -790,9 +790,9 @@
         "goal": 5
       },
       {
-        "progress": 2,
-        "completed": true,
-        "completedAt": 6,
+        "progress": 1,
+        "completed": false,
+        "completedAt": null,
         "goal": 2
       },
       {
@@ -1549,7 +1549,7 @@
         "goal": 2
       },
       {
-        "progress": 4,
+        "progress": 3,
         "completed": false,
         "completedAt": null,
         "goal": 5
@@ -1579,9 +1579,9 @@
         "goal": 8
       },
       {
-        "progress": 3,
-        "completed": true,
-        "completedAt": 6,
+        "progress": 2,
+        "completed": false,
+        "completedAt": null,
         "goal": 3
       },
       {
@@ -1736,9 +1736,9 @@
         "goal": 8
       },
       {
-        "progress": 3,
-        "completed": true,
-        "completedAt": 6,
+        "progress": 2,
+        "completed": false,
+        "completedAt": null,
         "goal": 3
       },
       {
@@ -2441,9 +2441,9 @@
         "goal": 1
       },
       {
-        "progress": 2,
-        "completed": true,
-        "completedAt": 6,
+        "progress": 1,
+        "completed": false,
+        "completedAt": null,
         "goal": 2
       },
       {
@@ -2859,9 +2859,9 @@
         "goal": 3
       },
       {
-        "progress": 1,
-        "completed": true,
-        "completedAt": 6,
+        "progress": 0,
+        "completed": false,
+        "completedAt": null,
         "goal": 1
       },
       {
