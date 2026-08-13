@@ -8,7 +8,7 @@ if (!stateFile) { console.log('用法: node board.js <赛季名>/state.json'); p
 var state = JSON.parse(fs.readFileSync(stateFile, 'utf8'));
 var board = state.board;
 var playerBoards = state.playerBoards || {};
-var isS2 = /^s2$/i.test(String(state.season || '').trim());
+var isS2 = /^s[23]$/i.test(String(state.season || '').trim());  // S2/S3 显示事件+屏息区块
 var s2breath = null;
 try { s2breath = require('./s2breath'); } catch (e) {}
 var players = Object.keys(playerBoards).sort();
